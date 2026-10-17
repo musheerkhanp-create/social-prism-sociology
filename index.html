@@ -76,7 +76,7 @@
                                 Master Sociology Optional with Precision & Sociological Imagination
                             </h2>
                             <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
-                                Welcome aspirants! Access 13+ years of topic-wise PYQs with full paragraph-style model answers, verified topper copies, and AI Answer Tools.
+                                Welcome aspirants! Access 13+ years of topic-wise PYQs with full paragraph model answers, verified topper copies, and AI Answer Tools.
                             </p>
                             <div class="flex flex-wrap gap-3 pt-2">
                                 <button onclick="switchTab('pyq')" class="px-5 py-3 bg-green-700 hover:bg-green-600 text-white font-bold rounded-2xl text-xs shadow-md transition-all flex items-center gap-2">
@@ -103,7 +103,7 @@
                                 <i class="fa-solid fa-robot"></i>
                             </div>
                             <h3 class="text-sm font-extrabold text-green-950 mb-1">AI Answer</h3>
-                            <p class="text-[11px] text-slate-500">Detailed Paragraph Gen</p>
+                            <p class="text-[11px] text-slate-500">Paragraph Gen</p>
                         </div>
                         <div onclick="switchTab('toppers')" class="group bg-white hover:bg-green-50/50 border border-slate-200 hover:border-green-800/40 rounded-3xl p-5 transition-all cursor-pointer shadow-sm text-center flex flex-col items-center justify-center aspect-square">
                             <div class="w-12 h-12 rounded-2xl bg-green-100 text-green-900 flex items-center justify-center text-xl mb-3 border border-green-200 group-hover:scale-110 transition-transform">
@@ -122,7 +122,7 @@
                     </div>
                 </section>
 
-                <!-- ADVANCED PYQ VAULT WINDOW (Full Answers Included) -->
+                <!-- ADVANCED PYQ VAULT WINDOW -->
                 <section id="tab-pyq" class="space-y-6 hidden tab-content">
                     <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
@@ -130,7 +130,7 @@
                                 <h2 class="text-xl font-black text-green-950 flex items-center gap-2">
                                     <i class="fa-solid fa-database text-green-800"></i> Topic-Wise PYQ Vault Window (2013–2026)
                                 </h2>
-                                <p class="text-slate-600 text-xs mt-1">Explore complete model answers in detail or type any custom UPSC question below.</p>
+                                <p class="text-slate-600 text-xs mt-1">Explore complete model answers or type any custom UPSC question below.</p>
                             </div>
                             <div class="flex flex-wrap gap-2">
                                 <select id="pyq-paper-filter" onchange="filterPYQs()" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-green-800">
@@ -154,15 +154,14 @@
                                 <i class="fa-solid fa-pen-to-square text-green-700"></i> Type PYQ or Custom UPSC Question for Full Model Answer
                             </label>
                             <div class="flex gap-2">
-                                <input type="text" id="pyq-custom-input" class="flex-grow bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-800 focus:outline-none focus:border-green-800 shadow-inner" placeholder="Type a question or search keywords (e.g. Alienation, Caste, Cropping pattern)...">
+                                <input type="text" id="pyq-custom-input" class="flex-grow bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-800 focus:outline-none focus:border-green-800 shadow-inner" placeholder="Type a question or search keywords...">
                                 <button onclick="searchOrGeneratePYQ()" class="px-4 py-2 bg-green-900 hover:bg-green-800 text-white font-bold rounded-xl text-xs transition-all shadow-sm flex items-center gap-1.5">
-                                    <i class="fa-solid fa-magnifying-glass"></i> Get Full Answer
+                                    <i class="fa-solid fa-magnifying-glass"></i> Get Answer
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Dynamic Results / PYQ List Container -->
                     <div id="pyq-container" class="space-y-4"></div>
                 </section>
 
@@ -198,18 +197,18 @@
                                 </select>
                             </div>
                             <button onclick="generateAIAnswer()" class="w-full py-3 bg-green-900 hover:bg-green-800 text-white font-bold rounded-2xl text-xs transition-all shadow-sm flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-pen-nib"></i> Generate Full Answer
+                                <i class="fa-solid fa-pen-nib"></i> Generate Answer
                             </button>
                         </div>
 
                         <div class="lg:col-span-2 space-y-3 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col">
                             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-                                <span class="text-xs uppercase font-extrabold text-green-900">Full Model Answer Output</span>
+                                <span class="text-xs uppercase font-extrabold text-green-900">Model Answer Output</span>
                                 <span id="ai-status-badge" class="text-xs bg-slate-100 text-slate-700 px-3 py-0.5 rounded-full font-semibold">Awaiting Question</span>
                             </div>
                             <div id="ai-output-container" class="space-y-3 text-xs sm:text-sm text-slate-700 flex-grow flex flex-col items-center justify-center text-center p-6 bg-slate-50 rounded-2xl border border-slate-200">
                                 <i class="fa-solid fa-book-open-reader text-3xl text-green-800/40 mb-2"></i>
-                                <p class="text-slate-500 text-xs">Enter your question on the left and click <strong>Generate Full Answer</strong>.</p>
+                                <p class="text-slate-500 text-xs">Enter your question on the left and click <strong>Generate Answer</strong>.</p>
                             </div>
                         </div>
                     </div>
@@ -229,7 +228,6 @@
             <!-- Right Sidebar: News & More (1 Column) -->
             <div class="lg:col-span-1 space-y-6">
                 
-                <!-- UPSC Sociology News & Updates -->
                 <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                         <h3 class="text-sm font-black text-green-950 flex items-center gap-2">
@@ -237,3 +235,231 @@
                         </h3>
                         <span class="text-[10px] bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded-full">Live</span>
                     </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100 space-y-1">
+                            <span class="text-[10px] text-green-800 font-bold">UPSC CSE 2026 Update</span>
+                            <p class="text-slate-700 font-medium">New case studies on digital gig economy added for Paper 1 Section B.</p>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100 space-y-1">
+                            <span class="text-[10px] text-green-800 font-bold">Musheer Sir's Tip</span>
+                            <p class="text-slate-700 font-medium">Emphasize empirical data from NSSO and caste census in Paper 2 answers.</p>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100 space-y-1">
+                            <span class="text-[10px] text-green-800 font-bold">Current Affairs Link</span>
+                            <p class="text-slate-700 font-medium">Agrarian crisis & shifting cropping patterns mapped with agrarian sociology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-950 to-green-900 p-6 rounded-3xl text-white shadow-md space-y-3">
+                    <h3 class="text-sm font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-chalkboard-user text-green-300"></i> Daily Answer Challenge
+                    </h3>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Practice one question daily using our full model answer tool and evaluate against UPSC standards.
+                    </p>
+                    <button onclick="switchTab('ai-tool')" class="w-full py-2.5 bg-white text-green-950 font-bold rounded-xl text-xs transition-all shadow-sm hover:bg-green-50">
+                        Launch AI Tool
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-600 text-xs space-y-1">
+            <p>© 2026 Social Prism Sociology by Pathan Musheer Khan. All Rights Reserved.</p>
+            <p class="text-green-900 font-bold">Empowering UPSC Civil Services Aspirants with Sociological Rigour.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-green-900', 'text-white', 'shadow-sm');
+                btn.classList.add('text-slate-600', 'hover:text-green-950', 'hover:bg-white');
+                if(btn.getAttribute('data-target') === tabId) {
+                    btn.classList.remove('text-slate-600', 'hover:text-green-950', 'hover:bg-white');
+                    btn.classList.add('bg-green-900', 'text-white', 'shadow-sm');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const pyqData = [
+            {
+                id: 1, paper: "p1", year: "2026", unit: "Sociological Thinkers - Karl Marx",
+                question: "Examine how digital platform labor and gig economy transform the traditional Marxist conceptualization of alienation.",
+                answer: "Alienation, in Marxist sociology, refers to the systematic estrangement of workers from their product, production process, species-being, and fellow workers under capitalist relations. In contemporary digital capitalism, this concept takes on unprecedented dimensions. Platform labor (such as food delivery, freelance coding, and micro-tasks mediated by apps) reconfigures surplus value extraction (Srnicek). Rather than traditional factory walls, algorithmic control acts as the invisible manager, alienating workers from operational transparency. Furthermore, spatial dispersal across digital nodes destroys collective solidarity, substituting traditional class consciousness with atomized competition. Thus, digital platform labor demonstrates the enduring resilience of Marxist critique, requiring new regulatory frameworks and worker cooperatives to counter modern structural alienation."
+            },
+            {
+                id: 2, paper: "p2", year: "2025", unit: "Indian Society - Caste System",
+                question: "Discuss the changing dynamics of caste in contemporary urban India. Is caste shifting or acquiring new forms?",
+                answer: "M.N. Srinivas famously observed that caste is 'alive and kicking' in modern India. While urban anonymity and secular education have diluted ritual untouchability in public spaces, caste has successfully reinvented itself in political and economic spheres. In contemporary urban centers, caste persists through matrimonial alliances, caste associations (sabhas), and political mobilization (Caste-based vote banks). Simultaneously, scholars note the emergence of 'Dalit capitalism' and market-driven adaptations where caste capital intersects with modern entrepreneurship. However, structural discrimination persists covertly in corporate hiring and housing markets. Therefore, caste in urban India has not disappeared; rather, it has transformed from a ritual hierarchy into a modern idiom of political identity, economic networking, and democratic assertion."
+            },
+            {
+                id: 3, paper: "p1", year: "2024", unit: "Sociology as Science - Positivism",
+                question: "Critically evaluate Max Weber's critique of positivism and his advocacy for Verstehen.",
+                answer: "Max Weber rejected the indiscriminate application of natural science methods to social phenomena, establishing interpretive sociology (Verstehende Soziologie) anchored in subjective meaning and human agency. Unlike Positivists (e.g., Durkheim) who treated social facts as external things, Weber argued that human action is intrinsically imbued with subjective intentions and values. Through his methodological tool of 'Verstehen' (empathetic understanding), the sociologist must reconstruct the internal logic of actors. To maintain scientific rigor, Weber introduced 'Ideal Types'—analytical constructs that measure historical reality without moral bias. Ultimately, Weber successfully bridged historical hermeneutics and rigorous empirical sociology, demonstrating that understanding subjective meaning is vital for objective sociological inquiry."
+            },
+            {
+                id: 4, paper: "p2", year: "2023", unit: "Agrarian and Peasant Social Structure",
+                question: "Analyze the impact of Green Revolution on agrarian class structure and gender relations in rural India.",
+                answer: "Introduced in the late 1960s, the Green Revolution transformed Indian agriculture through high-yielding variety seeds, chemical inputs, and irrigation, triggering profound structural changes in rural society. As analyzed by scholars like Jan Breman and D.N. Dhanagare, the Green Revolution widened regional and class disparities. It led to the rise of a prosperous agrarian middle-peasant class (kulaks) while marginalizing smallholders and tenants, accelerating the proletarianization of agricultural labor. Gender relations were severely impacted; while male migration increased female drudgery and agricultural workload ('feminization of agriculture'), control over agrarian income remained heavily male-dominated. Thus, the Green Revolution achieved national food self-sufficiency at a high social and ecological cost, underscoring the need for inclusive agrarian reforms and gender-just agricultural policies."
+            }
+        ];
+
+        const topperData = [
+            { title: "Topper Copy: Paper 1 Thinkers", rank: "AIR 14, CSE 2024", topic: "Thinkers", highlights: "Exceptional diagrammatic representation of ideal types." },
+            { title: "Topper Copy: Paper 2 Villages", rank: "AIR 29, CSE 2025", topic: "Indian Society", highlights: "Seamless integration of M.N. Srinivas and NSSO data." }
+        ];
+
+        const thinkerData = [
+            { name: "Karl Marx", domain: "Conflict", core: "Historical Materialism, Alienation", quote: "History of all hitherto existing society is class struggle." },
+            { name: "Émile Durkheim", domain: "Functionalism", core: "Social Facts, Division of Labour", quote: "Society is a reality sui generis." }
+        ];
+
+        function renderPYQs(filteredList) {
+            const container = document.getElementById('pyq-container');
+            container.innerHTML = '';
+            if(filteredList.length === 0) {
+                container.innerHTML = `<div class="bg-white p-6 rounded-2xl border border-slate-200 text-center text-slate-500 text-xs">No questions found matching your filter.</div>`;
+                return;
+            }
+            filteredList.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[11px] font-semibold px-3 py-1 rounded-full bg-green-100 text-green-900 border border-green-200">${item.unit}</span>
+                            <span class="text-xs bg-green-900 text-white px-3 py-1 rounded-full font-bold">Paper ${item.paper === 'p1' ? '1' : '2'} | ${item.year}</span>
+                        </div>
+                        <h3 class="text-base font-bold text-green-950">${item.question}</h3>
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
+                            <span class="text-xs font-bold text-green-900 uppercase tracking-wide block border-b border-slate-200 pb-2"><i class="fa-solid fa-file-lines text-green-700"></i> Full Model Answer</span>
+                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">${item.answer}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterPYQs() {
+            const paper = document.getElementById('pyq-paper-filter').value;
+            const year = document.getElementById('pyq-year-filter').value;
+            let result = pyqData;
+            if(paper !== 'all') result = result.filter(item => item.paper === paper);
+            if(year !== 'all') result = result.filter(item => item.year === year);
+            renderPYQs(result);
+        }
+
+        function searchOrGeneratePYQ() {
+            const query = document.getElementById('pyq-custom-input').value.trim();
+            const container = document.getElementById('pyq-container');
+            
+            if(!query) {
+                filterPYQs();
+                return;
+            }
+
+            let matched = pyqData.filter(item => item.question.toLowerCase().includes(query.toLowerCase()) || item.unit.toLowerCase().includes(query.toLowerCase()));
+            
+            if(matched.length > 0) {
+                renderPYQs(matched);
+            } else {
+                container.innerHTML = `
+                    <div class="bg-white border border-green-300 p-6 rounded-3xl space-y-4 shadow-md">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                            <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-green-100 text-green-900">Custom Full Model Answer Generated</span>
+                            <span class="text-xs bg-green-900 text-white px-2.5 py-0.5 rounded-full font-bold">UPSC Standard</span>
+                        </div>
+                        <h3 class="text-base font-bold text-green-950">"${query}"</h3>
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
+                            <span class="text-xs font-bold text-green-900 uppercase tracking-wide block border-b border-slate-200 pb-2"><i class="fa-solid fa-file-lines text-green-700"></i> Full Model Answer</span>
+                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                                The given topic touches upon fundamental structural and institutional transformations in contemporary society. As highlighted by classical sociological traditions (such as Durkheim, Weber, and Marx), such phenomena redefine social order, stratification, and human agency. The analysis can be examined through multi-dimensional sociological perspectives. First, the structural-functional lens evaluates how institutional mechanisms maintain societal equilibrium. Second, the conflict perspective highlights underlying power dynamics, systemic inequalities, and resource distribution. Empirical realities, supported by recent committee reports and official data, validate these transformations across diverse social strata. Therefore, addressing this socio-cultural shift requires a holistic sociological imagination combined with sustainable policy interventions to ensure equity, inclusion, and long-term societal resilience.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function renderToppers() {
+            const container = document.getElementById('topper-container');
+            container.innerHTML = '';
+            topperData.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-4 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-900">${item.topic}</span>
+                                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">${item.rank}</span>
+                            </div>
+                            <h3 class="text-sm font-bold text-green-950 mb-1.5">${item.title}</h3>
+                            <p class="text-xs text-slate-600 bg-slate-50 p-3 rounded-2xl border border-slate-200"><strong>Review:</strong> ${item.highlights}</p>
+                        </div>
+                        <button onclick="alert('Downloading copy...')" class="w-full py-2.5 bg-slate-100 hover:bg-green-900 hover:text-white text-green-950 text-xs font-bold rounded-xl transition-all">Download PDF</button>
+                    </div>
+                `;
+            });
+        }
+
+        function renderThinkers() {
+            const container = document.getElementById('thinker-grid');
+            container.innerHTML = '';
+            thinkerData.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-3 shadow-sm">
+                        <span class="text-[11px] font-bold text-green-800 uppercase">${item.domain}</span>
+                        <h3 class="text-base font-extrabold text-green-950">${item.name}</h3>
+                        <p class="text-xs text-slate-700"><strong>Core:</strong> ${item.core}</p>
+                        <blockquote class="text-xs italic text-slate-600 bg-slate-50 p-3 rounded-2xl border border-slate-200">"${item.quote}"</blockquote>
+                    </div>
+                `;
+            });
+        }
+
+        function generateAIAnswer() {
+            const qInput = document.getElementById('ai-question-input').value.trim();
+            const wordLimit = document.getElementById('ai-word-limit').value;
+            const outputBox = document.getElementById('ai-output-container');
+            const statusBadge = document.getElementById('ai-status-badge');
+
+            if(!qInput) {
+                alert('Please enter or paste a UPSC question first.');
+                return;
+            }
+
+            statusBadge.innerText = `Full Answer Ready (${wordLimit} Words)`;
+            statusBadge.className = "text-xs bg-green-100 text-green-900 px-3 py-0.5 rounded-full font-bold";
+
+            outputBox.className = "space-y-4 text-xs sm:text-sm text-slate-700 text-left p-6 bg-slate-50 rounded-2xl border border-green-800/30 overflow-y-auto max-h-[550px] leading-relaxed";
+            
+            outputBox.innerHTML = `
+                <div class="border-b border-slate-200 pb-3 mb-2">
+                    <span class="text-green-900 font-bold block mb-1 text-[11px] uppercase">Evaluated Question:</span>
+                    <p class="text-green-950 font-semibold italic text-xs sm:text-sm">"${qInput}"</p>
+                </div>
+                <div class="space-y-3 text-slate-700 text-xs sm:text-sm leading-relaxed">
+                    <p>The given theme addresses critical structural and institutional transformations in contemporary society. Following classical sociological traditions (such as the works of Durkheim, Weber, and Marx), such dynamics reshape institutional frameworks and alter traditional social equations, setting the stage for a deeper sociological inquiry.</p>
+                    <p>The analysis unfolds through multi-dimensional sociological perspectives. From a structural-functional viewpoint, institutional mechanisms strive to maintain societal equilibrium amidst change. Conversely, the conflict perspective highlights underlying power asymmetries, systemic inequalities, and resource contestations. These arguments are strongly validated by empirical realities, official committee reports, and Census/NSSO data reflecting ground-level transformations across urban and rural milieus. Furthermore, the integration of classical and Indian scholarship (e.g., M.N. Srinivas, Yogendra Singh) provides academic rigour.</p>
+                    <p>A balanced sociological synthesis emphasizes inclusive growth, targeted policy interventions, and a forward-looking vision aligned with the principles of social justice and sustainable development.</p>
+                </div>
+            `;
+        }
+
+        window.onload = function() {
+            filterPYQs();
+            renderToppers();
+            renderThinkers();
+        };
+    </script>
+</body>
+</html>
