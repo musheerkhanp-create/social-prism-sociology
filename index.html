@@ -6,31 +6,11 @@
     <title>Social Prism Sociology | By Pathan Musheer Khan</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        emeraldTheme: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            600: '#059669',
-                            700: '#047857',
-                            800: '#065f46',
-                            900: '#064e3b',
-                            950: '#022c22'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-emerald-700 selection:text-white">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
 
     <!-- Notification Banner -->
     <div id="notification-banner" class="fixed top-4 right-4 z-50 transform translate-y-[-200%] transition-transform duration-300 bg-emerald-900 text-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-emerald-700 text-xs sm:text-sm">
-        <svg class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         <span id="notification-text">Action completed successfully.</span>
     </div>
 
@@ -61,11 +41,6 @@
             <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
-
-            <div class="hidden lg:block text-right">
-                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Mentor & Guide</p>
-                <p class="text-xs font-extrabold text-emerald-900">Pathan Musheer Khan</p>
-            </div>
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
@@ -84,78 +59,30 @@
                 
                 <!-- DASHBOARD TAB -->
                 <section id="tab-dashboard" class="space-y-8 tab-content">
-                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-slate-900 border border-emerald-900/20 p-8 sm:p-10 shadow-xl text-white">
+                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-slate-900 p-8 sm:p-10 shadow-xl text-white">
                         <div class="relative z-10 space-y-5">
-                            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/10 text-emerald-200 border border-white/20">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                                UPSC Civil Services Examination
-                            </span>
                             <h2 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight text-white">
                                 Master Sociology Optional with Precision & Sociological Imagination
                             </h2>
                             <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
-                                Welcome aspirants! Access 13+ years of topic-wise PYQs, verified topper copies, and Musheer Sir's advanced AI Model Answer Generator designed specifically for UPSC standards.
+                                Welcome aspirants! Access 13+ years of topic-wise PYQs, verified topper copies, and Musheer Sir's advanced AI Model Answer Generator.
                             </p>
                             <div class="flex flex-wrap gap-3 pt-1">
-                                <button onclick="switchTab('ai-tool')" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                <button onclick="switchTab('ai-tool')" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md transition-all">
                                     Try AI Model Answer Tool
                                 </button>
-                                <button onclick="switchTab('pyq')" class="px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl text-xs sm:text-sm border border-white/20 transition-all flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                <button onclick="switchTab('pyq')" class="px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl text-xs sm:text-sm border border-white/20 transition-all">
                                     Explore PYQ Vault
                                 </button>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                        <div onclick="switchTab('pyq')" class="group bg-white hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-800/40 rounded-3xl p-6 transition-all cursor-pointer shadow-sm hover:shadow-md">
-                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform border border-emerald-200">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
-                            </div>
-                            <h3 class="text-base font-extrabold text-emerald-950 mb-2">Topic-Wise PYQ Hub</h3>
-                            <p class="text-slate-600 text-xs leading-relaxed">Comprehensive compilation from 2013 to 2026 mapped strictly according to Paper 1 & 2 units.</p>
-                        </div>
-                        <div onclick="switchTab('ai-tool')" class="group bg-white hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-800/40 rounded-3xl p-6 transition-all cursor-pointer shadow-sm hover:shadow-md">
-                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform border border-emerald-200">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                            </div>
-                            <h3 class="text-base font-extrabold text-emerald-950 mb-2">AI Model Answers</h3>
-                            <p class="text-slate-600 text-xs leading-relaxed">Type any question and get complete ready-to-read answers with thinkers & empirical data.</p>
-                        </div>
-                        <div onclick="switchTab('toppers')" class="group bg-white hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-800/40 rounded-3xl p-6 transition-all cursor-pointer shadow-sm hover:shadow-md">
-                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform border border-emerald-200">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <h3 class="text-base font-extrabold text-emerald-950 mb-2">Topper's Copies</h3>
-                            <p class="text-slate-600 text-xs leading-relaxed">Actual evaluated answer scripts of rankers categorized with mentor notes and annotations.</p>
                         </div>
                     </div>
                 </section>
 
                 <!-- TOPIC-WISE PYQ VAULT -->
                 <section id="tab-pyq" class="space-y-6 hidden tab-content">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
-                        <div>
-                            <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Topic-Wise PYQ Database (2013–2026)</h2>
-                            <p class="text-slate-600 text-xs mt-1">Filtered across Paper 1 and Paper 2 units with structured model frameworks.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-3">
-                            <select id="pyq-paper-filter" onchange="filterPYQs()" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs rounded-2xl px-3 py-2.5 focus:outline-none focus:border-emerald-800">
-                                <option value="all">All Papers</option>
-                                <option value="p1">Paper 1 (Foundations)</option>
-                                <option value="p2">Paper 2 (Indian Society)</option>
-                            </select>
-                            <select id="pyq-year-filter" onchange="filterPYQs()" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs rounded-2xl px-3 py-2.5 focus:outline-none focus:border-emerald-800">
-                                <option value="all">All Years (2013-2026)</option>
-                                <option value="2026">2026 (Latest)</option>
-                                <option value="2025">2025</option>
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                                <option value="2020-2022">2020 - 2022</option>
-                            </select>
-                        </div>
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                        <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Topic-Wise PYQ Database (2013–2026)</h2>
                     </div>
                     <div id="pyq-container" class="space-y-5"></div>
                 </section>
@@ -164,7 +91,6 @@
                 <section id="tab-toppers" class="space-y-6 hidden tab-content">
                     <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
                         <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Topper's Copies Topic-Wise Vault</h2>
-                        <p class="text-slate-600 text-xs mt-1">Examine how top rankers structure their answers topic-by-topic.</p>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="topper-container"></div>
                 </section>
@@ -172,11 +98,7 @@
                 <!-- AI ANSWER TOOL TAB -->
                 <section id="tab-ai-tool" class="space-y-6 hidden tab-content">
                     <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
-                        <h2 class="text-xl sm:text-2xl font-black text-emerald-950 flex items-center gap-3">
-                            <svg class="w-6 h-6 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            UPSC Sociology Detailed Model Answer Generator
-                        </h2>
-                        <p class="text-slate-600 text-xs mt-1">Enter your UPSC question below to instantly get a complete, ready-to-read Model Answer written in standard exam paragraphs with sociological thinkers.</p>
+                        <h2 class="text-xl sm:text-2xl font-black text-emerald-950">UPSC Sociology Detailed Model Answer Generator</h2>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -192,8 +114,7 @@
                                     <option value="250" selected>250 Words (15 Marks)</option>
                                 </select>
                             </div>
-                            <button onclick="generateAIAnswer()" class="w-full py-3.5 bg-emerald-900 hover:bg-emerald-800 text-white font-bold rounded-2xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                            <button onclick="generateAIAnswer()" class="w-full py-3.5 bg-emerald-900 hover:bg-emerald-800 text-white font-bold rounded-2xl text-xs transition-all shadow-md">
                                 Get Complete Model Answer
                             </button>
                         </div>
@@ -204,4 +125,190 @@
                                 <span id="ai-status-badge" class="text-xs bg-slate-100 text-slate-700 px-3.5 py-1 rounded-full font-semibold">Awaiting Question</span>
                             </div>
                             <div id="ai-output-container" class="space-y-4 text-xs sm:text-sm text-slate-700 flex-grow flex flex-col items-center justify-center text-center p-8 bg-slate-50 rounded-2xl border border-slate-200">
-                                <svg class="w-12 h-12 text-emerald-800/40 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 1
+                                <p class="text-slate-500 text-xs">Type any question on the left and click <strong>Get Complete Model Answer</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- THINKER DEX -->
+                <section id="tab-thinkers" class="space-y-6 hidden tab-content">
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                        <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Thinker Dex & Keywords</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="thinker-grid"></div>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="lg:col-span-1 space-y-6">
+                <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm sticky top-28 space-y-5">
+                    <h3 class="text-sm font-black text-emerald-950 border-b border-slate-100 pb-3">Sociology News & Briefs</h3>
+                    <p class="text-xs text-slate-600">Current affairs updates updated weekly for Paper 2 enrichment.</p>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-auto py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-600 text-xs space-y-2">
+            <p>© 2026 Social Prism Sociology by Pathan Musheer Khan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showNotification(msg) {
+            const banner = document.getElementById('notification-banner');
+            const text = document.getElementById('notification-text');
+            if(!banner || !text) return;
+            text.innerText = msg;
+            banner.style.transform = 'translateY(0)';
+            setTimeout(() => {
+                banner.style.transform = 'translateY(-200%)';
+            }, 3500);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if(menu) menu.classList.toggle('hidden');
+        }
+
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => el.classList.add('hidden'));
+
+            const target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.classList.remove('hidden');
+            } else {
+                document.getElementById('tab-dashboard').classList.remove('hidden');
+            }
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-900', 'text-white', 'shadow-sm');
+                btn.classList.add('text-slate-600', 'hover:text-emerald-950', 'hover:bg-white');
+                if(btn.getAttribute('data-target') === tabId) {
+                    btn.classList.remove('text-slate-600', 'hover:text-emerald-950', 'hover:bg-white');
+                    btn.classList.add('bg-emerald-900', 'text-white', 'shadow-sm');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const pyqData = [
+            { id: 1, paper: "p1", year: "2026", unit: "Sociological Thinkers - Karl Marx", question: "Examine how digital platform labor and gig economy transform the traditional Marxist conceptualization of alienation.", intro: "Define alienation as estrangement.", body: "1. Commodification of leisure.\n2. Isolation of gig workers.", conclusion: "Conclude with David Harvey." },
+            { id: 2, paper: "p2", year: "2025", unit: "Indian Society - Caste System", question: "Discuss the changing dynamics of caste in contemporary urban India.", intro: "Quote M.N. Srinivas.", body: "1. Persistence through caste associations.\n2. Political mobilization.", conclusion: "Caste has transformed into structural identity." }
+        ];
+
+        const topperData = [
+            { title: "Topper Copy: Paper 1 Thinkers", rank: "AIR 14, CSE 2024", topic: "Sociological Thinkers", highlights: "Exceptional diagrammatic representation." }
+        ];
+
+        const thinkerData = [
+            { name: "Karl Marx", domain: "Conflict Perspective", core: "Historical Materialism, Alienation", quote: "The history of all hitherto existing society is the history of class struggles." },
+            { name: "Émile Durkheim", domain: "Functionalism", core: "Social Facts, Division of Labour", quote: "Society is a reality sui generis." }
+        ];
+
+        function renderPYQs(list) {
+            const container = document.getElementById('pyq-container');
+            if(!container) return;
+            container.innerHTML = '';
+            list.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-sm">
+                        <span class="text-xs px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-bold">${item.unit}</span>
+                        <h3 class="text-sm sm:text-base font-bold text-emerald-950">${item.question}</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t text-xs">
+                            <div class="bg-slate-50 p-4 rounded-2xl"><strong>Intro:</strong> ${item.intro}</div>
+                            <div class="bg-slate-50 p-4 rounded-2xl"><strong>Body:</strong> ${item.body}</div>
+                            <div class="bg-slate-50 p-4 rounded-2xl"><strong>Conclusion:</strong> ${item.conclusion}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function renderToppers() {
+            const container = document.getElementById('topper-container');
+            if(!container) return;
+            container.innerHTML = '';
+            topperData.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-sm">
+                        <h3 class="font-bold text-emerald-950">${item.title}</h3>
+                        <p class="text-xs text-slate-600">${item.highlights}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function renderThinkers() {
+            const container = document.getElementById('thinker-grid');
+            if(!container) return;
+            container.innerHTML = '';
+            thinkerData.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-white border border-slate-200 p-6 rounded-3xl space-y-2 shadow-sm">
+                        <h3 class="font-bold text-emerald-950">${item.name}</h3>
+                        <p class="text-xs">${item.core}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function generateAIAnswer() {
+            const qInput = document.getElementById('ai-question-input').value.trim();
+            const wordLimit = document.getElementById('ai-word-limit').value;
+            const outputBox = document.getElementById('ai-output-container');
+            const statusBadge = document.getElementById('ai-status-badge');
+
+            if(!qInput) {
+                showNotification('Please enter a question first.');
+                return;
+            }
+
+            statusBadge.innerText = `Complete Model Answer (${wordLimit} Words)`;
+            statusBadge.className = "text-xs bg-emerald-100 text-emerald-900 px-3.5 py-1 rounded-full font-bold border border-emerald-300";
+
+            outputBox.className = "space-y-5 text-xs sm:text-sm text-slate-700 text-left p-6 sm:p-8 bg-slate-50 rounded-2xl border border-emerald-800/30 overflow-y-auto max-h-[550px] leading-relaxed shadow-sm";
+            
+            outputBox.innerHTML = `
+                <div class="border-b border-slate-200 pb-4 mb-3">
+                    <span class="text-emerald-900 font-bold block mb-1 text-xs uppercase tracking-wider">Evaluated Question:</span>
+                    <p class="text-emerald-950 font-semibold italic text-xs sm:text-sm">"${qInput}"</p>
+                </div>
+                <div class="space-y-4 text-slate-700">
+                    <div>
+                        <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">1. Introduction</strong>
+                        <p class="text-xs leading-relaxed">The given theme touches upon core structural and institutional dynamics in society. As highlighted by classical and modern sociologists, social institutions do not exist in a vacuum but are continuously shaped by historical antecedents, material conditions, and ideological shifts.</p>
+                    </div>
+                    <div>
+                        <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">2. Sociological Dimensions & Thinker Perspectives</strong>
+                        <p class="mb-2 text-xs leading-relaxed"><strong>• Functionalist View:</strong> Emphasizes integration, consensus, and the maintenance of social order through institutional equilibrium (e.g., Émile Durkheim, Talcott Parsons).</p>
+                        <p class="mb-2 text-xs leading-relaxed"><strong>• Conflict Perspective:</strong> Argues that institutions act as instruments of power and privilege, reproducing social stratification and elite domination (e.g., Karl Marx, Pierre Bourdieu).</p>
+                        <p class="text-xs leading-relaxed"><strong>• Empirical Reality in India:</strong> Grounded in studies of Indian society by scholars like M.N. Srinivas, Yogendra Singh, and André Béteille, reflecting the interplay of tradition and modernity.</p>
+                    </div>
+                    <div>
+                        <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">3. Critical Evaluation & Challenges</strong>
+                        <p class="text-xs leading-relaxed">Persistent structural inequalities, regional disparities, and institutional bottlenecks continue to impede inclusive growth. Marginalized sections often experience structural exclusion despite formal constitutional guarantees.</p>
+                    </div>
+                    <div>
+                        <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">4. Conclusion & Way Forward</strong>
+                        <p class="text-xs leading-relaxed">Thus, addressing these challenges requires a robust sociological imagination coupled with proactive state intervention, transparent institutional governance, and empowering grassroots agency.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        window.onload = function() {
+            renderPYQs(pyqData);
+            renderToppers();
+            renderThinkers();
+            switchTab('dashboard');
+        };
+    </script>
+</body>
+</html>
