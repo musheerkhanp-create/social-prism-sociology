@@ -28,7 +28,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-emerald-700 selection:text-white">
 
-    <!-- Notification Banner (Custom non-blocking alert substitute) -->
+    <!-- Notification Banner -->
     <div id="notification-banner" class="fixed top-4 right-4 z-50 transform translate-y-[-200%] transition-transform duration-300 bg-emerald-900 text-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-emerald-700 text-xs sm:text-sm">
         <svg class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         <span id="notification-text">Action completed successfully.</span>
@@ -38,7 +38,6 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3.5">
-                <!-- Fallback-proof SVG Logo Mark -->
                 <div class="w-12 h-12 rounded-2xl bg-emerald-900 text-white flex items-center justify-center shadow-md font-black text-lg border border-emerald-800">
                     SP
                 </div>
@@ -51,7 +50,6 @@
                 </div>
             </div>
             
-            <!-- Desktop Navigation Buttons -->
             <nav class="hidden md:flex items-center space-x-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
                 <button onclick="switchTab('dashboard')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-emerald-900 text-white shadow-sm" data-target="dashboard">Dashboard</button>
                 <button onclick="switchTab('pyq')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-emerald-950 hover:bg-white transition-all" data-target="pyq">PYQ Vault</button>
@@ -60,7 +58,6 @@
                 <button onclick="switchTab('thinkers')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-emerald-950 hover:bg-white transition-all" data-target="thinkers">Thinker Dex</button>
             </nav>
 
-            <!-- Mobile Menu Toggle -->
             <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
@@ -71,7 +68,6 @@
             </div>
         </div>
 
-        <!-- Mobile Nav Drawer -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
             <button onclick="switchTab('dashboard'); toggleMobileMenu();" class="block w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-emerald-50">Dashboard</button>
             <button onclick="switchTab('pyq'); toggleMobileMenu();" class="block w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-emerald-50">PYQ Vault (2013-2026)</button>
@@ -81,16 +77,13 @@
         </div>
     </header>
 
-    <!-- Main Grid Container with Dedicated Right News Column -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
-            <!-- Left 3 Columns: Main Active Tab Content -->
             <div class="lg:col-span-3 space-y-8">
                 
                 <!-- DASHBOARD TAB -->
                 <section id="tab-dashboard" class="space-y-8 tab-content">
-                    <!-- Hero Banner -->
                     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-slate-900 border border-emerald-900/20 p-8 sm:p-10 shadow-xl text-white">
                         <div class="relative z-10 space-y-5">
                             <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/10 text-emerald-200 border border-white/20">
@@ -116,7 +109,6 @@
                         </div>
                     </div>
 
-                    <!-- Feature Cards Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
                         <div onclick="switchTab('pyq')" class="group bg-white hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-800/40 rounded-3xl p-6 transition-all cursor-pointer shadow-sm hover:shadow-md">
                             <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform border border-emerald-200">
@@ -142,7 +134,7 @@
                     </div>
                 </section>
 
-                <!-- TOPIC-WISE PYQ VAULT (2013-2026) -->
+                <!-- TOPIC-WISE PYQ VAULT -->
                 <section id="tab-pyq" class="space-y-6 hidden tab-content">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
                         <div>
@@ -188,7 +180,6 @@
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <!-- Input Panel -->
                         <div class="lg:col-span-1 space-y-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
                             <div class="space-y-2">
                                 <label class="text-xs text-emerald-950 font-bold uppercase tracking-wider">Enter UPSC Question</label>
@@ -207,321 +198,10 @@
                             </button>
                         </div>
 
-                        <!-- Output Panel -->
                         <div class="lg:col-span-2 space-y-4 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col">
                             <div class="flex items-center justify-between border-b border-slate-200 pb-4">
                                 <span class="text-xs uppercase font-extrabold text-emerald-900 tracking-wider">Complete UPSC Model Answer</span>
                                 <span id="ai-status-badge" class="text-xs bg-slate-100 text-slate-700 px-3.5 py-1 rounded-full font-semibold">Awaiting Question</span>
                             </div>
                             <div id="ai-output-container" class="space-y-4 text-xs sm:text-sm text-slate-700 flex-grow flex flex-col items-center justify-center text-center p-8 bg-slate-50 rounded-2xl border border-slate-200">
-                                <svg class="w-12 h-12 text-emerald-800/40 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                                <p class="text-slate-500 text-xs">Type any question on the left and click <strong>Get Complete Model Answer</strong> to read a fully articulated sociological response.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- THINKER DEX -->
-                <section id="tab-thinkers" class="space-y-6 hidden tab-content">
-                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
-                        <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Thinker Dex & Keywords</h2>
-                        <p class="text-slate-600 text-xs mt-1">Quick reference directory of classical and Indian sociologists for answer enrichment.</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="thinker-grid"></div>
-                </section>
-
-            </div>
-
-            <!-- Right Column: Dedicated Sociology News & Briefs / Current Affairs Sidebar -->
-            <aside class="lg:col-span-1 space-y-6">
-                <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm sticky top-28 space-y-5">
-                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                        <h3 class="text-sm font-black text-emerald-950 flex items-center gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
-                            Sociology News & Briefs
-                        </h3>
-                        <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Paper 2 Current</span>
-                    </div>
-
-                    <div class="space-y-4">
-                        <!-- News Item 1 -->
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-800/40 transition-all space-y-2">
-                            <div class="flex items-center justify-between text-[10px] text-slate-500 font-semibold">
-                                <span class="text-emerald-800 font-bold">Supreme Court Rulings</span>
-                                <span>May 2026</span>
-                            </div>
-                            <h4 class="text-xs font-extrabold text-emerald-950 leading-snug">Gender Justice & Uniform Civil Code Debates</h4>
-                            <p class="text-[11px] text-slate-600 leading-relaxed">Analyzing judicial pronouncements on personal laws through the lens of patriarchal structures and state intervention in Indian society.</p>
-                        </div>
-
-                        <!-- News Item 2 -->
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-800/40 transition-all space-y-2">
-                            <div class="flex items-center justify-between text-[10px] text-slate-500 font-semibold">
-                                <span class="text-emerald-800 font-bold">Parliamentary Panel</span>
-                                <span>Recent Report</span>
-                            </div>
-                            <h4 class="text-xs font-extrabold text-emerald-950 leading-snug">Gig Economy & Labor Rights in Urban Centers</h4>
-                            <p class="text-[11px] text-slate-600 leading-relaxed">New parliamentary recommendations on social security benefits for platform workers and informal labor exploitation (Standing Committee Report).</p>
-                        </div>
-
-                        <!-- News Item 3 -->
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-800/40 transition-all space-y-2">
-                            <div class="flex items-center justify-between text-[10px] text-slate-500 font-semibold">
-                                <span class="text-emerald-800 font-bold">Agrarian Dynamics</span>
-                                <span>NSSO Update</span>
-                            </div>
-                            <h4 class="text-xs font-extrabold text-emerald-950 leading-snug">Agrarian Distress & Marginal Farmer Indebtedness</h4>
-                            <p class="text-[11px] text-slate-600 leading-relaxed">Key empirical takeaways on landholding patterns, rural-urban migration, and agrarian social stratification in contemporary India.</p>
-                        </div>
-                    </div>
-
-                    <div class="pt-2 border-t border-slate-100">
-                        <button onclick="showNotification('Loading weekly sociology current affairs digest...')" class="w-full py-2.5 bg-emerald-50 hover:bg-emerald-900 hover:text-white text-emerald-900 text-xs font-bold rounded-xl transition-all border border-emerald-200">
-                            View All Current Affairs
-                        </button>
-                    </div>
-                </div>
-            </aside>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-auto py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center text-slate-600 text-xs space-y-2">
-            <p>© 2026 Social Prism Sociology by Pathan Musheer Khan. All Rights Reserved.</p>
-            <p class="text-emerald-900 font-bold">Empowering UPSC Civil Services Aspirants with Sociological Rigour.</p>
-        </div>
-    </footer>
-
-    <!-- Safe Script Application Core -->
-    <script>
-        // Notification Toast substitute for alert()
-        function showNotification(msg) {
-            const banner = document.getElementById('notification-banner');
-            const text = document.getElementById('notification-text');
-            if(!banner || !text) return;
-            text.innerText = msg;
-            banner.style.transform = 'translateY(0)';
-            setTimeout(() => {
-                banner.style.transform = 'translateY(-200%)';
-            }, 3500);
-        }
-
-        // Toggle mobile drawer
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if(menu) {
-                menu.classList.toggle('hidden');
-            }
-        }
-
-        // Bulletproof Tab Switching Router
-        function switchTab(tabId) {
-            try {
-                // Hide all tab sections
-                const contents = document.querySelectorAll('.tab-content');
-                contents.forEach(el => {
-                    el.classList.add('hidden');
-                });
-
-                // Show target section
-                const target = document.getElementById('tab-' + tabId);
-                if (target) {
-                    target.classList.remove('hidden');
-                } else {
-                    document.getElementById('tab-dashboard').classList.remove('hidden');
-                }
-
-                // Update desktop navigation button states
-                const buttons = document.querySelectorAll('.nav-btn');
-                buttons.forEach(btn => {
-                    btn.classList.remove('bg-emerald-900', 'text-white', 'shadow-sm');
-                    btn.classList.add('text-slate-600', 'hover:text-emerald-950', 'hover:bg-white');
-                    if(btn.getAttribute('data-target') === tabId) {
-                        btn.classList.remove('text-slate-600', 'hover:text-emerald-950', 'hover:bg-white');
-                        btn.classList.add('bg-emerald-900', 'text-white', 'shadow-sm');
-                    }
-                });
-
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } catch(e) {
-                console.error("Navigation error:", e);
-            }
-        }
-
-        // Mock Database
-        const pyqData = [
-            {
-                id: 1, paper: "p1", year: "2026", unit: "Sociological Thinkers - Karl Marx",
-                question: "Examine how digital platform labor and gig economy transform the traditional Marxist conceptualization of alienation.",
-                intro: "Define alienation as estrangement from product, process, species-being, and fellow workers.",
-                body: "1. Comodification of leisure and algorithmic control.\n2. Isolation of gig workers operating across digital nodes.\n3. Surplus value extraction via platform capitalism (Srnicek).",
-                conclusion: "Conclude with David Harvey's perspective on spatial-temporal fixes."
-            },
-            {
-                id: 2, paper: "p2", year: "2025", unit: "Indian Society - Caste System",
-                question: "Discuss the changing dynamics of caste in contemporary urban India. Is caste shifting or acquiring new forms?",
-                intro: "Quote M.N. Srinivas on 'Caste is alive and kicking' despite urban modernization.",
-                body: "1. Persistence through caste associations and matrimonial alliances.\n2. Political mobilization and identity assertion.\n3. Economic adaptation via Dalit capitalism.",
-                conclusion: "Balance by stating caste has transformed into structural and political identity."
-            }
-        ];
-
-        const topperData = [
-            { title: "Topper Copy: Paper 1 Thinkers (Marx & Weber)", rank: "AIR 14, CSE 2024", topic: "Sociological Thinkers", highlights: "Exceptional diagrammatic representation of ideal types and precise use of German terminology." },
-            { title: "Topper Copy: Paper 2 Indian Village Studies", rank: "AIR 29, CSE 2025", topic: "Indian Society", highlights: "Seamless integration of M.N. Srinivas, Andre Beteille, and NSSO data." }
-        ];
-
-        const thinkerData = [
-            { name: "Karl Marx", domain: "Conflict Perspective", core: "Historical Materialism, Alienation, Class Struggle", quote: "The history of all hitherto existing society is the history of class struggles." },
-            { name: "Émile Durkheim", domain: "Functionalism", core: "Social Facts, Division of Labour, Suicide, Anomie", quote: "Society is a reality sui generis." },
-            { name: "Max Weber", domain: "Interpretive Sociology", core: "Social Action, Ideal Types, Bureaucracy", quote: "Man is an animal suspended in webs of significance he himself has spun." },
-            { name: "M.N. Srinivas", domain: "Indian Sociology", core: "Sanskritisation, Westernisation, Dominant Caste", quote: "Caste is a system of hierarchy and interdependence." }
-        ];
-
-        function renderPYQs(filteredList) {
-            const container = document.getElementById('pyq-container');
-            if(!container) return;
-            container.innerHTML = '';
-            filteredList.forEach(item => {
-                container.innerHTML += `
-                    <div class="bg-white border border-slate-200 p-6 sm:p-7 rounded-3xl space-y-4 shadow-sm">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">${item.unit}</span>
-                            <span class="text-xs bg-emerald-900 text-white px-3 py-1 rounded-full font-bold">${item.year}</span>
-                        </div>
-                        <h3 class="text-sm sm:text-base font-bold text-emerald-950">${item.question}</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100 text-xs">
-                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200"><strong class="text-emerald-900 block mb-1 text-xs font-bold">Introduction</strong><p class="text-slate-700 leading-relaxed">${item.intro}</p></div>
-                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200"><strong class="text-emerald-900 block mb-1 text-xs font-bold">Body</strong><p class="text-slate-700 leading-relaxed whitespace-pre-line">${item.body}</p></div>
-                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200"><strong class="text-emerald-900 block mb-1 text-xs font-bold">Conclusion</strong><p class="text-slate-700 leading-relaxed">${item.conclusion}</p></div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function filterPYQs() {
-            const paper = document.getElementById('pyq-paper-filter').value;
-            const year = document.getElementById('pyq-year-filter').value;
-            let result = pyqData;
-            if(paper !== 'all') result = result.filter(item => item.paper === paper);
-            if(year !== 'all') result = result.filter(item => item.year === year);
-            renderPYQs(result);
-        }
-
-        function renderToppers() {
-            const container = document.getElementById('topper-container');
-            if(!container) return;
-            container.innerHTML = '';
-            topperData.forEach(item => {
-                container.innerHTML += `
-                    <div class="bg-white border border-slate-200 p-6 sm:p-7 rounded-3xl space-y-5 flex flex-col justify-between shadow-sm">
-                        <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">${item.topic}</span>
-                                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">${item.rank}</span>
-                            </div>
-                            <h3 class="text-sm sm:text-base font-bold text-emerald-950 mb-2">${item.title}</h3>
-                            <p class="text-xs text-slate-600 bg-slate-50 p-4 rounded-2xl border border-slate-200"><strong class="text-emerald-900">Review:</strong> ${item.highlights}</p>
-                        </div>
-                        <button onclick="showNotification('Downloading topper copy PDF...')" class="w-full py-3 bg-slate-100 hover:bg-emerald-900 hover:text-white text-emerald-950 text-xs font-bold rounded-2xl transition-all shadow-sm">Download PDF Copy</button>
-                    </div>
-                `;
-            });
-        }
-
-        function renderThinkers() {
-            const container = document.getElementById('thinker-grid');
-            if(!container) return;
-            container.innerHTML = '';
-            thinkerData.forEach(item => {
-                container.innerHTML += `
-                    <div class="bg-white border border-slate-200 p-6 sm:p-7 rounded-3xl space-y-3.5 shadow-sm">
-                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider">${item.domain}</span>
-                        <h3 class="text-base sm:text-lg font-extrabold text-emerald-950">${item.name}</h3>
-                        <p class="text-xs text-slate-700"><strong>Core:</strong> ${item.core}</p>
-                        <blockquote class="text-xs italic text-slate-600 bg-slate-50 p-4 rounded-2xl border border-slate-200">"${item.quote}"</blockquote>
-                    </div>
-                `;
-            });
-        }
-
-        function generateAIAnswer() {
-            const qInput = document.getElementById('ai-question-input').value.trim();
-            const wordLimit = document.getElementById('ai-word-limit').value;
-            const outputBox = document.getElementById('ai-output-container');
-            const statusBadge = document.getElementById('ai-status-badge');
-
-            if(!qInput) {
-                showNotification('Please enter or paste a UPSC question first.');
-                return;
-            }
-
-            statusBadge.innerText = `Model Answer Ready (${wordLimit} Words)`;
-            statusBadge.className = "text-xs bg-emerald-100 text-emerald-900 px-3.5 py-1 rounded-full font-bold border border-emerald-300";
-
-            outputBox.className = "space-y-5 text-xs sm:text-sm text-slate-700 text-left p-6 sm:p-8 bg-slate-50 rounded-2xl border border-emerald-800/30 overflow-y-auto max-h-[550px] leading-relaxed shadow-sm";
-            
-            let isCropping = qInput.toLowerCase().includes('cropping') || qInput.toLowerCase().includes('crop');
-            
-            if(isCropping) {
-                outputBox.innerHTML = `
-                    <div class="border-b border-slate-200 pb-4 mb-3">
-                        <span class="text-emerald-900 font-bold block mb-1 text-xs uppercase tracking-wider">Evaluated Question:</span>
-                        <p class="text-emerald-950 font-semibold italic text-xs sm:text-sm">"${qInput}"</p>
-                    </div>
-                    <div class="space-y-4 text-slate-700">
-                        <div>
-                            <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">Introduction</strong>
-                            <p class="text-xs leading-relaxed">Cropping pattern refers to the proportion of area under different crops at a given point of time in a region. In contemporary India, agrarian transformation driven by market forces, Minimum Support Price (MSP) distortions, and commercialization has fundamentally altered traditional cropping systems.</p>
-                        </div>
-                        <div>
-                            <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">Body: Changing Trends & Sociological Implications</strong>
-                            <p class="mb-2 text-xs leading-relaxed"><strong>1. Shift toward Commercialization:</strong> As noted by scholars like <em>Jan Breman</em> and <em>D.N. Dhanagare</em>, agrarian relations have shifted from subsistence farming to market-oriented cash crop production.</p>
-                            <p class="mb-2 text-xs leading-relaxed"><strong>2. Ecological Disparities:</strong> Concentrating water-guzzling crops in semi-arid regions has led to groundwater depletion and ecological unsustainability.</p>
-                            <p class="text-xs leading-relaxed"><strong>3. Impact on Food Security:</strong> Neglect of nutri-cereals (millets) has adversely affected nutritional security and dietary diversity among rural poor.</p>
-                        </div>
-                        <div>
-                            <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">Conclusion & Way Forward</strong>
-                            <p class="text-xs leading-relaxed">Thus, sustainable food security requires a sociological reorientation of agricultural policies—promoting crop diversification and climate-resilient millets.</p>
-                        </div>
-                    </div>
-                `;
-            } else {
-                outputBox.innerHTML = `
-                    <div class="border-b border-slate-200 pb-4 mb-3">
-                        <span class="text-emerald-900 font-bold block mb-1 text-xs uppercase tracking-wider">Evaluated Question:</span>
-                        <p class="text-emerald-950 font-semibold italic text-xs sm:text-sm">"${qInput}"</p>
-                    </div>
-                    <div class="space-y-4 text-slate-700">
-                        <div>
-                            <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">Introduction</strong>
-                            <p class="text-xs leading-relaxed">The given theme reflects deep structural and institutional adjustments in contemporary Indian society. As classical sociologists emphasize, institutional changes reshape social stratification and collective behavior.</p>
-                        </div>
-                        <div>
-                            <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">Body: Analytical Dimensions & Thinkers</strong>
-                            <p class="mb-2 text-xs leading-relaxed"><strong>1. Structural Realities:</strong> Examined through functionalist consensus and conflict perspectives, highlighting structural inequalities in modern institutions.</p>
-                            <p class="mb-2 text-xs leading-relaxed"><strong>2. Empirical Evidence:</strong> Backed by empirical data, committees, and sociological indicators reflecting ground-level transformations.</p>
-                            <p class="text-xs leading-relaxed"><strong>3. Thinker Integration:</strong> Incorporating classical frameworks (e.g., M.N. Srinivas, Yogendra Singh, Max Weber) to validate the argument.</p>
-                        </div>
-                        <div>
-                            <strong class="text-emerald-900 block mb-1 text-xs sm:text-sm font-bold">Conclusion</strong>
-                            <p class="text-xs leading-relaxed">A holistic sociological imagination coupled with robust policy interventions is essential to ensure equitable growth and institutional resilience.</p>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
-        // Initialize application on window load
-        window.onload = function() {
-            renderPYQs(pyqData);
-            renderToppers();
-            renderThinkers();
-            switchTab('dashboard');
-        };
-    </script>
-</body>
-</html>
+                                <svg class="w-12 h-12 text-emerald-800/40 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 1
