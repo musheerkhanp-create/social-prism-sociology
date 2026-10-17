@@ -63,7 +63,7 @@
                         Master Sociology Optional with Precision & Sociological Imagination
                     </h2>
                     <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                        Welcome aspirants! Access 13+ years of topic-wise PYQs (2013–2026), evaluated topper copies, and Musheer Sir's AI-powered UPSC Answer Generation tool.
+                        Welcome aspirants! Access 13+ years of topic-wise PYQs (2013–2026), evaluated topper copies, and Musheer Sir's AI-powered UPSC Model Answer tool.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-2">
                         <button onclick="switchTab('ai-tool')" class="px-6 py-3.5 bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-brand-600/20 transition-all flex items-center gap-2">
@@ -90,7 +90,7 @@
                         <i class="fa-solid fa-robot"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">Instant AI Model Answer Tool</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Upload or type any UPSC sociology question and get a precise model answer with structured sub-headings instantly.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Type any UPSC sociology question and get a precise model answer with structured sub-headings instantly.</p>
                 </div>
                 <div onclick="switchTab('toppers')" class="group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-brand-500/50 rounded-2xl p-6 transition-all cursor-pointer shadow-lg">
                     <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
@@ -351,25 +351,25 @@
             outputBox.className = "space-y-4 text-xs text-slate-300 text-left p-6 bg-slate-950 rounded-xl border border-brand-500/30 overflow-y-auto max-h-[500px]";
             outputBox.innerHTML = `
                 <div class="border-b border-slate-800 pb-3">
-                    <span class="text-brand-400 font-bold block mb-1">QUESTION:</span>
+                    <span class="text-brand-400 font-bold block mb-1">EVALUATED QUESTION:</span>
                     <p class="text-white font-medium italic">"${qInput}"</p>
                 </div>
                 <div class="space-y-4 pt-2">
-                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-1.5">
-                        <strong class="text-brand-400 block text-sm font-bold"><i class="fa-solid fa-feather"></i> 1. Introduction</strong>
-                        <p class="text-slate-200 leading-relaxed">The query addresses structural and cultural shifts in society. As highlighted by classical sociological thinkers, such phenomena trigger institutional adaptations and alter traditional social equations.</p>
+                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-1.5 shadow-md">
+                        <strong class="text-brand-400 block text-sm font-bold"><i class="fa-solid fa-feather"></i> 1. Introduction (Definational Anchor)</strong>
+                        <p class="text-slate-200 leading-relaxed text-sm">The subject matter reflects critical socio-cultural and structural transitions in contemporary society. Following classical sociological traditions (such as the works of Durkheim or Weber), such dynamics reshape institutional frameworks and alter human behavior.</p>
                     </div>
-                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-2 shadow-md">
                         <strong class="text-brand-400 block text-sm font-bold"><i class="fa-solid fa-layer-group"></i> 2. Body (Multi-Dimensional & Thinkers)</strong>
-                        <div class="text-slate-300 space-y-2 leading-relaxed">
-                            <p>• <strong>Structural Dimension:</strong> Examined through functionalist consensus and conflict perspectives regarding institutional inequality.</p>
-                            <p>• <strong>Empirical Realities in India:</strong> Supported by recent sociological studies, state policies, and structural transformation indicators.</p>
-                            <p>• <strong>Thinker Integration:</strong> Incorporation of classical and Indian sociological frameworks (e.g., M.N. Srinivas, Yogendra Singh, Max Weber) to substantiate arguments.</p>
+                        <div class="text-slate-300 space-y-2 leading-relaxed text-sm">
+                            <p>• <strong>Structural & Institutional Dimension:</strong> Examined through functionalist consensus and conflict perspectives regarding systemic inequality.</p>
+                            <p>• <strong>Empirical Reality & Committees:</strong> Backed by recent sociological research, NSSO/Census indicators, and state policy frameworks.</p>
+                            <p>• <strong>Thinker Integration:</strong> Incorporation of classical and Indian scholarship (e.g., M.N. Srinivas, Yogendra Singh, Karl Marx) to substantiate sociological arguments.</p>
                         </div>
                     </div>
-                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-1.5">
-                        <strong class="text-brand-400 block text-sm font-bold"><i class="fa-solid fa-check-to-slot"></i> 3. Conclusion</strong>
-                        <p class="text-slate-200 leading-relaxed">A balanced sociological synthesis emphasizing inclusive growth, policy interventions, and a forward-looking vision aligned with the principles of social justice.</p>
+                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-1.5 shadow-md">
+                        <strong class="text-brand-400 block text-sm font-bold"><i class="fa-solid fa-check-to-slot"></i> 3. Conclusion & Way Forward</strong>
+                        <p class="text-slate-200 leading-relaxed text-sm">A balanced sociological synthesis emphasizing inclusive growth, policy interventions, and a forward-looking vision aligned with the principles of social justice and equity.</p>
                     </div>
                 </div>
             `;
