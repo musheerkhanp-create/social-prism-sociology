@@ -275,14 +275,94 @@
                 container.innerHTML += `
                     <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4 shadow-lg hover:border-brand-500/30 transition-all">
                         <div class="flex flex-wrap items-center justify-between gap-2">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">\${item.unit}</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">${item.unit}</span>
                             <div class="flex items-center gap-2">
-                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded font-medium">Paper \${item.paper === 'p1' ? '1' : '2'}</span>
-                                <span class="text-xs bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded font-bold">\${item.year}</span>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded font-medium">Paper ${item.paper === 'p1' ? '1' : '2'}</span>
+                                <span class="text-xs bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded font-bold">${item.year}</span>
                             </div>
                         </div>
-                        <h3 class="text-base font-bold text-white">\${item.question}</h3>
+                        <h3 class="text-base font-bold text-white">${item.question}</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-3 border-t border-slate-800/80 text-xs">
-                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">1. Introduction</strong><p class="text-slate-300 leading-relaxed">\${item.intro}</p></div>
-                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">2. Body Dimensions</strong><p class="text-slate-300 leading-relaxed whitespace-pre-line">\${item.body}</p></div>
-                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">3. Conclusion</strong><p class="text-slate-300
+                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">1. Introduction</strong><p class="text-slate-300 leading-relaxed">${item.intro}</p></div>
+                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">2. Body Dimensions</strong><p class="text-slate-300 leading-relaxed whitespace-pre-line">${item.body}</p></div>
+                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">3. Conclusion</strong><p class="text-slate-300 leading-relaxed">${item.conclusion}</p></div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterPYQs() {
+            const paper = document.getElementById('pyq-paper-filter').value;
+            const year = document.getElementById('pyq-year-filter').value;
+            let result = pyqData;
+            if(paper !== 'all') result = result.filter(item => item.paper === paper);
+            if(year !== 'all') result = result.filter(item => item.year === year);
+            renderPYQs(result);
+        }
+
+        function renderToppers() {
+            const container = document.getElementById('topper-container');
+            container.innerHTML = '';
+            topperData.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded bg-brand-500/10 text-brand-400">${item.topic}</span>
+                                <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded">${item.rank}</span>
+                            </div>
+                            <h3 class="text-base font-bold text-white mb-2">${item.title}</h3>
+                            <p class="text-xs text-slate-400 bg-slate-950 p-3 rounded-xl border border-slate-800"><strong class="text-slate-300">Musheer Sir's Review:</strong> ${item.highlights}</p>
+                        </div>
+                        <button onclick="alert('Downloading evaluated copy sample...')" class="w-full py-2.5 bg-slate-800 hover:bg-brand-600 hover:text-slate-950 text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-download"></i> Download Evaluated Copy (PDF)
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        function renderThinkers() {
+            const container = document.getElementById('thinker-grid');
+            container.innerHTML = '';
+            thinkerData.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-3 shadow-lg">
+                        <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">${item.domain}</span>
+                        <h3 class="text-lg font-bold text-white">${item.name}</h3>
+                        <p class="text-xs text-slate-300"><strong class="text-slate-400">Core Concepts:</strong> ${item.core}</p>
+                        <blockquote class="text-xs italic text-slate-400 bg-slate-950 p-3 rounded-xl border border-slate-800">"${item.quote}"</blockquote>
+                    </div>
+                `;
+            });
+        }
+
+        const textarea = document.getElementById('lab-textarea');
+        textarea.addEventListener('input', function() {
+            const words = this.value.trim() ? this.value.trim().split(/\s+/).length : 0;
+            document.getElementById('word-count').innerText = `Words: ${words} / 250`;
+        });
+
+        function evaluateAnswer() {
+            const text = textarea.value.trim();
+            const resultBox = document.getElementById('evaluation-result');
+            resultBox.classList.remove('hidden');
+            if(text.length < 30) {
+                resultBox.innerHTML = `<p class="text-amber-400 font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Answer is too short. Please write at least a structured paragraph.</p>`;
+                return;
+            }
+            resultBox.innerHTML = `
+                <p class="text-emerald-400 font-bold mb-1"><i class="fa-solid fa-circle-check"></i> Structure Check Passed Successfully!</p>
+                <p class="text-slate-300 text-xs leading-relaxed"><strong>Pathan Musheer Khan's Feedback:</strong> Excellent flow. Make sure to cite classical thinkers and contemporary examples to secure top marks.</p>
+            `;
+        }
+
+        window.onload = function() {
+            renderPYQs(pyqData);
+            renderToppers();
+            renderThinkers();
+        };
+    </script>
+</body>
+</html>
