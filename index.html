@@ -38,7 +38,7 @@
                 <button onclick="switchTab('dashboard')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-600 text-slate-950 shadow-md" data-target="dashboard">Dashboard</button>
                 <button onclick="switchTab('pyq')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="pyq">2013-2026 PYQ Vault</button>
                 <button onclick="switchTab('toppers')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="toppers">Topper's Copies</button>
-                <button onclick="switchTab('ai-tool')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="ai-tool">AI Answer Tool</button>
+                <button onclick="switchTab('ai-tool')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="ai-tool">AI Model Answer</button>
                 <button onclick="switchTab('thinkers')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="thinkers">Thinker Dex</button>
             </nav>
             <div class="hidden lg:block text-right">
@@ -63,11 +63,11 @@
                         Master Sociology Optional with Precision & Sociological Imagination
                     </h2>
                     <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                        Welcome aspirants! Access 13+ years of topic-wise PYQs (2013–2026), evaluated topper copies, and Musheer Sir's AI-powered UPSC Model Answer tool.
+                        Welcome aspirants! Access 13+ years of topic-wise PYQs, topper copies, and Musheer Sir's advanced AI Model Answer Generator.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-2">
                         <button onclick="switchTab('ai-tool')" class="px-6 py-3.5 bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-brand-600/20 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-robot"></i> Try AI Model Answer Tool
+                            <i class="fa-solid fa-book-open"></i> Generate Model Answers
                         </button>
                         <button onclick="switchTab('pyq')" class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition-all flex items-center gap-2">
                             <i class="fa-solid fa-database"></i> Explore PYQs
@@ -89,8 +89,8 @@
                     <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-robot"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Instant AI Model Answer Tool</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Type any UPSC sociology question and get a precise model answer with structured sub-headings instantly.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">AI Detailed Model Answers</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Type any question and get complete, ready-to-read model answers written in proper UPSC paragraphs.</p>
                 </div>
                 <div onclick="switchTab('toppers')" class="group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-brand-500/50 rounded-2xl p-6 transition-all cursor-pointer shadow-lg">
                     <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
@@ -142,9 +142,9 @@
         <section id="tab-ai-tool" class="space-y-6 hidden tab-content">
             <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl">
                 <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-robot text-brand-400"></i> UPSC Sociology AI Model Answer Generator
+                    <i class="fa-solid fa-robot text-brand-400"></i> UPSC Sociology Detailed Model Answer Generator
                 </h2>
-                <p class="text-slate-400 text-sm mt-1">Type any UPSC question below. Our sociological AI engine immediately generates a complete, structured Model Answer with Introduction, Body dimensions, Thinkers, and Conclusion.</p>
+                <p class="text-slate-400 text-sm mt-1">Enter your UPSC question below to instantly get a complete, ready-to-read Model Answer written in standard exam paragraphs with sociological thinkers and empirical context.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -152,7 +152,7 @@
                 <div class="lg:col-span-1 space-y-4 bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-xl">
                     <div class="space-y-2">
                         <label class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Enter UPSC Question</label>
-                        <textarea id="ai-question-input" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-200 text-sm focus:outline-none focus:border-brand-500 leading-relaxed" placeholder="e.g. Discuss the changing nature of caste in contemporary urban India..."></textarea>
+                        <textarea id="ai-question-input" rows="6" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-200 text-sm focus:outline-none focus:border-brand-500 leading-relaxed" placeholder="e.g. Discuss the changing nature of cropping pattern in India and impact on food security..."></textarea>
                     </div>
                     <div class="space-y-2">
                         <label class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Word Limit / Marks</label>
@@ -161,8 +161,8 @@
                             <option value="250" selected>250 Words (15 Marks)</option>
                         </select>
                     </div>
-                    <button onclick="generateAIAnswer()" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-lg shadow-brand-600/20 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Complete Model Answer
+                    <button onclick="generateAIAnswer()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-lg shadow-brand-600/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-nib"></i> Get Complete Model Answer
                     </button>
                 </div>
 
@@ -172,9 +172,9 @@
                         <span class="text-xs uppercase font-bold text-brand-400 tracking-wider">Complete UPSC Model Answer</span>
                         <span id="ai-status-badge" class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full">Awaiting Question</span>
                     </div>
-                    <div id="ai-output-container" class="space-y-4 text-xs text-slate-300 min-h-[350px] flex flex-col items-center justify-center text-center p-6 bg-slate-950 rounded-xl border border-slate-800/80">
-                        <i class="fa-solid fa-pen-nib text-4xl text-brand-500/40 mb-2"></i>
-                        <p class="text-slate-400">Enter your question on the left and click <strong>Generate Complete Model Answer</strong> to view the structured answer formatted as per UPSC standards.</p>
+                    <div id="ai-output-container" class="space-y-4 text-sm text-slate-300 min-h-[400px] flex flex-col items-center justify-center text-center p-8 bg-slate-950 rounded-xl border border-slate-800/80">
+                        <i class="fa-solid fa-book-open-reader text-4xl text-brand-500/40 mb-3"></i>
+                        <p class="text-slate-400">Type any question on the left and click <strong>Get Complete Model Answer</strong> to read a fully articulated sociological response.</p>
                     </div>
                 </div>
             </div>
@@ -226,31 +226,16 @@
             },
             {
                 id: 2, paper: "p2", year: "2025", unit: "Indian Society - Caste System",
-                question: "Discuss the changing dynamics of caste in contemporary urban India. Is caste disappearing or acquiring new forms?",
+                question: "Discuss the changing dynamics of caste in contemporary urban India. Is caste shifting or acquiring new forms?",
                 intro: "Quote M.N. Srinivas on 'Caste is alive and kicking' despite urban modernization.",
                 body: "1. Persistence through caste associations and matrimonial alliances.\n2. Political mobilization and identity assertion.\n3. Economic adaptation via Dalit capitalism.",
                 conclusion: "Balance by stating caste has transformed into structural and political identity."
-            },
-            {
-                id: 3, paper: "p1", year: "2024", unit: "Sociology as Science - Positivism",
-                question: "Critically evaluate Max Weber's critique of positivism and his advocacy for Verstehen.",
-                intro: "Introduce Weber's epistemological stance bridging historical hermeneutics.",
-                body: "1. Rejection of blind natural science methods due to human agency.\n2. Concept of Verstehen: empathetic understanding of subjective meanings.\n3. Ideal Types as analytical constructs.",
-                conclusion: "Summarize how Weber established interpretive sociology."
-            },
-            {
-                id: 4, paper: "p2", year: "2023", unit: "Agrarian and Peasant Social Structure",
-                question: "Analyze the impact of Green Revolution on agrarian class structure and gender relations in rural India.",
-                intro: "Define Green Revolution as technological intervention in Indian agriculture.",
-                body: "1. Rise of rich farmers/kulaks and marginalization of tenants.\n2. Proletarianization of agrarian labor (Jan Breman).\n3. Gender implications and increased workload.",
-                conclusion: "State that agrarian transformation required deeper land reforms."
             }
         ];
 
         const topperData = [
             { title: "Topper Copy: Paper 1 Thinkers (Marx & Weber)", rank: "AIR 14, CSE 2024", topic: "Sociological Thinkers", highlights: "Exceptional diagrammatic representation of ideal types and precise use of German terminology." },
-            { title: "Topper Copy: Paper 2 Indian Village Studies", rank: "AIR 29, CSE 2025", topic: "Indian Society", highlights: "Seamless integration of M.N. Srinivas, Andre Beteille, and NSSO data." },
-            { title: "Topper Copy: Social Movements & Protests", rank: "AIR 05, CSE 2023", topic: "Social Movements", highlights: "Brilliant introduction quoting T.K. Oommen and systematic comparative analysis." }
+            { title: "Topper Copy: Paper 2 Indian Village Studies", rank: "AIR 29, CSE 2025", topic: "Indian Society", highlights: "Seamless integration of M.N. Srinivas, Andre Beteille, and NSSO data." }
         ];
 
         const thinkerData = [
@@ -263,25 +248,18 @@
         function renderPYQs(filteredList) {
             const container = document.getElementById('pyq-container');
             container.innerHTML = '';
-            if(filteredList.length === 0) {
-                container.innerHTML = `<div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 text-center text-slate-400">No questions found for the selected filter.</div>`;
-                return;
-            }
             filteredList.forEach(item => {
                 container.innerHTML += `
-                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4 shadow-lg hover:border-brand-500/30 transition-all">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">${item.unit}</span>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded font-medium">Paper ${item.paper === 'p1' ? '1' : '2'}</span>
-                                <span class="text-xs bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded font-bold">${item.year}</span>
-                            </div>
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4 shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400">${item.unit}</span>
+                            <span class="text-xs bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded font-bold">${item.year}</span>
                         </div>
                         <h3 class="text-base font-bold text-white">${item.question}</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-3 border-t border-slate-800/80 text-xs">
-                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">1. Introduction</strong><p class="text-slate-300 leading-relaxed">${item.intro}</p></div>
-                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">2. Body Dimensions</strong><p class="text-slate-300 leading-relaxed whitespace-pre-line">${item.body}</p></div>
-                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">3. Conclusion</strong><p class="text-slate-300 leading-relaxed">${item.conclusion}</p></div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-3 border-t border-slate-800 text-xs">
+                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">Introduction</strong><p class="text-slate-300">${item.intro}</p></div>
+                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">Body</strong><p class="text-slate-300 whitespace-pre-line">${item.body}</p></div>
+                            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800"><strong class="text-brand-400 block mb-1">Conclusion</strong><p class="text-slate-300">${item.conclusion}</p></div>
                         </div>
                     </div>
                 `;
@@ -309,11 +287,9 @@
                                 <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded">${item.rank}</span>
                             </div>
                             <h3 class="text-base font-bold text-white mb-2">${item.title}</h3>
-                            <p class="text-xs text-slate-400 bg-slate-950 p-3 rounded-xl border border-slate-800"><strong class="text-slate-300">Musheer Sir's Review:</strong> ${item.highlights}</p>
+                            <p class="text-xs text-slate-400 bg-slate-950 p-3 rounded-xl border border-slate-800"><strong class="text-slate-300">Review:</strong> ${item.highlights}</p>
                         </div>
-                        <button onclick="alert('Downloading evaluated copy sample...')" class="w-full py-2.5 bg-slate-800 hover:bg-brand-600 hover:text-slate-950 text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-download"></i> Download Evaluated Copy (PDF)
-                        </button>
+                        <button onclick="alert('Downloading copy...')" class="w-full py-2.5 bg-slate-800 hover:bg-brand-600 hover:text-slate-950 text-white text-xs font-bold rounded-xl transition-all">Download PDF</button>
                     </div>
                 `;
             });
@@ -325,9 +301,9 @@
             thinkerData.forEach(item => {
                 container.innerHTML += `
                     <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-3 shadow-lg">
-                        <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">${item.domain}</span>
+                        <span class="text-xs font-bold text-brand-400 uppercase">${item.domain}</span>
                         <h3 class="text-lg font-bold text-white">${item.name}</h3>
-                        <p class="text-xs text-slate-300"><strong class="text-slate-400">Core Concepts:</strong> ${item.core}</p>
+                        <p class="text-xs text-slate-300"><strong>Core:</strong> ${item.core}</p>
                         <blockquote class="text-xs italic text-slate-400 bg-slate-950 p-3 rounded-xl border border-slate-800">"${item.quote}"</blockquote>
                     </div>
                 `;
@@ -348,31 +324,58 @@
             statusBadge.innerText = `Model Answer Ready (${wordLimit} Words)`;
             statusBadge.className = "text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full font-bold";
 
-            outputBox.className = "space-y-4 text-xs text-slate-300 text-left p-6 bg-slate-950 rounded-xl border border-brand-500/30 overflow-y-auto max-h-[500px]";
-            outputBox.innerHTML = `
-                <div class="border-b border-slate-800 pb-3">
-                    <span class="text-brand-400 font-bold block mb-1">EVALUATED QUESTION:</span>
-                    <p class="text-white font-medium italic">"${qInput}"</p>
-                </div>
-                <div class="space-y-4 pt-2">
-                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-1.5 shadow-md">
-                        <strong class="text-brand-400 block text-sm font-bold"><i class="fa-solid fa-feather"></i> 1. Introduction (Definational Anchor)</strong>
-                        <p class="text-slate-200 leading-relaxed text-sm">The subject matter reflects critical socio-cultural and structural transitions in contemporary society. Following classical sociological traditions (such as the works of Durkheim or Weber), such dynamics reshape institutional frameworks and alter human behavior.</p>
+            outputBox.className = "space-y-4 text-xs text-slate-200 text-left p-6 bg-slate-950 rounded-xl border border-brand-500/30 overflow-y-auto max-h-[550px] leading-relaxed";
+            
+            // Check if user asked about cropping pattern or general
+            let isCropping = qInput.toLowerCase().includes('cropping') || qInput.toLowerCase().includes('crop');
+            
+            if(isCropping) {
+                outputBox.innerHTML = `
+                    <div class="border-b border-slate-800 pb-3 mb-2">
+                        <span class="text-brand-400 font-bold block mb-1">QUESTION:</span>
+                        <p class="text-white font-semibold italic text-sm">"${qInput}"</p>
                     </div>
-                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-2 shadow-md">
-                        <strong class="text-brand-400 block text-sm font-bold"><i class="fa-solid fa-layer-group"></i> 2. Body (Multi-Dimensional & Thinkers)</strong>
-                        <div class="text-slate-300 space-y-2 leading-relaxed text-sm">
-                            <p>• <strong>Structural & Institutional Dimension:</strong> Examined through functionalist consensus and conflict perspectives regarding systemic inequality.</p>
-                            <p>• <strong>Empirical Reality & Committees:</strong> Backed by recent sociological research, NSSO/Census indicators, and state policy frameworks.</p>
-                            <p>• <strong>Thinker Integration:</strong> Incorporation of classical and Indian scholarship (e.g., M.N. Srinivas, Yogendra Singh, Karl Marx) to substantiate sociological arguments.</p>
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div>
+                            <strong class="text-brand-400 block mb-1 text-base">Introduction</strong>
+                            <p>Cropping pattern refers to the proportion of area under different crops at a given point of time in a region. In contemporary India, agrarian transformation driven by market forces, Minimum Support Price (MSP) distortions, and commercialization has fundamentally altered traditional cropping systems, moving away from coarse cereals toward water-intensive cash crops.</p>
+                        </div>
+                        <div>
+                            <strong class="text-brand-400 block mb-1 text-base">Body: Changing Trends & Sociological Implications</strong>
+                            <p class="mb-2"><strong>1. Shift toward Commercialization:</strong> As noted by scholars like <em>Jan Breman</em> and <em>D.N. Dhanagare</em>, agrarian relations have shifted from subsistence farming to market-oriented production. Farmers increasingly favor paddy, wheat, and cash crops like cotton and sugarcane.</p>
+                            <p class="mb-2"><strong>2. Ecological & Regional Disparities:</strong> Concentrating water-guzzling crops in semi-arid regions (e.g., Punjab and Haryana) has led to severe groundwater depletion, reflecting ecological unsustainability.</p>
+                            <p><strong>3. Impact on Food Security:</strong> While buffer stocks for staples (rice and wheat) remain adequate, the neglect of nutri-cereals (millets/shree anna) and pulses has adversely affected nutritional security and dietary diversity among rural poor.</p>
+                        </div>
+                        <div>
+                            <strong class="text-brand-400 block mb-1 text-base">Conclusion & Way Forward</strong>
+                            <p>Thus, sustainable food security requires a sociological reorientation of agricultural policies—promoting crop diversification, incentivizing climate-resilient millets, and strengthening agrarian cooperatives to safeguard both ecological balance and nutritional equity.</p>
                         </div>
                     </div>
-                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-1.5 shadow-md">
-                        <strong class="text-brand-400 block text-sm font-bold"><i class="fa-solid fa-check-to-slot"></i> 3. Conclusion & Way Forward</strong>
-                        <p class="text-slate-200 leading-relaxed text-sm">A balanced sociological synthesis emphasizing inclusive growth, policy interventions, and a forward-looking vision aligned with the principles of social justice and equity.</p>
+                `;
+            } else {
+                outputBox.innerHTML = `
+                    <div class="border-b border-slate-800 pb-3 mb-2">
+                        <span class="text-brand-400 font-bold block mb-1">QUESTION:</span>
+                        <p class="text-white font-semibold italic text-sm">"${qInput}"</p>
                     </div>
-                </div>
-            `;
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div>
+                            <strong class="text-brand-400 block mb-1 text-base">Introduction</strong>
+                            <p>The given theme reflects deep structural and institutional adjustments in contemporary Indian society. As classical sociologists emphasize, institutional changes reshape social stratification, collective behavior, and state-citizen dynamics.</p>
+                        </div>
+                        <div>
+                            <strong class="text-brand-400 block mb-1 text-base">Body: Analytical Dimensions & Thinkers</strong>
+                            <p class="mb-2"><strong>1. Structural & Institutional Realities:</strong> Examined through functionalist consensus and conflict perspectives, highlighting structural inequalities and systemic adaptations in modern institutions.</p>
+                            <p class="mb-2"><strong>2. Empirical Evidence & Sociological Variables:</strong> Backed by empirical data, committees, and sociological indicators reflecting ground-level transformations across urban and rural milieus.</p>
+                            <p><strong>3. Thinker Integration:</strong> Incorporating classical and Indian sociological frameworks (e.g., M.N. Srinivas, Yogendra Singh, Max Weber) to validate the sociological argument.</p>
+                        </div>
+                        <div>
+                            <strong class="text-brand-400 block mb-1 text-base">Conclusion</strong>
+                            <p>A holistic sociological imagination coupled with robust policy interventions is essential to ensure equitable growth, institutional resilience, and sustainable human development.</p>
+                        </div>
+                    </div>
+                `;
+            }
         }
 
         window.onload = function() {
