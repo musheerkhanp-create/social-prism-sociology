@@ -19,6 +19,7 @@
                             700: '#047857',
                             800: '#065f46',
                             900: '#064e3b',
+                            950: '#022c22'
                         }
                     }
                 }
@@ -213,7 +214,8 @@
     <script>
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            const target = document.getElementById('tab-' + tabId);
+            if(target) target.classList.remove('hidden');
             
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('bg-green-900', 'text-white', 'shadow-sm');
@@ -257,6 +259,7 @@
 
         function renderPYQs(filteredList) {
             const container = document.getElementById('pyq-container');
+            if(!container) return;
             container.innerHTML = '';
             filteredList.forEach(item => {
                 container.innerHTML += `
@@ -287,6 +290,7 @@
 
         function renderToppers() {
             const container = document.getElementById('topper-container');
+            if(!container) return;
             container.innerHTML = '';
             topperData.forEach(item => {
                 container.innerHTML += `
@@ -307,6 +311,7 @@
 
         function renderThinkers() {
             const container = document.getElementById('thinker-grid');
+            if(!container) return;
             container.innerHTML = '';
             thinkerData.forEach(item => {
                 container.innerHTML += `
