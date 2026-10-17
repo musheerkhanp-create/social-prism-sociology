@@ -76,7 +76,7 @@
                                 Master Sociology Optional with Precision & Sociological Imagination
                             </h2>
                             <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
-                                Welcome aspirants! Access 13+ years of topic-wise PYQs with interactive answer search, verified topper copies, and AI Model Answers.
+                                Welcome aspirants! Access 13+ years of topic-wise PYQs with full paragraph-style model answers, verified topper copies, and AI Answer Tools.
                             </p>
                             <div class="flex flex-wrap gap-3 pt-2">
                                 <button onclick="switchTab('pyq')" class="px-5 py-3 bg-green-700 hover:bg-green-600 text-white font-bold rounded-2xl text-xs shadow-md transition-all flex items-center gap-2">
@@ -96,14 +96,14 @@
                                 <i class="fa-solid fa-layer-group"></i>
                             </div>
                             <h3 class="text-sm font-extrabold text-green-950 mb-1">PYQ Vault</h3>
-                            <p class="text-[11px] text-slate-500">2013-2026 Interactive</p>
+                            <p class="text-[11px] text-slate-500">Full Model Answers</p>
                         </div>
                         <div onclick="switchTab('ai-tool')" class="group bg-white hover:bg-green-50/50 border border-slate-200 hover:border-green-800/40 rounded-3xl p-5 transition-all cursor-pointer shadow-sm text-center flex flex-col items-center justify-center aspect-square">
                             <div class="w-12 h-12 rounded-2xl bg-green-100 text-green-900 flex items-center justify-center text-xl mb-3 border border-green-200 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-robot"></i>
                             </div>
                             <h3 class="text-sm font-extrabold text-green-950 mb-1">AI Answer</h3>
-                            <p class="text-[11px] text-slate-500">Instant Model Gen</p>
+                            <p class="text-[11px] text-slate-500">Detailed Paragraph Gen</p>
                         </div>
                         <div onclick="switchTab('toppers')" class="group bg-white hover:bg-green-50/50 border border-slate-200 hover:border-green-800/40 rounded-3xl p-5 transition-all cursor-pointer shadow-sm text-center flex flex-col items-center justify-center aspect-square">
                             <div class="w-12 h-12 rounded-2xl bg-green-100 text-green-900 flex items-center justify-center text-xl mb-3 border border-green-200 group-hover:scale-110 transition-transform">
@@ -122,7 +122,7 @@
                     </div>
                 </section>
 
-                <!-- ADVANCED PYQ VAULT WINDOW (2013-2026 with Custom Question Option) -->
+                <!-- ADVANCED PYQ VAULT WINDOW (Full Answers Included) -->
                 <section id="tab-pyq" class="space-y-6 hidden tab-content">
                     <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
@@ -130,7 +130,7 @@
                                 <h2 class="text-xl font-black text-green-950 flex items-center gap-2">
                                     <i class="fa-solid fa-database text-green-800"></i> Topic-Wise PYQ Vault Window (2013–2026)
                                 </h2>
-                                <p class="text-slate-600 text-xs mt-1">Explore previous year questions or type any custom question below to get instant model answers.</p>
+                                <p class="text-slate-600 text-xs mt-1">Explore complete model answers in detail or type any custom UPSC question below.</p>
                             </div>
                             <div class="flex flex-wrap gap-2">
                                 <select id="pyq-paper-filter" onchange="filterPYQs()" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-green-800">
@@ -151,12 +151,12 @@
                         <!-- Custom Question Input inside PYQ Vault -->
                         <div class="bg-green-50/60 p-4 rounded-2xl border border-green-200 space-y-3">
                             <label class="text-xs font-bold text-green-950 flex items-center gap-2">
-                                <i class="fa-solid fa-pen-to-square text-green-700"></i> Type/Search PYQ or Custom UPSC Question in this Vault Window
+                                <i class="fa-solid fa-pen-to-square text-green-700"></i> Type PYQ or Custom UPSC Question for Full Model Answer
                             </label>
                             <div class="flex gap-2">
                                 <input type="text" id="pyq-custom-input" class="flex-grow bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-800 focus:outline-none focus:border-green-800 shadow-inner" placeholder="Type a question or search keywords (e.g. Alienation, Caste, Cropping pattern)...">
                                 <button onclick="searchOrGeneratePYQ()" class="px-4 py-2 bg-green-900 hover:bg-green-800 text-white font-bold rounded-xl text-xs transition-all shadow-sm flex items-center gap-1.5">
-                                    <i class="fa-solid fa-magnifying-glass"></i> Get Answer
+                                    <i class="fa-solid fa-magnifying-glass"></i> Get Full Answer
                                 </button>
                             </div>
                         </div>
@@ -179,9 +179,9 @@
                 <section id="tab-ai-tool" class="space-y-6 hidden tab-content">
                     <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
                         <h2 class="text-xl font-black text-green-950 flex items-center gap-2">
-                            <i class="fa-solid fa-robot text-green-800"></i> AI Model Answer Generator
+                            <i class="fa-solid fa-robot text-green-800"></i> AI Full Model Answer Generator
                         </h2>
-                        <p class="text-slate-600 text-xs mt-1">Get complete model answers with sociological thinkers.</p>
+                        <p class="text-slate-600 text-xs mt-1">Get complete paragraph-style model answers with sociological thinkers.</p>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -198,18 +198,18 @@
                                 </select>
                             </div>
                             <button onclick="generateAIAnswer()" class="w-full py-3 bg-green-900 hover:bg-green-800 text-white font-bold rounded-2xl text-xs transition-all shadow-sm flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-pen-nib"></i> Generate Answer
+                                <i class="fa-solid fa-pen-nib"></i> Generate Full Answer
                             </button>
                         </div>
 
                         <div class="lg:col-span-2 space-y-3 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col">
                             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-                                <span class="text-xs uppercase font-extrabold text-green-900">Model Answer Output</span>
+                                <span class="text-xs uppercase font-extrabold text-green-900">Full Model Answer Output</span>
                                 <span id="ai-status-badge" class="text-xs bg-slate-100 text-slate-700 px-3 py-0.5 rounded-full font-semibold">Awaiting Question</span>
                             </div>
                             <div id="ai-output-container" class="space-y-3 text-xs sm:text-sm text-slate-700 flex-grow flex flex-col items-center justify-center text-center p-6 bg-slate-50 rounded-2xl border border-slate-200">
                                 <i class="fa-solid fa-book-open-reader text-3xl text-green-800/40 mb-2"></i>
-                                <p class="text-slate-500 text-xs">Enter your question on the left and click <strong>Generate Answer</strong>.</p>
+                                <p class="text-slate-500 text-xs">Enter your question on the left and click <strong>Generate Full Answer</strong>.</p>
                             </div>
                         </div>
                     </div>
@@ -237,253 +237,3 @@
                         </h3>
                         <span class="text-[10px] bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded-full">Live</span>
                     </div>
-                    <div class="space-y-3 text-xs">
-                        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100 space-y-1">
-                            <span class="text-[10px] text-green-800 font-bold">UPSC CSE 2026 Update</span>
-                            <p class="text-slate-700 font-medium">New case studies on digital gig economy added for Paper 1 Section B.</p>
-                        </div>
-                        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100 space-y-1">
-                            <span class="text-[10px] text-green-800 font-bold">Musheer Sir's Tip</span>
-                            <p class="text-slate-700 font-medium">Emphasize empirical data from NSSO and caste census in Paper 2 answers.</p>
-                        </div>
-                        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100 space-y-1">
-                            <span class="text-[10px] text-green-800 font-bold">Current Affairs Link</span>
-                            <p class="text-slate-700 font-medium">Agrarian crisis & shifting cropping patterns mapped with agrarian sociology.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Mentorship Card -->
-                <div class="bg-gradient-to-br from-green-950 to-green-900 p-6 rounded-3xl text-white shadow-md space-y-3">
-                    <h3 class="text-sm font-bold flex items-center gap-2">
-                        <i class="fa-solid fa-chalkboard-user text-green-300"></i> Daily Answer Challenge
-                    </h3>
-                    <p class="text-xs text-slate-200 leading-relaxed">
-                        Practice one question daily using our AI tool and evaluate against official UPSC guidelines.
-                    </p>
-                    <button onclick="switchTab('ai-tool')" class="w-full py-2.5 bg-white text-green-950 font-bold rounded-xl text-xs transition-all shadow-sm hover:bg-green-50">
-                        Launch AI Tool
-                    </button>
-                </div>
-
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-auto py-6">
-        <div class="max-w-7xl mx-auto px-4 text-center text-slate-600 text-xs space-y-1">
-            <p>© 2026 Social Prism Sociology by Pathan Musheer Khan. All Rights Reserved.</p>
-            <p class="text-green-900 font-bold">Empowering UPSC Civil Services Aspirants with Sociological Rigour.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript Application Logic -->
-    <script>
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById('tab-' + tabId).classList.remove('hidden');
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('bg-green-900', 'text-white', 'shadow-sm');
-                btn.classList.add('text-slate-600', 'hover:text-green-950', 'hover:bg-white');
-                if(btn.getAttribute('data-target') === tabId) {
-                    btn.classList.remove('text-slate-600', 'hover:text-green-950', 'hover:bg-white');
-                    btn.classList.add('bg-green-900', 'text-white', 'shadow-sm');
-                }
-            });
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        const pyqData = [
-            {
-                id: 1, paper: "p1", year: "2026", unit: "Sociological Thinkers - Karl Marx",
-                question: "Examine how digital platform labor and gig economy transform the traditional Marxist conceptualization of alienation.",
-                intro: "Define alienation as estrangement from product, process, species-being, and fellow workers.",
-                body: "1. Comodification of leisure and algorithmic control.\n2. Isolation of gig workers operating across digital nodes.\n3. Surplus value extraction via platform capitalism (Srnicek).",
-                conclusion: "Conclude with David Harvey's perspective on spatial-temporal fixes."
-            },
-            {
-                id: 2, paper: "p2", year: "2025", unit: "Indian Society - Caste System",
-                question: "Discuss the changing dynamics of caste in contemporary urban India. Is caste shifting or acquiring new forms?",
-                intro: "Quote M.N. Srinivas on 'Caste is alive and kicking' despite urban modernization.",
-                body: "1. Persistence through caste associations and matrimonial alliances.\n2. Political mobilization and identity assertion.\n3. Economic adaptation via Dalit capitalism.",
-                conclusion: "Balance by stating caste has transformed into structural and political identity."
-            },
-            {
-                id: 3, paper: "p1", year: "2024", unit: "Sociology as Science - Positivism",
-                question: "Critically evaluate Max Weber's critique of positivism and his advocacy for Verstehen.",
-                intro: "Introduce Weber's epistemological stance bridging historical hermeneutics.",
-                body: "1. Rejection of blind natural science methods due to human agency.\n2. Concept of Verstehen: empathetic understanding of subjective meanings.\n3. Ideal Types as analytical constructs.",
-                conclusion: "Summarize how Weber established interpretive sociology."
-            },
-            {
-                id: 4, paper: "p2", year: "2023", unit: "Agrarian and Peasant Social Structure",
-                question: "Analyze the impact of Green Revolution on agrarian class structure and gender relations in rural India.",
-                intro: "Define Green Revolution as technological intervention in Indian agriculture.",
-                body: "1. Rise of rich farmers/kulaks and marginalization of tenants.\n2. Proletarianization of agrarian labor (Jan Breman).\n3. Gender implications and increased workload.",
-                conclusion: "State that agrarian transformation required deeper land reforms."
-            }
-        ];
-
-        const topperData = [
-            { title: "Topper Copy: Paper 1 Thinkers", rank: "AIR 14, CSE 2024", topic: "Thinkers", highlights: "Exceptional diagrammatic representation of ideal types." },
-            { title: "Topper Copy: Paper 2 Villages", rank: "AIR 29, CSE 2025", topic: "Indian Society", highlights: "Seamless integration of M.N. Srinivas and NSSO data." }
-        ];
-
-        const thinkerData = [
-            { name: "Karl Marx", domain: "Conflict", core: "Historical Materialism, Alienation", quote: "History of all hitherto existing society is class struggle." },
-            { name: "Émile Durkheim", domain: "Functionalism", core: "Social Facts, Division of Labour", quote: "Society is a reality sui generis." }
-        ];
-
-        function renderPYQs(filteredList) {
-            const container = document.getElementById('pyq-container');
-            container.innerHTML = '';
-            if(filteredList.length === 0) {
-                container.innerHTML = `<div class="bg-white p-6 rounded-2xl border border-slate-200 text-center text-slate-500 text-xs">No questions found matching your filter.</div>`;
-                return;
-            }
-            filteredList.forEach(item => {
-                container.innerHTML += `
-                    <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-3 shadow-sm">
-                        <div class="flex items-center justify-between">
-                            <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-900 border border-green-200">${item.unit}</span>
-                            <span class="text-xs bg-green-900 text-white px-2.5 py-0.5 rounded-full font-bold">Paper ${item.paper === 'p1' ? '1' : '2'} | ${item.year}</span>
-                        </div>
-                        <h3 class="text-sm font-bold text-green-950">${item.question}</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-3 border-t border-slate-100 text-xs">
-                            <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200"><strong class="text-green-900 block mb-1 font-bold">Introduction</strong><p class="text-slate-700">${item.intro}</p></div>
-                            <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200"><strong class="text-green-900 block mb-1 font-bold">Body</strong><p class="text-slate-700 whitespace-pre-line">${item.body}</p></div>
-                            <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200"><strong class="text-green-900 block mb-1 font-bold">Conclusion</strong><p class="text-slate-700">${item.conclusion}</p></div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function filterPYQs() {
-            const paper = document.getElementById('pyq-paper-filter').value;
-            const year = document.getElementById('pyq-year-filter').value;
-            let result = pyqData;
-            if(paper !== 'all') result = result.filter(item => item.paper === paper);
-            if(year !== 'all') result = result.filter(item => item.year === year);
-            renderPYQs(result);
-        }
-
-        function searchOrGeneratePYQ() {
-            const query = document.getElementById('pyq-custom-input').value.trim();
-            const container = document.getElementById('pyq-container');
-            
-            if(!query) {
-                filterPYQs();
-                return;
-            }
-
-            // Check if matches existing PYQ
-            let matched = pyqData.filter(item => item.question.toLowerCase().includes(query.toLowerCase()) || item.unit.toLowerCase().includes(query.toLowerCase()));
-            
-            if(matched.length > 0) {
-                renderPYQs(matched);
-            } else {
-                // Generate custom model answer card dynamically inside PYQ window
-                container.innerHTML = `
-                    <div class="bg-white border border-green-300 p-6 rounded-3xl space-y-4 shadow-md">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                            <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-green-100 text-green-900">Custom Answer Generated</span>
-                            <span class="text-xs bg-green-900 text-white px-2.5 py-0.5 rounded-full font-bold">UPSC Standard</span>
-                        </div>
-                        <h3 class="text-sm font-bold text-green-950">"${query}"</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-3 border-t border-slate-100 text-xs">
-                            <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200"><strong class="text-green-900 block mb-1 font-bold">Introduction</strong><p class="text-slate-700 leading-relaxed">The query addresses critical structural and institutional transformations in contemporary society, aligning with classical sociological perspectives.</p></div>
-                            <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200"><strong class="text-green-900 block mb-1 font-bold">Body Dimensions & Thinkers</strong><p class="text-slate-700 leading-relaxed">• Functionalist & Conflict dimensions.<br>• Empirical realities & NSSO/Census data.<br>• Integration of classical scholarship.</p></div>
-                            <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200"><strong class="text-green-900 block mb-1 font-bold">Conclusion</strong><p class="text-slate-700 leading-relaxed">A balanced sociological synthesis ensuring sustainable development and social equity.</p></div>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
-        function renderToppers() {
-            const container = document.getElementById('topper-container');
-            container.innerHTML = '';
-            topperData.forEach(item => {
-                container.innerHTML += `
-                    <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-4 flex flex-col justify-between shadow-sm">
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-900">${item.topic}</span>
-                                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">${item.rank}</span>
-                            </div>
-                            <h3 class="text-sm font-bold text-green-950 mb-1.5">${item.title}</h3>
-                            <p class="text-xs text-slate-600 bg-slate-50 p-3 rounded-2xl border border-slate-200"><strong>Review:</strong> ${item.highlights}</p>
-                        </div>
-                        <button onclick="alert('Downloading copy...')" class="w-full py-2.5 bg-slate-100 hover:bg-green-900 hover:text-white text-green-950 text-xs font-bold rounded-xl transition-all">Download PDF</button>
-                    </div>
-                `;
-            });
-        }
-
-        function renderThinkers() {
-            const container = document.getElementById('thinker-grid');
-            container.innerHTML = '';
-            thinkerData.forEach(item => {
-                container.innerHTML += `
-                    <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-3 shadow-sm">
-                        <span class="text-[11px] font-bold text-green-800 uppercase">${item.domain}</span>
-                        <h3 class="text-base font-extrabold text-green-950">${item.name}</h3>
-                        <p class="text-xs text-slate-700"><strong>Core:</strong> ${item.core}</p>
-                        <blockquote class="text-xs italic text-slate-600 bg-slate-50 p-3 rounded-2xl border border-slate-200">"${item.quote}"</blockquote>
-                    </div>
-                `;
-            });
-        }
-
-        function generateAIAnswer() {
-            const qInput = document.getElementById('ai-question-input').value.trim();
-            const wordLimit = document.getElementById('ai-word-limit').value;
-            const outputBox = document.getElementById('ai-output-container');
-            const statusBadge = document.getElementById('ai-status-badge');
-
-            if(!qInput) {
-                alert('Please enter or paste a UPSC question first.');
-                return;
-            }
-
-            statusBadge.innerText = `Ready (${wordLimit} Words)`;
-            statusBadge.className = "text-xs bg-green-100 text-green-900 px-3 py-0.5 rounded-full font-bold";
-
-            outputBox.className = "space-y-4 text-xs sm:text-sm text-slate-700 text-left p-5 bg-slate-50 rounded-2xl border border-green-800/30 overflow-y-auto max-h-[500px] leading-relaxed";
-            
-            outputBox.innerHTML = `
-                <div class="border-b border-slate-200 pb-3 mb-2">
-                    <span class="text-green-900 font-bold block mb-1 text-[11px] uppercase">Evaluated Question:</span>
-                    <p class="text-green-950 font-semibold italic text-xs sm:text-sm">"${qInput}"</p>
-                </div>
-                <div class="space-y-4 text-slate-700 text-xs sm:text-sm">
-                    <div>
-                        <strong class="text-green-900 block mb-1 font-bold">Introduction</strong>
-                        <p>The theme addresses critical structural and institutional transformations in contemporary society. Classical sociological frameworks (Durkheim, Weber) highlight how institutional adaptations reshape social order.</p>
-                    </div>
-                    <div>
-                        <strong class="text-green-900 block mb-1 font-bold">Body Dimensions & Thinkers</strong>
-                        <p class="mb-1.5"><strong>1. Structural Dimension:</strong> Examined through functionalist consensus and conflict perspectives.</p>
-                        <p class="mb-1.5"><strong>2. Empirical Realities:</strong> Supported by contemporary sociological indicators and committee reports.</p>
-                        <p><strong>3. Thinker Integration:</strong> Incorporation of classical and Indian scholarship to validate arguments.</p>
-                    </div>
-                    <div>
-                        <strong class="text-green-900 block mb-1 font-bold">Conclusion</strong>
-                        <p>A balanced sociological perspective ensuring sustainable development and social equity.</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        window.onload = function() {
-            renderPYQs(pyqData);
-            renderToppers();
-            renderThinkers();
-        };
-    </script>
-</body>
-</html>
