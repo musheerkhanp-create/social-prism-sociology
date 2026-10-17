@@ -68,12 +68,13 @@
                 </div>
 
                 <!-- Desktop Nav Links -->
-                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
                     <button onclick="switchTab('home')" class="nav-btn text-amber-400 transition hover:text-amber-300 pb-1 border-b-2 border-amber-400" data-target="home">Home</button>
                     <button onclick="switchTab('concepts')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="concepts">Core Concepts</button>
                     <button onclick="switchTab('pyq')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="pyq">PYQ Vault</button>
-                    <button onclick="switchTab('samaj')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="samaj">Samaj Current Affairs</button>
+                    <button onclick="switchTab('samaj')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="samaj">Socio-lens Monthly</button>
                     <button onclick="switchTab('hub')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="hub">Answer Writing</button>
+                    <button onclick="switchTab('student')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="student">Student Corner</button>
                     <button onclick="switchTab('mentor')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="mentor">About Mentor</button>
                 </div>
 
@@ -95,8 +96,9 @@
             <button onclick="switchTab('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-amber-400 font-medium bg-indigo-900/60">Home</button>
             <button onclick="switchTab('concepts'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Core Concepts</button>
             <button onclick="switchTab('pyq'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">PYQ Vault</button>
-            <button onclick="switchTab('samaj'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Samaj Current Affairs</button>
+            <button onclick="switchTab('samaj'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Socio-lens Monthly</button>
             <button onclick="switchTab('hub'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Answer Writing</button>
+            <button onclick="switchTab('student'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Student Corner</button>
             <button onclick="switchTab('mentor'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">About Mentor</button>
             <div class="pt-2">
                 <button onclick="openModal('joinTelegramModal'); toggleMobileMenu();" class="w-full flex items-center justify-center space-x-2 bg-amber-500 text-indigo-950 font-bold py-2.5 rounded-xl shadow">
@@ -146,7 +148,7 @@
                             <div class="w-full max-w-md bg-indigo-900/40 border border-amber-500/30 p-6 sm:p-8 rounded-3xl shadow-2xl backdrop-blur-md relative">
                                 <div class="absolute -top-4 -right-4 bg-amber-500 text-indigo-950 text-xs font-extrabold px-3 py-1.5 rounded-full shadow-lg uppercase tracking-wider">
                                     Top Rated
-                                </div >
+                                </div>
                                 <div class="flex items-center space-x-4 mb-6">
                                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-indigo-950 font-serif font-bold text-2xl shadow-inner">
                                         PMK
@@ -216,10 +218,10 @@
                         <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
                             <i class="fa-solid fa-newspaper"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-indigo-950 mb-2">Samaj Current Affairs</h3>
+                        <h3 class="text-lg font-bold text-indigo-950 mb-2">Socio-lens Monthly</h3>
                         <p class="text-sm text-slate-600 mb-4">Connect textbook concepts to everyday headlines like consumer culture, tech addiction, and gender dynamics.</p>
                         <span class="text-xs font-bold text-indigo-900 group-hover:text-amber-600 flex items-center space-x-1">
-                            <span>Read Samaj Articles</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            <span>Read Socio-lens Articles</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
                         </span>
                     </div>
 
@@ -461,12 +463,12 @@
             </div>
         </section>
 
-        <!-- ================= TAB 4: SAMAJ CURRENT AFFAIRS ================= -->
+        <!-- ================= TAB 4: SOCIO-LENS MONTHLY ================= -->
         <section id="tab-samaj" class="tab-content hidden py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <span class="text-amber-600 font-bold uppercase text-xs tracking-widest block mb-2">Sociology in Everyday Life</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">Samaj Weekly & Monthly Articles</h2>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">Socio-lens Monthly & Current Affairs</h2>
                     <p class="text-slate-600">Connecting everyday headlines, consumer habits, and technological trends directly to sociological theories.</p>
                 </div>
 
@@ -480,7 +482,7 @@
                                 <h3 class="text-xl font-serif font-bold leading-snug">The iPhone & Conspicuous Consumption: Veblen in the 21st Century</h3>
                             </div>
                             <div class="p-6">
-                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Samaj Weekly #42 • By Pathan Musheer Khan</p>
+                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Socio-lens Monthly #42 • By Pathan Musheer Khan</p>
                                 <p class="text-sm text-slate-600 mb-4">
                                     Why do people queue for hours for the latest smartphone? Thorstein Veblen’s theory of conspicuous consumption explains how status symbols dictate modern social stratification.
                                 </p>
@@ -502,7 +504,7 @@
                                 <h3 class="text-xl font-serif font-bold leading-snug">The Informal Economy & Women: Dual Burden and Invisible Labour</h3>
                             </div>
                             <div class="p-6">
-                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Samaj Monthly #18 • Editorial Desk</p>
+                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Socio-lens Monthly #18 • Editorial Desk</p>
                                 <p class="text-sm text-slate-600 mb-4">
                                     Analyzing the feminisation of informal labour and unpaid domestic work through Marxist-feminist frameworks and Ann Oakley's gender socialisation.
                                 </p>
@@ -524,7 +526,7 @@
                                 <h3 class="text-xl font-serif font-bold leading-snug">Algorithmic Tribes: Social Media & The New Collective Consciousness</h3>
                             </div>
                             <div class="p-6">
-                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Samaj Weekly #45 • By Pathan Musheer Khan</p>
+                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Socio-lens Monthly #45 • By Pathan Musheer Khan</p>
                                 <p class="text-sm text-slate-600 mb-4">
                                     How echo chambers and algorithmic feeds create virtual totems and modify Durkheimian collective effervescence in the digital era.
                                 </p>
@@ -614,7 +616,47 @@
             </div>
         </section>
 
-        <!-- ================= TAB 6: ABOUT MENTOR ================= -->
+        <!-- ================= TAB 6: STUDENT CORNER ================= -->
+        <section id="tab-student" class="tab-content hidden py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-amber-600 font-bold uppercase text-xs tracking-widest block mb-2">Resources & Community</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">Student Corner</h2>
+                    <p class="text-slate-600">Download syllabus guides, glossary lists, and connect with fellow aspirants in our dedicated peer community.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-4">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-indigo-950 mb-2">UPSC & NET Syllabus PDF</h3>
+                        <p class="text-xs text-slate-600 mb-4">Complete topic-wise paper breakdown for Paper 1 and Paper 2.</p>
+                        <button onclick="showToast('Downloading Syllabus PDF...')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white text-xs font-semibold py-2.5 rounded-xl transition">Download PDF</button>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-2xl mx-auto mb-4">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-indigo-950 mb-2">Sociological Glossary</h3>
+                        <p class="text-xs text-slate-600 mb-4">Over 200+ key terms defined with thinker attributions.</p>
+                        <button onclick="showToast('Downloading Glossary PDF...')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white text-xs font-semibold py-2.5 rounded-xl transition">Download Glossary</button>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-4">
+                            <i class="fa-brands fa-telegram"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-indigo-950 mb-2">Telegram Discussion Group</h3>
+                        <p class="text-xs text-slate-600 mb-4">Active community of 15,000+ students discussing daily MCQs.</p>
+                        <button onclick="openModal('joinTelegramModal')" class="w-full bg-amber-500 hover:bg-amber-600 text-indigo-950 text-xs font-bold py-2.5 rounded-xl transition">Join Group</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 7: ABOUT MENTOR ================= -->
         <section id="tab-mentor" class="tab-content hidden py-16">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="glass-card p-8 sm:p-12 rounded-3xl shadow-lg border border-slate-200">
@@ -669,7 +711,7 @@
                     <ul class="space-y-2 text-xs text-slate-300">
                         <li><button onclick="switchTab('concepts')" class="hover:text-amber-400 transition">Core Concepts & Thinkers</button></li>
                         <li><button onclick="switchTab('pyq')" class="hover:text-amber-400 transition">PYQ Vault & Answers</button></li>
-                        <li><button onclick="switchTab('samaj')" class="hover:text-amber-400 transition">Samaj Current Affairs</button></li>
+                        <li><button onclick="switchTab('samaj')" class="hover:text-amber-400 transition">Socio-lens Monthly</button></li>
                         <li><button onclick="switchTab('hub')" class="hover:text-amber-400 transition">Answer Writing Hub</button></li>
                     </ul>
                 </div>
@@ -677,7 +719,7 @@
                     <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-4">Community</h4>
                     <ul class="space-y-2 text-xs text-slate-300">
                         <li><a href="#" onclick="openModal('joinTelegramModal')" class="hover:text-amber-400 transition">Telegram Discussion Channel</a></li>
-                        <li><a href="#" onclick="openModal('joinTelegramModal')" class="hover:text-amber-400 transition">WhatsApp Student Group</a></li>
+                        <li><a href="#" onclick="switchTab('student')" class="hover:text-amber-400 transition">Student Corner Downloads</a></li>
                         <li><a href="#" onclick="showToast('PDF notes downloaded successfully!')" class="hover:text-amber-400 transition">Free Syllabus PDF Download</a></li>
                     </ul>
                 </div>
@@ -686,7 +728,7 @@
                     <p class="text-xs text-slate-400 mb-3">Get weekly sociological perspectives on current affairs straight to your inbox.</p>
                     <div class="flex space-x-2">
                         <input type="email" placeholder="Your email..." class="bg-indigo-900 text-xs px-3 py-2 rounded-lg border border-slate-700 text-white focus:outline-none focus:border-amber-500 w-full">
-                        <button onclick="showToast('Successfully subscribed to Samaj Newsletter!')" class="bg-amber-500 text-indigo-950 font-bold px-3 py-2 rounded-lg text-xs hover:bg-amber-600 transition">Join</button>
+                        <button onclick="showToast('Successfully subscribed to Socio-lens Newsletter!')" class="bg-amber-500 text-indigo-950 font-bold px-3 py-2 rounded-lg text-xs hover:bg-amber-600 transition">Join</button>
                     </div>
                 </div>
             </div>
@@ -970,7 +1012,7 @@
                             <strong class="text-indigo-950 block mb-1">1. Introduction:</strong>
                             Define Sanskritisation as formulated by M.N. Srinivas in 'Religion and Society Among the Coorgs of South India' as a process of cultural mobility among lower castes.
                         </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-indigo-200">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
                             <strong class="text-indigo-950 block mb-1">2. Main Arguments & Mechanics:</strong>
                             • Adoption of vegetarianism, abstinence, ritual purity.<br>
                             • Role of Dominant Caste as the local reference model.<br>
@@ -1027,7 +1069,7 @@
                 tag: "Consumer Culture",
                 content: `
                     <h3 class="text-2xl font-serif font-bold text-indigo-950">The iPhone & Conspicuous Consumption</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Samaj Weekly #42 • By Pathan Musheer Khan</p>
+                    <p class="text-xs text-amber-600 font-semibold">Socio-lens Monthly #42 • By Pathan Musheer Khan</p>
                     <div class="space-y-3 text-sm text-slate-700 pt-2 leading-relaxed">
                         <p>Thorstein Veblen, in his seminal 1899 work 'The Theory of the Leisure Class', introduced the concept of <strong class="text-indigo-950">conspicuous consumption</strong>—the spending of money on luxury goods to publicly display economic power and social status.</p>
                         <p>In contemporary society, queuing outside Apple stores for the latest iPhone launch is the modern equivalent of Veblen's leisure class displaying pecuniary strength. The device transcends communication utility; it functions as a potent cultural signifier of identity, taste, and affluence.</p>
@@ -1040,7 +1082,7 @@
                 tag: "Gender & Labour",
                 content: `
                     <h3 class="text-2xl font-serif font-bold text-indigo-950">The Informal Economy & Women: Dual Burden</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Samaj Monthly #18 • Editorial Desk</p>
+                    <p class="text-xs text-amber-600 font-semibold">Socio-lens Monthly #18 • Editorial Desk</p>
                     <div class="space-y-3 text-sm text-slate-700 pt-2 leading-relaxed">
                         <p>Women constitute a significant share of the informal workforce in developing economies. Operating without social security, legal contracts, or minimum wages, female informal workers experience extreme economic vulnerability.</p>
                         <p>Coupled with Ann Oakley's concept of the <strong class="text-indigo-950">dual burden</strong> (domestic caregiving work combined with external wage labor), women face structural hurdles that hinder upward social mobility.</p>
@@ -1053,7 +1095,7 @@
                 tag: "Digital Sociology",
                 content: `
                     <h3 class="text-2xl font-serif font-bold text-indigo-950">Algorithmic Tribes: Social Media & Collective Effervescence</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Samaj Weekly #45 • By Pathan Musheer Khan</p>
+                    <p class="text-xs text-amber-600 font-semibold">Socio-lens Monthly #45 • By Pathan Musheer Khan</p>
                     <div class="space-y-3 text-sm text-slate-700 pt-2 leading-relaxed">
                         <p>Émile Durkheim conceptualized collective effervescence as moments when physical gatherings of communities generate shared emotional intensity and solidarity.</p>
                         <p>In the digital age, social media algorithms manufacture virtual echo chambers that mimic this tribal cohesion. Hashtag movements, viral trends, and online cancellations create digital totems and moral panics.</p>
