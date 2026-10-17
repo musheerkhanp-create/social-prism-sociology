@@ -53,17 +53,17 @@
                         <div class="relative z-10 space-y-5">
                             <span class="inline-block px-3 py-1 rounded-full bg-emerald-800 text-emerald-100 text-xs font-bold uppercase tracking-wider">Social Prism Platform</span>
                             <h2 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight text-white">
-                                Chapter 1: Sociology - The Discipline (Compendium Loaded)
+                                Chapter 1: Sociology - The Discipline (Master Compendium)
                             </h2>
                             <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
-                                Chapter 1 PYQ Vault aur official PDF compendium successfully integrated by Pathan Musheer Khan. Students can view questions online or download the master PDF in one click without any 404 errors.
+                                Chapter 1 PYQ Vault and official master PDF compendium compiled by Pathan Musheer Khan. Access questions online or view/download the official PDF below.
                             </p>
                             <div class="flex flex-wrap gap-3 pt-1">
-                                <!-- One-Click Direct PDF Download Trigger -->
-                                <button onclick="downloadChapter1PDF()" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer">
+                                <!-- Standard Anchor Link pointing directly to the PDF file -->
+                                <a href="chapter1_final_compendium.pdf" target="_blank" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center gap-2">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                                    Download Chapter 1 PDF
-                                </button>
+                                    Open / Download Chapter 1 PDF
+                                </a>
                                 <button onclick="switchTab('pyq')" class="px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl text-xs sm:text-sm border border-white/20 transition-all">
                                     View PYQs Online
                                 </button>
@@ -80,10 +80,10 @@
                             <p class="text-slate-600 text-xs mt-1">Topic-wise previous year questions integrated directly from the compendium document.</p>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <button onclick="downloadChapter1PDF()" class="px-4 py-2.5 bg-emerald-900 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5 cursor-pointer">
+                            <a href="chapter1_final_compendium.pdf" target="_blank" class="px-4 py-2.5 bg-emerald-900 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                                 Download PDF
-                            </button>
+                            </a>
                             <select id="pyq-section-filter" onchange="filterPYQs()" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs rounded-2xl px-3 py-2.5 focus:outline-none focus:border-emerald-800">
                                 <option value="all">All Sections (A, B, C)</option>
                                 <option value="Modernity">A) Modernity & Social Changes</option>
@@ -137,10 +137,10 @@
             <aside class="lg:col-span-1 space-y-6">
                 <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm sticky top-28 space-y-5">
                     <h3 class="text-sm font-black text-emerald-950 border-b border-slate-100 pb-3">Quick Resources</h3>
-                    <button onclick="downloadChapter1PDF()" class="w-full py-3 bg-emerald-50 hover:bg-emerald-900 hover:text-white text-emerald-900 text-xs font-bold rounded-xl transition-all border border-emerald-200 flex items-center justify-center gap-2 cursor-pointer">
+                    <a href="chapter1_final_compendium.pdf" target="_blank" class="w-full py-3 bg-emerald-50 hover:bg-emerald-900 hover:text-white text-emerald-900 text-xs font-bold rounded-xl transition-all border border-emerald-200 flex items-center justify-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                         Download Chapter 1 PDF
-                    </button>
+                    </a>
                     <p class="text-[11px] text-slate-600 leading-relaxed">Chapter 1 complete compendium compiled by Pathan Musheer Khan.</p>
                 </div>
             </aside>
@@ -192,20 +192,6 @@
                 }
             });
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Direct Download Trigger Function (Prevents 404 Error)
-        function downloadChapter1PDF() {
-            showNotification('Preparing Chapter 1 Master PDF for download...');
-            // Generates a clean text/HTML backup download if direct server file is absent
-            const pdfContent = `SOCIAL PRISM SOCIOLOGY BY PATHAN MUSHEER KHAN\nUPSC CSE SOCIOLOGY OPTIONAL - CHAPTER 1 COMPENDIUM\n\n- Sociology is the product of European enlightenment and renaissance.\n- Discuss the nature of sociology and its relationship with social anthropology.\n- Scope of sociology and its comparison with history and anthropology.\n- Sociology and Common Sense.\n\nCompiled by Pathan Musheer Khan.`;
-            const blob = new Blob([pdfContent], { type: 'application/pdf' });
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = 'Social_Prism_Sociology_Chapter_1_PYQs.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
         }
 
         const pyqData = [
@@ -290,7 +276,3 @@
         window.onload = function() {
             renderPYQs(pyqData);
             switchTab('dashboard');
-        };
-    </script>
-</body>
-</html>
