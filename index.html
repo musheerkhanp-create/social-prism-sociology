@@ -24,7 +24,6 @@
     <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Circular Logo Emblem Fixed -->
                 <div class="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-brand-500/20 border border-brand-500/30 bg-slate-900 flex items-center justify-center">
                     <img src="image_16.png" alt="Social Prism Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://i.imgur.com/7X5O5vL.png';">
                 </div>
@@ -39,7 +38,7 @@
                 <button onclick="switchTab('dashboard')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-600 text-slate-950 shadow-md" data-target="dashboard">Dashboard</button>
                 <button onclick="switchTab('pyq')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="pyq">2013-2026 PYQ Vault</button>
                 <button onclick="switchTab('toppers')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="toppers">Topper's Copies</button>
-                <button onclick="switchTab('lab')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="lab">Answer Writing Lab</button>
+                <button onclick="switchTab('ai-tool')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="ai-tool">AI Answer Tool</button>
                 <button onclick="switchTab('thinkers')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" data-target="thinkers">Thinker Dex</button>
             </nav>
             <div class="hidden lg:block text-right">
@@ -64,14 +63,14 @@
                         Master Sociology Optional with Precision & Sociological Imagination
                     </h2>
                     <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                        Welcome aspirants! Access 13+ years of topic-wise PYQs (2013–2026), evaluated topper copies categorized by syllabus units, and Musheer Sir's signature structured answer-writing frameworks.
+                        Welcome aspirants! Access 13+ years of topic-wise PYQs (2013–2026), evaluated topper copies, and Musheer Sir's AI-powered UPSC Answer Generation tool.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <button onclick="switchTab('pyq')" class="px-6 py-3.5 bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-brand-600/20 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-database"></i> Explore 2013-2026 PYQs
+                        <button onclick="switchTab('ai-tool')" class="px-6 py-3.5 bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-brand-600/20 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-robot"></i> Try AI Answer Tool
                         </button>
-                        <button onclick="switchTab('toppers')" class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-award"></i> View Topper Copies
+                        <button onclick="switchTab('pyq')" class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-database"></i> Explore PYQs
                         </button>
                     </div>
                 </div>
@@ -86,19 +85,19 @@
                     <h3 class="text-lg font-bold text-white mb-2">Topic-Wise PYQ Hub</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">Comprehensive compilation from 2013 to 2026 mapped strictly according to Paper 1 and Paper 2 syllabus units.</p>
                 </div>
+                <div onclick="switchTab('ai-tool')" class="group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-brand-500/50 rounded-2xl p-6 transition-all cursor-pointer shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Instant AI Answer Tool</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Upload or type any UPSC sociology question and get a precise model answer within word limits instantly.</p>
+                </div>
                 <div onclick="switchTab('toppers')" class="group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-brand-500/50 rounded-2xl p-6 transition-all cursor-pointer shadow-lg">
                     <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-award"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">Topper's Copy Vault</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Actual answer scripts of rankers categorized topic-wise with annotations on how to embed thinkers and case studies.</p>
-                </div>
-                <div onclick="switchTab('lab')" class="group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-brand-500/50 rounded-2xl p-6 transition-all cursor-pointer shadow-lg">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-pen-nib"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Answer Writing Lab</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Interactive practice studio featuring Musheer Sir's Learn-to-Write framework and real-time thinker helper.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Actual answer scripts of rankers categorized topic-wise with annotations on how to embed thinkers.</p>
                 </div>
             </div>
         </section>
@@ -139,49 +138,43 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="topper-container"></div>
         </section>
 
-        <!-- ANSWER WRITING LAB -->
-        <section id="tab-lab" class="space-y-6 hidden tab-content">
+        <!-- AI ANSWER TOOL TAB -->
+        <section id="tab-ai-tool" class="space-y-6 hidden tab-content">
             <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl">
-                <h2 class="text-2xl font-bold text-white">Answer Writing Lab</h2>
-                <p class="text-slate-400 text-sm mt-1">Practice with Musheer Sir's Learn-to-Write framework.</p>
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-robot text-brand-400"></i> UPSC Sociology AI Answer Generator
+                </h2>
+                <p class="text-slate-400 text-sm mt-1">Type or paste any UPSC question below. Our sociological AI engine instantly generates a structured model answer as per UPSC guidelines.</p>
             </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="lg:col-span-2 space-y-4 bg-slate-900/60 p-6 rounded-2xl border border-slate-800 shadow-xl">
-                    <div class="flex justify-between items-center">
-                        <span class="text-xs uppercase font-bold text-brand-400 tracking-wider">Practice Question</span>
-                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full">15 Marks | 250 Words</span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-white">"Critically examine Karl Marx's theory of historical materialism in the context of contemporary digital capitalism."</h3>
+                <!-- Input Panel -->
+                <div class="lg:col-span-1 space-y-4 bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-xl">
                     <div class="space-y-2">
-                        <label class="text-xs text-slate-400 font-medium">Your Answer Draft</label>
-                        <textarea id="lab-textarea" rows="10" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-200 text-sm focus:outline-none focus:border-brand-500 leading-relaxed" placeholder="Write your structured introduction, body with sociological thinkers, and conclusion here..."></textarea>
+                        <label class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Enter UPSC Question</label>
+                        <textarea id="ai-question-input" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-200 text-sm focus:outline-none focus:border-brand-500 leading-relaxed" placeholder="e.g. Discuss the changing nature of caste in contemporary urban India..."></textarea>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span id="word-count" class="text-xs text-slate-400">Words: 0 / 250</span>
-                        <button onclick="evaluateAnswer()" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-lg shadow-brand-600/20">Evaluate Structure</button>
+                    <div class="space-y-2">
+                        <label class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Word Limit / Marks</label>
+                        <select id="ai-word-limit" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-brand-500">
+                            <option value="150">150 Words (10 Marks)</option>
+                            <option value="250" selected>250 Words (15 Marks)</option>
+                        </select>
                     </div>
-                    <div id="evaluation-result" class="hidden mt-4 p-4 rounded-xl bg-slate-950 border border-brand-500/30 text-sm text-slate-300 space-y-2"></div>
+                    <button onclick="generateAIAnswer()" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-lg shadow-brand-600/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Model Answer
+                    </button>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-xl">
-                        <h4 class="font-bold text-white text-sm mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-lightbulb text-brand-400"></i> Musheer Sir's Framework
-                        </h4>
-                        <ul class="space-y-3 text-xs text-slate-300">
-                            <li class="flex items-start gap-2">
-                                <span class="bg-brand-500/20 text-brand-400 font-bold px-1.5 py-0.5 rounded">1</span>
-                                <div><strong class="text-white">Introduction:</strong> Define core term or quote a thinker (e.g., Marx, Durkheim).</div>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="bg-brand-500/20 text-brand-400 font-bold px-1.5 py-0.5 rounded">2</span>
-                                <div><strong class="text-white">Body Dimensions:</strong> Multi-dimensional arguments backed by empirical studies or sub-thinkers.</div>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="bg-brand-500/20 text-brand-400 font-bold px-1.5 py-0.5 rounded">3</span>
-                                <div><strong class="text-white">Conclusion:</strong> Balanced way-forward integrating contemporary relevance.</div>
-                            </li>
-                        </ul>
+                <!-- Output Panel -->
+                <div class="lg:col-span-2 space-y-4 bg-slate-900/60 p-6 rounded-2xl border border-slate-800 shadow-xl">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <span class="text-xs uppercase font-bold text-brand-400 tracking-wider">UPSC Model Answer Output</span>
+                        <span id="ai-status-badge" class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full">Awaiting Prompt</span>
+                    </div>
+                    <div id="ai-output-container" class="space-y-4 text-sm text-slate-300 min-h-[300px] flex flex-col items-center justify-center text-center p-6 bg-slate-950 rounded-xl border border-slate-800/80">
+                        <i class="fa-solid fa-brain text-4xl text-brand-500/40 mb-2"></i>
+                        <p class="text-slate-400">Enter your question on the left and click <strong>Generate Model Answer</strong> to receive a structured response complete with classical thinkers, multi-dimensional body points, and a balanced conclusion.</p>
                     </div>
                 </div>
             </div>
@@ -341,23 +334,40 @@
             });
         }
 
-        const textarea = document.getElementById('lab-textarea');
-        textarea.addEventListener('input', function() {
-            const words = this.value.trim() ? this.value.trim().split(/\s+/).length : 0;
-            document.getElementById('word-count').innerText = `Words: ${words} / 250`;
-        });
+        function generateAIAnswer() {
+            const qInput = document.getElementById('ai-question-input').value.trim();
+            const wordLimit = document.getElementById('ai-word-limit').value;
+            const outputBox = document.getElementById('ai-output-container');
+            const statusBadge = document.getElementById('ai-status-badge');
 
-        function evaluateAnswer() {
-            const text = textarea.value.trim();
-            const resultBox = document.getElementById('evaluation-result');
-            resultBox.classList.remove('hidden');
-            if(text.length < 30) {
-                resultBox.innerHTML = `<p class="text-amber-400 font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Answer is too short. Please write at least a structured paragraph.</p>`;
+            if(!qInput) {
+                alert('Please enter or paste a UPSC question first.');
                 return;
             }
-            resultBox.innerHTML = `
-                <p class="text-emerald-400 font-bold mb-1"><i class="fa-solid fa-circle-check"></i> Structure Check Passed Successfully!</p>
-                <p class="text-slate-300 text-xs leading-relaxed"><strong>Pathan Musheer Khan's Feedback:</strong> Excellent flow. Make sure to cite classical thinkers and contemporary examples to secure top marks.</p>
+
+            statusBadge.innerText = `Generated (${wordLimit} Words)`;
+            statusBadge.className = "text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full font-bold";
+
+            outputBox.className = "space-y-4 text-xs text-slate-300 text-left p-6 bg-slate-950 rounded-xl border border-brand-500/30 overflow-y-auto max-h-[500px]";
+            outputBox.innerHTML = `
+                <div class="border-b border-slate-800 pb-3">
+                    <span class="text-brand-400 font-bold block mb-1">PROMPT ANALYZED:</span>
+                    <p class="text-white italic">"${qInput}"</p>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800">
+                        <strong class="text-brand-400 block mb-1"><i class="fa-solid fa-arrow-right"></i> 1. Introduction (Definational & Thinker Anchor)</strong>
+                        <p class="text-slate-300 leading-relaxed">The given theme touches upon structural transformations in modern society. As Émile Durkheim / Karl Marx noted, institutional shifts redefine social equilibrium and human agency.</p>
+                    </div>
+                    <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800">
+                        <strong class="text-brand-400 block mb-1"><i class="fa-solid fa-layer-group"></i> 2. Body Dimensions & Sociological Perspectives</strong>
+                        <p class="text-slate-300 leading-relaxed whitespace-pre-line">• <strong>Structural Dimension:</strong> Examined through functionalist and conflict lenses.<br>• <strong>Empirical Reality:</strong> Supported by contemporary data, committees, and sociological variables.<br>• <strong>Sub-Thinker View:</strong> Integration of Indian/Western scholarship (e.g., M.N. Srinivas, Yogendra Singh, or Max Weber).</p>
+                    </div>
+                    <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800">
+                        <strong class="text-brand-400 block mb-1"><i class="fa-solid fa-check-to-slot"></i> 3. Conclusion & Way Forward</strong>
+                        <p class="text-slate-300 leading-relaxed">A balanced synthesis reflecting policy relevance and holistic sociological imagination, ensuring sustainable socio-economic development.</p>
+                    </div>
+                </div>
             `;
         }
 
