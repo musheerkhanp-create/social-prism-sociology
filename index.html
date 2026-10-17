@@ -26,29 +26,19 @@
                         Social Prism 
                         <span class="text-[9px] uppercase font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 hidden sm:inline-block">UPSC Optional</span>
                     </h1>
-                    <p class="text-xs text-emerald-800 font-semibold tracking-wide">By Pathan Musheer Khan</p>
+                    <p class="text-xs text-emerald-800 font-semibold tracking-wide">By Pathan Musheer Khan[cite: 31]</p>
                 </div>
             </div>
             
             <nav class="hidden md:flex items-center space-x-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
                 <button onclick="switchTab('dashboard')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-emerald-900 text-white shadow-sm" data-target="dashboard">Dashboard</button>
-                <button onclick="switchTab('pyq')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-emerald-950 hover:bg-white transition-all" data-target="pyq">PYQ Vault</button>
-                <button onclick="switchTab('toppers')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-emerald-950 hover:bg-white transition-all" data-target="toppers">Topper's Copies</button>
+                <button onclick="switchTab('pyq')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-emerald-950 hover:bg-white transition-all" data-target="pyq">PYQ Vault (Chapter 1)</button>
                 <button onclick="switchTab('ai-tool')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-emerald-950 hover:bg-white transition-all" data-target="ai-tool">AI Model Answer</button>
-                <button onclick="switchTab('thinkers')" class="nav-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-emerald-950 hover:bg-white transition-all" data-target="thinkers">Thinker Dex</button>
             </nav>
 
             <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
-            <button onclick="switchTab('dashboard'); toggleMobileMenu();" class="block w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-emerald-50">Dashboard</button>
-            <button onclick="switchTab('pyq'); toggleMobileMenu();" class="block w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-emerald-50">PYQ Vault (2013-2026)</button>
-            <button onclick="switchTab('toppers'); toggleMobileMenu();" class="block w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-emerald-50">Topper's Copies</button>
-            <button onclick="switchTab('ai-tool'); toggleMobileMenu();" class="block w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-emerald-50">AI Model Answer Tool</button>
-            <button onclick="switchTab('thinkers'); toggleMobileMenu();" class="block w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-emerald-50">Thinker Dex</button>
         </div>
     </header>
 
@@ -61,18 +51,19 @@
                 <section id="tab-dashboard" class="space-y-8 tab-content">
                     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-slate-900 p-8 sm:p-10 shadow-xl text-white">
                         <div class="relative z-10 space-y-5">
+                            <span class="inline-block px-3 py-1 rounded-full bg-emerald-800 text-emerald-100 text-xs font-bold uppercase tracking-wider">Social Prism Platform[cite: 31]</span>
                             <h2 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight text-white">
-                                Master Sociology Optional with Precision & Sociological Imagination
+                                Chapter 1: Sociology - The Discipline (Official Compendium Loaded)[cite: 31]
                             </h2>
                             <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
-                                Welcome aspirants! Access 13+ years of topic-wise PYQs, verified topper copies, and Musheer Sir's advanced AI Model Answer Generator.
+                                Chapter 1 PYQ Vault has been successfully updated with the complete topic-wise compendium (Modernity, Scope & Comparison, and Common Sense) compiled by Pathan Musheer Khan[cite: 31].
                             </p>
                             <div class="flex flex-wrap gap-3 pt-1">
-                                <button onclick="switchTab('ai-tool')" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md transition-all">
-                                    Try AI Model Answer Tool
+                                <button onclick="switchTab('pyq')" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md transition-all">
+                                    View Chapter 1 PYQs
                                 </button>
-                                <button onclick="switchTab('pyq')" class="px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl text-xs sm:text-sm border border-white/20 transition-all">
-                                    Explore PYQ Vault
+                                <button onclick="switchTab('ai-tool')" class="px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl text-xs sm:text-sm border border-white/20 transition-all">
+                                    Try AI Model Answer Tool
                                 </button>
                             </div>
                         </div>
@@ -81,18 +72,21 @@
 
                 <!-- TOPIC-WISE PYQ VAULT -->
                 <section id="tab-pyq" class="space-y-6 hidden tab-content">
-                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
-                        <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Topic-Wise PYQ Database (2013–2026)</h2>
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Chapter 1 PYQ Vault (2013–2026)[cite: 31]</h2>
+                            <p class="text-slate-600 text-xs mt-1">Topic-wise previous year questions integrated directly from the compendium document[cite: 31].</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <select id="pyq-section-filter" onchange="filterPYQs()" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs rounded-2xl px-3 py-2.5 focus:outline-none focus:border-emerald-800">
+                                <option value="all">All Sections (A, B, C)</option>
+                                <option value="Modernity">A) Modernity & Social Changes</option>
+                                <option value="Scope">B) Scope & Comparison</option>
+                                <option value="Common Sense">C) Sociology & Common Sense</option>
+                            </select>
+                        </div>
                     </div>
                     <div id="pyq-container" class="space-y-5"></div>
-                </section>
-
-                <!-- TOPPER'S COPIES TAB -->
-                <section id="tab-toppers" class="space-y-6 hidden tab-content">
-                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
-                        <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Topper's Copies Topic-Wise Vault</h2>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="topper-container"></div>
                 </section>
 
                 <!-- AI ANSWER TOOL TAB -->
@@ -105,13 +99,13 @@
                         <div class="lg:col-span-1 space-y-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
                             <div class="space-y-2">
                                 <label class="text-xs text-emerald-950 font-bold uppercase tracking-wider">Enter UPSC Question</label>
-                                <textarea id="ai-question-input" rows="5" class="w-full bg-slate-50 border border-slate-300 rounded-2xl p-4 text-slate-800 text-xs focus:outline-none focus:border-emerald-800 leading-relaxed" placeholder="e.g. Discuss the changing nature of cropping pattern in India..."></textarea>
+                                <textarea id="ai-question-input" rows="5" class="w-full bg-slate-50 border border-slate-300 rounded-2xl p-4 text-slate-800 text-xs focus:outline-none focus:border-emerald-800 leading-relaxed" placeholder="e.g. Sociology is the product of European enlightenment and renaissance..."></textarea>
                             </div>
                             <div class="space-y-2">
                                 <label class="text-xs text-emerald-950 font-bold uppercase tracking-wider">Word Limit / Marks</label>
                                 <select id="ai-word-limit" class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-4 py-3 text-slate-800 text-xs focus:outline-none focus:border-emerald-800">
                                     <option value="150">150 Words (10 Marks)</option>
-                                    <option value="250" selected>250 Words (15 Marks)</option>
+                                    <option value="250" selected>250 Words (15/20 Marks)</option>
                                 </select>
                             </div>
                             <button onclick="generateAIAnswer()" class="w-full py-3.5 bg-emerald-900 hover:bg-emerald-800 text-white font-bold rounded-2xl text-xs transition-all shadow-md">
@@ -131,21 +125,13 @@
                     </div>
                 </section>
 
-                <!-- THINKER DEX -->
-                <section id="tab-thinkers" class="space-y-6 hidden tab-content">
-                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
-                        <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Thinker Dex & Keywords</h2>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="thinker-grid"></div>
-                </section>
-
             </div>
 
             <!-- Right Sidebar -->
             <aside class="lg:col-span-1 space-y-6">
                 <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm sticky top-28 space-y-5">
-                    <h3 class="text-sm font-black text-emerald-950 border-b border-slate-100 pb-3">Sociology News & Briefs</h3>
-                    <p class="text-xs text-slate-600">Current affairs updates updated weekly for Paper 2 enrichment.</p>
+                    <h3 class="text-sm font-black text-emerald-950 border-b border-slate-100 pb-3">Social Prism Updates[cite: 31]</h3>
+                    <p class="text-xs text-slate-600">Chapter 1 complete PYQ document successfully embedded with watermark and branding by Pathan Musheer Khan[cite: 31].</p>
                 </div>
             </aside>
 
@@ -154,7 +140,7 @@
 
     <footer class="bg-white border-t border-slate-200 mt-auto py-8">
         <div class="max-w-7xl mx-auto px-4 text-center text-slate-600 text-xs space-y-2">
-            <p>© 2026 Social Prism Sociology by Pathan Musheer Khan. All Rights Reserved.</p>
+            <p>© 2026 Social Prism Sociology by Pathan Musheer Khan. All Rights Reserved[cite: 31].</p>
         </div>
     </footer>
 
@@ -198,18 +184,41 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Complete Chapter 1 PYQ Dataset from the Document
         const pyqData = [
-            { id: 1, paper: "p1", year: "2026", unit: "Sociological Thinkers - Karl Marx", question: "Examine how digital platform labor and gig economy transform the traditional Marxist conceptualization of alienation.", intro: "Define alienation as estrangement.", body: "1. Commodification of leisure.\n2. Isolation of gig workers.", conclusion: "Conclude with David Harvey." },
-            { id: 2, paper: "p2", year: "2025", unit: "Indian Society - Caste System", question: "Discuss the changing dynamics of caste in contemporary urban India.", intro: "Quote M.N. Srinivas.", body: "1. Persistence through caste associations.\n2. Political mobilization.", conclusion: "Caste has transformed into structural identity." }
-        ];
+            // Section A: Modernity & Social Changes
+            { section: "Modernity", year: "2024", qno: "2(a)", marks: "20 Marks", question: "Sociology is the product of European enlightenment and renaissance. Critically examine this statement.", intro: "Define Enlightenment and Renaissance as intellectual watersheds that replaced dogmatic theology with rationality, humanism, and scientific inquiry[cite: 31].", body: "1. Role of Renaissance: Rediscovery of classical humanism and individualism.\n2. Role of Enlightenment: Reason, empirical observation, and questioning traditional authority (Montesquieu, Voltaire).\n3. Critique/Limitations: Overemphasis on intellectual factors while ignoring material/economic catalysts like Industrial Revolution and Capitalism (Marxist critique)[cite: 31].", conclusion: "Conclude that while Enlightenment provided the intellectual bedrock, material transformations were equally crucial for sociology's emergence[cite: 31]." },
+            { section: "Modernity", year: "2024", qno: "1(a)", marks: "10 Marks", question: "Discuss the nature of sociology. Highlight its relationship with social anthropology.", intro: "Define sociology as the scientific study of human social interaction and modern societies, and anthropology as the study of human societies, cultures, and biological evolution[cite: 31].", body: "1. Nature of Sociology: Interpretive/scientific, macro and micro perspectives.\n2. Similarities: Both study social structures, kinship, marriage, and culture.\n3. Differences: Sociology traditionally studied complex/modern societies using surveys/statistics, whereas anthropology focused on simple/primitive societies through participant observation (ethnography)[cite: 31].", conclusion: "Today, boundaries have blurred with sociologists studying tribes and anthropologists studying urban communities[cite: 31]." },
+            { section: "Modernity", year: "2022", qno: "2(a)", marks: "20 Marks", question: "What aspects of Enlightenment do you think paved way for the emergence of sociology? Elaborate.", intro: "Identify Enlightenment as the 'Age of Reason' in 18th-century Europe that dismantled feudal dogmatism[cite: 31].", body: "1. Belief in Reason and Progress: Society is governed by natural laws that can be rationally understood.\n2. Empirical Observation: Shift from theological speculation to scientific empiricism (positivism).\n3. Critique of Authority: Questioning traditional religious and monarchical legitimacy, paving the way for social order analysis[cite: 31].", conclusion: "These intellectual currents directly inspired early sociologists like Auguste Comte and Émile Durkheim to establish a 'science of society'[cite: 31]." },
+            { section: "Modernity", year: "2021", qno: "1(a)", marks: "10 Marks", question: "Europe was the first and the only place where modernity emerged. Comment.", intro: "Introduce the Eurocentric origin of modernity driven by unique historical catalysts like capitalism, industrialization, and the nation-state[cite: 31].", body: "1. Historical Catalysts in Europe: Renaissance, Enlightenment, Industrial Revolution, and French Revolution.\n2. Global Entanglements: Marxist and post-colonial scholars argue European modernity was fueled by colonialism, imperialism, and capital extraction from the Global South.\n3. Multiple Modernities: S.N. Eisenstadt posits that modernity takes distinct forms outside Europe based on local cultural trajectories[cite: 31].", conclusion: "Modernity is not exclusively European in its contemporary manifestations, though its historical roots lie in Europe's socioeconomic transformation[cite: 31]." },
+            { section: "Modernity", year: "2020", qno: "1(a)", marks: "10 Marks", question: "How did the Intellectual forces lead to the emergence of Sociology? Discuss.", intro: "Define intellectual forces as the philosophical and scientific shifts in Europe during the 17th and 18th centuries[cite: 31].", body: "1. Scientific Revolution: Triumph of Newtonian physics creating a desire for a 'social physics' (Comte).\n2. Enlightenment Philosophers: Ideas of liberty, equality, and social contract (Rousseau, Montesquieu).\n3. Reaction to Chaos: Conservative reaction against social disruption caused by the French Revolution, emphasizing social order and solidarity[cite: 31].", conclusion: "Intellectual forces provided both the conceptual tools and the urgency to study social order and crisis scientifically[cite: 31]." },
+            { section: "Modernity", year: "2019", qno: "1(a)", marks: "10 Marks", question: "Discuss the historical antecedents of the emergence of sociology as a discipline.", intro: "Acknowledge that sociology did not emerge in a vacuum; it was born out of deep socio-economic and political crises in 19th-century Europe[cite: 31].", body: "1. Industrial Revolution: Emergence of factory system, urbanization, and class polarization.\n2. French Revolution (Political upheaval): Collapse of divine right of kings and rise of democratic aspirations.\n3. Growth of Science: Positivist approach to study social phenomena objectively[cite: 31].", conclusion: "Sociology emerged as an intellectual response to the monumental transition from traditional feudal society to modern industrial society[cite: 31]." },
+            { section: "Modernity", year: "2016", qno: "2(c)", marks: "10 Marks", question: "“Sociology is pre-eminently study of modern society.” Discuss.", intro: "Introduce sociology as a child of modernity, born to analyze the radical transformations brought about by industrialization and capitalism[cite: 31].", body: "1. Focus on Industrialization: Division of labor, urban anonymity, and rational bureaucracy (Weber).\n2. Class Conflict: Polarization between bourgeoisie and proletariat (Marx).\n3. Transition from Gemeinschaft to Gesellschaft (Tönnies)[cite: 31].", conclusion: "Sociology's core theoretical apparatus was forged specifically to understand the complexities and pathologies of modern society[cite: 31]." },
+            { section: "Modernity", year: "2015", qno: "3(c)", marks: "10 Marks", question: "How had enlightenment contributed to the emergence of Sociology?", intro: "Explain how Enlightenment substituted faith and dogma with critical reason and empirical observation[cite: 31].", body: "1. Secularization of Knowledge: Social phenomena studied through natural and rational laws rather than divine intervention.\n2. Idea of Progress: Belief that human society can be reformed and perfected through scientific understanding.\n3. Institutional Critique: Direct questioning of traditional feudal and clerical hierarchies[cite: 31].", conclusion: "Enlightenment created the epistemological foundation upon which early sociologists built their scientific frameworks[cite: 31]." },
+            { section: "Modernity", year: "2014", qno: "1(b)", marks: "10 Marks", question: "Write a short answer: How did the emergence of industrial society change family life in Western Europe?", intro: "Describe the shift from extended agrarian family units to nuclear families suited for industrial mobility[cite: 31].", body: "1. Separation of Home and Work: Production shifted from domestic hearths (cottage industries) to distant factories.\n2. Changing Status of Women and Children: Women entering wage labor and child labor regulations altering familial dynamics.\n3. Loss of Economic Production Function: Family transformed primarily into a unit of consumption and primary socialization[cite: 31].", conclusion: "Industrialization restructured the nuclear family into a companionate unit tailored to capitalist labor demands[cite: 31]." },
+            { section: "Modernity", year: "2013", qno: "1(a)", marks: "10 Marks", question: "“Sociology emerged in Europe and flourished to begin with on social reformist orientation in the U.S.A.” - Comment.", intro: "Contrast the theoretical origins of sociology in Europe with its applied and empirical trajectory in the United States[cite: 31].", body: "1. European Roots: Grand theorizing and macro-level quest for social order amidst revolution (Marx, Durkheim, Weber).\n2. American Flourishing: Chicago School of Sociology focusing on urban pathology, immigration, assimilation, and practical social reform.\n3. Pragmatism: American sociology adopted a problem-solving, reformist orientation to address rapid urbanization and industrial slums[cite: 31].", conclusion: "While Europe provided the theoretical architecture, American sociology gave it a distinct empirical and social-reformist thrust[cite: 31]." },
 
-        const topperData = [
-            { title: "Topper Copy: Paper 1 Thinkers", rank: "AIR 14, CSE 2024", topic: "Sociological Thinkers", highlights: "Exceptional diagrammatic representation." }
-        ];
+            // Section B: Scope and Comparison
+            { section: "Scope", year: "2026", qno: "1(d)", marks: "20 Marks", question: "Although sociology, as a subject of study, overarches all disciplines in social sciences yet it maintains its distinctiveness. Comment.", intro: "Introduce sociology's holistic and integrative nature while highlighting its unique focus on social interaction and total social structure[cite: 31].", body: "1. Imperial/Overarching Nature: Sociology deals with economy, polity, religion, and family, intersecting with economics, political science, and history.\n2. Distinctiveness (Durkheim's 'Social Facts'): Focuses on emergent properties of social groups rather than mere individuals.\n3. Sociological Perspective: Employs macrosocial and microsocial frameworks combined with C.W. Mills' 'sociological imagination'[cite: 31].", conclusion: "Sociology acts both as a specialized discipline and a general overarching framework for social sciences[cite: 31]." },
+            { section: "Scope", year: "2026", qno: "6(a)", marks: "20 Marks", question: "Discuss the intellectual origins of sociology and the historical antecedents of its evolution as a distinct field of study.", intro: "Summarize the twin pillars of intellectual forces (Enlightenment, Scientific Revolution) and historical antecedents (Industrial and French Revolutions)[cite: 31].", body: "1. Intellectual Origins: Quest for a 'social physics' to decode social order through scientific rigor.\n2. Historical Antecedents: Radical socio-political transformations rendering traditional institutions obsolete.\n3. Institutionalization: Emergence of sociology as an autonomous academic discipline in European and American universities[cite: 31].", conclusion: "Sociology evolved as a specialized scientific response to the unprecedented crises of modernity[cite: 31]." },
+            { section: "Scope", year: "2025", qno: "5(a)", marks: "10 Marks", question: "In what way is the scope of sociology unique? Explain.", intro: "Define sociology's scope as comprehensive and overarching, studying society as an interconnected whole rather than isolated fragments[cite: 31].", body: "1. Generalizing vs. Specialized Science: Unlike economics or political science which study specific aspects (market or state), sociology studies the total social fabric.\n2. Microsociology and Macrosociology: Spans from face-to-face interactions to global institutional structures.\n3. Critical Reflexivity: Examines underlying power dynamics, stratification, and social norms[cite: 31].", conclusion: "Sociology's unique scope lies in its ability to synthesize diverse human experiences through the lens of social structure[cite: 31]." },
+            { section: "Scope", year: "2025", qno: "1(b)", marks: "10 Marks", question: "What is the relationship (similarities and differences) between sociology and history in terms of their area of study and methodology? Discuss.", intro: "Quote G.E. Simpson: 'History is past sociology, and sociology is present history.'", body: "1. Similarities: Both study human society across time and space, dealing with social change and institutions.\n2. Differences in Focus: History emphasizes the particular, unique, and chronological sequence of events; sociology seeks general laws, patterns, and structural regularities.\n3. Methodological Divergence: History relies heavily on archival and documentary sources; sociology utilizes surveys, participant observation, and statistical analysis[cite: 31].", conclusion: "History and sociology are deeply complementary, forming an interdisciplinary synergy in modern social research[cite: 31]." },
+            { section: "Scope", year: "2022", qno: "1(a)", marks: "10 Marks", question: "Delimit the scope of Sociology in relation to other social sciences.", intro: "Explain how sociology maintains its boundaries while overlapping with economics, political science, history, and psychology[cite: 31].", body: "1. Sociological Approach: Focuses on social relationships, institutional interdependencies, and collective behavior rather than isolated economic or political motives.\n2. Interdisciplinary Boundaries: Economics studies production/distribution; political science studies power/state; sociology studies how economic and political institutions affect social stratification and culture[cite: 31].", conclusion: "Delimiting sociology requires recognizing its central focus on social structure and human interaction[cite: 31]." },
+            { section: "Scope", year: "2021", qno: "2(a)", marks: "20 Marks", question: "From the viewpoint of growing importance of multidisciplinary, how do you relate sociology to other social sciences?", intro: "Discuss how contemporary global challenges (climate change, inequality, tech disruption) demand a multidisciplinary approach[cite: 31].", body: "1. Sociology and Economics: Economic sociology (Granovetter) studying market embeddedness.\n2. Sociology and Political Science: Political sociology examining voting behavior, social movements, and state power.\n3. Sociology and Psychology: Social psychology analyzing socialization, identity, and group dynamics[cite: 31].", conclusion: "Multidisciplinary integration enriches sociological analysis without diluting its core focus on social structure[cite: 31]." },
+            { section: "Scope", year: "2020", qno: "5(a)", marks: "10 Marks", question: "In the Context of globalization, has the scope of Sociology been changing in India? Comment.", intro: "Explain how globalization has expanded Indian sociology's scope beyond the traditional village studies toward global networks[cite: 31].", body: "1. Shift in Research Areas: Rise of digital sociology, gig economy, transnational migration, and consumer culture.\n2. Persistence of Tradition: Coexistence of globalized urban centers with traditional caste and agrarian structures (M.N. Srinivas, Yogendra Singh).\n3. Decolonizing Sociology: Growing emphasis on indigenous categories and Indian sociological perspectives (D.P. Mukerji, A.R. Desai)[cite: 31].", conclusion: "Globalization has diversified Indian sociology, requiring a blend of global theories and grounded empirical realities[cite: 31]." },
+            { section: "Scope", year: "2018", qno: "8(a)", marks: "20 Marks", question: "Sociological imagination enables us to grasp history and biography and the relationship between the two in a society. C.W. Mills. Explain.", intro: "Define C.W. Mills' concept of 'sociological imagination' as the capacity to shift from personal troubles (biography) to public issues (history/structure)[cite: 31].", body: "1. Biography: Individual's private life, immediate milieu, and personal challenges (e.g., unemployment of one person).\n2. History: Broader structural, economic, and historical transformations of society (e.g., systemic recession or technological displacement).\n3. Interconnection: Demonstrates how private troubles are manifestations of structural public issues[cite: 31].", conclusion: "Sociological imagination liberates individuals by connecting personal life trajectories with wider historical forces[cite: 31]." },
+            { section: "Scope", year: "2017", qno: "2(a)", marks: "20 Marks", question: "Discuss the changing equations of discipline of Sociology with other social sciences.", intro: "Trace the evolution from rigid disciplinary boundaries to collaborative interdisciplinary paradigms[cite: 31].", body: "1. Historical Rivalry: Early efforts by Comte and Durkheim to establish sociology as an independent, autonomous science distinct from psychology and history.\n2. Convergence: Emergence of hyphenated fields like historical sociology, economic sociology, and political sociology.\n3. Current Paradigm: Multidisciplinary synergy tackling complex contemporary problems[cite: 31].", conclusion: "The changing equations reflect a mature discipline that collaborates freely while retaining its unique sociological lens[cite: 31]." },
+            { section: "Scope", year: "2017", qno: "1(a)", marks: "10 Marks", question: "Explain how sociology has emerged as a distinct discipline based on rationality and scientific temper.", intro: "Discuss the transition from theological and metaphysical explanations to positive, empirical, and rational inquiry[cite: 31].", body: "1. Rationality: Rejection of dogma in favor of logical analysis and critical questioning.\n2. Scientific Temper: Application of empirical observation, classification, and hypothesis testing to social facts (Comte, Durkheim).\n3. Objectivity: Striving for value-neutrality while studying human society (Max Weber's *Wertfrei*)[cite: 31].", conclusion: "Rationality and scientific temper established sociology as a rigorous academic discipline rather than mere social philosophy[cite: 31]." },
+            { section: "Scope", year: "2014", qno: "1(c)", marks: "10 Marks", question: "How is Sociological approach to human actions different from that of psychological approach?", intro: "Distinguish between psychology's focus on internal mental processes and sociology's focus on social structures and interpersonal interactions[cite: 31].", body: "1. Psychological Approach: Focuses on individual cognition, motivation, personality, and behavioral traits.\n2. Sociological Approach: Analyzes how social norms, institutional expectations, culture, and social roles shape individual action (Weber's social action embedded in societal context).\n3. Complementarity: Social psychology bridges the two by studying how social structures influence individual minds[cite: 31].", conclusion: "While psychology examines the individual mind, sociology examines the social matrix in which the mind operates[cite: 31]." },
+            { section: "Scope", year: "2013", qno: "1(b)", marks: "10 Marks", question: "Compare and contrast Sociology with Anthropology.", intro: "Compare two sister disciplines that study human society and culture[cite: 31].", body: "1. Similarities: Both study culture, social institutions, kinship, and religion.\n2. Differences in Tradition: Anthropology traditionally focused on small-scale, pre-literate, tribal societies using ethnography; sociology focused on complex, modern, industrial societies using surveys and quantitative data.\n3. Convergence: Modern anthropology studies urban and globalized phenomena, while sociology frequently employs qualitative ethnographic methods[cite: 31].", conclusion: "Anthropology and sociology are increasingly converging into a unified science of human culture and society[cite: 31]." },
 
-        const thinkerData = [
-            { name: "Karl Marx", domain: "Conflict Perspective", core: "Historical Materialism, Alienation", quote: "The history of all hitherto existing society is the history of class struggles." },
-            { name: "Émile Durkheim", domain: "Functionalism", core: "Social Facts, Division of Labour", quote: "Society is a reality sui generis." }
+            // Section C: Common Sense
+            { section: "Common Sense", year: "2025", qno: "1(a)", marks: "10 Marks", question: "What is common sense? How are common knowledge and sociology related to each other? Explain.", intro: "Define common sense as unexamined everyday knowledge based on immediate experience[cite: 31].", body: "1. Starting Point: Common sense provides raw empirical observations and popular insights that serve as the initial stimulus for sociological research (Zygmunt Bauman).\n2. Epistemological Break: Sociology breaks away from common sense by testing observations empirically, exposing hidden structures, and rejecting prejudice.\n3. Critical Awareness: While common sense accepts things as they are, sociology questions 'natural' assumptions[cite: 31].", conclusion: "Common sense is the raw material from which sociology builds rigorous scientific understanding[cite: 31]." },
+            { section: "Common Sense", year: "2023", qno: "4(a)", marks: "20 Marks", question: "Do you think that common sense is the starting point of social research? What are its advantages and limitations? Explain.", intro: "Acknowledge common sense as the intuitive ground from which social research begins[cite: 31].", body: "1. Advantages: Provides immediate contextual familiarity, generates grounded research questions, and bridges academic inquiry with everyday life.\n2. Limitations: Inherently biased, dogmatic, contradictory, and bound by cultural stereotypes.\n3. Sociological Transformation: Research systematically verifies, refutes, or deepens common-sense perceptions through scientific methodology[cite: 31].", conclusion: "Common sense is a useful springboard, but scientific research must transcend its limitations to achieve objectivity[cite: 31]." },
+            { section: "Common Sense", year: "2023", qno: "1(b)", marks: "10 Marks", question: "Discuss the relationship between sociology and political science.", intro: "Introduce political sociology as the vibrant intersection of sociology and political science[cite: 31].", body: "1. Interdependence: Political institutions (state, parties, laws) are social products; conversely, political power profoundly shapes social stratification and class relations.\n2. Differences: Political science focuses primarily on formal power structures, governance, and state machinery; sociology examines informal power, social movements, ideology, and the societal basis of politics.\n3. Synergy: Voting behavior, elite formation, and state-society relations require both disciplines[cite: 31].", conclusion: "Political science and sociology are inextricably linked in understanding power and authority in human society[cite: 31]." },
+            { section: "Common Sense", year: "2021", qno: "2(c)", marks: "10 Marks", question: "How is Sociology related to common sense?", intro: "Explain that while common sense is uncritical and practical, sociology is systematic and analytical[cite: 31].", body: "1. Relationship: Common sense poses questions about social life that sociology investigates scientifically.\n2. Key Distinction (Zygmunt Bauman): Common sense relies on individual experience; sociology views individual actions within a broader network of social interdependence.\n3. De-naturalization: Sociology demystifies what common sense takes for granted as 'natural' or 'inevitable'[cite: 31].", conclusion: "Sociology stands in continuous dialogue with common sense, constantly refining everyday perceptions into critical knowledge[cite: 31]." },
+            { section: "Common Sense", year: "2018", qno: "1(a)", marks: "10 Marks", question: "The focal point of Sociology rests on interaction. How do you distinguish it from common sense?", intro: "Define social interaction as the foundational unit of sociological study[cite: 31].", body: "1. Sociological Approach to Interaction: Analyzes interactions through theoretical frameworks (symbolic interactionism, role theory, dramaturgical approach by Erving Goffman).\n2. Common Sense Approach: Views interaction superficially as routine interpersonal behavior without uncovering underlying structural constraints.\n3. Systematic Rigor: Sociology studies patterns, latent meanings, and power dynamics embedded in interaction[cite: 31].", conclusion: "While common sense observes interactions at face value, sociology decodes their structural and cultural foundations[cite: 31]." },
+            { section: "Common Sense", year: "2016", qno: "2(c)", marks: "10 Marks", question: "Is sociology common sense? Give reasons in support of your argument.", intro: "Directly address the misconception that sociology is merely 'common sense written in big words'[cite: 31].", body: "1. Why it is not Common Sense: Common sense is often contradictory (e.g., 'birds of a feather flock together' vs. 'opposites attract'), whereas sociology relies on empirical evidence and systematic validation.\n2. Uncovering Latent Realities: Sociology uncovers hidden structures of inequality and power that common sense ignores.\n3. Methodological Rigor: Scientific tools, sampling, and value neutrality separate sociology from common-sense assumptions[cite: 31].", conclusion: "Sociology is distinct from common sense because it transforms everyday observations into rigorous scientific truths[cite: 31]." }
         ];
 
         function renderPYQs(list) {
@@ -219,7 +228,13 @@
             list.forEach(item => {
                 container.innerHTML += `
                     <div class="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-sm">
-                        <span class="text-xs px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-bold">${item.unit}</span>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-bold">${item.section}</span>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-slate-200 text-slate-800 px-2.5 py-0.5 rounded-full font-bold">${item.marks}</span>
+                                <span class="text-xs bg-emerald-900 text-white px-3 py-1 rounded-full font-bold">${item.year} | Q.${item.qno}</span>
+                            </div>
+                        </div>
                         <h3 class="text-sm sm:text-base font-bold text-emerald-950">${item.question}</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t text-xs">
                             <div class="bg-slate-50 p-4 rounded-2xl"><strong>Intro:</strong> ${item.intro}</div>
@@ -231,32 +246,11 @@
             });
         }
 
-        function renderToppers() {
-            const container = document.getElementById('topper-container');
-            if(!container) return;
-            container.innerHTML = '';
-            topperData.forEach(item => {
-                container.innerHTML += `
-                    <div class="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-sm">
-                        <h3 class="font-bold text-emerald-950">${item.title}</h3>
-                        <p class="text-xs text-slate-600">${item.highlights}</p>
-                    </div>
-                `;
-            });
-        }
-
-        function renderThinkers() {
-            const container = document.getElementById('thinker-grid');
-            if(!container) return;
-            container.innerHTML = '';
-            thinkerData.forEach(item => {
-                container.innerHTML += `
-                    <div class="bg-white border border-slate-200 p-6 rounded-3xl space-y-2 shadow-sm">
-                        <h3 class="font-bold text-emerald-950">${item.name}</h3>
-                        <p class="text-xs">${item.core}</p>
-                    </div>
-                `;
-            });
+        function filterPYQs() {
+            const section = document.getElementById('pyq-section-filter').value;
+            let result = pyqData;
+            if(section !== 'all') result = result.filter(item => item.section === section);
+            renderPYQs(result);
         }
 
         function generateAIAnswer() {
@@ -305,8 +299,6 @@
 
         window.onload = function() {
             renderPYQs(pyqData);
-            renderToppers();
-            renderThinkers();
             switchTab('dashboard');
         };
     </script>
