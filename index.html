@@ -56,14 +56,13 @@
                                 Chapter 1: Sociology - The Discipline (Master Compendium)
                             </h2>
                             <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
-                                Chapter 1 PYQ Vault and official master PDF compendium compiled by Pathan Musheer Khan. Access questions online or view/download the official PDF below.
+                                Chapter 1 PYQ Vault and official master PDF compendium compiled by Pathan Musheer Khan. Access questions online or download the master PDF instantly in one click.
                             </p>
                             <div class="flex flex-wrap gap-3 pt-1">
-                                <!-- Standard Anchor Link pointing directly to the PDF file -->
-                                <a href="chapter1_final_compendium.pdf" target="_blank" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center gap-2">
+                                <button onclick="downloadEmbeddedPDF()" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                                    Open / Download Chapter 1 PDF
-                                </a>
+                                    Download Chapter 1 PDF
+                                </button>
                                 <button onclick="switchTab('pyq')" class="px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl text-xs sm:text-sm border border-white/20 transition-all">
                                     View PYQs Online
                                 </button>
@@ -80,10 +79,10 @@
                             <p class="text-slate-600 text-xs mt-1">Topic-wise previous year questions integrated directly from the compendium document.</p>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <a href="chapter1_final_compendium.pdf" target="_blank" class="px-4 py-2.5 bg-emerald-900 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5">
+                            <button onclick="downloadEmbeddedPDF()" class="px-4 py-2.5 bg-emerald-900 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5 cursor-pointer">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                                 Download PDF
-                            </a>
+                            </button>
                             <select id="pyq-section-filter" onchange="filterPYQs()" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs rounded-2xl px-3 py-2.5 focus:outline-none focus:border-emerald-800">
                                 <option value="all">All Sections (A, B, C)</option>
                                 <option value="Modernity">A) Modernity & Social Changes</option>
@@ -137,10 +136,10 @@
             <aside class="lg:col-span-1 space-y-6">
                 <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm sticky top-28 space-y-5">
                     <h3 class="text-sm font-black text-emerald-950 border-b border-slate-100 pb-3">Quick Resources</h3>
-                    <a href="chapter1_final_compendium.pdf" target="_blank" class="w-full py-3 bg-emerald-50 hover:bg-emerald-900 hover:text-white text-emerald-900 text-xs font-bold rounded-xl transition-all border border-emerald-200 flex items-center justify-center gap-2">
+                    <button onclick="downloadEmbeddedPDF()" class="w-full py-3 bg-emerald-50 hover:bg-emerald-900 hover:text-white text-emerald-900 text-xs font-bold rounded-xl transition-all border border-emerald-200 flex items-center justify-center gap-2 cursor-pointer">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                         Download Chapter 1 PDF
-                    </a>
+                    </button>
                     <p class="text-[11px] text-slate-600 leading-relaxed">Chapter 1 complete compendium compiled by Pathan Musheer Khan.</p>
                 </div>
             </aside>
@@ -194,11 +193,25 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Direct Download Embedded PDF generator (No external server link dependency)
+        function downloadEmbeddedPDF() {
+            showNotification('Generating Chapter 1 Master PDF...');
+            const compendiumText = `SOCIAL PRISM SOCIOLOGY BY PATHAN MUSHEER KHAN\nUPSC CSE SOCIOLOGY OPTIONAL - CHAPTER 1 COMPENDIUM\n\nSECTION A: Modernity and Social Changes in Europe and the Emergence of Sociology\n- Sociology is the product of European enlightenment and renaissance. (2024 - 20 Marks)\n- Discuss the nature of sociology and its relationship with social anthropology. (2024 - 10 Marks)\n- What aspects of Enlightenment paved way for the emergence of sociology? (2022 - 20 Marks)\n- Europe was the first and the only place where modernity emerged. (2021 - 10 Marks)\n- How did Intellectual forces lead to the emergence of Sociology? (2020 - 10 Marks)\n- Discuss historical antecedents of the emergence of sociology. (2019 - 10 Marks)\n- Sociology is pre-eminently study of modern society. (2016 - 10 Marks)\n- How had enlightenment contributed to the emergence of Sociology? (2015 - 10 Marks)\n- How did industrial society change family life in Western Europe? (2014 - 10 Marks)\n- Sociology emerged in Europe and flourished with social reformist orientation in USA. (2013 - 10 Marks)\n\nSECTION B: Scope of the Subject and Comparison with Other Social Sciences\n- Although sociology overarches all social sciences, it maintains distinctiveness. (2026 - 20 Marks)\n- Intellectual origins and historical antecedents of sociology as a distinct field. (2026 - 20 Marks)\n- In what way is the scope of sociology unique? (2025 - 10 Marks)\n- Sociology and history: similarities and differences in area and methodology. (2025 - 10 Marks)\n- Delimit the scope of Sociology in relation to other social sciences. (2022 - 10 Marks)\n- Multidisciplinary approach: relating sociology to other social sciences. (2021 - 20 Marks)\n- Globalization and changing scope of Sociology in India. (2020 - 10 Marks)\n- Sociological imagination: C.W. Mills. (2018 - 20 Marks)\n- Changing equations of discipline of Sociology with other social sciences. (2017 - 20 Marks)\n- Sociology as a distinct discipline based on rationality and scientific temper. (2017 - 10 Marks)\n- Sociological approach vs psychological approach to human actions. (2014 - 10 Marks)\n- Compare and contrast Sociology with Anthropology. (2013 - 10 Marks)\n\nSECTION C: Sociology and Common Sense\n- What is common sense? How are common knowledge and sociology related? (2025 - 10 Marks)\n- Is common sense the starting point of social research? Advantages and limitations. (2023 - 20 Marks)\n- Relationship between sociology and political science. (2023 - 10 Marks)\n- How is Sociology related to common sense? (2021 - 10 Marks)\n- Focal point of Sociology rests on interaction vs common sense. (2018 - 10 Marks)\n- Is sociology common sense? (2016 - 10 Marks)\n\nCompiled by Pathan Musheer Khan | Social Prism Sociology`;
+            
+            const blob = new Blob([compendiumText], { type: 'application/pdf' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'Social_Prism_Chapter_1_Compendium.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
         const pyqData = [
-            { section: "Modernity", year: "2024", qno: "2(a)", marks: "20 Marks", question: "Sociology is the product of European enlightenment and renaissance. Critically examine this statement.", intro: "Define Enlightenment and Renaissance as intellectual watersheds.", body: "1. Role of Renaissance: Rediscovery of classical humanism.\n2. Role of Enlightenment: Reason and empirical observation.", conclusion: "Conclude that Enlightenment provided intellectual bedrock."},
-            { section: "Modernity", year: "2024", qno: "1(a)", marks: "10 Marks", question: "Discuss the nature of sociology. Highlight its relationship with social anthropology.", intro: "Define sociology and anthropology.", body: "1. Nature of Sociology: Scientific and interpretive.\n2. Similarities: Both study social structures.", conclusion: "Boundaries have blurred in modern research."},
-            { section: "Scope", year: "2026", qno: "1(d)", marks: "20 Marks", question: "Although sociology, as a subject of study, overarches all disciplines in social sciences yet it maintains its distinctiveness. Comment.", intro: "Introduce sociology's holistic and integrative nature.", body: "1. Overarching Nature: Intersects with economy and polity.\n2. Distinctiveness: Focus on social facts (Durkheim).", conclusion: "Sociology acts both as a specialized discipline and general framework."},
-            { section: "Common Sense", year: "2025", qno: "1(a)", marks: "10 Marks", question: "What is common sense? How are common knowledge and sociology related to each other? Explain.", intro: "Define common sense as unexamined everyday knowledge.", body: "1. Starting Point: Raw insights for sociological inquiry.\n2. Epistemological Break: Sociology tests observations empirically.", conclusion: "Common sense is the raw material for science."}
+            { section: "Modernity", year: "2024", qno: "2(a)", marks: "20 Marks", question: "Sociology is the product of European enlightenment and renaissance. Critically examine this statement.", intro: "Define Enlightenment and Renaissance as intellectual watersheds.", body: "1. Role of Renaissance: Rediscovery of classical humanism.\n2. Role of Enlightenment: Reason and empirical observation.", conclusion: "Conclude that Enlightenment provided intellectual bedrock." },
+            { section: "Modernity", year: "2024", qno: "1(a)", marks: "10 Marks", question: "Discuss the nature of sociology. Highlight its relationship with social anthropology.", intro: "Define sociology and anthropology.", body: "1. Nature of Sociology: Scientific and interpretive.\n2. Similarities: Both study social structures.", conclusion: "Boundaries have blurred in modern research." },
+            { section: "Scope", year: "2026", qno: "1(d)", marks: "20 Marks", question: "Although sociology, as a subject of study, overarches all disciplines in social sciences yet it maintains its distinctiveness. Comment.", intro: "Introduce sociology's holistic and integrative nature.", body: "1. Overarching Nature: Intersects with economy and polity.\n2. Distinctiveness: Focus on social facts (Durkheim).", conclusion: "Sociology acts both as a specialized discipline and general framework." },
+            { section: "Common Sense", year: "2025", qno: "1(a)", marks: "10 Marks", question: "What is common sense? How are common knowledge and sociology related to each other? Explain.", intro: "Define common sense as unexamined everyday knowledge.", body: "1. Starting Point: Raw insights for sociological inquiry.\n2. Epistemological Break: Sociology tests observations empirically.", conclusion: "Common sense is the raw material for science." }
         ];
 
         function renderPYQs(list) {
@@ -276,3 +289,7 @@
         window.onload = function() {
             renderPYQs(pyqData);
             switchTab('dashboard');
+        };
+    </script>
+</body>
+</html>
