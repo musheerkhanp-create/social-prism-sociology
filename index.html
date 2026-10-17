@@ -19,12 +19,14 @@
 <body class="bg-slate-50 text-slate-800">
 
 <nav class="sticky top-0 z-50 bg-indigo-950 text-white shadow-xl">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
     <button onclick="showTab('home')" class="text-left flex items-center gap-3">
-      <div class="w-10 h-10 rounded-full bg-amber-400 text-indigo-950 flex items-center justify-center font-bold text-lg serif">SP</div>
+      <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-amber-400 bg-white shrink-0">
+        <img src="image_3331a7.jpg" alt="Social Prism Logo" class="w-full h-full object-cover">
+      </div>
       <div>
-        <span class="text-2xl font-bold serif">Social Prism</span>
-        <span class="block text-xs text-amber-400">BY PATHAN MUSHEER KHAN</span>
+        <span class="text-xl font-bold serif">Social Prism</span>
+        <span class="block text-[10px] text-amber-400 tracking-wider">BY PATHAN MUSHEER KHAN</span>
       </div>
     </button>
     <button class="lg:hidden text-xl" onclick="document.getElementById('mobileNav').classList.toggle('hidden')">
@@ -56,33 +58,40 @@
 <main class="min-h-screen">
 
   <section id="home" class="tab active">
-    <div class="bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900 text-white py-24 px-5">
-      <div class="max-w-6xl mx-auto text-center">
-        <span class="text-amber-400 uppercase tracking-widest text-sm font-bold">UPSC Sociology • UGC NET • Academic Learning</span>
-        <h1 class="text-4xl md:text-6xl font-bold serif mt-6 mb-6">Understand. Grasp. Write.</h1>
-        <p class="max-w-3xl mx-auto text-slate-300 text-lg leading-relaxed">
-          Your student-friendly prism to decoding society. Learn sociological thinkers,
-          understand social issues and develop structured exam-ready answers.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4 mt-8">
-          <button onclick="showTab('concepts')" class="bg-amber-400 text-indigo-950 font-bold px-6 py-3 rounded-xl">Explore Sociology</button>
-          <button onclick="showTab('ai')" class="border border-amber-400 text-amber-300 font-bold px-6 py-3 rounded-xl">✨ Try AI Answer</button>
+    <div class="bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900 text-white py-20 px-5">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 text-center md:text-left">
+          <span class="text-amber-400 uppercase tracking-widest text-xs font-bold bg-amber-400/10 px-3 py-1 rounded-full">UPSC Sociology • UGC NET • Academic Learning</span>
+          <h1 class="text-4xl md:text-6xl font-bold serif mt-6 mb-4">Understand. Analyze. Transform.</h1>
+          <p class="text-slate-300 text-lg leading-relaxed mb-8">
+            Your student-friendly prism to decoding society. Master sociological thinkers,
+            understand social issues and develop structured exam-ready answers under the guidance of Pathan Musheer Khan.
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-start gap-4">
+            <button onclick="showTab('concepts')" class="bg-amber-400 text-indigo-950 font-bold px-6 py-3 rounded-xl shadow-lg">Explore Sociology</button>
+            <button onclick="showTab('ai')" class="border border-amber-400 text-amber-300 font-bold px-6 py-3 rounded-xl">✨ Try AI Answer</button>
+          </div>
+        </div>
+        <div class="shrink-0">
+          <div class="w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-amber-400 to-indigo-600 shadow-2xl">
+            <img src="image_3331a7.jpg" alt="Social Prism Logo" class="w-full h-full object-cover rounded-full">
+          </div>
         </div>
       </div>
     </div>
     <div class="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-3 gap-6">
-      <button onclick="showTab('concepts')" class="card text-left hover:shadow-lg"><i class="fa-solid fa-book-open text-amber-500 text-2xl"></i><h2 class="serif text-xl font-bold mt-4">Core Concepts</h2><p class="text-slate-600 mt-2">Explore thinkers, comprehensive theories and sociological concepts.</p></button>
-      <button onclick="showTab('pyq')" class="card text-left hover:shadow-lg"><i class="fa-solid fa-file-lines text-amber-500 text-2xl"></i><h2 class="serif text-xl font-bold mt-4">PYQ Vault</h2><p class="text-slate-600 mt-2">Understand previous-year question themes.</p></button>
-      <button onclick="showTab('ai')" class="card text-left hover:shadow-lg"><i class="fa-solid fa-wand-magic-sparkles text-amber-500 text-2xl"></i><h2 class="serif text-xl font-bold mt-4">AI Answer Studio</h2><p class="text-slate-600 mt-2">Generate a structured answer from your question.</p></button>
+      <button onclick="showTab('concepts')" class="card text-left hover:shadow-lg transition"><i class="fa-solid fa-book-open text-amber-500 text-2xl"></i><h2 class="serif text-xl font-bold mt-4">Core Concepts</h2><p class="text-slate-600 mt-2">Explore thinkers, comprehensive theories and sociological concepts.</p></button>
+      <button onclick="showTab('pyq')" class="card text-left hover:shadow-lg transition"><i class="fa-solid fa-file-lines text-amber-500 text-2xl"></i><h2 class="serif text-xl font-bold mt-4">PYQ Vault</h2><p class="text-slate-600 mt-2">Understand previous-year question themes.</p></button>
+      <button onclick="showTab('ai')" class="card text-left hover:shadow-lg transition"><i class="fa-solid fa-wand-magic-sparkles text-amber-500 text-2xl"></i><h2 class="serif text-xl font-bold mt-4">AI Answer Studio</h2><p class="text-slate-600 mt-2">Generate a structured answer from your question.</p></button>
     </div>
   </section>
 
-  <!-- EXPANDED CORE CONCEPTS & THINKERS SECTION WITH THOROUGH TOPIC BREAKDOWNS -->
+  <!-- EXPLORE SOCIOLOGY: COMPLETE THINKERS & THEORIES SECTION -->
   <section id="concepts" class="tab max-w-6xl mx-auto px-5 py-14">
     <div class="mb-10 text-center">
       <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Detailed Thinkers & Theories Vault</span>
       <h2 class="serif text-4xl font-bold text-indigo-950 mt-3">Explore Sociology: Comprehensive Thinker Breakdowns</h2>
-      <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Extracted from academic literature and encyclopedic sources, covering all fundamental topics and major theories for each thinker.</p>
+      <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Extracted from academic literature and reliable encyclopedic sources, covering all fundamental topics and major theories for each thinker[cite: 4].</p>
     </div>
 
     <div class="space-y-8">
@@ -95,32 +104,32 @@
           </div>
           <button onclick="sendToAI('Critically evaluate Émile Durkheim\'s contribution to sociological methodology and social order.')" class="bg-indigo-950 text-white text-xs font-bold px-4 py-2 rounded-lg">Practise Questions on Durkheim →</button>
         </div>
-        <p class="text-slate-700 leading-relaxed mb-4">As one of the principal architects of modern social science, Durkheim established sociology as an independent, autonomous academic discipline distinct from psychology and philosophy. His work focuses heavily on how social order is maintained in modern societies.</p>
+        <p class="text-slate-700 leading-relaxed mb-4">As one of the principal architects of modern social science, Durkheim established sociology as an independent academic discipline. His work focuses heavily on how social order is maintained in modern societies.</p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-100">
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">1. Social Facts (*Les Faits Sociaux*)</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">External to the individual and endowed with a coercive power by which they control people. Divided into <em>material</em> social facts (society, institutions) and <em>non-material</em> social facts (morals, collective conscience, norms).</p>
+            <p class="text-xs text-slate-600 leading-relaxed">External to the individual and endowed with coercive power. Divided into material and non-material social facts.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">2. Division of Labour in Society</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Examines transition from traditional to modern society. Distinguishes <b>Mechanical Solidarity</b> (based on sameness, strong collective consciousness, repressive law) from <b>Organic Solidarity</b> (based on division of labour, functional interdependence, restitutive law).</p>
+            <h4 class="font-bold text-indigo-900 mb-1">2. Division of Labour</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Contrasts Mechanical Solidarity (sameness, repressive law) with Organic Solidarity (interdependence, restitutive law).</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">3. Theory of Suicide</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Proved suicide is a social fact, not just an individual act. Correlated suicide rates with two social forces: <em>Social Integration</em> and <em>Moral Regulation</em>. Categorized into Egoistic, Altruistic, Anomic, and Fatalistic suicide.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Categorized suicide into Egoistic, Altruistic, Anomic, and Fatalistic based on integration and regulation.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">4. Sociology of Religion</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Studied totemism among Australian Aborigines in <em>The Elementary Forms of the Religious Life</em>. Formulated the dichotomy of <b>Sacred</b> vs. <b>Profane</b>, asserting that religion is essentially the symbolic worship of society itself.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Formulated the dichotomy of Sacred vs. Profane; religion is society worshipping itself symbolically.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">5. Anomie & Social Pathologies</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Defined <em>anomie</em> as a state of normlessness or deregulation occurring during rapid economic or societal shifts, causing a breakdown in moral guidance for individuals.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">5. Anomie</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">A state of normlessness or moral deregulation occurring during rapid societal shifts.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">6. Sociology of Deviance</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Proposed that crime and deviance are normal and necessary parts of a healthy society, because they reinforce moral boundaries and catalyze progressive social change.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Crime is normal and necessary as it reinforces collective moral boundaries.</p>
           </div>
         </div>
       </article>
@@ -134,32 +143,32 @@
           </div>
           <button onclick="sendToAI('Analyze Karl Marx\'s historical materialism and its relevance to capitalist societies.')" class="bg-indigo-950 text-white text-xs font-bold px-4 py-2 rounded-lg">Practise Questions on Marx →</button>
         </div>
-        <p class="text-slate-700 leading-relaxed mb-4">German political philosopher and economist whose critical theories revolutionized social stratification, political economy, and conflict sociology. Marx argued that human societies progress through class struggle.</p>
+        <p class="text-slate-700 leading-relaxed mb-4">German philosopher and economist whose critical theories revolutionized social stratification and political economy through class struggle.</p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-100">
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">1. Historical Materialism</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">The material conditions of economic production form the foundation of human history, overriding abstract ideas. History evolves through successive stages: primitive communism, ancient slavery, feudalism, and capitalism.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Economic production forms the foundation of human history, evolving through successive socio-economic stages.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">2. Base and Superstructure</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Society is divided into the economic <b>Base</b> (forces and relations of production) which dictates the legal, political, religious, and cultural <b>Superstructure</b>.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">The economic Base dictates the legal, political, and cultural Superstructure of society.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">3. Class Struggle & Polarization</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">All history is characterized by struggle between exploiters and exploited. In capitalism, this polarizes society into the <em>Bourgeoisie</em> (owners of means of production) and the <em>Proletariat</em> (wage labourers).</p>
+            <h4 class="font-bold text-indigo-900 mb-1">3. Class Struggle</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Polarization between the Bourgeoisie (owners) and the Proletariat (wage labourers).</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">4. Theory of Alienation</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Under capitalism, workers experience estrangement in four forms: from the product of their labour, from the work process itself, from their species-essence (human nature), and from fellow workers.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Workers feel estranged from their product, production process, species-essence, and peers.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">5. Surplus Value & Exploitation</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Capitalism derives profit by paying workers less than the actual value generated by their labour (surplus value), leading to systemic economic exploitation.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">5. Surplus Value</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Capitalist profit is derived from paying workers less than the actual value generated by their labour.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">6. Revolution & Class Consciousness</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Workers move from being a "class-in-itself" to a "class-for-itself" as they develop class consciousness, triggering a socialist revolution that overthrows capitalism.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">6. Class Consciousness</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Transition from a class-in-itself to a class-for-itself, sparking revolutionary social change.</p>
           </div>
         </div>
       </article>
@@ -173,32 +182,32 @@
           </div>
           <button onclick="sendToAI('Explain Max Weber\'s theory of social action, authority, and rationalisation.')" class="bg-indigo-950 text-white text-xs font-bold px-4 py-2 rounded-lg">Practise Questions on Weber →</button>
         </div>
-        <p class="text-slate-700 leading-relaxed mb-4">Pioneer of interpretive (Verstehende) sociology who emphasized subjective meaning, cultural values, and historical specificity alongside economic structures.</p>
+        <p class="text-slate-700 leading-relaxed mb-4">Pioneer of interpretive (Verstehende) sociology who emphasized subjective meaning, cultural values, and administrative rationalisation.</p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-100">
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">1. Social Action (*Soziales Handeln*)</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Sociology must study human action imbued with subjective meaning directed toward others. Categorized into: <em>Instrumentally rational</em>, <em>Value-rational</em>, <em>Affective</em>, and <em>Traditional</em> action.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">1. Social Action</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Action imbued with subjective meaning: instrumentally rational, value-rational, affective, and traditional.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">2. Ideal Types (*Idealtypus*)</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">A methodological mental construct used as a measuring rod to analyze and compare specific empirical social phenomena without being a moral ideal or average.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">2. Ideal Types</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Methodological mental constructs used as measuring rods to analyze empirical social phenomena.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">3. Authority & Legitimation</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Power institutionalized and legitimized. Distinguished into three pure types of authority: <b>Traditional</b>, <b>Charismatic</b>, and <b>Legal-Rational</b> authority.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">3. Types of Authority</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Legitimized power categorized into Traditional, Charismatic, and Legal-Rational authority.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">4. Bureaucracy</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">The purest form of legal-rational administration featuring hierarchy, written rules, specialized division of labour, and impersonality. Warned of the "iron cage" of rationalization.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Hierarchical legal-rational administration leading to the "iron cage" of modern rationalization.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">5. Protestant Ethic & Capitalism</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Argued in <em>The Protestant Ethic and the Spirit of Capitalism</em> that ascetic Protestantism (especially Calvinism) psychologically fostered the rise of modern capitalist enterprise.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">5. Protestant Ethic</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Ascetic Protestantism psychologically fostered the rise of modern capitalist enterprise spirit.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">6. Class, Status, and Party</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Expanded stratification beyond Marx. Stratification operates across three distinct dimensions: economic (Class), social honour/prestige (Status), and political influence (Party).</p>
+            <h4 class="font-bold text-indigo-900 mb-1">6. Class, Status, Party</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Three-component theory of stratification spanning economic, social prestige, and political dimensions.</p>
           </div>
         </div>
       </article>
@@ -212,32 +221,32 @@
           </div>
           <button onclick="sendToAI('Discuss M.N. Srinivas concepts of Sanskritisation, Westernisation and Dominant Caste.')" class="bg-indigo-950 text-white text-xs font-bold px-4 py-2 rounded-lg">Practise Questions on Srinivas →</button>
         </div>
-        <p class="text-slate-700 leading-relaxed mb-4">Pioneer of empirical, field-based sociology in India who transformed the study of Indian society from textual Indology to living village studies.</p>
+        <p class="text-slate-700 leading-relaxed mb-4">Pioneer of empirical, field-based sociology in India who transformed the study of Indian society from scriptural texts to living village ethnography.</p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-100">
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">1. Sanskritisation</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Process by which lower or intermediate castes imitate the customs, rituals, dress, and lifestyle of upper castes (Brahmans/Kshatriyas) to upwardly mobility within the caste hierarchy.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Process by which lower castes imitate upper-caste lifestyles and rituals for upward social mobility.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">2. Dominant Caste</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">A caste is dominant when it wields numerical strength, economic power (land ownership), political clout, and high ritual status locally (e.g., Vokkaligas, Reddys, Marathas).</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Castes wielding numerical strength, land ownership, political clout, and ritual status locally.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">3. Westernisation</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Changes brought about in Indian society due to British colonial contact—including technology, dress, education, secular values, humanitarianism, and rational legal systems.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Societal changes brought by British rule—technology, secular values, and legal systems.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">4. Field-View vs. Book-View</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Advocated empirical village immersion (field-view) over relying solely on classical scriptural texts (book-view) to understand genuine social realities in India.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">4. Field-View vs Book-View</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Advocated village immersion over relying solely on classical religious texts.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">5. Secularisation</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Analyzed how science, rationalism, legal frameworks, and democratic politics steadily reduced the sacred or ritualistic domain in everyday public affairs in India.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Reduction of sacred ritual influence in public, political, and everyday affairs in India.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1>6. The Remembered Village</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">His classic ethnographic monograph on Rampura village showcasing jajmani ties, inter-caste relations, and rural social transformation in South India.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">6. The Remembered Village</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Classic ethnographic monograph documenting rural social transformation in Rampura.</p>
           </div>
         </div>
       </article>
@@ -251,32 +260,32 @@
           </div>
           <button onclick="sendToAI('Explain Talcott Parsons structural functionalism, AGIL model and pattern variables.')" class="bg-indigo-950 text-white text-xs font-bold px-4 py-2 rounded-lg">Practise Questions on Parsons →</button>
         </div>
-        <p class="text-slate-700 leading-relaxed mb-4">Dominant American theorist who formulated grand grand-theory structural functionalism, synthesizing European sociological classics into a unified system.</p>
+        <p class="text-slate-700 leading-relaxed mb-4">Dominant American theorist who formulated grand structural functionalism, synthesizing classical European sociology into a unified action system.</p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-100">
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">1. Action Frame of Reference</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Social action involves an actor pursuing goals within a situation shaped by norms, values, and biological/environmental conditions.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Social action involves actors pursuing goals within norm-governed situations.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">2. AGIL Schema</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Four functional prerequisites every social system must meet to survive: <b>Adaptation</b> (Economy), <b>Goal Attainment</b> (Polity), <b>Integration</b> (Community/Law), and <b>Latency/Pattern Maintenance</b> (Culture/Family).</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Four functional prerequisites: Adaptation, Goal Attainment, Integration, and Latency.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">3. Pattern Variables</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Five dichotomous choices defining social relationships: Affectivity vs. Affective Neutrality, Collectivity vs. Self-Orientation, Particularism vs. Universalism, Ascription vs. Achievement, Diffuseness vs. Specificity.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Five dichotomous choices defining role relationships in social systems.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
-            <h4 class="font-bold text-indigo-900 mb-1">4. Social System Integration</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Order is maintained through value consensus—shared socialization internalizes cultural norms so individuals voluntarily fulfill social roles.</p>
+            <h4 class="font-bold text-indigo-900 mb-1">4. Value Consensus</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Social order is maintained when individuals internalize shared cultural norms.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">5. Evolutionary Universals</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Complex organizational traits (such as stratification, bureaucracy, money, and universalistic legal systems) that enhance adaptive capacity across societies.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Complex organizational traits like money, bureaucracy, and legal systems enhancing societal survival.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">6. Sick Role Theory</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Analyzed illness as a socially institutionalized deviant role where the sick person is exempt from normal duties provided they seek competent help and want to get well.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Analyzed illness as an institutionalized deviant role with specific rights and obligations.</p>
           </div>
         </div>
       </article>
@@ -290,32 +299,32 @@
           </div>
           <button onclick="sendToAI('Discuss Robert K. Merton\'s middle-range theory, reference groups and anomie strain theory.')" class="bg-indigo-950 text-white text-xs font-bold px-4 py-2 rounded-lg">Practise Questions on Merton →</button>
         </div>
-        <p class="text-slate-700 leading-relaxed mb-4">Refined functional analysis by introducing middle-range theories, breaking away from abstract grand theory and establishing modern empirical sociology.</p>
+        <p class="text-slate-700 leading-relaxed mb-4">Refined functional analysis by introducing middle-range theories, bridging abstract grand theory with empirical investigation.</p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-100">
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">1. Middle-Range Theory</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Theories intermediate to general sociological systems and rigorous empirical data collection, focusing on limited aspects of social phenomena.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Theories intermediate to general systems and rigorous empirical data collection.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">2. Manifest & Latent Functions</h4>
-            <p class="text-xs text-slate-600 leading-relaxed"><b>Manifest functions</b> are objective, intended, and recognized consequences of social action; <b>Latent functions</b> are unintended, unrecognized, and often hidden consequences.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Distinction between intended/recognized consequences versus hidden, unintended ones.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">3. Strain Theory of Deviance</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Deviance arises when there is a disconnect between culturally approved goals and institutionalized means. Typology: Conformity, Innovation, Ritualism, Retreatism, and Rebellion.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Deviance arising from disconnect between cultural goals and institutionalized means.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">4. Reference Groups</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Groups against which individuals evaluate their own status, behavior, and achievements, fostering relative deprivation or upward comparison.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Groups against which individuals evaluate their own status and achievements.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">5. Bureaucratic Personality</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">Analyzed how strict adherence to rules in bureaucratic structures can lead to rigidity, displacement of goals, and inability to adapt to clients' real needs.</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Rigid adherence to rules leading to goal displacement in bureaucratic organizations.</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl">
             <h4 class="font-bold text-indigo-900 mb-1">6. Self-Fulfilling Prophecy</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">A false definition of a situation evoking a new behavior which makes the originally false conception come true (e.g., bank runs or racial stereotypes).</p>
+            <p class="text-xs text-slate-600 leading-relaxed">A false definition of a situation that evokes behavior making the original assumption come true.</p>
           </div>
         </div>
       </article>
@@ -416,8 +425,11 @@
 </main>
 
 <footer class="bg-indigo-950 text-slate-300 text-center py-8 px-4">
+  <div class="w-12 h-12 rounded-full overflow-hidden mx-auto border-2 border-amber-400 mb-3 bg-white">
+    <img src="image_3331a7.jpg" alt="Social Prism Logo" class="w-full h-full object-cover">
+  </div>
   <p class="serif text-2xl text-white">Social Prism</p>
-  <p class="mt-2 text-sm">Understand • Grasp • Write</p>
+  <p class="mt-1 text-sm">Understand • Analyze • Transform</p>
   <p class="mt-4 text-xs">© <span id="year"></span> Social Prism by Pathan Musheer Khan</p>
 </footer>
 
