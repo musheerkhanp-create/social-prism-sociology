@@ -253,7 +253,7 @@
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">UPSC Optional Syllabus Hub</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3 mb-2">PYQ Vault</h2>
-        <p class="text-slate-600">Switch between Paper 1 and Paper 2 to access complete unit-wise breakdowns, interactive PYQ tables, and model AI answers[cite: 6].</p>
+        <p class="text-slate-600">Switch between Paper 1 and Paper 2 to access complete unit-wise breakdowns, interactive PYQ tables, and model AI answers.</p>
       </div>
 
       <!-- Paper Selector Tabs / Buttons -->
@@ -316,7 +316,7 @@
               <i id="icon-unit2" class="fa-solid fa-chevron-up text-amber-600 transition"></i>
             </div>
             <div id="content-unit2" class="mt-4 pt-4 border-t border-slate-100 space-y-6">
-              <p class="text-xs text-slate-600 font-medium">💡 Click on any question row below to instantly generate a full UPSC-style model answer[cite: 6]!</p>
+              <p class="text-xs text-slate-600 font-medium">💡 Click on any question row below to instantly generate a full UPSC-style model answer!</p>
               
               <!-- Sub-section A -->
               <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -373,7 +373,7 @@
               <i id="icon-unit4" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
             </div>
             <div id="content-unit4" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-6">
-              <p class="text-xs text-slate-600 font-medium">💡 Click on any question row below to instantly generate a full UPSC-style model answer[cite: 6]!</p>
+              <p class="text-xs text-slate-600 font-medium">💡 Click on any question row below to instantly generate a full UPSC-style model answer!</p>
               
               <!-- Sub-section A: Karl Marx -->
               <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -441,7 +441,7 @@
           <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
             <div onclick="toggleUnit('unit6')" class="flex justify-between items-center cursor-pointer select-none">
               <div>
-                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 6</span>
+                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 6</span>
                 <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Work and Economic Life</h4>
               </div>
               <i id="icon-unit6" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
@@ -688,7 +688,7 @@
       <div class="text-center mb-8">
         <span class="bg-amber-100 text-amber-900 rounded-full px-4 py-1.5 text-xs font-bold uppercase">✨ Real-Time AI Sociology Engine</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3">AI Answer Studio</h2>
-        <p class="text-slate-600 mt-2">Apna koi bhi Sociology question daalo — poora full-length exam answer (Thinkers, Books aur Indian Examples ke saath) aayega[cite: 6]!</p>
+        <p class="text-slate-600 mt-2">Apna koi bhi Sociology question daalo — poora full-length exam answer (Thinkers, Books aur Indian Examples ke saath) aayega!</p>
       </div>
 
       <div class="glass-card space-y-4 shadow-md">
@@ -736,10 +736,86 @@
       </div>
     </section>
 
-    <!-- 8. STUDENT CORNER PANEL -->
-    <section id="panel-student" class="tab-panel max-w-6xl mx-auto px-5 py-14">
-      <h2 class="serif text-4xl font-bold text-indigo-950 mb-2">Student Corner</h2>
-      <p class="text-slate-600 mb-8">Essential study strategies, revision techniques, and glossary checklists.</p>
+    <!-- 8. STUDENT CORNER & PREPARATION DIAGNOSTIC TOOL -->
+    <section id="panel-student" class="tab-panel max-w-5xl mx-auto px-5 py-14">
+      <div class="text-center mb-10">
+        <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Aspirant Diagnostic & Strategy Engine</span>
+        <h2 class="serif text-4xl font-bold text-indigo-950 mt-3">Student Corner & Preparation Planner</h2>
+        <p class="text-slate-600 mt-2">Apni preparation details enter karo — yeh tool aapke current status aur difficulties ke basis par ek custom strategy prompt generate karega!</p>
+      </div>
+
+      <div class="glass-card space-y-6 shadow-md mb-8">
+        <h3 class="serif text-2xl font-bold text-indigo-950 border-b pb-3"><i class="fa-solid fa-clipboard-question text-amber-500 mr-2"></i>Preparation Status Questionnaire</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block font-bold text-sm mb-2 text-indigo-950">1. When did you start your preparation?</label>
+            <select id="qStart" class="w-full border border-slate-300 rounded-xl p-3 bg-white text-sm">
+              <option value="Last 3 to 6 months">Last 3 to 6 months (Beginner)</option>
+              <option value="1 Year ago">1 Year ago (Intermediate)</option>
+              <option value="More than 1 year / Second Attempt">More than 1 year / Second Attempt (Advanced)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-sm mb-2 text-indigo-950">2. How many subjects/units completed?</label>
+            <select id="qUnits" class="w-full border border-slate-300 rounded-xl p-3 bg-white text-sm">
+              <option value="Just started / 1-3 units">Just started / 1–3 units</option>
+              <option value="Paper 1 complete, Paper 2 pending">Paper 1 complete, Paper 2 pending</option>
+              <option value="Both Paper 1 & Paper 2 syllabus done">Both Paper 1 & Paper 2 syllabus done</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block font-bold text-sm mb-2 text-indigo-950">3. Preparation Mode</label>
+            <select id="qMode" class="w-full border border-slate-300 rounded-xl p-3 bg-white text-sm">
+              <option value="Self-study with standard books">Self-study with standard books</option>
+              <option value="Coaching classes + Self study">Coaching classes + Self study</option>
+              <option value="Working professional / College student">Working professional / College student</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-sm mb-2 text-indigo-950">4. Target Exam Year</label>
+            <select id="qTarget" class="w-full border border-slate-300 rounded-xl p-3 bg-white text-sm">
+              <option value="2026 Attempt">2026 Attempt</option>
+              <option value="2027 Attempt">2027 Attempt</option>
+              <option value="UGC NET (JRF Target)">UGC NET (JRF Target)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-sm mb-2 text-indigo-950">5. Primary Difficulties Faced (Select or type below)</label>
+          <div class="grid sm:grid-cols-3 gap-3 mb-3 text-xs font-medium text-slate-700">
+            <label class="bg-slate-50 p-2.5 rounded-lg border flex items-center gap-2 cursor-pointer"><input type="checkbox" name="diff" value="Remembering thinkers and book names"> Remembering thinkers & books</label>
+            <label class="bg-slate-50 p-2.5 rounded-lg border flex items-center gap-2 cursor-pointer"><input type="checkbox" name="diff" value="Structuring analytical answers"> Structuring analytical answers</label>
+            <label class="bg-slate-50 p-2.5 rounded-lg border flex items-center gap-2 cursor-pointer"><input type="checkbox" name="diff" value="Linking Paper 1 with Paper 2"> Linking Paper 1 with Paper 2</label>
+            <label class="bg-slate-50 p-2.5 rounded-lg border flex items-center gap-2 cursor-pointer"><input type="checkbox" name="diff" value="Time management / Backlog"> Time management / Backlog</label>
+            <label class="bg-slate-50 p-2.5 rounded-lg border flex items-center gap-2 cursor-pointer"><input type="checkbox" name="diff" value="Current affairs integration"> Current affairs integration</label>
+            <label class="bg-slate-50 p-2.5 rounded-lg border flex items-center gap-2 cursor-pointer"><input type="checkbox" name="diff" value="Answer writing speed"> Answer writing speed</label>
+          </div>
+          <input type="text" id="qExtraDiff" placeholder="Any other specific difficulty (e.g., lack of revision time)..." class="w-full border border-slate-300 rounded-xl p-3 text-sm">
+        </div>
+
+        <button type="button" onclick="generateDiagnosticStrategy()" class="w-full bg-amber-500 hover:bg-amber-600 text-indigo-950 font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Custom Strategy Prompt & Action Plan
+        </button>
+      </div>
+
+      <!-- Strategy Output Box -->
+      <div id="stratOutBox" class="hidden glass-card border-l-4 border-l-indigo-900 shadow-xl space-y-4">
+        <div class="flex flex-wrap justify-between items-center gap-3 pb-3 border-b border-slate-200">
+          <div>
+            <h3 class="serif text-2xl font-bold text-indigo-950">Your Personalized Aspirant Strategy Blueprint</h3>
+            <p class="text-xs text-slate-500">Generated by Social Prism Intelligence based on your diagnostic inputs</p>
+          </div>
+          <button type="button" onclick="copyStrategyText()" id="copyStratBtn" class="bg-indigo-950 hover:bg-indigo-900 text-amber-400 font-bold px-4 py-2 rounded-lg text-xs transition">
+            <i class="fa-regular fa-copy mr-1"></i>Copy Strategy
+          </button>
+        </div>
+        <div id="stratOutText" class="whitespace-pre-wrap text-sm leading-7 text-slate-800 bg-slate-50 p-5 rounded-xl border"></div>
+      </div>
     </section>
 
     <!-- 9. ABOUT US / MENTOR PANEL -->
@@ -887,6 +963,52 @@
       switchPanelDirect('ai');
       document.getElementById('aiQ').value = qText;
       genAIAnswer();
+    }
+
+    function generateDiagnosticStrategy() {
+      var start = document.getElementById('qStart').value;
+      var units = document.getElementById('qUnits').value;
+      var mode = document.getElementById('qMode').value;
+      var target = document.getElementById('qTarget').value;
+      
+      var diffs = [];
+      document.querySelectorAll('input[name="diff"]:checked').forEach(function(cb) {
+        diffs.push(cb.value);
+      });
+      var extra = document.getElementById('qExtraDiff').value.trim();
+      if(extra) diffs.push(extra);
+
+      var stratText = "=== SOCIAL PRISM ASPIRANT DIAGNOSTIC REPORT ===\n\n" +
+        "1. PROFILE OVERVIEW:\n" +
+        "• Preparation Tenure: " + start + "\n" +
+        "• Syllabus Completion Status: " + units + "\n" +
+        "• Study Methodology: " + mode + "\n" +
+        "• Target Exam: " + target + "\n\n" +
+        "2. IDENTIFIED BOTTLENECKS & DIFFICULTIES:\n" + (diffs.length > 0 ? "• " + diffs.join("\n• ") : "• General conceptual consolidation needed.") + "\n\n" +
+        "3. TAILORED ACTION PLAN & STRATEGY PROMPT:\n" +
+        "Based on your status (" + start + " into preparation targeting " + target + "), here is your prioritized execution roadmap:\n\n" +
+        "• PHASE 1 (Core Consolidation): Focus heavily on Paper 1 Thinkers (Marx, Durkheim, Weber) and paper integration. Prepare 1-page summary sheets for each thinker containing key books, definitions, and 3 major criticisms.\n" +
+        "• PHASE 2 (Answer Writing Integration): Transition from passive reading to active pyq solving using Social Prism's AI Answer Studio. Write at least 2 answers daily and incorporate contemporary Indian examples (e.g., agrarian distress, digital gig economy).\n" +
+        "• PHASE 3 (Paper 2 Synthesis): Link classical western theories directly with Indian sociological perspectives (M.N. Srinivas, Yogendra Singh, A.R. Desai).\n\n" +
+        "4. RECOMMENDED DAILY ROUTINE:\n" +
+        "• 3 Hours: Core concept reading & standard textbook revision.\n" +
+        "• 1.5 Hours: PYQ analysis and structured answer writing practice.\n" +
+        "• 30 Mins: Revision of thinker cards and current affairs sociology mapping.";
+
+      document.getElementById('stratOutText').textContent = stratText;
+      document.getElementById('stratOutBox').classList.remove('hidden');
+      document.getElementById('stratOutBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function copyStrategyText() {
+      var text = document.getElementById('stratOutText').textContent;
+      var btn = document.getElementById('copyStratBtn');
+      navigator.clipboard.writeText(text).then(function() {
+        btn.innerHTML = '<i class="fa-solid fa-check mr-1"></i>Copied!';
+        setTimeout(function() {
+          btn.innerHTML = '<i class="fa-regular fa-copy mr-1"></i>Copy Strategy';
+        }, 2000);
+      });
     }
 
     function buildSmartOfflineAnswer(q, ex, len) {
