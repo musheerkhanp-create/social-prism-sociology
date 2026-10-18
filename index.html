@@ -138,7 +138,7 @@
         <label for="rad-pyq" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-amber-500">
           <i class="fa-solid fa-file-lines text-amber-500 text-2xl"></i>
           <h2 class="serif text-xl font-bold mt-4">PYQ Vault</h2>
-          <p class="text-slate-600 text-sm mt-2">Paper 1 Unit-wise breakdown & chapter compendiums.</p>
+          <p class="text-slate-600 text-sm mt-2">Click any PYQ to instantly generate AI model answers.</p>
         </label>
         <label for="rad-concepts" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-indigo-900">
           <i class="fa-solid fa-book-open text-indigo-900 text-2xl"></i>
@@ -249,12 +249,12 @@
       </div>
     </section>
 
-    <!-- 3. PYQ VAULT PANEL (PAPER 1 SYLLABUS UNITS & CHAPTER 2 COMPENDIUM INTEGRATED) -->
+    <!-- 3. PYQ VAULT PANEL (PAPER 1 SYLLABUS UNITS & INTERACTIVE CLICKABLE PYQs) -->
     <section id="panel-pyq" class="tab-panel max-w-6xl mx-auto px-5 py-14">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">UPSC Optional Syllabus Hub</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3 mb-2">PYQ Vault</h2>
-        <p class="text-slate-600">Select Paper 1 to explore unit-wise subtopics and detailed Chapter Compendium PYQ tables, or switch to Paper 2.</p>
+        <p class="text-slate-600">Click on any official UPSC question statement below to instantly open it in the <strong>AI Answer Studio</strong> and generate a complete model answer[cite: 6].</p>
       </div>
 
       <!-- Paper Selector Tabs / Buttons -->
@@ -267,13 +267,13 @@
         </button>
       </div>
 
-      <!-- PAPER 1 UNITS VIEW (WITH UNIT 2 CHAPTER 2 COMPENDIUM LINKED TO chapter2_final_compendium.pdf) -->
+      <!-- PAPER 1 UNITS VIEW -->
       <div id="viewP1" class="space-y-8 max-w-5xl mx-auto">
         <div class="bg-indigo-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <span class="bg-amber-400 text-indigo-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">UPSC Paper 1 Official Syllabus</span>
             <h3 class="serif text-2xl font-bold text-white mt-2">Principles of Sociology — 10 Core Units</h3>
-            <p class="text-xs text-slate-300 mt-1">Click on Unit 2 below to view official UPSC Chapter 2 PYQ Compendium tables & download PDF.</p>
+            <p class="text-xs text-slate-300 mt-1">Click on Unit 2 below to view official UPSC Chapter 2 PYQ tables where every question is interactive.</p>
           </div>
           <a href="chapter2_final_compendium.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-5 py-3 rounded-xl text-xs transition shadow-lg flex items-center gap-2 shrink-0">
             <i class="fa-solid fa-file-pdf text-base"></i> Download Chapter 2 PDF
@@ -307,17 +307,17 @@
             </div>
           </div>
 
-          <!-- Unit 2 (UPDATED WITH CHAPTER 2 COMPENDIUM TABLES & CHAPTER 2 PDF LINK) -->
+          <!-- Unit 2 (INTERACTIVE CLICKABLE QUESTIONS LINKED TO AI STUDIO) -->
           <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden ring-2 ring-amber-400/50">
             <div onclick="toggleUnit('unit2')" class="flex justify-between items-center cursor-pointer select-none">
               <div>
                 <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 2 (High Priority)</span>
-                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociology as Science (Chapter 2 Compendium)</h4>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociology as Science (Click any question for AI Answer)</h4>
               </div>
               <i id="icon-unit2" class="fa-solid fa-chevron-up text-amber-600 transition"></i>
             </div>
             <div id="content-unit2" class="mt-4 pt-4 border-t border-slate-100 space-y-6">
-              <p class="text-xs text-slate-600 font-medium">Official UPSC PYQ Compendium categorized by sub-topics (2013–2026):</p>
+              <p class="text-xs text-slate-600 font-medium">💡 <strong>Interactive Vault:</strong> Click on any question row below to instantly generate a full UPSC-style model answer via AI[cite: 6]!</p>
               
               <!-- Sub-section A -->
               <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -325,16 +325,30 @@
                 <div class="overflow-x-auto">
                   <table class="w-full text-left text-xs">
                     <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement</th></tr>
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr><td class="p-2 font-bold">2025</td><td class="p-2">6(a)</td><td class="p-2">20</td><td class="p-2">What is science? Do you think that the methods used in natural sciences can be applied to sociology? Give reasons for your answer.</td></tr>
-                      <tr><td class="p-2 font-bold">2023</td><td class="p-2">3(a)</td><td class="p-2">20</td><td class="p-2">What are the characteristics of scientific method? Do you think that scientific method in conducting sociological research is foolproof? Elaborate.</td></tr>
-                      <tr><td class="p-2 font-bold">2022</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2">How does a researcher achieve objectivity in interpretative research?</td></tr>
-                      <tr><td class="p-2 font-bold">2018</td><td class="p-2">5(c)</td><td class="p-2">10</td><td class="p-2">Does scientific method make Sociology a science? Illustrate your answer with Durkheim's method.</td></tr>
-                      <tr><td class="p-2 font-bold">2016</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2">Describe the basic postulates of Scientific method. How far are these followed in sociological research?</td></tr>
-                      <tr><td class="p-2 font-bold">2015</td><td class="p-2">1(a)</td><td class="p-2">10</td><td class="p-2">Is Sociology a science? Give reasons for your answer.</td></tr>
-                      <tr><td class="p-2 font-bold">2015</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2">Discuss the relevance of historical method in the study of Society?</td></tr>
+                      <tr onclick="askAI('What is science? Do you think that the methods used in natural sciences can be applied to sociology? Give reasons for your answer.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2025</td><td class="p-2">6(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What is science? Do you think that the methods used in natural sciences can be applied to sociology? Give reasons for your answer.</td>
+                      </tr>
+                      <tr onclick="askAI('What are the characteristics of scientific method? Do you think that scientific method in conducting sociological research is foolproof? Elaborate.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2023</td><td class="p-2">3(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What are the characteristics of scientific method? Do you think that scientific method in conducting sociological research is foolproof? Elaborate.</td>
+                      </tr>
+                      <tr onclick="askAI('How does a researcher achieve objectivity in interpretative research?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2022</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How does a researcher achieve objectivity in interpretative research?</td>
+                      </tr>
+                      <tr onclick="askAI('Does scientific method make Sociology a science? Illustrate your answer with Durkheim\'s method.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2018</td><td class="p-2">5(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Does scientific method make Sociology a science? Illustrate your answer with Durkheim's method.</td>
+                      </tr>
+                      <tr onclick="askAI('Describe the basic postulates of Scientific method. How far are these followed in sociological research?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2016</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Describe the basic postulates of Scientific method. How far are these followed in sociological research?</td>
+                      </tr>
+                      <tr onclick="askAI('Is Sociology a science? Give reasons for your answer.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2015</td><td class="p-2">1(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Is Sociology a science? Give reasons for your answer.</td>
+                      </tr>
+                      <tr onclick="askAI('Discuss the relevance of historical method in the study of Society?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2015</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Discuss the relevance of historical method in the study of Society?</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -346,15 +360,27 @@
                 <div class="overflow-x-auto">
                   <table class="w-full text-left text-xs">
                     <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement</th></tr>
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr><td class="p-2 font-bold">2025</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2">What is positivism? Critically analyze the major arguments against it.</td></tr>
-                      <tr><td class="p-2 font-bold">2022</td><td class="p-2">3(a)</td><td class="p-2">20</td><td class="p-2">What are the shortfalls of positivist philosophy that gave rise to the non-positivist methods of studying social reality?</td></tr>
-                      <tr><td class="p-2 font-bold">2020</td><td class="p-2">7(b)</td><td class="p-2">20</td><td class="p-2">Phenomenological perspectives in Sociology reject many of the assumption of positivism. Comment.</td></tr>
-                      <tr><td class="p-2 font-bold">2018</td><td class="p-2">6(c)</td><td class="p-2">20</td><td class="p-2">In what way 'Interpretative' method is different from the 'positivist' approach in the study of social phenomena?</td></tr>
-                      <tr><td class="p-2 font-bold">2017</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2">Explain ethnomethodological and phenomenological perspectives as critique of positivism.</td></tr>
-                      <tr><td class="p-2 font-bold">2013</td><td class="p-2">1(c)</td><td class="p-2">10</td><td class="p-2">Critically examine positivistic approach in sociology studies.</td></tr>
+                      <tr onclick="askAI('What is positivism? Critically analyze the major arguments against it.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2025</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What is positivism? Critically analyze the major arguments against it.</td>
+                      </tr>
+                      <tr onclick="askAI('What are the shortfalls of positivist philosophy that gave rise to the non-positivist methods of studying social reality?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2022</td><td class="p-2">3(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What are the shortfalls of positivist philosophy that gave rise to the non-positivist methods of studying social reality?</td>
+                      </tr>
+                      <tr onclick="askAI('Phenomenological perspectives in Sociology reject many of the assumption of positivism. Comment.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2020</td><td class="p-2">7(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Phenomenological perspectives in Sociology reject many of the assumption of positivism. Comment.</td>
+                      </tr>
+                      <tr onclick="askAI('In what way \'Interpretative\' method is different from the \'positivist\' approach in the study of social phenomena?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2018</td><td class="p-2">6(c)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">In what way 'Interpretative' method is different from the 'positivist' approach in the study of social phenomena?</td>
+                      </tr>
+                      <tr onclick="askAI('Explain ethnomethodological and phenomenological perspectives as critique of positivism.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2017</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain ethnomethodological and phenomenological perspectives as critique of positivism.</td>
+                      </tr>
+                      <tr onclick="askAI('Critically examine positivistic approach in sociology studies.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2013</td><td class="p-2">1(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically examine positivistic approach in sociology studies.</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -366,14 +392,24 @@
                 <div class="overflow-x-auto">
                   <table class="w-full text-left text-xs">
                     <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement</th></tr>
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr><td class="p-2 font-bold">2026</td><td class="p-2">5(a)</td><td class="p-2">10</td><td class="p-2">The major challenge for sociology researchers is to analyze social reality objectively. Critically analyze.</td></tr>
-                      <tr><td class="p-2 font-bold">2024</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2">Do you think 'objectivity' is an over-hyped idea in sociological research? Discuss merits/demerits of non-positivist methods.</td></tr>
-                      <tr><td class="p-2 font-bold">2020</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2">Is Sociology a Value-free Science? Discuss.</td></tr>
-                      <tr><td class="p-2 font-bold">2016</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2">What is "Value free Sociology'? Clarify.</td></tr>
-                      <tr><td class="p-2 font-bold">2014</td><td class="p-2">1(a)</td><td class="p-2">10</td><td class="p-2">How is objectivity different from value neutrality? Discuss with reference to Weber's views on methodology.</td></tr>
+                      <tr onclick="askAI('The major challenge for sociology researchers is to analyze social reality objectively. Critically analyze.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2026</td><td class="p-2">5(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">The major challenge for sociology researchers is to analyze social reality objectively. Critically analyze.</td>
+                      </tr>
+                      <tr onclick="askAI('Do you think \'objectivity\' is an over-hyped idea in sociological research? Discuss merits/demerits of non-positivist methods.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2024</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Do you think 'objectivity' is an over-hyped idea in sociological research? Discuss merits/demerits of non-positivist methods.</td>
+                      </tr>
+                      <tr onclick="askAI('Is Sociology a Value-free Science? Discuss.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2020</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Is Sociology a Value-free Science? Discuss.</td>
+                      </tr>
+                      <tr onclick="askAI('What is \"Value free Sociology\'? Clarify.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2016</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What is "Value free Sociology'? Clarify.</td>
+                      </tr>
+                      <tr onclick="askAI('How is objectivity different from value neutrality? Discuss with reference to Weber\'s views on methodology.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2014</td><td class="p-2">1(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How is objectivity different from value neutrality? Discuss with reference to Weber's views on methodology.</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -385,15 +421,27 @@
                 <div class="overflow-x-auto">
                   <table class="w-full text-left text-xs">
                     <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement</th></tr>
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr><td class="p-2 font-bold">2026</td><td class="p-2">5(d)</td><td class="p-2">10</td><td class="p-2">Explain the concept of 'definition of the situation' and its significance in sociology.</td></tr>
-                      <tr><td class="p-2 font-bold">2026</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2">Is 'interpretativism' more effective than 'positivism' in analysing social reality? Discuss.</td></tr>
-                      <tr><td class="p-2 font-bold">2021</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2">Do you think ethnomethodology helps us in getting reliable and valid data? Justify your answer.</td></tr>
-                      <tr><td class="p-2 font-bold">2021</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2">How far are sociologists justified in using positivist approach to understand social reality? Explain.</td></tr>
-                      <tr><td class="p-2 font-bold">2018</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2">Is non-positivism methodology scientific? Illustrate.</td></tr>
-                      <tr><td class="p-2 font-bold">2015</td><td class="p-2">4(a)</td><td class="p-2">20</td><td class="p-2">"Non positivistic methodology is essential for understanding human behavior." Discuss.</td></tr>
+                      <tr onclick="askAI('Explain the concept of \'definition of the situation\' and its significance in sociology.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2026</td><td class="p-2">5(d)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain the concept of 'definition of the situation' and its significance in sociology.</td>
+                      </tr>
+                      <tr onclick="askAI('Is \'interpretativism\' more effective than \'positivism\' in analysing social reality? Discuss.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2026</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Is 'interpretativism' more effective than 'positivism' in analysing social reality? Discuss.</td>
+                      </tr>
+                      <tr onclick="askAI('Do you think ethnomethodology helps us in getting reliable and valid data? Justify your answer.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2021</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Do you think ethnomethodology helps us in getting reliable and valid data? Justify your answer.</td>
+                      </tr>
+                      <tr onclick="askAI('How far are sociologists justified in using positivist approach to understand social reality? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2021</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How far are sociologists justified in using positivist approach to understand social reality? Explain.</td>
+                      </tr>
+                      <tr onclick="askAI('Is non-positivism methodology scientific? Illustrate.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2018</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Is non-positivism methodology scientific? Illustrate.</td>
+                      </tr>
+                      <tr onclick="askAI('\"Non positivistic methodology is essential for understanding human behavior.\" Discuss.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2015</td><td class="p-2">4(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">"Non positivistic methodology is essential for understanding human behavior." Discuss.</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -920,7 +968,7 @@
     </div>
   </footer>
 
-  <!-- UPGRADED SCRIPT FOR PAPER SWITCHING & UNIT ACCORDION -->
+  <!-- UPGRADED SCRIPT FOR PAPER SWITCHING, UNIT ACCORDION & DIRECT PYQ TO AI STUDIO LINKING -->
   <script>
     function switchPaper(paper) {
       var btnP1 = document.getElementById('btnP1');
