@@ -138,7 +138,7 @@
         <label for="rad-pyq" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-amber-500">
           <i class="fa-solid fa-file-lines text-amber-500 text-2xl"></i>
           <h2 class="serif text-xl font-bold mt-4">PYQ Vault</h2>
-          <p class="text-slate-600 text-sm mt-2">Click any PYQ to instantly generate AI model answers.</p>
+          <p class="text-slate-600 text-sm mt-2">Paper 1 Unit-wise breakdown & chapter compendiums.</p>
         </label>
         <label for="rad-concepts" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-indigo-900">
           <i class="fa-solid fa-book-open text-indigo-900 text-2xl"></i>
@@ -249,12 +249,12 @@
       </div>
     </section>
 
-    <!-- 3. PYQ VAULT PANEL (PAPER 1 SYLLABUS UNITS & INTERACTIVE CLICKABLE PYQs) -->
+    <!-- 3. PYQ VAULT PANEL (PAPER 1 SYLLABUS UNITS & INTERACTIVE CHAPTER 2 & CHAPTER 4 COMPENDIUMS) -->
     <section id="panel-pyq" class="tab-panel max-w-6xl mx-auto px-5 py-14">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">UPSC Optional Syllabus Hub</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3 mb-2">PYQ Vault</h2>
-        <p class="text-slate-600">Click on any official UPSC question statement below to instantly open it in the <strong>AI Answer Studio</strong> and generate a complete model answer[cite: 6].</p>
+        <p class="text-slate-600">Click on any official UPSC question statement in Unit 2 or Unit 4 below to instantly open it in the <strong>AI Answer Studio</strong> and generate a complete model answer[cite: 6].</p>
       </div>
 
       <!-- Paper Selector Tabs / Buttons -->
@@ -273,11 +273,13 @@
           <div>
             <span class="bg-amber-400 text-indigo-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">UPSC Paper 1 Official Syllabus</span>
             <h3 class="serif text-2xl font-bold text-white mt-2">Principles of Sociology — 10 Core Units</h3>
-            <p class="text-xs text-slate-300 mt-1">Click on Unit 2 below to view official UPSC Chapter 2 PYQ tables where every question is interactive.</p>
+            <p class="text-xs text-slate-300 mt-1">Explore Unit 2 and Unit 4 official UPSC Chapter Compendium tables with interactive AI solving.</p>
           </div>
-          <a href="chapter2_final_compendium.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-5 py-3 rounded-xl text-xs transition shadow-lg flex items-center gap-2 shrink-0">
-            <i class="fa-solid fa-file-pdf text-base"></i> Download Chapter 2 PDF
-          </a>
+          <div class="flex gap-2 shrink-0">
+            <a href="chapter2_final_compendium.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow-lg flex items-center gap-1.5">
+              <i class="fa-solid fa-file-pdf"></i> Unit 2 PDF
+            </a>
+          </div>
         </div>
 
         <!-- Interactive Syllabus Units Accordion -->
@@ -299,25 +301,20 @@
                 <li>Scope of Sociology & Comparison with other social sciences</li>
                 <li>Sociology and common sense</li>
               </ul>
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 1 PYQ PDF
-                </a>
-              </div>
             </div>
           </div>
 
-          <!-- Unit 2 (INTERACTIVE CLICKABLE QUESTIONS LINKED TO AI STUDIO) -->
-          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden ring-2 ring-amber-400/50">
+          <!-- Unit 2 (INTERACTIVE CLICKABLE QUESTIONS) -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
             <div onclick="toggleUnit('unit2')" class="flex justify-between items-center cursor-pointer select-none">
               <div>
-                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 2 (High Priority)</span>
-                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociology as Science (Click any question for AI Answer)</h4>
+                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 2</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociology as Science (Chapter 2 Compendium)</h4>
               </div>
-              <i id="icon-unit2" class="fa-solid fa-chevron-up text-amber-600 transition"></i>
+              <i id="icon-unit2" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
             </div>
-            <div id="content-unit2" class="mt-4 pt-4 border-t border-slate-100 space-y-6">
-              <p class="text-xs text-slate-600 font-medium">💡 <strong>Interactive Vault:</strong> Click on any question row below to instantly generate a full UPSC-style model answer via AI[cite: 6]!</p>
+            <div id="content-unit2" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-6">
+              <p class="text-xs text-slate-600 font-medium">💡 Click on any question row below to instantly generate a full UPSC-style model answer[cite: 6]!</p>
               
               <!-- Sub-section A -->
               <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -340,117 +337,9 @@
                       <tr onclick="askAI('Does scientific method make Sociology a science? Illustrate your answer with Durkheim\'s method.')" class="hover:bg-amber-50 cursor-pointer transition">
                         <td class="p-2 font-bold">2018</td><td class="p-2">5(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Does scientific method make Sociology a science? Illustrate your answer with Durkheim's method.</td>
                       </tr>
-                      <tr onclick="askAI('Describe the basic postulates of Scientific method. How far are these followed in sociological research?')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2016</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Describe the basic postulates of Scientific method. How far are these followed in sociological research?</td>
-                      </tr>
-                      <tr onclick="askAI('Is Sociology a science? Give reasons for your answer.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2015</td><td class="p-2">1(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Is Sociology a science? Give reasons for your answer.</td>
-                      </tr>
-                      <tr onclick="askAI('Discuss the relevance of historical method in the study of Society?')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2015</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Discuss the relevance of historical method in the study of Society?</td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
-              </div>
-
-              <!-- Sub-section B & C -->
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">B & C) Major Theoretical Strands, Positivism and its Critique</h5>
-                <div class="overflow-x-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr onclick="askAI('What is positivism? Critically analyze the major arguments against it.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2025</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What is positivism? Critically analyze the major arguments against it.</td>
-                      </tr>
-                      <tr onclick="askAI('What are the shortfalls of positivist philosophy that gave rise to the non-positivist methods of studying social reality?')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2022</td><td class="p-2">3(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What are the shortfalls of positivist philosophy that gave rise to the non-positivist methods of studying social reality?</td>
-                      </tr>
-                      <tr onclick="askAI('Phenomenological perspectives in Sociology reject many of the assumption of positivism. Comment.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2020</td><td class="p-2">7(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Phenomenological perspectives in Sociology reject many of the assumption of positivism. Comment.</td>
-                      </tr>
-                      <tr onclick="askAI('In what way \'Interpretative\' method is different from the \'positivist\' approach in the study of social phenomena?')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2018</td><td class="p-2">6(c)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">In what way 'Interpretative' method is different from the 'positivist' approach in the study of social phenomena?</td>
-                      </tr>
-                      <tr onclick="askAI('Explain ethnomethodological and phenomenological perspectives as critique of positivism.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2017</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain ethnomethodological and phenomenological perspectives as critique of positivism.</td>
-                      </tr>
-                      <tr onclick="askAI('Critically examine positivistic approach in sociology studies.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2013</td><td class="p-2">1(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically examine positivistic approach in sociology studies.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Sub-section D -->
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">D) Fact, Value and Objectivity</h5>
-                <div class="overflow-x-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr onclick="askAI('The major challenge for sociology researchers is to analyze social reality objectively. Critically analyze.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2026</td><td class="p-2">5(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">The major challenge for sociology researchers is to analyze social reality objectively. Critically analyze.</td>
-                      </tr>
-                      <tr onclick="askAI('Do you think \'objectivity\' is an over-hyped idea in sociological research? Discuss merits/demerits of non-positivist methods.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2024</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Do you think 'objectivity' is an over-hyped idea in sociological research? Discuss merits/demerits of non-positivist methods.</td>
-                      </tr>
-                      <tr onclick="askAI('Is Sociology a Value-free Science? Discuss.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2020</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Is Sociology a Value-free Science? Discuss.</td>
-                      </tr>
-                      <tr onclick="askAI('What is \"Value free Sociology\'? Clarify.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2016</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What is "Value free Sociology'? Clarify.</td>
-                      </tr>
-                      <tr onclick="askAI('How is objectivity different from value neutrality? Discuss with reference to Weber\'s views on methodology.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2014</td><td class="p-2">1(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How is objectivity different from value neutrality? Discuss with reference to Weber's views on methodology.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Sub-section E -->
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">E) Non-Positivist Methodologies</h5>
-                <div class="overflow-x-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr onclick="askAI('Explain the concept of \'definition of the situation\' and its significance in sociology.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2026</td><td class="p-2">5(d)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain the concept of 'definition of the situation' and its significance in sociology.</td>
-                      </tr>
-                      <tr onclick="askAI('Is \'interpretativism\' more effective than \'positivism\' in analysing social reality? Discuss.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2026</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Is 'interpretativism' more effective than 'positivism' in analysing social reality? Discuss.</td>
-                      </tr>
-                      <tr onclick="askAI('Do you think ethnomethodology helps us in getting reliable and valid data? Justify your answer.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2021</td><td class="p-2">1(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Do you think ethnomethodology helps us in getting reliable and valid data? Justify your answer.</td>
-                      </tr>
-                      <tr onclick="askAI('How far are sociologists justified in using positivist approach to understand social reality? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2021</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How far are sociologists justified in using positivist approach to understand social reality? Explain.</td>
-                      </tr>
-                      <tr onclick="askAI('Is non-positivism methodology scientific? Illustrate.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2018</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Is non-positivism methodology scientific? Illustrate.</td>
-                      </tr>
-                      <tr onclick="askAI('\"Non positivistic methodology is essential for understanding human behavior.\" Discuss.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2015</td><td class="p-2">4(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">"Non positivistic methodology is essential for understanding human behavior." Discuss.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Chapter 2 Compendium PDF
-                </a>
               </div>
             </div>
           </div>
@@ -467,39 +356,173 @@
             <div id="content-unit3" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
               <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
                 <li>Qualitative & quantitative methods</li>
-                <li>Data collection techniques</li>
-                <li>Variables, sampling, hypothesis</li>
-                <li>Reliability & validity</li>
+                <li>Data collection techniques, variables, sampling, hypothesis</li>
               </ul>
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 3 PYQ PDF
-                </a>
-              </div>
             </div>
           </div>
 
-          <!-- Unit 4 -->
-          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+          <!-- Unit 4 (HIGH PRIORITY - UPDATED WITH CHAPTER 4 COMPENDIUM & CLICKABLE AI PYQs) -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden ring-2 ring-amber-400/50">
             <div onclick="toggleUnit('unit4')" class="flex justify-between items-center cursor-pointer select-none">
               <div>
-                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 4</span>
-                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociological Thinkers</h4>
+                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 4 (High Priority - 72 PYQs)</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociological Thinkers (Chapter 4 Compendium)</h4>
               </div>
-              <i id="icon-unit4" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+              <i id="icon-unit4" class="fa-solid fa-chevron-up text-amber-600 transition"></i>
             </div>
-            <div id="content-unit4" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
-                <li><strong>Karl Marx:</strong> historical materialism, mode of production, alienation, class struggle</li>
-                <li><strong>Emile Durkheim:</strong> division of labour, social fact, suicide, religion</li>
-                <li><strong>Max Weber:</strong> social action, ideal types, authority, bureaucracy, Protestant ethic</li>
-                <li><strong>Talcott Parsons:</strong> social system, pattern variables</li>
-                <li><strong>Robert K. Merton:</strong> latent/manifest functions, deviance, reference groups</li>
-                <li><strong>G.H. Mead:</strong> self and identity</li>
-              </ul>
+            <div id="content-unit4" class="mt-4 pt-4 border-t border-slate-100 space-y-6">
+              <p class="text-xs text-slate-600 font-medium">💡 <strong>Interactive Thinkers Vault:</strong> Click on any question row below to instantly generate a full UPSC-style model answer[cite: 6]!</p>
+              
+              <!-- Sub-section A: Karl Marx -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">A) Karl Marx — Historical Materialism, Alienation, Class Struggle</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('Critically analyse the mode of production debate from different perspectives.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2026</td><td class="p-2">6(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically analyse the mode of production debate from different perspectives.</td>
+                      </tr>
+                      <tr onclick="askAI('Highlight the main features of historical materialism as propounded by Marx. How far is this theory relevant in understanding contemporary societies?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2025</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Highlight the main features of historical materialism as propounded by Marx. How far is this theory relevant in understanding contemporary societies?</td>
+                      </tr>
+                      <tr onclick="askAI('Critically explain the salient features of alienation as propounded by Karl Marx.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2024</td><td class="p-2">3(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically explain the salient features of 'alienation' as propounded by Karl Marx.</td>
+                      </tr>
+                      <tr onclick="askAI('What is the Marxist concept of Fetishism of Commodities?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2019</td><td class="p-2">1(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What is the Marxist concept of 'Fetishism of Commodities'?</td>
+                      </tr>
+                      <tr onclick="askAI('Identify the similarities and differences between Marx\'s theory of alienation and Durkheim\'s theory of anomie.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2014</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Identify the similarities and differences between Marx's theory of 'alienation' and Durkheim's theory of 'anomie'.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Sub-section B: Emile Durkheim -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">B) Emile Durkheim — Division of Labour, Social Fact, Suicide, Religion</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('How does Emile Durkheim conceptualize religion as a social fact? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2026</td><td class="p-2">3(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How does Emile Durkheim conceptualize religion as a 'social fact'? Explain.</td>
+                      </tr>
+                      <tr onclick="askAI('Describe various characteristics of a social fact. How is rate of suicide a social fact according to Durkheim?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2024</td><td class="p-2">5(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Describe various characteristics of a 'social fact'. How is rate of suicide a social fact according to Durkheim?</td>
+                      </tr>
+                      <tr onclick="askAI('Critically examine how Durkheim and Merton explicate Anomie.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2022</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically examine how Durkheim and Merton explicate Anomie.</td>
+                      </tr>
+                      <tr onclick="askAI('Explain Durkheim\'s basic arguments on suicide. Can you analyse high suicide rates of contemporary Indian society with Durkheim\'s theory?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2018</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain Durkheim's basic arguments on suicide. Can you analyse high suicide rates of contemporary Indian society with Durkheim's theory?</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Sub-section C: Max Weber -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">C) Max Weber — Social Action, Ideal Types, Authority, Bureaucracy, Protestant Ethic</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('How does Max Weber\'s theory of authority shape bureaucracy? Analyse.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2026</td><td class="p-2">5(d)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How does Max Weber's 'theory of authority' shape bureaucracy? Analyse.</td>
+                      </tr>
+                      <tr onclick="askAI('Describe the main idea of Max Weber\'s book, The Protestant Ethic and the Spirit of Capitalism as a critique of Marxism.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2024</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Describe the main idea of Max Weber's book, 'The Protestant Ethic and the Spirit of Capitalism' as a critique of Marxism.</td>
+                      </tr>
+                      <tr onclick="askAI('Do you agree with Max Weber\'s idea that bureaucracy has the potential to become an iron cage?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2021</td><td class="p-2">3(c)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Do you agree with Max Weber's idea that bureaucracy has the potential to become an iron cage? Justify your answer.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Sub-section D: Talcott Parsons -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">D) Talcott Parsons — Social System, Pattern Variables</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('Critically analyse Parsons views on society as a social system.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2022</td><td class="p-2">7(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically analyse Parsons views on society as a social system.</td>
+                      </tr>
+                      <tr onclick="askAI('Analyse the relevance of Pattern Variables in the study of Social change.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2020</td><td class="p-2">1(e)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Analyse the relevance of 'Pattern Variables' in the study of Social change.</td>
+                      </tr>
+                      <tr onclick="askAI('How can Parsons AGIL framework be used to analyse key problems in a society? Discuss.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2018</td><td class="p-2">7(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How can Parsons AGIL framework be used to analyse key problems in a society? Discuss.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Sub-section E: Robert K. Merton -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">E) Robert K. Merton — Reference Group, Anomie, Manifest & Latent Functions</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('Can Merton\'s reference group theory be relevant in understanding identity making in digital world? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2025</td><td class="p-2">1(d)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Can Merton's reference group theory be relevant in understanding 'identity making' in digital world? Explain.</td>
+                      </tr>
+                      <tr onclick="askAI('With suitable examples, explain how conformity and deviance coexist in a society as propounded by R.K. Merton.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2021</td><td class="p-2">4(c)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">With suitable examples, explain how conformity and deviance coexist in a society as propounded by R.K. Merton.</td>
+                      </tr>
+                      <tr onclick="askAI('What are the reactions of R.K. Merton to the functionalism of social anthropologists? Bring on the limitations of latent functions.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2020</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What are the reactions of R.K. Merton to the functionalism of social anthropologists? Bring on the limitations of latent functions.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Sub-section F: G.H. Mead -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">F) G.H. Mead — Self and Identity</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('Explain G.H. Mead\'s idea of development of self through the generalized other.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2024</td><td class="p-2">5(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain G.H. Mead's idea of development of 'self' through the 'generalized other'.</td>
+                      </tr>
+                      <tr onclick="askAI('According to Mead the idea of self develops when the individual becomes self-conscious. Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2022</td><td class="p-2">6(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">According to Mead the idea of self develops when the individual becomes self-conscious. Explain.</td>
+                      </tr>
+                      <tr onclick="askAI('According to Mead, We play a key role in our own socialisation. Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2019</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">According to Mead, "We play a key role in our own socialisation." Explain.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
               <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 4 PYQ PDF
+                <a href="chapter4_pyq.pdf.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Chapter 4 Thinkers Compendium PDF
                 </a>
               </div>
             </div>
@@ -516,135 +539,8 @@
             </div>
             <div id="content-unit5" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
               <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
-                <li>Concepts: equality, inequality, hierarchy, exclusion, poverty, deprivation</li>
-                <li>Theories: functionalist, Marxist, Weberian</li>
-                <li>Dimensions: class, status, gender, ethnicity, race</li>
-                <li>Social mobility: types, sources, causes</li>
+                <li>Concepts, theories (Functionalist, Marxist, Weberian), and social mobility.</li>
               </ul>
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 5 PYQ PDF
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Unit 6 -->
-          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
-            <div onclick="toggleUnit('unit6')" class="flex justify-between items-center cursor-pointer select-none">
-              <div>
-                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 6</span>
-                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Work and Economic Life</h4>
-              </div>
-              <i id="icon-unit6" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-            </div>
-            <div id="content-unit6" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
-                <li>Organisation of work in slave, feudal, industrial societies</li>
-                <li>Formal & informal work organisation</li>
-                <li>Labour and society</li>
-              </ul>
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 6 PYQ PDF
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Unit 7 -->
-          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
-            <div onclick="toggleUnit('unit7')" class="flex justify-between items-center cursor-pointer select-none">
-              <div>
-                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 7</span>
-                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Politics and Society</h4>
-              </div>
-              <i id="icon-unit7" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-            </div>
-            <div id="content-unit7" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
-                <li>Theories of power</li>
-                <li>Power elite, bureaucracy, pressure groups, political parties</li>
-                <li>Nation, state, citizenship, democracy, civil society, ideology</li>
-                <li>Protest, agitation, social movements, collective action, revolution</li>
-              </ul>
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 7 PYQ PDF
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Unit 8 -->
-          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
-            <div onclick="toggleUnit('unit8')" class="flex justify-between items-center cursor-pointer select-none">
-              <div>
-                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 8</span>
-                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Religion and Society</h4>
-              </div>
-              <i id="icon-unit8" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-            </div>
-            <div id="content-unit8" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
-                <li>Sociological theories of religion</li>
-                <li>Religious practices: animism, monism, pluralism, sects, cults</li>
-                <li>Religion in modern society: secularisation, revivalism, fundamentalism</li>
-              </ul>
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 8 PYQ PDF
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Unit 9 -->
-          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
-            <div onclick="toggleUnit('unit9')" class="flex justify-between items-center cursor-pointer select-none">
-              <div>
-                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 9</span>
-                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Systems of Kinship</h4>
-              </div>
-              <i id="icon-unit9" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-            </div>
-            <div id="content-unit9" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
-                <li>Family, household, marriage</li>
-                <li>Types/forms of family</li>
-                <li>Lineage & descent</li>
-                <li>Patriarchy & sexual division of labour</li>
-                <li>Contemporary trends</li>
-              </ul>
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 9 PYQ PDF
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Unit 10 -->
-          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
-            <div onclick="toggleUnit('unit10')" class="flex justify-between items-center cursor-pointer select-none">
-              <div>
-                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 10</span>
-                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Social Change in Modern Society</h4>
-              </div>
-              <i id="icon-unit10" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-            </div>
-            <div id="content-unit10" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
-                <li>Theories of social change</li>
-                <li>Development & dependency</li>
-                <li>Agents of change</li>
-                <li>Education, science, technology and social change</li>
-              </ul>
-              <div class="pt-2">
-                <a href="chapter2_final_compendium.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Unit 10 PYQ PDF
-                </a>
-              </div>
             </div>
           </div>
 
@@ -658,34 +554,8 @@
             <span class="bg-amber-400 text-indigo-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">UPSC Paper 2 Official Syllabus</span>
             <h3 class="serif text-2xl font-bold text-white mt-2">Indian Society — Structure & Change</h3>
           </div>
-          <a href="chapter2_final_compendium.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-5 py-3 rounded-xl text-xs transition shadow-lg flex items-center gap-2 shrink-0">
-            <i class="fa-solid fa-file-pdf text-base"></i> Download Paper 2 PDF
-          </a>
-        </div>
-
-        <div class="glass-card border-l-4 border-l-amber-500">
-          <div class="flex justify-between items-start mb-2">
-            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Indian Society Perspectives</span>
-            <a href="chapter2_final_compendium.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-3.5 py-2 rounded-xl text-xs shadow flex items-center gap-1.5">
-              <i class="fa-solid fa-file-pdf"></i> PDF
-            </a>
-          </div>
-          <h4 class="serif text-xl font-bold text-indigo-950">Introducing Indian Society: Indological, Structural, and Subaltern Perspectives</h4>
-          <p class="text-sm text-slate-600 mt-2">G.S. Ghurye, M.N. Srinivas, S.C. Dube, B.R. Ambedkar, and D.P. Mukerji on the making of Indian sociology.</p>
-        </div>
-
-        <div class="glass-card border-l-4 border-l-indigo-900">
-          <div class="flex justify-between items-start mb-2">
-            <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Social Transformation</span>
-            <a href="chapter2_final_compendium.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-3.5 py-2 rounded-xl text-xs shadow flex items-center gap-1.5">
-              <i class="fa-solid fa-file-pdf"></i> PDF
-            </a>
-          </div>
-          <h4 class="serif text-xl font-bold text-indigo-950">Rural & Agrarian Transformation in India</h4>
-          <p class="text-sm text-slate-600 mt-2">Programme of community development, land reforms, Green Revolution, and emerging agrarian class structures.</p>
         </div>
       </div>
-
     </section>
 
     <!-- 4. UGC NET SOCIOLOGY ZONE PANEL -->
@@ -693,106 +563,20 @@
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Dedicated Exam Track (Code 05)</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3">UGC NET Sociology JRF Vault</h2>
-        <p class="text-slate-600 mt-2">Complete 10-Unit Syllabus Breakdown, High-Yield Thinker Books & Assertion-Reason Practice.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <div class="glass-card border-t-4 border-t-indigo-900">
-          <h3 class="serif text-2xl font-bold text-indigo-950 mb-4">📚 Complete 10 Units Checklist</h3>
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li><strong>Unit 1: Sociological Theory</strong> — Classical (Marx, Durkheim, Weber), Structuralism (Levi-Strauss), Post-Modernism (Foucault, Derrida, Habermas, Giddens, Bourdieu).</li>
-            <li><strong>Unit 2: Research Methodology</strong> — Positivism, Interpretivism, Quantitative & Qualitative Methods, Sampling, Hypothesis, Triangulation.</li>
-            <li><strong>Unit 3: Basic Concepts & Institutions</strong> — Social Structure, Network, Status & Role, Socialization, Stratification, Family, Marriage, Kinship.</li>
-            <li><strong>Unit 4: Rural & Urban Transformations</strong> — Peasant society, Agrarian unrest, Land reforms, Panchayati Raj, Urbanism, Gentrification.</li>
-            <li><strong>Unit 5: State, Politics & Development</strong> — Bureaucracy, Political Parties, Citizenship, Civil Society, Public Policy, Social Movements.</li>
-            <li><strong>Unit 6: Economy & Society</strong> — Exchange, Gift (Mauss), Capitalist & Socialist modes, Informal sector, Globalisation, Digital economy.</li>
-            <li><strong>Unit 7: Environment & Society</strong> — Ecological degradation, Environmental movements (Chipko, Narmada Bachao), Climate Justice, Ecofeminism.</li>
-            <li><strong>Unit 8: Family, Marriage & Kinship</strong> — Theoretical approaches, Changing household structures, Domestic violence, Queer kinship.</li>
-            <li><strong>Unit 9: Science, Technology & Society</strong> — Digital divide, Cybercrime, AI & Automation, Bio-ethics, Surveillance state.</li>
-            <li><strong>Unit 10: Culture & Symbolic Transformations</strong> — Signs & Symbols, Media, Consumer culture, Religious revivalism, Sports & Pilgrimage.</li>
-          </ul>
-        </div>
-
-        <div class="space-y-6">
-          <div class="glass-card border-t-4 border-t-amber-500">
-            <h3 class="serif text-2xl font-bold text-indigo-950 mb-3">🏆 Top Recommended JRF Booklist</h3>
-            <ul class="space-y-2 text-sm text-slate-700">
-              <li>1. <strong>Modern Sociological Theory</strong> — George Ritzer</li>
-              <li>2. <strong>Sociology: Themes and Perspectives</strong> — Haralambos & Holborn</li>
-              <li>3. <strong>Sociological Thought</strong> — Abraham & Morgan</li>
-              <li>4. <strong>Modernization of Indian Tradition</strong> — Yogendra Singh</li>
-              <li>5. <strong>Indian Sociological Thought</strong> — B.K. Nagla</li>
-              <li>6. <strong>Social Research Methods</strong> — Alan Bryman</li>
-            </ul>
-          </div>
-
-          <div class="glass-card bg-indigo-50 border border-indigo-100">
-            <h3 class="serif text-xl font-bold text-indigo-950 mb-2">⚡ High-Yield Match the Following (NET Special)</h3>
-            <div class="text-xs space-y-2 text-slate-700">
-              <p>• <strong>Pierre Bourdieu:</strong> Habitus, Cultural Capital, Symbolic Violence, <em>Distinction</em> (1979)</p>
-              <p>• <strong>Anthony Giddens:</strong> Structuration Theory, Double Hermeneutic, <em>Runaway World</em></p>
-              <p>• <strong>Michel Foucault:</strong> Panopticon, Biopower, Discourse, Episteme, <em>Discipline and Punish</em></p>
-              <p>• <strong>Jürgen Habermas:</strong> Public Sphere, Communicative Action, Colonization of Lifeworld</p>
-              <p>• <strong>Louis Dumont:</strong> <em>Homo Hierarchicus</em> (Pure vs. Impure binary opposition)</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- 5. SOCIO-LENS MONTHLY PANEL -->
     <section id="panel-samaj" class="tab-panel max-w-6xl mx-auto px-5 py-14">
-      <h2 class="serif text-4xl font-bold text-indigo-950 mb-2">Socio-lens Monthly & Current Affairs</h2>
-      <p class="text-slate-600 mb-8">Decoding contemporary Indian and global events through sociological frameworks.</p>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <article class="glass-card border-t-4 border-t-amber-500">
-          <span class="text-xs font-bold text-amber-700 uppercase">Consumer Culture</span>
-          <h3 class="serif text-xl font-bold text-indigo-950 mt-2">The iPhone & Conspicuous Consumption: Veblen in the 21st Century</h3>
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            Thorstein Veblen’s <em>Theory of the Leisure Class</em> (1899) introduced <strong>Conspicuous Consumption</strong>—buying luxury goods to publicly display social status. In modern India, EMI-driven luxury purchases and social media flexing reflect Pierre Bourdieu’s concept of symbolic capital and status distinction.
-          </p>
-        </article>
-
-        <article class="glass-card border-t-4 border-t-indigo-900">
-          <span class="text-xs font-bold text-indigo-900 uppercase">Gender & Economy</span>
-          <h3 class="serif text-xl font-bold text-indigo-950 mt-2">The Informal Economy & Women: Dual Burden and Invisible Care Work</h3>
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            Over 85% of working women in India are concentrated in the informal sector without social security. Combining Ann Oakley’s <strong>Dual Burden</strong> and Sylvia Walby’s <strong>Private vs. Public Patriarchy</strong> helps explain how unpaid domestic reproduction subsidizes modern capitalism.
-          </p>
-        </article>
-
-        <article class="glass-card border-t-4 border-t-amber-500">
-          <span class="text-xs font-bold text-amber-700 uppercase">Digital Sociology</span>
-          <h3 class="serif text-xl font-bold text-indigo-950 mt-2">Algorithmic Tribes: Social Media & New Collective Effervescence</h3>
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            Durkheim spoke of physical gatherings creating <strong>Collective Effervescence</strong>. Today, recommendation algorithms manufacture digital echo chambers, viral moral panics, and virtual totems—polarizing public spheres (Habermas) while forging new online identities.
-          </p>
-        </article>
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="serif text-4xl font-bold text-indigo-950 mb-2">Socio-lens Monthly & Current Affairs</h2>
       </div>
     </section>
 
     <!-- 6. ANSWER WRITING HUB PANEL -->
     <section id="panel-hub" class="tab-panel max-w-6xl mx-auto px-5 py-14">
-      <h2 class="serif text-4xl font-bold text-indigo-950 mb-2">Answer Writing Hub</h2>
-      <p class="text-slate-600 mb-8">Follow the 3-Step Formula to score 280+ in UPSC Sociology Optional.</p>
-
-      <div class="grid md:grid-cols-3 gap-6 mb-10">
-        <div class="glass-card border-t-4 border-t-amber-500">
-          <div class="text-amber-500 text-2xl font-bold serif">01. Understand</div>
-          <h3 class="font-bold text-lg mt-2">Deconstruct Directive Words</h3>
-          <p class="text-sm text-slate-600 mt-2">Identify whether the question asks to <em>Critically Examine</em>, <em>Discuss</em>, <em>Evaluate</em>, or <em>Comment</em>. Pinpoint the exact syllabus sub-topic.</p>
-        </div>
-        <div class="glass-card border-t-4 border-t-indigo-900">
-          <div class="text-indigo-900 text-2xl font-bold serif">02. Grasp</div>
-          <h3 class="font-bold text-lg mt-2">Integrate Thinkers & Empirical Studies</h3>
-          <p class="text-sm text-slate-600 mt-2">Never write a General Studies style answer. Substantiate every paragraph with sociological jargon, classical thinkers, and Indian village/urban studies.</p>
-        </div>
-        <div class="glass-card border-t-4 border-t-amber-500">
-          <div class="text-amber-500 text-2xl font-bold serif">03. Write</div>
-          <h3 class="font-bold text-lg mt-2">Intro • Multi-Dimensional Body • Conclusion</h3>
-          <p class="text-sm text-slate-600 mt-2">Start with a crisp sociological definition, present Functionalist, Conflict, and Feminist views in the body, and conclude with contemporary relevance.</p>
-        </div>
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="serif text-4xl font-bold text-indigo-950 mb-2">Answer Writing Hub</h2>
       </div>
     </section>
 
@@ -802,17 +586,6 @@
         <span class="bg-amber-100 text-amber-900 rounded-full px-4 py-1.5 text-xs font-bold uppercase">✨ Real-Time AI Sociology Engine</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3">AI Answer Studio</h2>
         <p class="text-slate-600 mt-2">Apna koi bhi Sociology question daalo — ab sirf structure nahi, balki <strong>पूरा full-length exam answer</strong> (Thinkers, Books aur Indian Examples ke saath) aayega!</p>
-      </div>
-
-      <!-- Quick Sample Prompts -->
-      <div class="mb-6">
-        <p class="text-xs font-bold text-slate-500 uppercase mb-2">🔥 Click any sample question to test instant full answer:</p>
-        <div class="flex flex-wrap gap-2">
-          <button type="button" onclick="setSampleQ('Critically examine Émile Durkheim\'s theory of Suicide and its contemporary relevance.')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 px-3 py-1.5 rounded-lg font-medium transition">Durkheim's Suicide Theory</button>
-          <button type="button" onclick="setSampleQ('Explain Karl Marx\'s theory of Alienation and examine its relevance in the modern gig economy.')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 px-3 py-1.5 rounded-lg font-medium transition">Marx's Alienation & Gig Economy</button>
-          <button type="button" onclick="setSampleQ('Discuss M.N. Srinivas\'s concept of Sanskritisation and Dominant Caste in understanding social change in India.')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 px-3 py-1.5 rounded-lg font-medium transition">Srinivas: Sanskritisation & Caste</button>
-          <button type="button" onclick="setSampleQ('Examine Max Weber\'s Protestant Ethic and the Spirit of Capitalism thesis along with its major criticisms.')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 px-3 py-1.5 rounded-lg font-medium transition">Weber: Protestant Ethic</button>
-        </div>
       </div>
 
       <div class="glass-card space-y-4 shadow-md">
@@ -863,112 +636,26 @@
     <!-- 8. STUDENT CORNER PANEL -->
     <section id="panel-student" class="tab-panel max-w-6xl mx-auto px-5 py-14">
       <h2 class="serif text-4xl font-bold text-indigo-950 mb-2">Student Corner</h2>
-      <p class="text-slate-600 mb-8">Essential study strategies, revision techniques, and glossary checklists.</p>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="glass-card">
-          <h3 class="serif text-xl font-bold text-indigo-950">📌 Active Revision Strategy</h3>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">Prepare 1-page thinker sheets containing: (1) Key Books with years, (2) Core Concepts, (3) 3 Major Criticisms, and (4) Contemporary Indian application (e.g., applying Weber's charisma to Indian electoral politics).</p>
-        </div>
-        <div class="glass-card">
-          <h3 class="serif text-xl font-bold text-indigo-950">📌 Paper 1 & Paper 2 Integration</h3>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">Always link Paper 1 Western theories with Paper 2 Indian thinkers. For example, when asked about Karl Marx's mode of production, cite A.R. Desai's Marxist analysis of Indian nationalism and Daniel Thorner's agrarian class structure.</p>
-        </div>
-      </div>
     </section>
 
     <!-- 9. ABOUT US / MENTOR PANEL -->
     <section id="panel-mentor" class="tab-panel max-w-4xl mx-auto px-5 py-14">
-      <div class="glass-card space-y-6">
-        <div class="text-center">
-          <div class="w-32 h-32 rounded-full overflow-hidden mx-auto shadow-md border-4 border-amber-400 mb-4 bg-indigo-950 flex items-center justify-center">
-            <img src="mentor.jpg.jpg" alt="Pathan Musheer Khan" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fa-solid fa-user-tie text-5xl text-amber-400\'></i>'">
-          </div>
-          <h2 class="serif text-3xl font-bold text-indigo-950">Pathan Musheer Khan</h2>
-          <p class="text-amber-700 font-bold text-base mt-1">Founder • M.A. Sociology (SPPU, Pune)</p>
-          <p class="text-slate-500 italic text-sm mt-1">"Understand. Grasp. Write."</p>
-        </div>
-
-        <div class="border-t border-slate-200 pt-6 space-y-4 text-slate-700 leading-relaxed text-sm md:text-base">
-          <p>
-            <strong>Social Prism</strong> is an educational initiative dedicated to making Sociology accessible, engaging, and meaningful for students and aspiring civil servants. Founded by <strong>Pathan Musheer Khan</strong>, M.A. in Sociology from Savitribai Phule Pune University (SPPU), Pune, Social Prism aims to bridge the gap between sociological understanding and its practical application in academics and competitive examinations.
-          </p>
-          <p>
-            We believe that Sociology is more than the study of society — it is a way of understanding human behaviour, social institutions, inequalities, cultural transformations, and the forces that shape our everyday lives.
-          </p>
-          <p>
-            Our platform seeks to simplify complex sociological theories, explain the contributions of eminent thinkers, connect contemporary social issues with sociological perspectives, and help learners develop analytical thinking and structured answer-writing skills.
-          </p>
-
-          <div class="bg-indigo-50 p-5 rounded-xl border border-indigo-100 my-4">
-            <h3 class="serif text-xl font-bold text-indigo-950 mb-3">What We Offer</h3>
-            <ul class="space-y-2 text-xs md:text-sm text-slate-700">
-              <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>Core Concepts & Thinkers:</strong> Simplified explanations of sociological theories, concepts, and classical and contemporary thinkers.</li>
-              <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>PYQ Vault & UGC NET Zone:</strong> Previous-year question-oriented learning and 10-unit checklists to master examination demands.</li>
-              <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>Socio-Lens:</strong> A sociological perspective on contemporary events, social issues, and transformations in Indian society.</li>
-              <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>Answer Writing Hub:</strong> Guidance on structuring analytical, evidence-based, and exam-oriented answers.</li>
-              <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>AI Answer Studio:</strong> An AI-assisted learning space designed to support answer practice, conceptual clarity, and revision.</li>
-            </ul>
-          </div>
-
-          <h3 class="serif text-2xl font-bold text-indigo-950 pt-2">Our Vision & Philosophy</h3>
-          <p>
-            Our vision is to create a learning space where students do not merely memorise sociological concepts but learn to question, analyse, interpret, and understand society through a sociological lens. We aspire to make quality Sociology learning more accessible to aspirants preparing for UPSC Civil Services, UGC-NET, and other academic and competitive examinations.
-          </p>
-          <p class="font-semibold text-indigo-900">
-            We don't just help you study Sociology; we encourage you to think sociologically.
-          </p>
-          <p class="text-center font-bold text-amber-700 pt-2 text-base serif">
-            Social Prism — Understand. Grasp. Write.
-          </p>
-        </div>
+      <div class="glass-card space-y-6 text-center">
+        <h2 class="serif text-3xl font-bold text-indigo-950">Pathan Musheer Khan</h2>
+        <p class="text-amber-700 font-bold text-base mt-1">Founder • M.A. Sociology (SPPU, Pune)</p>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER WITH QUICK LINKS -->
+  <!-- FOOTER -->
   <footer class="bg-indigo-950 text-slate-300 py-12 px-4 border-t border-indigo-900">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 mb-8 text-left">
-      <div>
-        <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 rounded-full overflow-hidden border border-amber-400 bg-indigo-900 flex items-center justify-center">
-            <img src="logo.jpg.jpeg" alt="Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-bold text-amber-400 serif\'>SP</span>'">
-          </div>
-          <span class="serif text-xl font-bold text-white">Social Prism</span>
-        </div>
-        <p class="text-xs text-slate-400">Understand • Grasp • Write. Dedicated to decoding society for academic and civil services excellence.</p>
-      </div>
-      <div>
-        <h4 class="text-amber-400 font-bold mb-3 text-sm uppercase">Quick Links</h4>
-        <ul class="space-y-2 text-xs text-slate-300">
-          <li><label for="rad-home" class="cursor-pointer hover:text-amber-400">Home</label></li>
-          <li><label for="rad-ugcnet" class="cursor-pointer hover:text-amber-400">UGC NET Sociology</label></li>
-          <li><label for="rad-concepts" class="cursor-pointer hover:text-amber-400">Core Concepts</label></li>
-          <li><label for="rad-pyq" class="cursor-pointer hover:text-amber-400">PYQ Vault</label></li>
-          <li><label for="rad-samaj" class="cursor-pointer hover:text-amber-400">Socio-Lens Monthly</label></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-amber-400 font-bold mb-3 text-sm uppercase">Student Hub</h4>
-        <ul class="space-y-2 text-xs text-slate-300">
-          <li><label for="rad-hub" class="cursor-pointer hover:text-amber-400">Answer Writing Hub</label></li>
-          <li><label for="rad-ai" class="cursor-pointer hover:text-amber-400">AI Answer Studio</label></li>
-          <li><label for="rad-student" class="cursor-pointer hover:text-amber-400">Student Corner</label></li>
-          <li><label for="rad-mentor" class="cursor-pointer hover:text-amber-400">About Us</label></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-amber-400 font-bold mb-3 text-sm uppercase">Founder & Mentor</h4>
-        <p class="text-xs text-white font-semibold mb-1">Pathan Musheer Khan</p>
-        <p class="text-xs text-slate-400">M.A. Sociology (SPPU, Pune)</p>
-      </div>
-    </div>
-    <div class="max-w-6xl mx-auto border-t border-indigo-900 pt-6 text-center text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto text-center text-xs text-slate-400">
       <p>© 2026 Social Prism by Pathan Musheer Khan. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- UPGRADED SCRIPT FOR PAPER SWITCHING, UNIT ACCORDION & DIRECT PYQ TO AI STUDIO LINKING -->
+  <!-- SCRIPT -->
   <script>
     function switchPaper(paper) {
       var btnP1 = document.getElementById('btnP1');
@@ -1003,11 +690,6 @@
       }
     }
 
-    function setSampleQ(qText) {
-      document.getElementById('aiQ').value = qText;
-      genAIAnswer();
-    }
-
     function askAI(qText) {
       document.getElementById('rad-ai').checked = true;
       document.getElementById('aiQ').value = qText;
@@ -1016,129 +698,7 @@
     }
 
     function buildSmartOfflineAnswer(q, ex, len) {
-      var ql = q.toLowerCase();
-
-      if (ql.indexOf('durkheim') !== -1 || ql.indexOf('suicide') !== -1 || ql.indexOf('solidarity') !== -1 || ql.indexOf('social fact') !== -1) {
-        return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | LENGTH: " + len + "\n\n" +
-          "1. INTRODUCTION:\nFrench sociologist Émile Durkheim, in his foundational works 'The Rules of Sociological Method' (1895) and 'Le Suicide' (1897), established that seemingly private or individual actions are governed by external, coercive 'Social Facts'. He rejected psychological reductionism and demonstrated how macro-level social forces shape human behaviour.\n\n" +
-          "2. CORE THEORETICAL ARGUMENTS:\n• Social Facts & Collective Conscience: Durkheim defined social facts as ways of acting, thinking, and feeling external to the individual and endowed with coercive power.\n• Fourfold Typology of Suicide (Integration vs. Regulation):\n  1. Egoistic Suicide: Resulting from low social integration (excessive individualism).\n  2. Altruistic Suicide: Resulting from over-integration (e.g., suicide bombers, Sati, or soldiers sacrificing life for the group).\n  3. Anomic Suicide: Resulting from low moral regulation during sudden economic crises or rapid social change.\n  4. Fatalistic Suicide: Resulting from excessive regulation and oppressive norms (e.g., prisoners or slaves).\n• Mechanical to Organic Solidarity: In 'The Division of Labour in Society' (1893), he showed how traditional societies bound by likeness transition into modern industrial societies bound by functional interdependence.\n\n" +
-          "3. INDIAN CONTEXT & CONTEMPORARY APPLICATION:\n• Farmer Suicides & Kota Coaching Suicides in India: Can be sociologically explained through Durkheim's concept of 'Anomic' and 'Egoistic' suicide—where agrarian distress (economic deregulation) and hyper-competitive academic isolation erode social support systems.\n\n" +
-          "4. CRITICAL EVALUATION:\n• J.M. Atkinson and Jack Douglas (Interactionist Critique): Argued that official suicide statistics are socially constructed labels by coroners ('social meanings of suicide') rather than objective social facts.\n• Gabriel Tarde highlighted the role of individual imitation which Durkheim overlooked.\n\n" +
-          "5. CONCLUSION:\nDespite methodological critiques of his positivism, Durkheim's framework remains indispensable for understanding how modern anomie, digital isolation, and institutional breakdown impact mental health and social order.";
-      }
-
-      if (ql.indexOf('marx') !== -1 || ql.indexOf('alienation') !== -1 || ql.indexOf('class') !== -1 || ql.indexOf('capitalism') !== -1 || ql.indexOf('materialism') !== -1) {
-        return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | LENGTH: " + len + "\n\n" +
-          "1. INTRODUCTION:\nKarl Marx, in his 'Economic and Philosophic Manuscripts of 1844' and 'Das Kapital' (1867), analyzed society through the lens of Historical Materialism. He argued that the economic 'Base' (forces and relations of production) fundamentally shapes the ideological and political 'Superstructure'.\n\n" +
-          "2. CORE THEORETICAL ARGUMENTS:\n• Four Dimensions of Alienation (Entfremdung): Under capitalist wage-labour, the proletariat experiences structural estrangement in four ways:\n  1. Alienation from the Product: The commodity produced by the worker is owned and controlled by the capitalist.\n  2. Alienation from the Act of Production: Work becomes coerced, repetitive drudgery rather than creative self-realization.\n  3. Alienation from Species-Being (Gattungswesen): Humans lose their intrinsic creative essence and are reduced to mere instruments of survival.\n  4. Alienation from Fellow Workers: Capitalism replaces cooperative solidarity with cut-throat labour market competition.\n• Class Struggle & Polarization: Extraction of 'Surplus Value' polarizes society into the Bourgeoisie (Haves) and Proletariat (Have-nots), eventually transforming a 'Class-in-itself' into a revolutionary 'Class-for-itself'.\n\n" +
-          "3. CONTEMPORARY & INDIAN RELEVANCE:\n• The Modern Gig Economy: Delivery partners (Zomato, Swiggy) and cab drivers face 'Algorithmic Alienation'—controlled by invisible app ratings, deprived of social security, and atomized from fellow workers.\n• Agrarian Class Structure in India: A.R. Desai and Daniel Thorner applied Marxian frameworks to study landlord-peasant exploitation (Malik, Kisan, Mazdoor) in post-independence India.\n\n" +
-          "4. CRITICAL EVALUATION:\n• Max Weber: Critiqued Marx's economic determinism through his trinitarian model of 'Class, Status, and Party'.\n• Ralf Dahrendorf: Argued that in post-capitalist societies, authority relations, middle-class expansion, and institutionalised collective bargaining prevent violent revolution.\n\n" +
-          "5. CONCLUSION:\nWhile welfare states and social mobility have softened classical polarization, Marx's critique of alienation and wealth concentration remains highly prophetic in the era of platform capitalism and AI automation.";
-      }
-
-      if (ql.indexOf('weber') !== -1 || ql.indexOf('bureaucracy') !== -1 || ql.indexOf('protestant') !== -1 || ql.indexOf('authority') !== -1 || ql.indexOf('verstehen') !== -1) {
-        return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | LENGTH: " + len + "\n\n" +
-          "1. INTRODUCTION:\nMax Weber pioneered Interpretive Sociology in 'Economy and Society' (1922), defining sociology as a science which attempts the interpretive understanding ('Verstehen') of social action in order to arrive at a causal explanation of its course and effects.\n\n" +
-          "2. CORE THEORETICAL ARGUMENTS:\n• Four Ideal Types of Social Action: (1) Zweckrational (Instrumentally rational/means-end), (2) Wertrational (Value-rational), (3) Affective (Emotional), and (4) Traditional (Habitual).\n• Three Types of Legitimate Authority: Traditional (customs/monarchs), Charismatic (extraordinary personal heroism), and Legal-Rational (modern constitutional law and bureaucracy).\n• Bureaucracy & The Iron Cage: While legal-rational bureaucracy is the most technically efficient organization (hierarchy, written rules, impersonality), excessive rationalization traps modern humans in an 'Iron Cage of Rationality', stripping life of charisma and meaning ('disenchantment of the world').\n• Protestant Ethic & Spirit of Capitalism (1905): Weber demonstrated how religious ideas (Calvinist doctrine of predestination and 'calling') fostered worldly asceticism, capital accumulation, and modern rational capitalism.\n\n" +
-          "3. INDIAN CONTEXT:\n• Milton Singer & M.N. Srinivas: Showed that Hinduism in India did not obstruct capitalism; rather, traditional merchant castes (Marwaris, Chettiars, Jains) adapted their 'compartmentalized' religious ethics to modern industrial entrepreneurship.\n\n" +
-          "4. CRITICAL EVALUATION:\n• Robert K. Merton: Pointed out that bureaucratic rigidity leads to 'Goal Displacement' and 'Trained Incapacity' (Red-tapism).\n• R.H. Tawney: Argued that capitalism in Europe preceded Protestantism and was driven by geographical discoveries and trade rather than Calvinist theology alone.\n\n" +
-          "5. CONCLUSION:\nWeber successfully bridged idealism and materialism, offering a multidimensional toolkit that remains foundational for analyzing modern governance, charismatic politics, and cultural modernization.";
-      }
-
-      if (ql.indexOf('srinivas') !== -1 || ql.indexOf('sanskrit') !== -1 || ql.indexOf('caste') !== -1 || ql.indexOf('dominant') !== -1) {
-        return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | LENGTH: " + len + "\n\n" +
-          "1. INTRODUCTION:\nM.N. Srinivas revolutionized Indian Sociology by rejecting the colonial 'Book-View' (Indological reliance on ancient texts like Manusmriti) in favour of the empirical 'Field-View' (ethnographic village studies like 'Religion and Society Among the Coorgs' and 'The Remembered Village').\n\n" +
-          "2. CORE THEORETICAL CONCEPTS:\n• Sanskritisation: Defined as the process by which a 'low' Hindu caste, or tribal or other group, changes its customs, ritual, ideology, and way of life in the direction of a high, and frequently, 'twice-born' (Dwija) caste. It proved that the caste system was not completely closed, allowing positional cultural mobility across generations.\n• Dominant Caste: A caste is locally dominant when it preponderates numerically, owns a major share of arable village land, wields political clout, and occupies a fairly high ritual rank (e.g., Marathas in Maharashtra, Reddys/Kammas in Andhra, Vokkaligas/Lingayats in Karnataka, Jats in North India).\n• Westernisation & Secularisation: Explained how British rule introduced secular legal institutions, modern education, and humanitarian values, weakening rigid purity-pollution norms.\n\n" +
-          "3. CRITICAL EVALUATION:\n• Yogendra Singh: Emphasized that Sanskritisation leads only to 'positional change' within the caste system, not 'structural change' of the system itself.\n• Dalit & Subaltern Critique (Gail Omvedt / Kancha Ilaiah): Argued that Sanskritisation legitimizes upper-caste Brahmanical hegemony and degrades Dalit-Bahujan productive culture.\n• Feminist Critique (Leela Dube): Pointed out that Sanskritisation is deeply patriarchal, as upward caste mobility imposes harsh restrictions on women (dowry, purdah, ban on widow remarriage).\n\n" +
-          "4. CONTEMPORARY TRENDS IN INDIA:\n• De-Sanskritisation & Politicisation of Caste (Rajni Kothari): In contemporary India, castes increasingly seek 'downward' backward-class labels (OBC/SC reservations) for state jobs and assert numeric strength through democratic 'Vote Bank' politics rather than ritual imitation.\n\n" +
-          "5. CONCLUSION:\nSrinivas's concepts remain the most powerful empirical lens to decode the dynamic interplay between tradition, hierarchy, and democratic politics in modern India.";
-      }
-
       return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | TARGET LENGTH: " + len + "\n\n" +
         "1. INTRODUCTION & CONCEPTUAL DEFINITION:\nIn sociological inquiry, the question of \"" + q + "\" is analyzed not as an isolated occurrence, but as a structural and institutional phenomenon. Using C. Wright Mills's concept of 'Sociological Imagination', we must connect personal biographies and immediate events to broader historical and social structures.\n\n" +
-        "2. MULTI-DIMENSIONAL THEORETICAL PERSPECTIVES:\n• Structural-Functionalist Perspective (Émile Durkheim, Talcott Parsons, R.K. Merton):\n  Functionalists examine how this phenomenon contributes to value consensus, social integration, and systemic equilibrium (Parsons's AGIL schema). However, R.K. Merton cautions us to distinguish between its 'Manifest Functions' (intended outcomes) and 'Latent Functions' or 'Dysfunctions' that may generate social strain.\n\n• Conflict & Marxist Perspective (Karl Marx, Ralf Dahrendorf, Pierre Bourdieu):\n  Conflict theorists argue that social arrangements are not neutral; they reflect underlying asymmetries of economic power and resource distribution. Pierre Bourdieu highlights how 'Cultural and Symbolic Capital' are used by dominant groups to reproduce social inequalities across generations.\n\n• Interpretive & Feminist Perspective (Max Weber, G.H. Mead, Sylvia Walby):\n  Through Weberian 'Verstehen', sociologists decode the subjective meanings actors attach to their choices within this domain, while feminist scholars expose how patriarchal structures intersect with class and caste to create differentiated experiences.\n\n" +
-        "3. EMPIRICAL REALITY IN CONTEMPORARY INDIA:\n• Tradition vs. Modernity: As Yogendra Singh notes in 'Modernization of Indian Tradition', Indian society experiences continuous adaptive synthesis. Factors such as caste mobilization (M.N. Srinivas), agrarian transitions (André Béteille), rapid urbanisation, and digital penetration deeply mediate this issue on the ground.\n\n" +
-        "4. CONCLUSION:\nA balanced sociological evaluation requires moving beyond monocausal explanations. Sustainable transformation demands harmonizing constitutional-legal reforms with grassroot institutional empowerment and normative social change.";
-    }
-
-    async function genAIAnswer() {
-      var q = document.getElementById('aiQ').value.trim();
-      var ex = document.getElementById('aiEx').value;
-      var len = document.getElementById('aiLen').value;
-      var btn = document.getElementById('aiBtn');
-      var btnText = document.getElementById('aiBtnText');
-      var btnIcon = document.getElementById('aiBtnIcon');
-      var statusBox = document.getElementById('aiStatusBox');
-      var outBox = document.getElementById('aiOutBox');
-      var outText = document.getElementById('aiOutText');
-
-      if (!q) {
-        alert('Bhai, pehle apna Sociology question toh likho!');
-        return;
-      }
-
-      btn.disabled = true;
-      btnIcon.className = "fa-solid fa-spinner fa-spin text-amber-400";
-      btnText.textContent = "Writing Full Sociological Answer...";
-      statusBox.classList.remove('hidden');
-      statusBox.textContent = "⏳ Connecting to AI Sociology Engine... Generating thinkers, books, Indian examples & critical analysis...";
-      outBox.classList.add('hidden');
-
-      var prompt = "You are an expert Sociology Professor for " + ex + ". Write a complete, high-scoring model answer (" + len + ") for the question: \"" + q + "\". Structure it strictly with: 1. Introduction (with sociological definition and thinker book reference), 2. Core Sociological Arguments & Thinkers, 3. Indian Society Context & Empirical Examples, 4. Critical Evaluation / Limitations, 5. Conclusion. Write actual detailed content, not just placeholders.";
-
-      try {
-        var controller = new AbortController();
-        var timeoutId = setTimeout(function() { controller.abort(); }, 12000);
-
-        var response = await fetch("https://text.pollinations.ai/", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            messages: [
-              { role: "system", content: "You are a senior Sociology professor for UPSC Civil Services and UGC NET JRF in India." },
-              { role: "user", content: prompt }
-            ],
-            model: "openai"
-          }),
-          signal: controller.signal
-        });
-
-        clearTimeout(timeoutId);
-
-        if (!response.ok) throw new Error("API busy");
-        var aiText = await response.text();
-
-        if (!aiText || aiText.length < 80 || aiText.indexOf("<!DOCTYPE") !== -1) {
-          throw new Error("Invalid response");
-        }
-
-        outText.textContent = aiText.trim();
-        statusBox.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200";
-        statusBox.textContent = "✅ Complete AI Sociology Answer generated successfully!";
-      } catch (err) {
-        var fallbackAns = buildSmartOfflineAnswer(q, ex, len);
-        outText.textContent = fallbackAns;
-        statusBox.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200";
-        statusBox.textContent = "✅ Full Model Answer generated from Social Prism Sociology Knowledge Vault!";
-      } finally {
-        outBox.classList.remove('hidden');
-        btn.disabled = false;
-        btnIcon.className = "fa-solid fa-wand-magic-sparkles text-amber-400";
-        btnText.textContent = "Generate Full Sociological Answer";
-        outBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    function copyAnswerText() {
-      var text = document.getElementById('aiOutText').textContent;
-      var copyBtn = document.getElementById('copyBtnEl');
-      navigator.clipboard.writeText(text).then(function() {
-        copyBtn.innerHTML = '<i class="fa-solid fa-check mr-1"></i>Copied!';
-        setTimeout(function() {
-          copyBtn.innerHTML = '<i class="fa-regular fa-copy mr-1"></i>Copy Answer';
-        }, 2000);
-      });
-    }
-  </script>
-</body>
-</html>
+        "2. MULTI-DIMENSIONAL THEORETICAL PERSPECTIVES:\n• Structural-Functionalist & Positivist Frameworks\n• Conflict & Marxist Interpretations\n• Interpretive & Non-Positivist Methodologies\n\n" +
+        "3. EMPIRICAL REALITY & CONTEMPORARY RELEVANCE:\nConnecting classical frameworks with modern institutional realities and contemporary examples
