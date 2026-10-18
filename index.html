@@ -17,14 +17,8 @@
             theme: {
                 extend: {
                     colors: {
-                        indigo: {
-                            900: '#1e1b4b',
-                            950: '#0f0e26',
-                        },
-                        amber: {
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
+                        indigo: { 900: '#1e1b4b', 950: '#0f0e26' },
+                        amber: { 500: '#f59e0b', 600: '#d97706' }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -32,11 +26,63 @@
                     }
                 }
             }
+        };
+
+        // CORE NAVIGATION SCRIPT PLACED IN HEAD SO TABS ALWAYS OPEN IMMEDIATELY
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(function(el) {
+                el.classList.add('hidden');
+            });
+            var target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.classList.remove('hidden');
+            }
+            document.querySelectorAll('.nav-btn').forEach(function(btn) {
+                btn.classList.remove('text-amber-400', 'border-amber-400');
+                btn.classList.add('text-slate-300', 'border-transparent');
+                if (btn.getAttribute('data-target') === tabId) {
+                    btn.classList.remove('text-slate-300', 'border-transparent');
+                    btn.classList.add('text-amber-400', 'border-amber-400');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            var menu = document.getElementById('mobile-menu');
+            var icon = document.getElementById('mobile-icon');
+            if (menu) menu.classList.toggle('hidden');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-xmark');
+            }
+        }
+
+        function openModal(modalId) {
+            var m = document.getElementById(modalId);
+            if (m) m.classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            var m = document.getElementById(modalId);
+            if (m) m.classList.add('hidden');
+        }
+
+        function showToast(message) {
+            var toast = document.getElementById('toast');
+            var msg = document.getElementById('toast-message');
+            if (toast && msg) {
+                msg.innerText = message;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                setTimeout(function() {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }
         }
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        h1, h2, h3, .font-serif, .serif { font-family: 'Playfair Display', serif; }
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -82,7 +128,7 @@
 
                 <!-- Action CTA & Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
-                    <button onclick="openModal('joinTelegramModal')" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-indigo-950 font-bold px-4 py-2.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                    <button onclick="openModal('joinTelegramModal')" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-indigo-950 font-bold px-4 py-2.5 rounded-xl shadow-lg transition">
                         <i class="fa-brands fa-telegram text-lg"></i>
                         <span>Join Telegram</span>
                     </button>
@@ -104,12 +150,6 @@
             <button onclick="switchTab('ai'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-amber-300 hover:bg-indigo-900/50"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>AI Answer</button>
             <button onclick="switchTab('student'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Student Corner</button>
             <button onclick="switchTab('mentor'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">About Us</button>
-            <div class="pt-2">
-                <button onclick="openModal('joinTelegramModal'); toggleMobileMenu();" class="w-full flex items-center justify-center space-x-2 bg-amber-500 text-indigo-950 font-bold py-2.5 rounded-xl shadow">
-                    <i class="fa-brands fa-telegram text-lg"></i>
-                    <span>Join Telegram Community</span>
-                </button>
-            </div>
         </div>
     </nav>
 
@@ -118,9 +158,7 @@
 
         <!-- ================= TAB 1: HOME ================= -->
         <section id="tab-home" class="tab-content">
-            <!-- Hero Section -->
             <div class="relative bg-gradient-to-b from-indigo-950 via-indigo-900 to-indigo-950 text-white overflow-hidden py-20 lg:py-28">
-                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
@@ -135,7 +173,7 @@
                                 Master sociology with clarity, critical thinking, and structured precision. Curated by <span class="text-amber-400 font-semibold">Pathan Musheer Khan</span> to transform abstract sociological imagination into high-scoring answers.
                             </p>
                             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
-                                <button onclick="switchTab('ugcnet')" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-indigo-950 font-bold px-8 py-3.5 rounded-xl shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                                <button onclick="switchTab('ugcnet')" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-indigo-950 font-bold px-8 py-3.5 rounded-xl shadow-xl transition flex items-center justify-center space-x-2">
                                     <i class="fa-solid fa-award"></i>
                                     <span>Explore UGC NET Zone</span>
                                 </button>
@@ -146,15 +184,11 @@
                             </div>
                         </div>
                         
-                        <!-- Hero Card / Mentor Showcase -->
                         <div class="lg:col-span-5 flex justify-center">
                             <div class="w-full max-w-md bg-indigo-900/40 border border-amber-500/30 p-6 sm:p-8 rounded-3xl shadow-2xl backdrop-blur-md relative">
-                                <div class="absolute -top-4 -right-4 bg-amber-500 text-indigo-950 text-xs font-extrabold px-3 py-1.5 rounded-full shadow-lg uppercase tracking-wider">
-                                    Top Rated
-                                </div>
                                 <div class="flex items-center space-x-4 mb-6">
                                     <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-amber-400 bg-indigo-900 shrink-0">
-                                        <img src="mentor.jpg.jpg" alt="Mentor" class="w-full h-full object-cover" onerror="this.outerHTML='<div class=\'w-full h-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-indigo-950 font-serif font-bold text-2xl\'>PMK</div>'">
+                                        <img src="mentor.jpg.jpg" alt="Mentor" class="w-full h-full object-cover" onerror="this.outerHTML='<div class=\'w-full h-full bg-amber-500 flex items-center justify-center text-indigo-950 font-serif font-bold text-2xl\'>PMK</div>'">
                                     </div>
                                     <div>
                                         <h3 class="text-lg font-serif font-bold text-white">Pathan Musheer Khan</h3>
@@ -165,18 +199,9 @@
                                     "Sociology is not merely a subject to memorize; it is a lens through which we decode everyday human interaction and structural realities."
                                 </p>
                                 <div class="grid grid-cols-3 gap-3 pt-4 border-t border-indigo-800/60 text-center">
-                                    <div>
-                                        <span class="block text-xl font-bold text-amber-400">120+</span>
-                                        <span class="text-xs text-slate-400">Core Notes</span>
-                                    </div>
-                                    <div>
-                                        <span class="block text-xl font-bold text-amber-400">500+</span>
-                                        <span class="text-xs text-slate-400">Solved PYQs</span>
-                                    </div>
-                                    <div>
-                                        <span class="block text-xl font-bold text-amber-400">15K+</span>
-                                        <span class="text-xs text-slate-400">Students</span>
-                                    </div>
+                                    <div><span class="block text-xl font-bold text-amber-400">120+</span><span class="text-xs text-slate-400">Core Notes</span></div>
+                                    <div><span class="block text-xl font-bold text-amber-400">500+</span><span class="text-xs text-slate-400">Solved PYQs</span></div>
+                                    <div><span class="block text-xl font-bold text-amber-400">15K+</span><span class="text-xs text-slate-400">Students</span></div>
                                 </div>
                             </div>
                         </div>
@@ -184,195 +209,64 @@
                 </div>
             </div>
 
-            <!-- Quick Feature Cards Grid -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="text-center max-w-3xl mx-auto mb-14">
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">Your Comprehensive Learning Ecosystem</h2>
-                    <p class="text-slate-600 text-base">Designed specifically for aspirants who want conceptual clarity, structural answer writing, and real-time sociological application.</p>
-                </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Card 1 -->
                     <div onclick="switchTab('ugcnet')" class="glass-card p-6 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer group border-t-4 border-t-amber-500">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-award"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-award"></i></div>
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">UGC NET Special Zone</h3>
-                        <p class="text-sm text-slate-600 mb-4">Dedicated units, conceptual checklists, and previous year paper trends targeted specifically for UGC NET JRF.</p>
-                        <span class="text-xs font-bold text-indigo-900 group-hover:text-amber-600 flex items-center space-x-1">
-                            <span>Open UGC NET Zone</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </span>
+                        <p class="text-sm text-slate-600 mb-4">Dedicated units, conceptual checklists, and previous year paper trends for UGC NET JRF.</p>
+                        <span class="text-xs font-bold text-indigo-900">Open UGC NET Zone →</span>
                     </div>
-
-                    <!-- Card 2 -->
                     <div onclick="switchTab('concepts')" class="glass-card p-6 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer group border-t-4 border-t-indigo-900">
-                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-brain"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-brain"></i></div>
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">Thinkers & Theories</h3>
-                        <p class="text-sm text-slate-600 mb-4">Master classical and modern thinkers with interactive summary cards, mind maps, and core axioms.</p>
-                        <span class="text-xs font-bold text-indigo-900 group-hover:text-amber-600 flex items-center space-x-1">
-                            <span>Explore Thinkers</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </span>
+                        <p class="text-sm text-slate-600 mb-4">Master classical and modern thinkers with interactive summary cards and core axioms.</p>
+                        <span class="text-xs font-bold text-indigo-900">Explore Thinkers →</span>
                     </div>
-
-                    <!-- Card 3 -->
                     <div onclick="switchTab('pyq')" class="glass-card p-6 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer group border-t-4 border-t-amber-500">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-list-check"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-list-check"></i></div>
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">PYQ Vault</h3>
-                        <p class="text-sm text-slate-600 mb-4">Access year-wise solved papers with structured Introduction, Body, Critical View, and Conclusion.</p>
-                        <span class="text-xs font-bold text-indigo-900 group-hover:text-amber-600 flex items-center space-x-1">
-                            <span>Open PYQ Vault</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </span>
+                        <p class="text-sm text-slate-600 mb-4">Access solved papers with structured Introduction, Body, and Conclusion.</p>
+                        <span class="text-xs font-bold text-indigo-900">Open PYQ Vault →</span>
                     </div>
-
-                    <!-- Card 4 -->
                     <div onclick="switchTab('ai')" class="glass-card p-6 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer group border-t-4 border-t-indigo-900">
-                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">AI Answer Studio</h3>
-                        <p class="text-sm text-slate-600 mb-4">Generate instantaneous answers and revision notes tailored for competitive examinations.</p>
-                        <span class="text-xs font-bold text-indigo-900 group-hover:text-amber-600 flex items-center space-x-1">
-                            <span>Try AI Studio</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </span>
+                        <p class="text-sm text-slate-600 mb-4">Generate instantaneous answers and revision notes tailored for competitive exams.</p>
+                        <span class="text-xs font-bold text-indigo-900">Try AI Studio →</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= TAB 2: UGC NET SOCIOLOGY ZONE (NEW) ================= -->
+        <!-- ================= TAB 2: UGC NET SOCIOLOGY ZONE ================= -->
         <section id="tab-ugcnet" class="tab-content hidden py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Dedicated Exam Track</span>
                     <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mt-3 mb-3">UGC NET Sociology JRF Zone</h2>
-                    <p class="text-slate-600">Curated resources, unit-wise topic breakdowns, high-yield conceptual lists, and mock preparation specifically designed to crack UGC NET Sociology Code 05.</p>
+                    <p class="text-slate-600">Curated resources, unit-wise topic breakdowns, high-yield conceptual lists, and mock preparation specifically designed to crack UGC NET Sociology (Code 05).</p>
                 </div>
 
-                <!-- UGC NET Highlights Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
                     <div class="glass-card p-6 rounded-2xl border-t-4 border-t-indigo-900 shadow-sm">
                         <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-xl mb-4 font-bold">01</div>
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">Unit-Wise Quick Checklists</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Covering all 10 units from Classical Thinkers (Unit 1) to Contemporary Issues (Unit 10) with exact book references and thinker matching lists.</p>
-                        <button onclick="openUgcModal('units')" class="text-indigo-900 font-bold text-xs hover:text-amber-600 flex items-center space-x-1">
-                            <span>View Unit Breakdowns</span> <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </button>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Covering all 10 units from Classical & Post-Modern Thinkers (Unit 1) to Contemporary Issues (Unit 10) with key book lists.</p>
+                        <button onclick="openUgcModal('units')" class="text-indigo-900 font-bold text-xs hover:text-amber-600">View Unit Breakdowns →</button>
                     </div>
-
                     <div class="glass-card p-6 rounded-2xl border-t-4 border-t-amber-500 shadow-sm">
                         <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4 font-bold">02</div>
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">Matching & Assertion PYQs</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-4">UGC NET heavily tests 'Assertion-Reason' and 'Match the List' formats. Practice specialized sets compiled directly from past papers.</p>
-                        <button onclick="openUgcModal('assertion')" class="text-indigo-900 font-bold text-xs hover:text-amber-600 flex items-center space-x-1">
-                            <span>Practice Sample Set</span> <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </button>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">UGC NET heavily tests 'Assertion-Reason' and 'Match the List' formats. Practice specialized sets compiled from past papers.</p>
+                        <button onclick="openUgcModal('assertion')" class="text-indigo-900 font-bold text-xs hover:text-amber-600">Practice Sample Set →</button>
                     </div>
-
                     <div class="glass-card p-6 rounded-2xl border-t-4 border-t-indigo-900 shadow-sm">
                         <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-xl mb-4 font-bold">03</div>
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">JRF Strategy & Booklist</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Essential reading guide recommended by top rankers: Haralambos, R.<bos>9. Ahuja, Abraham & Morgan, and crucial Indian sociology anthologies.</p>
-                        <button onclick="openUgcModal('booklist')" class="text-indigo-900 font-bold text-xs hover:text-amber-600 flex items-center space-x-1">
-                            <span>View JRF Booklist</span> <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </button>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Essential reading guide recommended by top rankers: Haralambos, R. Ahuja, Abraham & Morgan, and Yogendra Singh.</p>
+                        <button onclick="openUgcModal('booklist')" class="text-indigo-900 font-bold text-xs hover:text-amber-600">View JRF Booklist →</button>
                     </div>
-                </div>
-
-                <!-- UGC NET Quick Practice Box -->
-                <div class="bg-indigo-950 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-amber-500/30">
-                    <div class="max-w-3xl mx-auto text-center space-y-4">
-                        <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Interactive Test Series Prep</span>
-                        <h3 class="text-2xl sm:text-3xl font-serif font-bold">Ready to test your UGC NET Sociology preparation?</h3>
-                        <p class="text-slate-300 text-sm">Join our active Telegram discussion group where daily UGC NET paper-1 and paper-2 mock MCQs are shared and discussed by peers.</p>
-                        <div class="pt-2">
-                            <button onclick="openModal('joinTelegramModal')" class="bg-amber-500 hover:bg-amber-600 text-indigo-950 font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
-                                <i class="fa-brands fa-telegram mr-2 text-lg"></i> Join UGC NET Discussion Group
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= AI ANSWER TOOL ================= -->
-        <section id="tab-ai" class="tab-content hidden py-12 sm:py-16">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-10">
-                    <div class="inline-flex items-center gap-2 rounded-full bg-amber-100 text-amber-800 px-4 py-2 text-xs font-bold uppercase tracking-widest mb-4"><i class="fa-solid fa-wand-magic-sparkles"></i> AI-powered study assistant</div>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">AI Answer Studio</h2>
-                    <p class="text-slate-600">Apna question daalo aur Sociology / UPSC-style structured answer generate karo — introduction, thinkers, examples, analysis aur conclusion ke saath.</p>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-                    <div class="lg:col-span-2 bg-white rounded-3xl border border-slate-200 shadow-xl p-5 sm:p-8">
-                        <form id="aiAnswerForm" class="space-y-5">
-                            <div>
-                                <label for="aiQuestion" class="block text-sm font-bold text-indigo-950 mb-2">Your question</label>
-                                <textarea id="aiQuestion" required rows="5" maxlength="5000" placeholder="Example: Discuss the relevance of Durkheim's theory of religion in contemporary society." class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 resize-y"></textarea>
-                                <p class="text-xs text-slate-500 mt-2">Tip: Paste the exact UPSC / UGC-NET question for a more focused answer.</p>
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="aiExam" class="block text-sm font-bold text-indigo-950 mb-2">Exam / purpose</label>
-                                    <select id="aiExam" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                        <option value="UPSC Sociology Optional">UPSC Sociology Optional</option>
-                                        <option value="UPSC General Studies">UPSC General Studies</option>
-                                        <option value="UGC NET Sociology" selected>UGC NET Sociology</option>
-                                        <option value="College / general Sociology">College / general Sociology</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="aiLength" class="block text-sm font-bold text-indigo-950 mb-2">Answer length</label>
-                                    <select id="aiLength" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                        <option value="150 words">150 words</option>
-                                        <option value="250 words" selected>250 words</option>
-                                        <option value="400 words">400 words</option>
-                                        <option value="Detailed notes">Detailed notes</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="aiStyle" class="block text-sm font-bold text-indigo-950 mb-2">Answer format</label>
-                                <select id="aiStyle" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                    <option value="Exam-ready answer with introduction, structured body, examples and conclusion">Mains-ready answer (Intro–Body–Conclusion)</option>
-                                    <option value="Pointwise notes with definitions, thinkers, key concepts and examples">Pointwise notes</option>
-                                    <option value="Critical analysis with arguments for and against, thinkers and contemporary examples">Critical analysis / evaluate</option>
-                                    <option value="Simple explanation for a beginner, with a short example">Simple explanation</option>
-                                </select>
-                            </div>
-                            <button id="aiGenerateBtn" type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-indigo-950 hover:bg-indigo-900 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold px-6 py-4 rounded-xl shadow-lg transition">
-                                <i class="fa-solid fa-wand-magic-sparkles"></i><span id="aiGenerateLabel">Generate Answer</span>
-                            </button>
-                            <p class="text-xs text-slate-500"><i class="fa-solid fa-shield-halved mr-1"></i>Your question is sent to the configured AI service to generate the answer. Never enter passwords or private personal information.</p>
-                        </form>
-                    </div>
-                    <aside class="space-y-4">
-                        <div class="bg-indigo-950 text-white rounded-3xl p-6 shadow-lg">
-                            <div class="w-11 h-11 rounded-xl bg-amber-500 text-indigo-950 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <h3 class="font-serif text-xl font-bold mb-2">Built for learners</h3>
-                            <ul class="text-sm text-slate-300 space-y-3">
-                                <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Thinkers and sociological concepts</li>
-                                <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Indian and contemporary examples</li>
-                                <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Exam-oriented structure</li>
-                                <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Copy answer for your notes</li>
-                            </ul>
-                        </div>
-                        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-sm text-amber-950">
-                            <p class="font-bold mb-1"><i class="fa-solid fa-lightbulb mr-2"></i>Study smart</p>
-                            <p>Use AI as a study aid. Verify facts, quotations, statistics and references before using them in an exam answer.</p>
-                        </div>
-                    </aside>
-                </div>
-                <div id="aiAnswerStatus" class="hidden mt-6 rounded-2xl p-4 text-sm" role="status" aria-live="polite"></div>
-                <div id="aiAnswerResult" class="hidden mt-6 bg-white border border-slate-200 rounded-3xl shadow-xl overflow-hidden">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50 border-b border-slate-200 px-5 sm:px-7 py-4">
-                        <div><h3 class="font-serif text-xl font-bold text-indigo-950">Your AI-generated answer</h3><p class="text-xs text-slate-500 mt-1">Review and verify before using.</p></div>
-                        <button type="button" onclick="copyAIAnswer()" class="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-indigo-950 font-bold px-4 py-2.5 rounded-xl"><i class="fa-regular fa-copy"></i>Copy answer</button>
-                    </div>
-                    <div id="aiAnswerText" class="p-5 sm:p-7 whitespace-pre-wrap leading-7 text-slate-700"></div>
                 </div>
             </div>
         </section>
@@ -386,134 +280,59 @@
                     <p class="text-slate-600">Click any sociologist card to open comprehensive study notes, key terms, and exam application pointers.</p>
                 </div>
 
-                <!-- Search Filter for Thinkers -->
-                <div class="max-w-md mx-auto mb-10">
-                    <div class="relative">
-                        <i class="fa-solid fa-search absolute left-4 top-3.5 text-slate-400"></i>
-                        <input type="text" id="thinkerSearch" onkeyup="filterThinkers()" placeholder="Search thinkers, theories, keywords..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-indigo-900 shadow-sm text-sm">
-                    </div>
-                </div>
-
-                <!-- Thinkers Grid -->
                 <div id="thinkersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Thinker 1 -->
-                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between" data-title="Émile Durkheim Social Facts Religion Division of Labour">
+                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Classical Theorist</span>
-                                <span class="text-xs text-slate-500 font-medium">France (1858–1917)</span>
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mb-2">Émile Durkheim</h3>
-                            <p class="text-sm text-slate-600 mb-4">Pioneer of modern social science. Focused on social integration, collective consciousness, social facts, and religion as social glue.</p>
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-700 mb-4">
-                                <span class="font-bold text-indigo-900 block mb-1">Key Concepts:</span>
-                                • Social Facts • Suicide Typology • Sacred & Profane • Mechanical & Organic Solidarity
-                            </div>
+                            <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Classical Theorist</span>
+                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mt-3 mb-2">Émile Durkheim</h3>
+                            <p class="text-sm text-slate-600 mb-4">Focused on social facts, division of labour, suicide typology, and religion as collective consciousness.</p>
                         </div>
-                        <button onclick="openThinkerModal('durkheim')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm transition flex items-center justify-center space-x-2">
-                            <span>Read Full Notes</span>
-                            <i class="fa-solid fa-book-open text-amber-400 text-xs"></i>
-                        </button>
+                        <button onclick="openThinkerModal('durkheim')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm">Read Full Notes</button>
                     </div>
 
-                    <!-- Thinker 2 -->
-                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between" data-title="Karl Marx Historical Materialism Alienation Class Struggle">
+                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Conflict Theorist</span>
-                                <span class="text-xs text-slate-500 font-medium">Germany (1818–1883)</span>
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mb-2">Karl Marx</h3>
-                            <p class="text-sm text-slate-600 mb-4">Examined society through the lens of economic production, class struggle, historical materialism, and capitalist alienation.</p>
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-700 mb-4">
-                                <span class="font-bold text-indigo-900 block mb-1">Key Concepts:</span>
-                                • Historical Materialism • Mode of Production • Alienation • False Consciousness
-                            </div>
+                            <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Conflict Theorist</span>
+                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mt-3 mb-2">Karl Marx</h3>
+                            <p class="text-sm text-slate-600 mb-4">Examined historical materialism, modes of production, class struggle, and four dimensions of alienation.</p>
                         </div>
-                        <button onclick="openThinkerModal('marx')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm transition flex items-center justify-center space-x-2">
-                            <span>Read Full Notes</span>
-                            <i class="fa-solid fa-book-open text-amber-400 text-xs"></i>
-                        </button>
+                        <button onclick="openThinkerModal('marx')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm">Read Full Notes</button>
                     </div>
 
-                    <!-- Thinker 3 -->
-                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between" data-title="Max Weber Social Action Bureaucracy Protestant Ethic Authority">
+                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Interpretive Sociology</span>
-                                <span class="text-xs text-slate-500 font-medium">Germany (1864–1920)</span>
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mb-2">Max Weber</h3>
-                            <p class="text-sm text-slate-600 mb-4">Introduced Verstehen (interpretive understanding), ideal types, rationalization, bureaucracy, and the link between religion and capitalism.</p>
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-700 mb-4">
-                                <span class="font-bold text-indigo-900 block mb-1">Key Concepts:</span>
-                                • Social Action • Authority Types • Bureaucracy • Protestant Ethic
-                            </div>
+                            <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Interpretive Sociology</span>
+                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mt-3 mb-2">Max Weber</h3>
+                            <p class="text-sm text-slate-600 mb-4">Introduced Verstehen, social action, ideal types, bureaucracy, and the Protestant Ethic thesis.</p>
                         </div>
-                        <button onclick="openThinkerModal('weber')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm transition flex items-center justify-center space-x-2">
-                            <span>Read Full Notes</span>
-                            <i class="fa-solid fa-book-open text-amber-400 text-xs"></i>
-                        </button>
+                        <button onclick="openThinkerModal('weber')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm">Read Full Notes</button>
                     </div>
 
-                    <!-- Thinker 4 -->
-                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between" data-title="Radcliffe Brown Structural Functionalism Social Structure">
+                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">Structural Anthropology</span>
-                                <span class="text-xs text-slate-500 font-medium">UK (1881–1955)</span>
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mb-2">A.R. Radcliffe-Brown</h3>
-                            <p class="text-sm text-slate-600 mb-4">Developed structural-functionalism by comparing social structures to biological organisms maintaining social equilibrium.</p>
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-700 mb-4">
-                                <span class="font-bold text-indigo-900 block mb-1">Key Concepts:</span>
-                                • Social Structure • Function & Process • Andaman Islanders • Totemism
-                            </div>
+                            <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">Structural Anthropology</span>
+                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mt-3 mb-2">A.R. Radcliffe-Brown</h3>
+                            <p class="text-sm text-slate-600 mb-4">Developed structural-functionalism comparing social institutions to biological organisms.</p>
                         </div>
-                        <button onclick="openThinkerModal('radcliffe')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm transition flex items-center justify-center space-x-2">
-                            <span>Read Full Notes</span>
-                            <i class="fa-solid fa-book-open text-amber-400 text-xs"></i>
-                        </button>
+                        <button onclick="openThinkerModal('radcliffe')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm">Read Full Notes</button>
                     </div>
 
-                    <!-- Thinker 5 -->
-                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between" data-title="Bronislaw Malinowski Participant Observation Functionalism Magic">
+                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">Ethnographic Method</span>
-                                <span class="text-xs text-slate-500 font-medium">Poland/UK (1884–1942)</span>
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mb-2">Bronislaw Malinowski</h3>
-                            <p class="text-sm text-slate-600 mb-4">Championed intensive fieldwork and participant observation. Argued that cultural institutions satisfy basic psychological needs.</p>
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-700 mb-4">
-                                <span class="font-bold text-indigo-900 block mb-1">Key Concepts:</span>
-                                • Participant Observation • Needs Functionalism • Kula Ring • Magic & Science
-                            </div>
+                            <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">Ethnographic Method</span>
+                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mt-3 mb-2">Bronislaw Malinowski</h3>
+                            <p class="text-sm text-slate-600 mb-4">Championed participant observation, Kula ring exchange, and psychological needs functionalism.</p>
                         </div>
-                        <button onclick="openThinkerModal('malinowski')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm transition flex items-center justify-center space-x-2">
-                            <span>Read Full Notes</span>
-                            <i class="fa-solid fa-book-open text-amber-400 text-xs"></i>
-                        </button>
+                        <button onclick="openThinkerModal('malinowski')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm">Read Full Notes</button>
                     </div>
 
-                    <!-- Thinker 6 -->
-                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between" data-title="M.N. Srinivas Sanskritisation Westernisation Dominant Caste">
+                    <div class="thinker-card glass-card p-6 rounded-2xl shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">Indian Sociology</span>
-                                <span class="text-xs text-slate-500 font-medium">India (1916–1999)</span>
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mb-2">M.N. Srinivas</h3>
-                            <p class="text-sm text-slate-600 mb-4">Titan of Indian sociology. Grounded sociology in rigorous village studies and introduced vital concepts regarding social mobility in India.</p>
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-700 mb-4">
-                                <span class="font-bold text-indigo-900 block mb-1">Key Concepts:</span>
-                                • Sanskritisation • Dominant Caste • Westernisation • The Remembered Village
-                            </div>
+                            <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">Indian Sociology</span>
+                            <h3 class="text-2xl font-serif font-bold text-indigo-950 mt-3 mb-2">M.N. Srinivas</h3>
+                            <p class="text-sm text-slate-600 mb-4">Pioneered field-view village studies, Sanskritisation, Westernisation, and Dominant Caste.</p>
                         </div>
-                        <button onclick="openThinkerModal('srinivas')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm transition flex items-center justify-center space-x-2">
-                            <span>Read Full Notes</span>
-                            <i class="fa-solid fa-book-open text-amber-400 text-xs"></i>
-                        </button>
+                        <button onclick="openThinkerModal('srinivas')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white font-medium py-2.5 rounded-xl text-sm">Read Full Notes</button>
                     </div>
                 </div>
             </div>
@@ -521,81 +340,28 @@
 
         <!-- ================= TAB 4: PYQ VAULT ================= -->
         <section id="tab-pyq" class="tab-content hidden py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-amber-600 font-bold uppercase text-xs tracking-widest block mb-2">Exam Practice & Model Answers</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">PYQ Vault & Solved Answers</h2>
-                    <p class="text-slate-600">Search previous year questions for UPSC Optional and UGC NET. Every model answer follows the structured Introduction, Body, and Conclusion format.</p>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-3">PYQ Vault & Model Answers</h2>
+                    <p class="text-slate-600">Structured Introduction, Body, and Conclusion frameworks for past questions.</p>
                 </div>
 
-                <!-- Search & Filter Controls -->
-                <div class="max-w-2xl mx-auto mb-10 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                    <div class="relative flex-grow">
-                        <i class="fa-solid fa-search absolute left-4 top-3.5 text-slate-400"></i>
-                        <input type="text" id="pyqSearch" onkeyup="filterPYQs()" placeholder="Search questions by topic, thinker, or keyword..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-indigo-900 shadow-sm text-sm">
-                    </div>
-                    <select id="examFilter" onchange="filterPYQs()" class="bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-indigo-900 shadow-sm">
-                        <option value="all">All Exams</option>
-                        <option value="upsc">UPSC Civil Services</option>
-                        <option value="ugc">UGC NET</option>
-                    </select>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-indigo-900">
+                    <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">UPSC Optional</span>
+                    <h3 class="text-xl font-serif font-bold text-indigo-950 mt-2 mb-3">"Discuss the relationship between religion and science in modern society. Do they necessarily remain in conflict?"</h3>
+                    <button onclick="openPYQModal('pyq1')" class="bg-indigo-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl">View Model Answer Structure</button>
                 </div>
 
-                <!-- PYQ List -->
-                <div id="pyqList" class="space-y-6 max-w-4xl mx-auto">
-                    <!-- PYQ Item 1 -->
-                    <div class="pyq-item glass-card p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-l-indigo-900" data-exam="upsc" data-text="religion science modern society secularisation durkheim">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">UPSC Optional (25 Marks)</span>
-                            <span class="text-xs text-slate-500 font-medium">Paper 1 • Sociological Thinkers & Religion</span>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-indigo-950 mb-3">
-                            "Discuss the relationship between religion and science in modern society. Do they necessarily remain in conflict?"
-                        </h3>
-                        <p class="text-sm text-slate-600 mb-4">
-                            Analyze the transformation of religious institutions vis-à-vis scientific rationalization, drawing upon Durkheimian sacred/profane and Weberian disenchantment.
-                        </p>
-                        <button onclick="openPYQModal('pyq1')" class="bg-indigo-900 hover:bg-indigo-950 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition flex items-center space-x-2">
-                            <i class="fa-solid fa-eye text-amber-400"></i>
-                            <span>View Model Answer Structure</span>
-                        </button>
-                    </div>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-amber-500">
+                    <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">UGC NET & UPSC</span>
+                    <h3 class="text-xl font-serif font-bold text-indigo-950 mt-2 mb-3">Critically evaluate M.N. Srinivas's concept of 'Sanskritisation' in understanding contemporary social mobility.</h3>
+                    <button onclick="openPYQModal('pyq2')" class="bg-indigo-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl">View Model Answer Structure</button>
+                </div>
 
-                    <!-- PYQ Item 2 -->
-                    <div class="pyq-item glass-card p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-l-amber-500" data-exam="ugc" data-text="sanskritisation dominant caste m n srinivas social mobility india">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">UGC NET (Objective & Descriptive)</span>
-                            <span class="text-xs text-slate-500 font-medium">Indian Society • Social Stratification</span>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-indigo-950 mb-3">
-                            Critically evaluate M.N. Srinivas's concept of 'Sanskritisation' in understanding contemporary social mobility in rural and urban India.
-                        </h3>
-                        <p class="text-sm text-slate-600 mb-4">
-                            Examine how lower castes emulate upper caste lifestyle customs and the limitations of Sanskritisation in capturing structural economic mobility.
-                        </p>
-                        <button onclick="openPYQModal('pyq2')" class="bg-indigo-900 hover:bg-indigo-950 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition flex items-center space-x-2">
-                            <i class="fa-solid fa-eye text-amber-400"></i>
-                            <span>View Model Answer Structure</span>
-                        </button>
-                    </div>
-
-                    <!-- PYQ Item 3 -->
-                    <div class="pyq-item glass-card p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-l-indigo-900" data-exam="upsc" data-text="alienation karl marx capitalist mode production labor">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">UPSC Optional (15 Marks)</span>
-                            <span class="text-xs text-slate-500 font-medium">Paper 1 • Karl Marx & Work</span>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-indigo-950 mb-3">
-                            Explain Karl Marx's four dimensions of alienation under the capitalist mode of production. Is alienation relevant in the modern gig economy?
-                        </h3>
-                        <p class="text-sm text-slate-600 mb-4">
-                            Break down alienation from product, process, species-being, and fellow workers with modern examples of gig platforms and algorithms.
-                        </p>
-                        <button onclick="openPYQModal('pyq3')" class="bg-indigo-900 hover:bg-indigo-950 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition flex items-center space-x-2">
-                            <i class="fa-solid fa-eye text-amber-400"></i>
-                            <span>View Model Answer Structure</span>
-                        </button>
-                    </div>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-indigo-900">
+                    <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">UPSC Optional</span>
+                    <h3 class="text-xl font-serif font-bold text-indigo-950 mt-2 mb-3">Explain Karl Marx's four dimensions of alienation under capitalism. Is alienation relevant in the modern gig economy?</h3>
+                    <button onclick="openPYQModal('pyq3')" class="bg-indigo-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl">View Model Answer Structure</button>
                 </div>
             </div>
         </section>
@@ -604,77 +370,36 @@
         <section id="tab-samaj" class="tab-content hidden py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-amber-600 font-bold uppercase text-xs tracking-widest block mb-2">Sociology in Everyday Life</span>
                     <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">Socio-lens Monthly & Current Affairs</h2>
-                    <p class="text-slate-600">Connecting everyday headlines, consumer habits, and technological trends directly to sociological theories.</p>
+                    <p class="text-slate-600">Connecting everyday headlines and consumer trends directly to sociological theories.</p>
                 </div>
 
-                <!-- Articles Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Article 1 -->
-                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between p-6">
                         <div>
-                            <div class="h-48 bg-gradient-to-tr from-indigo-900 to-indigo-950 p-6 flex flex-col justify-end text-white relative">
-                                <span class="absolute top-4 right-4 bg-amber-500 text-indigo-950 font-bold text-xs px-3 py-1 rounded-full">Consumer Culture</span>
-                                <h3 class="text-xl font-serif font-bold leading-snug">The iPhone & Conspicuous Consumption: Veblen in the 21st Century</h3>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Socio-lens Monthly #42 • By Pathan Musheer Khan</p>
-                                <p class="text-sm text-slate-600 mb-4">
-                                    Why do people queue for hours for the latest smartphone? Thorstein Veblen’s theory of conspicuous consumption explains how status symbols dictate modern social stratification.
-                                </p>
-                            </div>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Consumer Culture</span>
+                            <h3 class="text-xl font-serif font-bold text-indigo-950 mt-3 mb-2">The iPhone & Conspicuous Consumption: Veblen in the 21st Century</h3>
+                            <p class="text-sm text-slate-600 mb-4">How Thorstein Veblen’s theory explains status symbols and modern social stratification.</p>
                         </div>
-                        <div class="p-6 pt-0">
-                            <button onclick="openArticleModal('art1')" class="w-full bg-slate-100 hover:bg-amber-500 hover:text-indigo-950 text-indigo-900 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center space-x-2">
-                                <span>Read Full Article</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
+                        <button onclick="openArticleModal('art1')" class="w-full bg-indigo-900 text-white font-bold py-2.5 rounded-xl text-xs">Read Full Article →</button>
                     </div>
 
-                    <!-- Article 2 -->
-                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between p-6">
                         <div>
-                            <div class="h-48 bg-gradient-to-tr from-indigo-900 to-indigo-950 p-6 flex flex-col justify-end text-white relative">
-                                <span class="absolute top-4 right-4 bg-amber-500 text-indigo-950 font-bold text-xs px-3 py-1 rounded-full">Gender & Labour</span>
-                                <h3 class="text-xl font-serif font-bold leading-snug">The Informal Economy & Women: Dual Burden and Invisible Labour</h3>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Socio-lens Monthly #18 • Editorial Desk</p>
-                                <p class="text-sm text-slate-600 mb-4">
-                                    Analyzing the feminisation of informal labour and unpaid domestic work through Marxist-feminist frameworks and Ann Oakley's gender socialisation.
-                                </p>
-                            </div>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Gender & Labour</span>
+                            <h3 class="text-xl font-serif font-bold text-indigo-950 mt-3 mb-2">The Informal Economy & Women: Dual Burden and Invisible Labour</h3>
+                            <p class="text-sm text-slate-600 mb-4">Analyzing feminisation of informal labour and unpaid domestic work through Marxist-feminist lenses.</p>
                         </div>
-                        <div class="p-6 pt-0">
-                            <button onclick="openArticleModal('art2')" class="w-full bg-slate-100 hover:bg-amber-500 hover:text-indigo-950 text-indigo-900 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center space-x-2">
-                                <span>Read Full Article</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
+                        <button onclick="openArticleModal('art2')" class="w-full bg-indigo-900 text-white font-bold py-2.5 rounded-xl text-xs">Read Full Article →</button>
                     </div>
 
-                    <!-- Article 3 -->
-                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between p-6">
                         <div>
-                            <div class="h-48 bg-gradient-to-tr from-indigo-900 to-indigo-950 p-6 flex flex-col justify-end text-white relative">
-                                <span class="absolute top-4 right-4 bg-amber-500 text-indigo-950 font-bold text-xs px-3 py-1 rounded-full">Digital Sociology</span>
-                                <h3 class="text-xl font-serif font-bold leading-snug">Algorithmic Tribes: Social Media & The New Collective Consciousness</h3>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-calendar-days text-amber-500 mr-1.5"></i> Socio-lens Monthly #45 • By Pathan Musheer Khan</p>
-                                <p class="text-sm text-slate-600 mb-4">
-                                    How echo chambers and algorithmic feeds create virtual totems and modify Durkheimian collective effervescence in the digital era.
-                                </p>
-                            </div>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Digital Sociology</span>
+                            <h3 class="text-xl font-serif font-bold text-indigo-950 mt-3 mb-2">Algorithmic Tribes: Social Media & New Collective Consciousness</h3>
+                            <p class="text-sm text-slate-600 mb-4">How echo chambers and algorithmic feeds modify Durkheimian collective effervescence.</p>
                         </div>
-                        <div class="p-6 pt-0">
-                            <button onclick="openArticleModal('art3')" class="w-full bg-slate-100 hover:bg-amber-500 hover:text-indigo-950 text-indigo-900 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center space-x-2">
-                                <span>Read Full Article</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
+                        <button onclick="openArticleModal('art3')" class="w-full bg-indigo-900 text-white font-bold py-2.5 rounded-xl text-xs">Read Full Article →</button>
                     </div>
                 </div>
             </div>
@@ -684,116 +409,96 @@
         <section id="tab-hub" class="tab-content hidden py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-amber-600 font-bold uppercase text-xs tracking-widest block mb-2">High-Scoring Framework</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">Student-Friendly Answer Writing Masterclass</h2>
-                    <p class="text-slate-600">Master the foolproof 3-step formula to transform average answers into top-tier examiner favorites.</p>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">Answer Writing Masterclass</h2>
+                    <p class="text-slate-600">Follow the 3-Step Formula: Understand • Grasp • Write.</p>
                 </div>
 
-                <!-- 3 Step Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                    <div class="glass-card p-8 rounded-3xl shadow-sm border-t-4 border-t-amber-500 text-center">
-                        <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-6 shadow-inner font-bold font-serif">
-                            1
-                        </div>
-                        <h3 class="text-xl font-bold text-indigo-950 mb-3">Understand</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Deconstruct command words (*Critically examine*, *Discuss*, *Comment*). Identify the core sociological sub-branch and thinkers implied in the prompt.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-3xl shadow-sm border-t-4 border-t-indigo-900 text-center">
-                        <div class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-2xl mx-auto mb-6 shadow-inner font-bold font-serif">
-                            2
-                        </div>
-                        <h3 class="text-xl font-bold text-indigo-950 mb-3">Grasp</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Integrate classical & modern thinkers, empirical case studies, and sociological terms (e.g., *Anomie*, *Habitus*, *Verstehen*) to substantiate arguments.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-3xl shadow-sm border-t-4 border-t-amber-500 text-center">
-                        <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-6 shadow-inner font-bold font-serif">
-                            3
-                        </div>
-                        <h3 class="text-xl font-bold text-indigo-950 mb-3">Write</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Structure neatly into Introduction (definition/quote), Body (balanced arguments with thinkers), and a forward-looking Sociological Conclusion.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Interactive Answer Structure Tool -->
-                <div class="bg-indigo-950 text-white p-8 sm:p-10 rounded-3xl shadow-xl border border-amber-500/30 max-w-4xl mx-auto">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-indigo-950 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-serif font-bold">Interactive Answer Blueprint Generator</h3>
-                            <p class="text-xs text-amber-400">Select a topic to generate an instant structuring template</p>
-                        </div>
-                    </div>
-                    
+                <div class="bg-indigo-950 text-white p-8 rounded-3xl max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Interactive Answer Blueprint Generator</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                        <button onclick="generateBlueprint('religion')" class="bg-indigo-900 hover:bg-indigo-800 border border-slate-700 text-white py-3 px-4 rounded-xl text-sm font-semibold transition text-left">
-                            <i class="fa-solid fa-book text-amber-400 mr-2"></i> Religion & Society
-                        </button>
-                        <button onclick="generateBlueprint('stratification')" class="bg-indigo-900 hover:bg-indigo-800 border border-slate-700 text-white py-3 px-4 rounded-xl text-sm font-semibold transition text-left">
-                            <i class="fa-solid fa-layer-group text-amber-400 mr-2"></i> Caste & Class
-                        </button>
-                        <button onclick="generateBlueprint('globalisation')" class="bg-indigo-900 hover:bg-indigo-800 border border-slate-700 text-white py-3 px-4 rounded-xl text-sm font-semibold transition text-left">
-                            <i class="fa-solid fa-globe text-amber-400 mr-2"></i> Globalisation
-                        </button>
+                        <button onclick="generateBlueprint('religion')" class="bg-indigo-900 hover:bg-indigo-800 border border-slate-700 py-3 px-4 rounded-xl text-sm font-semibold">Religion & Society</button>
+                        <button onclick="generateBlueprint('stratification')" class="bg-indigo-900 hover:bg-indigo-800 border border-slate-700 py-3 px-4 rounded-xl text-sm font-semibold">Caste & Class</button>
+                        <button onclick="generateBlueprint('globalisation')" class="bg-indigo-900 hover:bg-indigo-800 border border-slate-700 py-3 px-4 rounded-xl text-sm font-semibold">Globalisation</button>
                     </div>
-
-                    <div id="blueprintOutput" class="bg-indigo-900/60 border border-indigo-800 p-6 rounded-2xl text-slate-200 text-sm space-y-3">
-                        <p class="text-amber-400 font-semibold"><i class="fa-solid fa-circle-info mr-2"></i> Click any topic above to view the examiner-friendly answer template.</p>
+                    <div id="blueprintOutput" class="bg-indigo-900/60 border border-indigo-800 p-6 rounded-2xl text-slate-200 text-sm space-y-2">
+                        <p class="text-amber-400 font-semibold">Click any topic above to view the answer template.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= TAB 7: STUDENT CORNER ================= -->
+        <!-- ================= TAB 7: AI ANSWER STUDIO ================= -->
+        <section id="tab-ai" class="tab-content hidden py-12 sm:py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-3">AI Answer Studio</h2>
+                    <p class="text-slate-600">Apna question daalo aur structured Sociology answer generate karo.</p>
+                </div>
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-8">
+                    <form id="aiAnswerForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-indigo-950 mb-2">Your Question</label>
+                            <textarea id="aiQuestion" required rows="4" placeholder="Example: Critically examine Durkheim's theory of suicide." class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-800"></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-indigo-950 mb-2">Exam</label>
+                                <select id="aiExam" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-3">
+                                    <option value="UPSC Sociology Optional">UPSC Sociology Optional</option>
+                                    <option value="UGC NET Sociology">UGC NET Sociology</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-indigo-950 mb-2">Length</label>
+                                <select id="aiLength" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-3">
+                                    <option value="250 words">250 words</option>
+                                    <option value="400 words">400 words</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="aiGenerateBtn" type="submit" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-bold px-6 py-4 rounded-xl shadow-lg">
+                            <span id="aiGenerateLabel">Generate Structured Answer</span>
+                        </button>
+                    </form>
+                </div>
+                <div id="aiAnswerResult" class="hidden mt-6 bg-white border border-slate-200 rounded-3xl shadow-xl p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-serif text-xl font-bold text-indigo-950">Generated Answer</h3>
+                        <button type="button" onclick="copyAIAnswer()" class="bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs">Copy Answer</button>
+                    </div>
+                    <div id="aiAnswerText" class="whitespace-pre-wrap leading-7 text-slate-700 text-sm"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 8: STUDENT CORNER ================= -->
         <section id="tab-student" class="tab-content hidden py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-amber-600 font-bold uppercase text-xs tracking-widest block mb-2">Resources & Community</span>
                     <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-950 mb-4">Student Corner</h2>
-                    <p class="text-slate-600">Download syllabus guides, glossary lists, and connect with fellow aspirants in our dedicated peer community.</p>
+                    <p class="text-slate-600">Download syllabus guides, glossary lists, and connect with fellow aspirants.</p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
-                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-4">
-                            <i class="fa-solid fa-download"></i>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-card p-6 rounded-2xl text-center">
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">UPSC & NET Syllabus PDF</h3>
-                        <p class="text-xs text-slate-600 mb-4">Complete topic-wise paper breakdown for Paper 1 and Paper 2.</p>
-                        <button onclick="showToast('Downloading Syllabus PDF...')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white text-xs font-semibold py-2.5 rounded-xl transition">Download PDF</button>
+                        <p class="text-xs text-slate-600 mb-4">Complete topic-wise syllabus breakdown.</p>
+                        <button onclick="showToast('Syllabus check initiated!')" class="w-full bg-indigo-900 text-white text-xs font-semibold py-2.5 rounded-xl">Download PDF</button>
                     </div>
-
-                    <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
-                        <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-2xl mx-auto mb-4">
-                            <i class="fa-solid fa-book-bookmark"></i>
-                        </div>
+                    <div class="glass-card p-6 rounded-2xl text-center">
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">Sociological Glossary</h3>
-                        <p class="text-xs text-slate-600 mb-4">Over 200+ key terms defined with thinker attributions.</p>
-                        <button onclick="showToast('Downloading Glossary PDF...')" class="w-full bg-indigo-900 hover:bg-indigo-950 text-white text-xs font-semibold py-2.5 rounded-xl transition">Download Glossary</button>
+                        <p class="text-xs text-slate-600 mb-4">200+ key terms defined with thinker attributions.</p>
+                        <button onclick="showToast('Glossary check initiated!')" class="w-full bg-indigo-900 text-white text-xs font-semibold py-2.5 rounded-xl">Download Glossary</button>
                     </div>
-
-                    <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
-                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-4">
-                            <i class="fa-brands fa-telegram"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-indigo-950 mb-2">Telegram Discussion Group</h3>
-                        <p class="text-xs text-slate-600 mb-4">Active community of 15,000+ students discussing daily MCQs.</p>
-                        <button onclick="openModal('joinTelegramModal')" class="w-full bg-amber-500 hover:bg-amber-600 text-indigo-950 text-xs font-bold py-2.5 rounded-xl transition">Join Group</button>
+                    <div class="glass-card p-6 rounded-2xl text-center">
+                        <h3 class="text-lg font-bold text-indigo-950 mb-2">Telegram Group</h3>
+                        <p class="text-xs text-slate-600 mb-4">Discuss daily MCQs and answer reviews.</p>
+                        <button onclick="openModal('joinTelegramModal')" class="w-full bg-amber-500 text-indigo-950 text-xs font-bold py-2.5 rounded-xl">Join Group</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= TAB 8: ABOUT US (MENTOR) ================= -->
+        <!-- ================= TAB 9: ABOUT US (MENTOR) ================= -->
         <section id="tab-mentor" class="tab-content hidden py-16">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="glass-card p-8 sm:p-12 rounded-3xl shadow-lg border border-slate-200 space-y-6">
@@ -813,36 +518,14 @@
                         <p>
                             We believe that Sociology is more than the study of society — it is a way of understanding human behaviour, social institutions, inequalities, cultural transformations, and the forces that shape our everyday lives.
                         </p>
-                        <p>
-                            Our platform seeks to simplify complex sociological theories, explain the contributions of eminent thinkers, connect contemporary social issues with sociological perspectives, and help learners develop analytical thinking and structured answer-writing skills.
-                        </p>
-
                         <div class="bg-indigo-50 p-5 rounded-xl border border-indigo-100 my-4">
                             <h3 class="serif text-xl font-bold text-indigo-950 mb-3">What We Offer</h3>
                             <ul class="space-y-2 text-xs md:text-sm text-slate-700">
-                                <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>Core Concepts & Thinkers:</strong> Simplified explanations of sociological theories, concepts, and classical and contemporary thinkers.</li>
-                                <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>PYQ Vault:</strong> Previous-year question-oriented learning to identify recurring themes and understand examination demands.</li>
-                                <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>Socio-Lens:</strong> A sociological perspective on contemporary events, social issues, and transformations in Indian society.</li>
-                                <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>Answer Writing Hub:</strong> Guidance on structuring analytical, evidence-based, and exam-oriented answers.</li>
-                                <li><i class="fa-solid fa-check text-amber-600 mr-2"></i><strong>AI Answer Studio:</strong> An AI-assisted learning space designed to support answer practice, conceptual clarity, and revision.</li>
+                                <li>• <strong>Core Concepts & Thinkers:</strong> Simplified explanations of classical and contemporary thinkers.</li>
+                                <li>• <strong>UGC NET Zone & PYQ Vault:</strong> Exam-focused preparation and model answer structures.</li>
+                                <li>• <strong>Socio-Lens & AI Answer Studio:</strong> Contemporary examples and structured answer generation.</li>
                             </ul>
                         </div>
-
-                        <h3 class="serif text-2xl font-bold text-indigo-950 pt-2">Our Vision</h3>
-                        <p>
-                            Our vision is to create a learning space where students do not merely memorise sociological concepts but learn to question, analyse, interpret, and understand society through a sociological lens.
-                        </p>
-                        <p>
-                            We aspire to make quality Sociology learning more accessible to aspirants preparing for UPSC Civil Services, UGC-NET, and other academic and competitive examinations.
-                        </p>
-
-                        <h3 class="serif text-2xl font-bold text-indigo-950 pt-2">Our Philosophy</h3>
-                        <p>
-                            At Social Prism, we believe that every social phenomenon has multiple dimensions, and understanding those dimensions is the first step towards meaningful learning.
-                        </p>
-                        <p class="font-semibold text-indigo-900">
-                            We don't just help you study Sociology; we encourage you to think sociologically.
-                        </p>
                         <p class="text-center font-bold text-amber-700 pt-2 text-base serif">
                             Social Prism — Understand. Grasp. Write.
                         </p>
@@ -864,26 +547,24 @@
                         </div>
                         <span class="text-xl font-serif font-bold text-white">Social Prism</span>
                     </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        Sociology by Pathan Musheer Khan. Your student-friendly prism to decoding society, mastering concepts, and acing competitive examinations.
-                    </p>
+                    <p class="text-xs text-slate-400">Sociology by Pathan Musheer Khan. Understand • Grasp • Write.</p>
                 </div>
                 <div>
                     <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-xs text-slate-300">
-                        <li><button onclick="switchTab('home')" class="hover:text-amber-400 transition">Home</button></li>
-                        <li><button onclick="switchTab('ugcnet')" class="hover:text-amber-400 transition">UGC NET Sociology</button></li>
-                        <li><button onclick="switchTab('concepts')" class="hover:text-amber-400 transition">Core Concepts</button></li>
-                        <li><button onclick="switchTab('pyq')" class="hover:text-amber-400 transition">PYQ Vault</button></li>
+                        <li><button onclick="switchTab('home')" class="hover:text-amber-400">Home</button></li>
+                        <li><button onclick="switchTab('ugcnet')" class="hover:text-amber-400">UGC NET Sociology</button></li>
+                        <li><button onclick="switchTab('concepts')" class="hover:text-amber-400">Core Concepts</button></li>
+                        <li><button onclick="switchTab('pyq')" class="hover:text-amber-400">PYQ Vault</button></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-4">Student Hub</h4>
                     <ul class="space-y-2 text-xs text-slate-300">
-                        <li><button onclick="switchTab('hub')" class="hover:text-amber-400 transition">Answer Writing Hub</button></li>
-                        <li><button onclick="switchTab('ai')" class="hover:text-amber-400 transition">AI Answer Studio</button></li>
-                        <li><button onclick="switchTab('student')" class="hover:text-amber-400 transition">Student Corner</button></li>
-                        <li><button onclick="switchTab('mentor')" class="hover:text-amber-400 transition">About Us</button></li>
+                        <li><button onclick="switchTab('hub')" class="hover:text-amber-400">Answer Writing Hub</button></li>
+                        <li><button onclick="switchTab('ai')" class="hover:text-amber-400">AI Answer Studio</button></li>
+                        <li><button onclick="switchTab('student')" class="hover:text-amber-400">Student Corner</button></li>
+                        <li><button onclick="switchTab('mentor')" class="hover:text-amber-400">About Us</button></li>
                     </ul>
                 </div>
                 <div>
@@ -893,409 +574,128 @@
                 </div>
             </div>
             <div class="pt-8 border-t border-indigo-900 text-center text-xs text-slate-500">
-                © <span id="year"></span> Social Prism by Pathan Musheer Khan. All Rights Reserved.
+                © 2026 Social Prism by Pathan Musheer Khan. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- ================= MODALS ================= -->
-
-    <!-- Thinker Detail Modal -->
-    <div id="thinkerModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <!-- MODALS -->
+    <div id="thinkerModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('thinkerModal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <div id="thinkerModalContent" class="space-y-4">
-                <!-- Dynamically filled -->
-            </div>
+            <div id="thinkerModalContent" class="space-y-4"></div>
         </div>
     </div>
 
-    <!-- PYQ Answer Modal -->
-    <div id="pyqModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <div id="pyqModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('pyqModal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <div id="pyqModalContent" class="space-y-4">
-                <!-- Dynamically filled -->
-            </div>
+            <div id="pyqModalContent" class="space-y-4"></div>
         </div>
     </div>
 
-    <!-- UGC NET Modal -->
-    <div id="ugcModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <div id="ugcModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('ugcModal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <div id="ugcModalContent" class="space-y-4">
-                <!-- Dynamically filled -->
-            </div>
+            <div id="ugcModalContent" class="space-y-4"></div>
         </div>
     </div>
 
-    <!-- Article Modal -->
-    <div id="articleModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <div id="articleModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('articleModal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <div id="articleModalContent" class="space-y-4">
-                <!-- Dynamically filled -->
-            </div>
+            <div id="articleModalContent" class="space-y-4"></div>
         </div>
     </div>
 
-    <!-- Telegram Modal -->
-    <div id="joinTelegramModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative text-center">
+    <div id="joinTelegramModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative text-center">
             <button onclick="closeModal('joinTelegramModal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <div class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-3xl mx-auto mb-4">
-                <i class="fa-brands fa-telegram"></i>
-            </div>
             <h3 class="text-2xl font-serif font-bold text-indigo-950 mb-2">Join Telegram Community</h3>
-            <p class="text-sm text-slate-600 mb-6">Get daily sociology current affairs, answer writing prompts, and direct updates from Pathan Musheer Khan.</p>
-            <button onclick="showToast('Redirecting to Telegram channel...'); closeModal('joinTelegramModal');" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-indigo-950 font-bold py-3 rounded-xl shadow-lg hover:from-amber-600 hover:to-amber-700 transition">
-                Open Telegram Channel
-            </button>
+            <p class="text-sm text-slate-600 mb-6">Get daily sociology updates and direct mentorship from Pathan Musheer Khan.</p>
+            <button onclick="showToast('Redirecting to Telegram...'); closeModal('joinTelegramModal');" class="w-full bg-amber-500 text-indigo-950 font-bold py-3 rounded-xl">Open Telegram</button>
         </div>
     </div>
 
-    <!-- JavaScript Application Logic -->
+    <!-- Remaining Interactive Scripts -->
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-
-        // Tab Navigation Logic
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            const target = document.getElementById('tab-' + tabId);
-            if(target) target.classList.remove('hidden');
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-amber-400', 'border-amber-400');
-                btn.classList.add('text-slate-300', 'border-transparent');
-                if(btn.getAttribute('data-target') === tabId) {
-                    btn.classList.remove('text-slate-300', 'border-transparent');
-                    btn.classList.add('text-amber-400', 'border-amber-400');
-                }
-            });
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('mobile-icon');
-            menu.classList.toggle('hidden');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
-        }
-
-        // Toast Notification Function
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-message').innerText = message;
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
-        }
-
-        // Modal Open/Close Controls
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
-        }
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-        }
-
-        // UGC NET Modal Content
-        const ugcData = {
-            units: {
-                title: "UGC NET Sociology Unit-Wise Checklist",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">UGC NET Syllabus Breakdown (Code 05)</h3>
-                    <p class="text-xs text-amber-600 font-semibold">10 Essential Units Overview</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p><strong>Unit 1: Sociological Theories</strong> (Classical Thinkers: Marx, Weber, Durkheim, Pareto, Mead)</p>
-                        <p><strong>Unit 2: Research Methods & Analysis</strong> (Epistemology, Quantitative/Qualitative methods, Sampling)</p>
-                        <p><strong>Unit 3: Basic Concepts & Institutions</strong> (Society, Culture, Socialization, Family, Religion)</p>
-                        <p><strong>Unit 4: Rural and Peasant Society</strong> (Agrarian structure, Peasant movements, Land reforms)</p>
-                        <p><strong>Unit 5: Indian Society</strong> (Perspectives: GS Ghurye, MN Srinivas, SC Dube, BR Ambedkar, DP Mukerji)</p>
-                        <p><strong>Unit 6-10:</strong> Social Movements, Change in India, Gender, Environment, and Modernity.</p>
-                    </div>
-                `
-            },
-            assertion: {
-                title: "Sample Assertion-Reason Practice Set",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">Assertion & Reasoning Test</h3>
-                    <p class="text-xs text-amber-600 font-semibold">UGC NET Exam Pattern Sample</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p><strong>Assertion (A):</strong> Émile Durkheim argued that suicide rates are fundamentally social facts tied to social integration and moral regulation.</p>
-                        <p><strong>Reason (R):</strong> Individual psychological traits alone are insufficient to account for regular statistical variations in national suicide rates.</p>
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mt-4">
-                            <span class="font-bold text-indigo-900 block mb-1">Correct Answer Explanation:</span>
-                            Both (A) and (R) are true, and (R) is the correct explanation of (A). Durkheim established this in his 1897 sociological study 'Suicide'.
-                        </div>
-                    </div>
-                `
-            },
-            booklist: {
-                title: "Recommended UGC NET JRF Booklist",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">Top Recommended Books for JRF</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Curated by Pathan Musheer Khan</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p>1. <strong>Sociological Thought</strong> — Francis Abraham & John Henry Morgan</p>
-                        <p>2. <strong>Sociology: Themes and Perspectives</strong> — Michael Haralambos & Martin Holborn</p>
-                        <p>3. <strong>Indian Society: Themes and Social Issues</strong> — Ram Ahuja</p>
-                        <p>4. <strong>Modernization of Indian Tradition</strong> — Yogendra Singh</p>
-                        <p>5. <strong>Social Change in Modern India</strong> — M.N. Srinivas</p>
-                    </div>
-                `
-            }
+        var ugcData = {
+            units: '<h3 class="text-2xl font-serif font-bold text-indigo-950">UGC NET 10 Units Breakdown</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>Unit 1:</b> Sociological Theories (Classical & Post-Modern)</p><p><b>Unit 2:</b> Research Methodology & Methods</p><p><b>Unit 3:</b> Basic Concepts & Social Institutions</p><p><b>Unit 4:</b> Rural & Peasant Society</p><p><b>Unit 5:</b> Indian Sociological Thinkers (Ghurye, Srinivas, Dube, Ambedkar)</p><p><b>Units 6-10:</b> Social Movements, Development, Gender, Technology & Culture.</p></div>',
+            assertion: '<h3 class="text-2xl font-serif font-bold text-indigo-950">Assertion-Reason Practice</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>Assertion (A):</b> Durkheim argued suicide rates are social facts tied to integration and regulation.</p><p><b>Reason (R):</b> Psychological traits alone cannot explain statistical regularities in suicide rates.</p><p class="text-emerald-700 font-bold pt-2">Answer: Both (A) and (R) are true, and (R) is the correct explanation.</p></div>',
+            booklist: '<h3 class="text-2xl font-serif font-bold text-indigo-950">Recommended JRF Booklist</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p>1. Sociological Thought — Abraham & Morgan</p><p>2. Sociology: Themes & Perspectives — Haralambos</p><p>3. Modernization of Indian Tradition — Yogendra Singh</p><p>4. Social Change in Modern India — M.N. Srinivas</p></div>'
         };
 
         function openUgcModal(type) {
-            const data = ugcData[type];
-            if(!data) return;
-            document.getElementById('ugcModalContent').innerHTML = `
-                <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">UGC NET JRF Track</span>
-                \${data.content}
-            `;
+            if (!ugcData[type]) return;
+            document.getElementById('ugcModalContent').innerHTML = ugcData[type];
             openModal('ugcModal');
         }
 
-        // AI Answer Studio Simulated Client Fallback
-        const aiAnswerForm = document.getElementById('aiAnswerForm');
-        if (aiAnswerForm) {
-            aiAnswerForm.addEventListener('submit', async function(event) {
-                event.preventDefault();
-                const question = document.getElementById('aiQuestion').value.trim();
-                const exam = document.getElementById('aiExam').value;
-                const length = document.getElementById('aiLength').value;
-                const style = document.getElementById('aiStyle').value;
-                const button = document.getElementById('aiGenerateBtn');
-                const label = document.getElementById('aiGenerateLabel');
-                const status = document.getElementById('aiAnswerStatus');
-                const result = document.getElementById('aiAnswerResult');
-                if (!question) return;
-                
-                button.disabled = true;
-                label.textContent = 'Generating answer…';
-                button.querySelector('i').className = 'fa-solid fa-spinner fa-spin';
-                status.className = 'mt-6 rounded-2xl p-4 text-sm bg-indigo-50 text-indigo-900 border border-indigo-100';
-                status.textContent = 'Analysing question through sociological lens…';
-                result.classList.add('hidden');
-
-                setTimeout(() => {
-                    const mockAnswer = `**Question:** \${question}\n**Exam Focus:** ${exam} \vert{} **Target Length:**${length}\n\n---\n\n### **1. Introduction**\nSociology views this phenomenon not merely as an isolated occurrence, but as a structural outcome shaped by historical, cultural, and institutional forces. As classical and modern sociologists argue, individual actions are deeply embedded within broader social frameworks.\n\n### **2. Core Sociological Analysis & Perspectives**\n- **Theoretical Grounding:** Drawing from classical sociological perspectives (such as Durkheimian functionalism, Marxian conflict approach, or Weberian rational action), this issue reflects underlying tensions within societal stratification and institutional arrangements.\n- **Empirical Reality in India:** In the contemporary Indian context, factors such as caste dynamics, class inequalities, gender roles, and the transition toward modernization significantly influence this domain.\n- **Critical Evaluation:** While structural functionalists view such mechanisms as serving systemic equilibrium, conflict theorists highlight how dominant groups leverage these structures to maintain unequal power equations.\n\n### **3. Conclusion**\nA balanced sociological assessment requires acknowledging both continuity and change. Moving forward, policy interventions coupled with critical sociological reflection remain essential for fostering a more inclusive and equitable society.`;
-
-                    document.getElementById('aiAnswerText').textContent = mockAnswer;
-                    result.classList.remove('hidden');
-                    status.className = 'mt-6 rounded-2xl p-4 text-sm bg-emerald-50 text-emerald-800 border border-emerald-200';
-                    status.textContent = 'Answer generated successfully! You can copy and use it for your revision.';
-                    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-                    button.disabled = false;
-                    label.textContent = 'Generate Answer';
-                    button.querySelector('i').className = 'fa-solid fa-wand-magic-sparkles';
-                }, 1200);
-            });
-        }
-
-        async function copyAIAnswer() {
-            const answer = document.getElementById('aiAnswerText').textContent;
-            try {
-                await navigator.clipboard.writeText(answer);
-                showToast('Answer copied to clipboard!');
-            } catch (error) {
-                showToast('Please select and copy the answer manually.');
-            }
-        }
-
-        // Thinker Filter Search
-        function filterThinkers() {
-            const query = document.getElementById('thinkerSearch').value.toLowerCase();
-            const cards = document.querySelectorAll('.thinker-card');
-            cards.forEach(card => {
-                const text = card.getAttribute('data-title').toLowerCase();
-                if(text.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // PYQ Filter Search
-        function filterPYQs() {
-            const query = document.getElementById('pyqSearch').value.toLowerCase();
-            const exam = document.getElementById('examFilter').value;
-            const items = document.querySelectorAll('.pyq-item');
-            
-            items.forEach(item => {
-                const text = item.getAttribute('data-text').toLowerCase();
-                const itemExam = item.getAttribute('data-exam');
-                const matchesSearch = text.includes(query);
-                const matchesExam = (exam === 'all' || itemExam === exam);
-
-                if(matchesSearch && matchesExam) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Thinker Modals Data
-        const thinkersData = {
-            durkheim: {
-                title: "Émile Durkheim: Social Facts & Religion",
-                badge: "Classical Theorist",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">Émile Durkheim</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Key Theorist of Functionalism & Social Order</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p><strong>1. Social Facts:</strong> Durkheim defined social facts as ways of acting, thinking, and feeling, external to the individual, and endowed with a power of coercion by reason of which they control them.</p>
-                        <p><strong>2. Division of Labour:</strong> Shifted from mechanical solidarity (based on likeness and repressive law) in primitive societies to organic solidarity (based on interdependence and restitutive law) in modern industrial societies.</p>
-                        <p><strong>3. Religion & The Sacred:</strong> In 'The Elementary Forms of the Religious Life', he argued that religion is the worship of society itself. The distinction between the Sacred and the Profane forms the bedrock of ritual life.</p>
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mt-4">
-                            <span class="font-bold text-indigo-900 block mb-1">Exam Application Pointer:</span>
-                            Use Durkheim when discussing social cohesion, education reforms, secularisation debates, and suicide rates in contemporary sociological analysis.
-                        </div>
-                    </div>
-                `
-            },
-            marx: {
-                title: "Karl Marx: Historical Materialism & Alienation",
-                badge: "Conflict Theorist",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">Karl Marx</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Architect of Conflict Theory & Historical Materialism</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p><strong>1. Historical Materialism:</strong> Society progresses through stages based on its mode of production (primitive communism, slavery, feudalism, capitalism, socialism). Economic base determines the superstructure (law, religion, politics).</p>
-                        <p><strong>2. Alienation (Entfremdung):</strong> Under capitalism, workers suffer alienation from: (a) The product of labour, (b) The production process, (c) Species-being (creative essence), and (d) Fellow workers.</p>
-                        <p><strong>3. Class Struggle:</strong> Bourgeoisie (owners of means of production) versus Proletariat (wage labourers), leading inevitably to class consciousness and revolution.</p>
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mt-4">
-                            <span class="font-bold text-indigo-900 block mb-1">Exam Application Pointer:</span>
-                            Apply Marx to analyze economic inequality, gig economy exploitation, corporate culture, and labour rights.
-                        </div>
-                    </div>
-                `
-            },
-            weber: {
-                title: "Max Weber: Social Action, Bureaucracy & Verstehen",
-                badge: "Interpretive Sociology",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">Max Weber</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Pioneer of Interpretive Sociology & Rationalisation</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p><strong>1. Verstehen:</strong> Interpretive understanding of human social action. Sociology must study the subjective meanings actors attach to their actions.</p>
-                        <p><strong>2. Ideal Types:</strong> Analytical constructs used as methodological yardsticks to study complex social phenomena (e.g., Bureaucracy, Authority).</p>
-                        <p><strong>3. Bureaucracy:</strong> Characterized by hierarchy, written rules, impersonality, and technical competence. Weber warned of the 'iron cage of rationality'.</p>
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mt-4">
-                            <span class="font-bold text-indigo-900 block mb-1">Exam Application Pointer:</span>
-                            Essential for questions on governance, administrative reforms, religion vs. capitalism, and authority types.
-                        </div>
-                    </div>
-                `
-            },
-            radcliffe: {
-                title: "A.R. Radcliffe-Brown: Structural Functionalism",
-                badge: "Structural Anthropology",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">A.R. Radcliffe-Brown</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Structural-Functionalist Anthropologist</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p><strong>1. Concept of Social Structure:</strong> Viewed social structure as an arrangement of persons in institutionalized relations. Influenced by Durkheim and biological analogies.</p>
-                        <p><strong>2. Function:</strong> The contribution a social activity makes to the maintenance of the structural continuity of the whole social system.</p>
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mt-4">
-                            <span class="font-bold text-indigo-900 block mb-1">Exam Application Pointer:</span>
-                            Use in kinship studies, tribal social systems, and structural continuity.
-                        </div>
-                    </div>
-                `
-            },
-            malinowski: {
-                title: "Bronislaw Malinowski: Fieldwork & Functionalism",
-                badge: "Ethnographic Method",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">Bronislaw Malinowski</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Father of Participant Observation</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p><strong>1. Participant Observation:</strong> Pioneered intensive fieldwork where the researcher lives among the studied community to grasp their native point of view.</p>
-                        <p><strong>2. Needs Functionalism:</strong> Culture exists to satisfy biological, psychological, and instrumental needs of human beings.</p>
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mt-4">
-                            <span class="font-bold text-indigo-900 block mb-1">Exam Application Pointer:</span>
-                            Crucial for methodology questions and ethnographic fieldwork discussions.
-                        </div>
-                    </div>
-                `
-            },
-            srinivas: {
-                title: "M.N. Srinivas: Sanskritisation & Dominant Caste",
-                badge: "Indian Sociology",
-                content: `
-                    <h3 class="text-2xl font-serif font-bold text-indigo-950">M.N. Srinivas</h3>
-                    <p class="text-xs text-amber-600 font-semibold">Titan of Indian Sociological Studies</p>
-                    <div class="space-y-3 text-sm text-slate-700 pt-2">
-                        <p><strong>1. Sanskritisation:</strong> Process by which lower castes emulate the customs, rituals, and lifestyle of upper castes to achieve higher ritual status in the caste hierarchy.</p>
-                        <p><strong>2. Dominant Caste:</strong> A caste wielding economic and political power in a local region, regardless of its ritual hierarchy rank.</p>
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mt-4">
-                            <span class="font-bold text-indigo-900 block mb-1">Exam Application Pointer:</span>
-                            Indispensable for Paper 2 Indian Society questions on social mobility, caste politics, and rural transformation.
-                        </div>
-                    </div>
-                `
-            }
+        var thinkersData = {
+            durkheim: '<h3 class="text-2xl font-serif font-bold text-indigo-950">Émile Durkheim</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>Social Facts:</b> External, coercive ways of acting and thinking.</p><p><b>Solidarity:</b> Mechanical (likeness) vs. Organic (interdependence).</p><p><b>Suicide:</b> Egoistic, Altruistic, Anomic, and Fatalistic.</p><p><b>Religion:</b> Sacred vs. Profane; society worshipping itself.</p></div>',
+            marx: '<h3 class="text-2xl font-serif font-bold text-indigo-950">Karl Marx</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>Historical Materialism:</b> Economic base shapes the ideological superstructure.</p><p><b>Alienation:</b> Estrangement from product, process, species-being, and peers.</p><p><b>Class Struggle:</b> Bourgeoisie vs. Proletariat.</p></div>',
+            weber: '<h3 class="text-2xl font-serif font-bold text-indigo-950">Max Weber</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>Verstehen:</b> Interpretive understanding of subjective meanings in social action.</p><p><b>Authority:</b> Traditional, Charismatic, and Legal-Rational.</p><p><b>Bureaucracy:</b> Rational-legal administration and the iron cage of rationality.</p></div>',
+            radcliffe: '<h3 class="text-2xl font-serif font-bold text-indigo-950">A.R. Radcliffe-Brown</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>Social Structure:</b> Institutionalized arrangement of persons.</p><p><b>Function:</b> Contribution of partial activities to the maintenance of structural continuity.</p></div>',
+            malinowski: '<h3 class="text-2xl font-serif font-bold text-indigo-950">Bronislaw Malinowski</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>Participant Observation:</b> Immersive ethnographic fieldwork in the Trobriand Islands.</p><p><b>Needs Functionalism:</b> Cultural institutions satisfy biological and psychological human needs.</p></div>',
+            srinivas: '<h3 class="text-2xl font-serif font-bold text-indigo-950">M.N. Srinivas</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>Sanskritisation:</b> Lower castes emulating rituals of upper castes for status mobility.</p><p><b>Dominant Caste:</b> Numerical, economic (land), and political power in a village.</p><p><b>Field-View:</b> Direct village ethnography over textual Indology.</p></div>'
         };
 
         function openThinkerModal(id) {
-            const data = thinkersData[id];
-            if(!data) return;
-            document.getElementById('thinkerModalContent').innerHTML = `
-                <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">${data.badge}</span>${data.content}
-            `;
+            if (!thinkersData[id]) return;
+            document.getElementById('thinkerModalContent').innerHTML = thinkersData[id];
             openModal('thinkerModal');
         }
 
-        // PYQ Modals Data
-        const pyqData = {
-            pyq1: {
-                title: "Religion & Science Model Answer",
-                exam: "UPSC Optional (25 Marks)",
-                q: "Discuss the relationship between religion and science in modern society. Do they necessarily remain in conflict?",
-                structure: `
-                    <div class="space-y-4 text-sm text-slate-700">
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
-                            <strong class="text-indigo-950 block mb-1">1. Introduction (3 Marks):</strong>
-                            Define religion (Durkheim: Sacred/Profane) and science (empirical rationality). State thesis: While historical conflicts existed (Galileo, Darwin), modern sociology views them as operating in distinct domains (Gould's NOMA) while interacting dynamically.
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <strong class="text-indigo-950 block mb-1">2. Core Body (15 Marks):</strong>
-                            • <strong>Conflict Perspective:</strong> Scientific rationalization leading to secularisation (Weber's disenchantment of the world). Science replacing religious dogma.<br>
-                            • <strong>Complementary / Functional View:</strong> Religion provides existential meaning and moral values where empirical science remains silent.<br>
-                            • <strong>Resurgence of Religion in Science Age:</strong> Rise of fundamentalism, tele-evangelism, and spiritual healing in hyper-technological societies.
-                        </div>
-                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
-                            <strong class="text-indigo-950 block mb-1">3. Conclusion (3 Marks):</strong>
-                            Summarize with a balanced sociological outlook: Science answers 'how', religion answers 'why'. They do not necessarily conflict; rather, they coexist and adapt in post-secular global societies.
-                        </div>
-                    </div>
-                `
-            },
-            pyq2: {
-                title: "Sanskritisation Model Answer",
-                exam: "UGC NET & UPSC Indian Society",
-                q: "Critically evaluate M.N. Srinivas's concept of 'Sanskritisation' in understanding contemporary social mobility.",
-                structure: `
-                    <div class="space-y-4 text-sm text-slate-700">
-                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
-                            <strong class="text-indigo-950 block mb-1">1. Introduction:</strong>
-                            Define Sanskritisation as formulated by M.N. Srinivas in 'Religion and Society Among the Coorgs of South India' as a process of cultural mobility among lower castes.
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <strong class="text-indigo-950 block mb-1">2. Main Arguments & Mechanics:</strong>
-                            • Adoption of vegetarianism, abstinence, ritual purity.<br>
-                            • Role of Dominant Caste as the local reference model.<br>
-                            • Shift from structural rigidity to fluid mobility aspirations.
-                        </div>
-                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
-                            <strong class="text-indigo-950 block mb-1">3. Critical Evaluation & Conclusion:</strong>
-                            Critique: Yog
+        var pyqData = {
+            pyq1: '<h3 class="text-xl font-serif font-bold text-indigo-950">Religion & Science Model Answer</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>1. Intro:</b> Define Durkheimian Sacred/Profane and empirical rationality.</p><p><b>2. Body:</b> Contrast Weberian disenchantment with modern religious resurgence.</p><p><b>3. Conclusion:</b> Science explains how; religion provides existential meaning.</p></div>',
+            pyq2: '<h3 class="text-xl font-serif font-bold text-indigo-950">Sanskritisation Evaluation</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>1. Intro:</b> Define Sanskritisation as cultural mobility within caste hierarchy.</p><p><b>2. Critique:</b> Yogendra Singh notes it leads to positional change, not structural change.</p></div>',
+            pyq3: '<h3 class="text-xl font-serif font-bold text-indigo-950">Marxian Alienation in Gig Economy</h3><div class="space-y-2 text-sm text-slate-700 pt-2"><p><b>1. Intro:</b> Define Entfremdung from 1844 Manuscripts.</p><p><b>2. Body:</b> Explain the 4 dimensions and connect to algorithmic control in platform work.</p></div>'
+        };
+
+        function openPYQModal(id) {
+            if (!pyqData[id]) return;
+            document.getElementById('pyqModalContent').innerHTML = pyqData[id];
+            openModal('pyqModal');
+        }
+
+        var articleData = {
+            art1: '<h3 class="text-xl font-serif font-bold text-indigo-950">Conspicuous Consumption</h3><p class="text-sm text-slate-700 pt-2">Thorstein Veblen explained how luxury goods serve as public displays of economic power and social status in stratified societies.</p>',
+            art2: '<h3 class="text-xl font-serif font-bold text-indigo-950">Women & Dual Burden</h3><p class="text-sm text-slate-700 pt-2">Ann Oakley and Marxist feminists highlight how unpaid domestic care work combined with informal wage labour creates a dual burden.</p>',
+            art3: '<h3 class="text-xl font-serif font-bold text-indigo-950">Algorithmic Tribes</h3><p class="text-sm text-slate-700 pt-2">Social media echo chambers create digital totems and virtual collective effervescence, reshaping modern social solidarity.</p>'
+        };
+
+        function openArticleModal(id) {
+            if (!articleData[id]) return;
+            document.getElementById('articleModalContent').innerHTML = articleData[id];
+            openModal('articleModal');
+        }
+
+        function generateBlueprint(topic) {
+            var out = document.getElementById('blueprintOutput');
+            if (topic === 'religion') out.innerHTML = '<p><b>Intro:</b> Sacred vs. Profane | <b>Thinkers:</b> Durkheim, Weber, Marx, Berger | <b>Conclusion:</b> Post-secular coexistence.</p>';
+            if (topic === 'stratification') out.innerHTML = '<p><b>Intro:</b> Caste vs. Class | <b>Thinkers:</b> Srinivas, Dumont, Beteille | <b>Conclusion:</b> Continuity and change in modern India.</p>';
+            if (topic === 'globalisation') out.innerHTML = '<p><b>Intro:</b> Time-space compression | <b>Thinkers:</b> Giddens, Ritzer, Appadurai | <b>Conclusion:</b> Glocalisation.</p>';
+        }
+
+        var aiForm = document.getElementById('aiAnswerForm');
+        if (aiForm) {
+            aiForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var q = document.getElementById('aiQuestion').value.trim();
+                var exam = document.getElementById('aiExam').value;
+                var len = document.getElementById('aiLength').value;
+                if (!q) return;
+                var text = "Question: " + q + "\nExam: " + exam + " (" + len + ")\n\n1. Introduction:\nSociology examines this phenomenon as a structural outcome shaped by historical and institutional forces.\n\n2. Sociological Perspectives:\n• Functionalist View (Durkheim/Parsons): Highlights systemic integration and institutional balance.\n• Conflict View (Marx): Examines underlying power asymmetries and material inequalities.\n• Indian Context (Srinivas/Beteille): Connects theoretical frameworks with empirical caste, class, and gender realities.\n\n3. Conclusion:\nA balanced sociological synthesis requires combining structural reforms with grassroot empowerment.";
+                document.getElementById('aiAnswerText').textContent = text;
+                document.getElementById('aiAnswerResult').classList.remove('hidden');
+            });
+        }
+
+        function copyAIAnswer() {
+            var ans = document.getElementById('aiAnswerText').textContent;
+            navigator.clipboard.writeText(ans);
+            showToast('Answer copied!');
+        }
+    </script>
+</body>
+</html>
