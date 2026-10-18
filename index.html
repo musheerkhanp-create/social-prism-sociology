@@ -42,33 +42,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
-
-        /* Social Prism News & Events sidebar */
-        .sp-updates-shell { max-width: 80rem; margin: 0 auto; padding: 0 1rem 2.5rem; }
-        .sp-updates-layout { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr); gap:1.25rem; align-items:start; }
-        .sp-update-card { background:#fff; border:1px solid #e2e8f0; border-radius:1.15rem; padding:1.1rem; box-shadow:0 8px 24px rgba(15,23,42,.05); }
-        .sp-update-title { display:flex; align-items:center; justify-content:space-between; gap:.7rem; margin-bottom:1rem; }
-        .sp-update-title h3 { margin:0; color:#0f0e26; font-size:1.05rem; font-weight:800; }
-        .sp-update-pill { font-size:.65rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#92400e; background:#fef3c7; border-radius:999px; padding:.3rem .55rem; white-space:nowrap; }
-        .sp-update-item { padding:.75rem 0; border-bottom:1px solid #eef2f7; }
-        .sp-update-item:first-child { padding-top:0; }
-        .sp-update-item:last-child { border-bottom:0; padding-bottom:0; }
-        .sp-update-item a { color:#1e1b4b; font-size:.88rem; line-height:1.5; font-weight:700; text-decoration:none; }
-        .sp-update-item a:hover { color:#b45309; text-decoration:underline; }
-        .sp-update-meta { color:#64748b; font-size:.7rem; margin-top:.3rem; line-height:1.45; }
-        .sp-update-category { display:inline-block; color:#4338ca; background:#eef2ff; border-radius:5px; padding:.2rem .4rem; font-size:.63rem; font-weight:800; margin-bottom:.35rem; }
-        .sp-update-empty { color:#64748b; font-size:.8rem; line-height:1.6; }
-        .sp-update-actions { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem; }
-        .sp-update-btn { background:#1e1b4b; color:#fff; border:0; border-radius:.6rem; padding:.55rem .75rem; font-size:.75rem; font-weight:700; cursor:pointer; }
-        .sp-update-btn:hover { background:#312e81; }
-        .sp-update-btn.secondary { background:#f1f5f9; color:#1e1b4b; border:1px solid #e2e8f0; }
-        .sp-update-form { display:none; margin-top:.85rem; padding-top:.85rem; border-top:1px solid #e2e8f0; gap:.55rem; }
-        .sp-update-form.open { display:grid; }
-        .sp-update-form input,.sp-update-form textarea,.sp-update-form select { width:100%; min-width:0; padding:.65rem .7rem; border:1px solid #cbd5e1; border-radius:.6rem; background:#fff; color:#0f172a; font:inherit; font-size:.8rem; }
-        .sp-update-form textarea { min-height:65px; resize:vertical; }
-        .sp-update-note { color:#64748b; font-size:.67rem; line-height:1.5; margin-top:.7rem; }
-        @media(max-width:850px) { .sp-updates-layout { grid-template-columns:1fr; } }
-
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-900 selection:text-amber-400">
@@ -102,6 +75,7 @@
                     <button onclick="switchTab('samaj')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="samaj">Socio-lens Monthly</button>
                     <button onclick="switchTab('hub')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="hub">Answer Writing</button>
                     <button onclick="switchTab('ai')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="ai"><i class="fa-solid fa-wand-magic-sparkles mr-1 text-amber-400"></i>AI Answer</button>
+                    <button onclick="switchTab('news')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="news">News & Events</button>
                     <button onclick="switchTab('student')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="student">Student Corner</button>
                     <button onclick="switchTab('mentor')" class="nav-btn text-slate-300 transition hover:text-amber-400 pb-1 border-b-2 border-transparent" data-target="mentor">About Mentor</button>
                 </div>
@@ -127,6 +101,7 @@
             <button onclick="switchTab('samaj'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Socio-lens Monthly</button>
             <button onclick="switchTab('hub'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Answer Writing</button>
             <button onclick="switchTab('ai'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-amber-300 hover:bg-indigo-900/50"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>AI Answer</button>
+            <button onclick="switchTab('news'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50"><i class="fa-regular fa-calendar-days mr-2 text-amber-400"></i>News & Events</button>
             <button onclick="switchTab('student'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">Student Corner</button>
             <button onclick="switchTab('mentor'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-indigo-900/50">About Mentor</button>
             <div class="pt-2">
@@ -209,53 +184,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- SOCIAL PRISM: NEWS & EVENTS -->
-            <section class="sp-updates-shell" aria-label="News and events">
-                <div class="sp-updates-layout">
-                    <div class="sp-update-card">
-                        <div class="sp-update-title">
-                            <h3><i class="fa-solid fa-newspaper text-amber-500 mr-2"></i>News &amp; Current Affairs</h3>
-                            <span class="sp-update-pill"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Live feed</span>
-                        </div>
-                        <div id="sp-live-news" aria-live="polite"><p class="sp-update-empty">Loading latest headlines…</p></div>
-                        <div class="sp-update-actions">
-                            <button type="button" class="sp-update-btn secondary" id="sp-refresh-news"><i class="fa-solid fa-rotate mr-1"></i>Refresh news</button>
-                        </div>
-                        <p class="sp-update-note">Headlines are retrieved from Google News RSS search feeds. Always open the original source and verify details before using them in exam answers.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="sp-update-card">
-                            <div class="sp-update-title">
-                                <h3><i class="fa-regular fa-calendar-days text-amber-500 mr-2"></i>Upcoming Events</h3>
-                                <span class="sp-update-pill">Student desk</span>
-                            </div>
-                            <div id="sp-live-events"><p class="sp-update-empty">No events added yet. Check back for academic updates.</p></div>
-                        </div>
-                        <div class="sp-update-card">
-                            <div class="sp-update-title">
-                                <h3><i class="fa-solid fa-bullhorn text-amber-500 mr-2"></i>Announcements</h3>
-                                <span class="sp-update-pill">Social Prism</span>
-                            </div>
-                            <div id="sp-live-announcements"><p class="sp-update-empty">No announcements published yet.</p></div>
-                            <div class="sp-update-actions">
-                                <button type="button" class="sp-update-btn" id="sp-manage-updates"><i class="fa-solid fa-pen-to-square mr-1"></i>Manage updates</button>
-                            </div>
-                            <form id="sp-update-form" class="sp-update-form">
-                                <input id="sp-update-heading" maxlength="160" placeholder="Announcement / event title" required>
-                                <select id="sp-update-type"><option value="Announcement">Announcement</option><option value="Event">Upcoming Event</option><option value="UPSC">UPSC Update</option><option value="UGC-NET">UGC-NET Update</option><option value="Sociology">Sociology Update</option></select>
-                                <textarea id="sp-update-details" maxlength="1200" placeholder="Short details (optional)"></textarea>
-                                <input id="sp-update-date" type="datetime-local" aria-label="Event date and time (optional)">
-                                <input id="sp-update-link" type="url" placeholder="Source / registration link (https://...) (optional)">
-                                <div class="sp-update-actions"><button class="sp-update-btn" type="submit">Save update</button><button class="sp-update-btn secondary" id="sp-cancel-update" type="button">Cancel</button></div>
-                            </form>
-                            <p class="sp-update-note">Note: This is a static HTML site, so these manual updates are saved in this browser only. To publish updates for every visitor securely, connect a database/admin backend.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END NEWS & EVENTS -->
 
             <!-- Quick Feature Cards Grid -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -800,13 +728,95 @@
                     </div>
 
                     <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
-                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mx-auto mb-4">
                             <i class="fa-brands fa-telegram"></i>
                         </div>
                         <h3 class="text-lg font-bold text-indigo-950 mb-2">Telegram Discussion Group</h3>
                         <p class="text-xs text-slate-600 mb-4">Active community of 15,000+ students discussing daily MCQs.</p>
                         <button onclick="openModal('joinTelegramModal')" class="w-full bg-amber-500 hover:bg-amber-600 text-indigo-950 text-xs font-bold py-2.5 rounded-xl transition">Join Group</button>
                     </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= NEWS & EVENTS ================= -->
+        <section id="tab-news" class="tab-content hidden py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-950 via-indigo-900 to-indigo-950 text-white p-8 sm:p-12 mb-10 shadow-xl">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:18px_18px]"></div>
+                    <div class="relative z-10 max-w-3xl">
+                        <span class="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-indigo-900/70 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-300"><i class="fa-regular fa-calendar-days"></i> Social Prism Bulletin</span>
+                        <h2 class="text-3xl sm:text-5xl font-serif font-bold mt-5 mb-4">News & Events</h2>
+                        <p class="text-slate-300 leading-relaxed">UPSC and Sociology updates, important announcements, workshops, answer-writing sessions, deadlines and learning events — all in one place.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+                    <div class="lg:col-span-2">
+                        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-5">
+                            <div><span class="text-amber-600 font-bold uppercase text-xs tracking-widest">Latest updates</span><h3 class="text-2xl font-serif font-bold text-indigo-950 mt-1">News & Announcements</h3></div>
+                            <input id="newsSearch" oninput="filterNewsEvents()" type="search" placeholder="Search updates..." class="w-full sm:w-64 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div id="newsList" class="space-y-4">
+                            <article class="news-event-item glass-card rounded-2xl p-5 sm:p-6 border-l-4 border-l-amber-500" data-search="social prism announcement website updates sociology upsc">
+                                <div class="flex flex-wrap items-center gap-2 mb-3"><span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Announcement</span><span class="text-xs text-slate-500">Social Prism</span></div>
+                                <h4 class="text-lg font-bold text-indigo-950 mb-2">Welcome to the Social Prism Bulletin</h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">Check this space for new study resources, website updates, academic announcements and upcoming learning activities.</p>
+                            </article>
+                            <article class="news-event-item glass-card rounded-2xl p-5 sm:p-6 border-l-4 border-l-indigo-900" data-search="upsc sociology current affairs answer writing practice">
+                                <div class="flex flex-wrap items-center gap-2 mb-3"><span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Study Update</span><span class="text-xs text-slate-500">Preparation</span></div>
+                                <h4 class="text-lg font-bold text-indigo-950 mb-2">Make Current Affairs Sociological</h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">When studying a news item, connect it with a sociological concept, a relevant thinker, an Indian example and a balanced conclusion.</p>
+                            </article>
+                            <p id="newsEmpty" class="hidden text-center text-sm text-slate-500 py-8">No updates match your search.</p>
+                        </div>
+                    </div>
+
+                    <aside class="space-y-5">
+                        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-indigo-950 flex items-center justify-center text-xl mb-4"><i class="fa-regular fa-bell"></i></div>
+                            <h3 class="text-xl font-serif font-bold text-indigo-950 mb-2">Stay Updated</h3>
+                            <p class="text-sm text-slate-600 mb-4">Important notices and event details will appear here as they are added to the website.</p>
+                            <button onclick="openModal('joinTelegramModal')" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-bold py-3 rounded-xl text-sm"><i class="fa-brands fa-telegram mr-2 text-amber-400"></i>Join Telegram</button>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6">
+                            <h3 class="text-lg font-bold text-indigo-950 mb-3"><i class="fa-solid fa-circle-info text-amber-500 mr-2"></i>How to use this space</h3>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex gap-2"><i class="fa-solid fa-check text-amber-500 mt-1"></i><span>Check announcements and study updates.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-check text-amber-500 mt-1"></i><span>Search updates by keyword.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-check text-amber-500 mt-1"></i><span>Add real dates and registration links when publishing an event.</span></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+                    <div><span class="text-amber-600 font-bold uppercase text-xs tracking-widest">Calendar & activities</span><h3 class="text-2xl font-serif font-bold text-indigo-950 mt-1">Upcoming Events</h3></div>
+                    <p class="text-xs text-slate-500">Sample event cards — replace details with confirmed dates before publishing.</p>
+                </div>
+                <div id="eventsList" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <article class="news-event-item glass-card rounded-2xl p-6 shadow-sm" data-search="answer writing workshop mains sociology practice">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-900 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-pen-nib"></i></div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Workshop</span>
+                        <h4 class="text-lg font-bold text-indigo-950 mt-2 mb-2">Answer Writing Practice</h4>
+                        <p class="text-sm text-slate-600 mb-4">A guided practice session for structuring introductions, analytical points, thinkers and conclusions.</p>
+                        <div class="text-xs text-slate-500 border-t border-slate-100 pt-3"><i class="fa-regular fa-calendar mr-2"></i>Date to be announced</div>
+                    </article>
+                    <article class="news-event-item glass-card rounded-2xl p-6 shadow-sm" data-search="sociology discussion thinkers concept revision">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-people-group"></i></div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Discussion</span>
+                        <h4 class="text-lg font-bold text-indigo-950 mt-2 mb-2">Sociology Thinkers Discussion</h4>
+                        <p class="text-sm text-slate-600 mb-4">Revise key concepts and compare perspectives from classical and contemporary sociologists.</p>
+                        <div class="text-xs text-slate-500 border-t border-slate-100 pt-3"><i class="fa-regular fa-calendar mr-2"></i>Date to be announced</div>
+                    </article>
+                    <article class="news-event-item glass-card rounded-2xl p-6 shadow-sm" data-search="current affairs quiz upsc ugc net">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-list-check"></i></div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Practice</span>
+                        <h4 class="text-lg font-bold text-indigo-950 mt-2 mb-2">Current Affairs & Concepts Quiz</h4>
+                        <p class="text-sm text-slate-600 mb-4">Practice linking current events with social institutions, stratification, culture and social change.</p>
+                        <div class="text-xs text-slate-500 border-t border-slate-100 pt-3"><i class="fa-regular fa-calendar mr-2"></i>Date to be announced</div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -942,6 +952,21 @@
 
     <!-- JavaScript Application Logic -->
     <script>
+        // News & Events search filter
+        function filterNewsEvents() {
+            const query = (document.getElementById('newsSearch')?.value || '').trim().toLowerCase();
+            const items = document.querySelectorAll('#tab-news .news-event-item');
+            let visible = 0;
+            items.forEach(item => {
+                const text = ((item.innerText || '') + ' ' + (item.dataset.search || '')).toLowerCase();
+                const match = text.includes(query);
+                item.classList.toggle('hidden', !match);
+                if (match) visible++;
+            });
+            const empty = document.getElementById('newsEmpty');
+            if (empty) empty.classList.toggle('hidden', visible > 0);
+        }
+
         // Tab Navigation Logic
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
@@ -1008,7 +1033,7 @@
             } else if (/marx|class struggle|capitalism|alienation|bourgeois|proletariat|historical material/.test(q)) {
                 topic = 'Marx: class, capitalism and social change';
                 thinkers = 'Karl Marx; concepts include historical materialism, mode of production, class struggle, alienation and ideology';
-                core = 'Marx explains social structure through material production and relations of production. In capitalist society, the conflict between those who own the means of production and those who sell their labour is a central source of inequality and social change. Alienation describes workers’ separation from the product, process, human potential and other people under exploitative labour relations. Class struggle is therefore both a feature of society and a potential driver of transformation.';
+                core = 'Marx explains social structure through material production and relations of production. In capitalist society, the conflict between those who own the means of production and those who sell their labour is a central source of inequality and social change. Alienation describes workers’ separation from the product, process, species-being and other people under exploitative labour relations. Class struggle is therefore both a feature of society and a potential driver of transformation.';
                 india = 'Apply the framework to informal labour, gig work, agrarian relations, unequal access to productive assets and the bargaining power of workers. Support claims with a verified example or data point where possible.';
                 critique = 'The framework is powerful for analysing economic power but may understate the independent role of caste, gender, religion, ethnicity and status. Weberian and feminist approaches can deepen the analysis.';
                 keywords = 'mode of production, class relations, exploitation, alienation, ideology, conflict, transformation';
@@ -1441,105 +1466,6 @@
                 `;
             }
         }
-
-
-        // Social Prism News & Events module
-        (function initSocialPrismUpdates() {
-            const newsBox = document.getElementById('sp-live-news');
-            const eventsBox = document.getElementById('sp-live-events');
-            const announcementsBox = document.getElementById('sp-live-announcements');
-            if (!newsBox || !eventsBox || !announcementsBox) return;
-
-            const feeds = [
-                { label: 'UPSC & National', q: 'India government policy UPSC' },
-                { label: 'Education', q: 'UGC NET Indian universities education' },
-                { label: 'Sociology & Society', q: 'India society caste gender social justice' }
-            ];
-            const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-            const safeUrl = value => { try { const u = new URL(value); return u.protocol === 'https:' ? u.href : ''; } catch { return ''; } };
-            const dateText = value => { const d = new Date(value); return value && !Number.isNaN(d.getTime()) ? d.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}) : ''; };
-            const storageKey = 'socialPrismNewsEvents_v1';
-            const getItems = () => { try { const x = JSON.parse(localStorage.getItem(storageKey) || '[]'); return Array.isArray(x) ? x : []; } catch { return []; } };
-            const saveItems = items => localStorage.setItem(storageKey, JSON.stringify(items));
-
-            function renderUpdates() {
-                const items = getItems();
-                const now = Date.now();
-                const events = items.filter(x => x.type === 'Event' && x.date && new Date(x.date).getTime() >= now).sort((a,b)=>new Date(a.date)-new Date(b.date));
-                const announcements = items.filter(x => x.type !== 'Event').sort((a,b)=>(b.created||0)-(a.created||0));
-                const itemHTML = (x, isEvent) => {
-                    const link = safeUrl(x.link);
-                    return `<article class="sp-update-item">${isEvent && x.date ? `<div class="sp-update-meta mb-1"><i class="fa-regular fa-clock mr-1"></i>${escape(new Date(x.date).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'}))}</div>` : ''}<span class="sp-update-category">${escape(x.type || 'Announcement')}</span><div class="text-sm font-bold text-indigo-950">${escape(x.title)}</div>${x.details ? `<p class="text-xs text-slate-600 mt-1 leading-relaxed">${escape(x.details)}</p>` : ''}${link ? `<a class="text-xs inline-block mt-2" href="${escape(link)}" target="_blank" rel="noopener noreferrer">View details ↗</a>` : ''}<div class="sp-update-actions"><button type="button" class="sp-update-btn secondary" data-sp-delete="${escape(x.id)}">Delete</button></div></article>`;
-                };
-                eventsBox.innerHTML = events.length ? events.map(x=>itemHTML(x,true)).join('') : '<p class="sp-update-empty">No upcoming events added yet.</p>';
-                announcementsBox.innerHTML = announcements.length ? announcements.map(x=>itemHTML(x,false)).join('') : '<p class="sp-update-empty">No announcements published yet.</p>';
-            }
-
-            async function loadNews() {
-                const button = document.getElementById('sp-refresh-news');
-                if (button) button.disabled = true;
-                newsBox.innerHTML = '<p class="sp-update-empty"><i class="fa-solid fa-spinner fa-spin mr-2"></i>Fetching latest headlines…</p>';
-                try {
-                    const results = await Promise.all(feeds.map(async feed => {
-                        const rss = 'https://news.google.com/rss/search?q=' + encodeURIComponent(feed.q) + '&hl=en-IN&gl=IN&ceid=IN:en';
-                        const proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rss);
-                        const response = await fetch(proxy, {signal: AbortSignal.timeout(10000)});
-                        if (!response.ok) throw new Error('RSS feed unavailable');
-                        const xmlText = await response.text();
-                        const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
-                        if (xml.querySelector('parsererror')) throw new Error('Invalid RSS response');
-                        return [...xml.querySelectorAll('item')].slice(0,5).map(item => ({
-                            title: item.querySelector('title')?.textContent?.trim() || 'Untitled headline',
-                            link: safeUrl(item.querySelector('link')?.textContent?.trim() || ''),
-                            date: item.querySelector('pubDate')?.textContent || '',
-                            source: item.querySelector('source')?.textContent || '',
-                            category: feed.label
-                        })).filter(x=>x.link);
-                    }));
-                    const articles = results.flat().sort((a,b)=>(Date.parse(b.date)||0)-(Date.parse(a.date)||0)).slice(0,9);
-                    if (!articles.length) throw new Error('No headlines');
-                    newsBox.innerHTML = articles.map(x=>`<article class="sp-update-item"><span class="sp-update-category">${escape(x.category)}</span><div><a href="${escape(x.link)}" target="_blank" rel="noopener noreferrer">${escape(x.title)}</a></div><div class="sp-update-meta">${escape(x.source || 'Google News RSS')}${x.date ? ' · '+escape(dateText(x.date)) : ''}</div></article>`).join('');
-                } catch (error) {
-                    newsBox.innerHTML = '<p class="sp-update-empty">Live headlines are temporarily unavailable. Please try Refresh news, or check official UPSC/UGC notifications directly.</p>';
-                } finally { if (button) button.disabled = false; }
-            }
-
-            document.getElementById('sp-refresh-news')?.addEventListener('click', loadNews);
-            document.getElementById('sp-manage-updates')?.addEventListener('click', () => {
-                const form = document.getElementById('sp-update-form');
-                form.classList.toggle('open');
-                if (form.classList.contains('open')) document.getElementById('sp-update-heading').focus();
-            });
-            document.getElementById('sp-cancel-update')?.addEventListener('click', () => document.getElementById('sp-update-form').classList.remove('open'));
-            document.getElementById('sp-update-form')?.addEventListener('submit', event => {
-                event.preventDefault();
-                const title = document.getElementById('sp-update-heading').value.trim();
-                const type = document.getElementById('sp-update-type').value;
-                const dateValue = document.getElementById('sp-update-date').value;
-                const rawLink = document.getElementById('sp-update-link').value.trim();
-                const link = rawLink ? safeUrl(rawLink) : '';
-                if (!title) return;
-                if (rawLink && !link) { alert('Please enter a valid HTTPS link.'); return; }
-                if (type === 'Event' && !dateValue) { alert('Please add the event date and time.'); return; }
-                const items = getItems();
-                items.push({id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()), title, type, details: document.getElementById('sp-update-details').value.trim(), date: dateValue ? new Date(dateValue).toISOString() : '', link, created: Date.now()});
-                try { saveItems(items); } catch { alert('Could not save this update in browser storage.'); return; }
-                event.target.reset();
-                document.getElementById('sp-update-form').classList.remove('open');
-                renderUpdates();
-                if (typeof showToast === 'function') showToast('Update saved in this browser.');
-            });
-            document.addEventListener('click', event => {
-                const button = event.target.closest('[data-sp-delete]');
-                if (!button || !confirm('Delete this update from this browser?')) return;
-                saveItems(getItems().filter(x=>String(x.id)!==button.dataset.spDelete));
-                renderUpdates();
-            });
-            renderUpdates();
-            loadNews();
-            setInterval(loadNews, 15 * 60 * 1000);
-        })();
-
     </script>
 </body>
 </html>
