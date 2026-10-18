@@ -248,12 +248,12 @@
       </div>
     </section>
 
-    <!-- 3. PYQ VAULT PANEL (PAPER 1 ALL 10 UNITS RESTORED & INTERACTIVE) -->
+    <!-- 3. PYQ VAULT PANEL (ALL 10 UNITS WITH UNIT 2 & UNIT 4 INTERACTIVE TABLES) -->
     <section id="panel-pyq" class="tab-panel max-w-6xl mx-auto px-5 py-14">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">UPSC Optional Syllabus Hub</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3 mb-2">PYQ Vault</h2>
-        <p class="text-slate-600">Explore all 10 Paper 1 Units. Click on any official UPSC question in Unit 2 or Unit 4 to instantly generate its AI model answer[cite: 6].</p>
+        <p class="text-slate-600">Explore all 10 Paper 1 Units[cite: 1]. Click on any official UPSC question statement in Unit 2 or Unit 4 to instantly generate its AI model answer[cite: 6].</p>
       </div>
 
       <!-- Paper Selector Tabs / Buttons -->
@@ -266,7 +266,7 @@
         </button>
       </div>
 
-      <!-- PAPER 1 UNITS VIEW (ALL 10 UNITS) -->
+      <!-- PAPER 1 UNITS VIEW (ALL 10 UNITS RESTORED) -->
       <div id="viewP1" class="space-y-6 max-w-5xl mx-auto">
         <div class="bg-indigo-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
@@ -363,11 +363,11 @@
             </div>
           </div>
 
-          <!-- Unit 4 (HIGH PRIORITY - INTERACTIVE THINKERS) -->
-          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+          <!-- Unit 4 (HIGH PRIORITY - INTERACTIVE THINKERS COMPENDIUM) -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden ring-2 ring-amber-400/50">
             <div onclick="toggleUnit('unit4')" class="flex justify-between items-center cursor-pointer select-none">
               <div>
-                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 4 (72 PYQs)</span>
+                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 4 (High Priority - 72 PYQs)</span>
                 <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociological Thinkers (Chapter 4 Compendium)</h4>
               </div>
               <i id="icon-unit4" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
@@ -377,7 +377,7 @@
               
               <!-- Sub-section A: Karl Marx -->
               <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">A) Karl Marx — Historical Materialism, Alienation, Class Struggle</h5>
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">A) Karl Marx — Historical Materialism, Mode of Production, Alienation, Class Struggle</h5>
                 <div class="overflow-x-auto">
                   <table class="w-full text-left text-xs">
                     <thead class="bg-indigo-950 text-white">
@@ -387,11 +387,14 @@
                       <tr onclick="askAI('Critically analyse the mode of production debate from different perspectives.')" class="hover:bg-amber-50 cursor-pointer transition">
                         <td class="p-2 font-bold">2026</td><td class="p-2">6(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically analyse the mode of production debate from different perspectives.</td>
                       </tr>
-                      <tr onclick="askAI('Highlight the main features of historical materialism as propounded by Marx. How far is this theory relevant in understanding contemporary societies?')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2025</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Highlight the main features of historical materialism as propounded by Marx. How far is this theory relevant in understanding contemporary societies?</td>
+                      <tr onclick="askAI('Highlight the main features of historical materialism as propounded by Marx. How far is this theory relevant in understanding contemporary societies? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2025</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Highlight the main features of historical materialism as propounded by Marx. How far is this theory relevant in understanding contemporary societies? Explain.</td>
                       </tr>
-                      <tr onclick="askAI('Critically explain the salient features of alienation as propounded by Karl Marx.')" class="hover:bg-amber-50 cursor-pointer transition">
+                      <tr onclick="askAI('Critically explain the salient features of \'alienation\' as propounded by Karl Marx.')" class="hover:bg-amber-50 cursor-pointer transition">
                         <td class="p-2 font-bold">2024</td><td class="p-2">3(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically explain the salient features of 'alienation' as propounded by Karl Marx.</td>
+                      </tr>
+                      <tr onclick="askAI('Identify the similarities and differences between Marx\'s theory of \'alienation\' and Durkheim\'s theory of \'anomie\'.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2014</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Identify the similarities and differences between Marx's theory of 'alienation' and Durkheim's theory of 'anomie'.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -407,15 +410,104 @@
                       <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr onclick="askAI('How does Emile Durkheim conceptualize religion as a social fact? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                      <tr onclick="askAI('How does Emile Durkheim conceptualize religion as a \'social fact\'? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
                         <td class="p-2 font-bold">2026</td><td class="p-2">3(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How does Emile Durkheim conceptualize religion as a 'social fact'? Explain.</td>
                       </tr>
-                      <tr onclick="askAI('Describe various characteristics of a social fact. How is rate of suicide a social fact according to Durkheim?')" class="hover:bg-amber-50 cursor-pointer transition">
+                      <tr onclick="askAI('Describe various characteristics of a \'social fact\'. How is rate of suicide a social fact according to Durkheim?')" class="hover:bg-amber-50 cursor-pointer transition">
                         <td class="p-2 font-bold">2024</td><td class="p-2">5(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Describe various characteristics of a 'social fact'. How is rate of suicide a social fact according to Durkheim?</td>
+                      </tr>
+                      <tr onclick="askAI('Explain Durkheim\'s basic arguments on suicide. Can you analyse high suicide rates of contemporary Indian society with Durkheim\'s theory?')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2018</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain Durkheim's basic arguments on suicide. Can you analyse high suicide rates of contemporary Indian society with Durkheim's theory?</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+              </div>
+
+              <!-- Sub-section C: Max Weber -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">C) Max Weber — Social Action, Ideal Types, Authority, Bureaucracy, Protestant Ethic</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('How does Max Weber\'s \'theory of authority\' shape bureaucracy? Analyse.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2026</td><td class="p-2">5(d)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How does Max Weber's 'theory of authority' shape bureaucracy? Analyse.</td>
+                      </tr>
+                      <tr onclick="askAI('Describe the main idea of Max Weber\'s book, \'The Protestant Ethic and the Spirit of Capitalism\' as a critique of Marxism.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2024</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Describe the main idea of Max Weber's book, 'The Protestant Ethic and the Spirit of Capitalism' as a critique of Marxism.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Sub-section D: Talcott Parsons -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">D) Talcott Parsons — Social System, Pattern Variables</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('Critically analyse Parsons views on society as a social system.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2022</td><td class="p-2">7(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically analyse Parsons views on society as a social system.</td>
+                      </tr>
+                      <tr onclick="askAI('Analyse the relevance of \'Pattern Variables\' in the study of Social change.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2020</td><td class="p-2">1(e)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Analyse the relevance of 'Pattern Variables' in the study of Social change.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Sub-section E: Robert K. Merton -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">E) Robert K. Merton — Reference Group, Anomie, Manifest & Latent Functions</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('Can Merton\'s reference group theory be relevant in understanding \'identity making\' in digital world? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2025</td><td class="p-2">1(d)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Can Merton's reference group theory be relevant in understanding 'identity making' in digital world? Explain.</td>
+                      </tr>
+                      <tr onclick="askAI('With suitable examples, explain how conformity and deviance coexist in a society as propounded by R.K. Merton.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2021</td><td class="p-2">4(c)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">With suitable examples, explain how conformity and deviance coexist in a society as propounded by R.K. Merton.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Sub-section F: G.H. Mead -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">F) G.H. Mead — Self and Identity</h5>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-indigo-950 text-white">
+                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                      <tr onclick="askAI('Explain G.H. Mead\'s idea of development of \'self\' through the \'generalized other\'.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2024</td><td class="p-2">5(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain G.H. Mead's idea of development of 'self' through the 'generalized other'.</td>
+                      </tr>
+                      <tr onclick="askAI('According to Mead the idea of self develops when the individual becomes self-conscious. Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
+                        <td class="p-2 font-bold">2022</td><td class="p-2">6(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">According to Mead the idea of self develops when the individual becomes self-conscious. Explain.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <a href="chapter4_pyq.pdf.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Chapter 4 Thinkers Compendium PDF
+                </a>
               </div>
             </div>
           </div>
@@ -635,7 +727,7 @@
     </div>
   </footer>
 
-  <!-- ROBUST SCRIPT -->
+  <!-- SCRIPT -->
   <script>
     function switchPanelDirect(panelId) {
       document.querySelectorAll('.tab-panel').forEach(function(p) {
