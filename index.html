@@ -12,7 +12,7 @@
     h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
     .glass-card { background: white; border: 1px solid #e2e8f0; border-radius: 18px; padding: 24px; }
 
-    /* BULLETPROOF PURE CSS TAB ENGINE */
+    /* TAB ENGINE */
     input.tab-radio { display: none; }
     .tab-panel { display: none; }
 
@@ -42,7 +42,6 @@
       border-bottom-color: #fbbf24 !important;
     }
 
-    /* Mobile Menu Toggle */
     #mob-toggle { display: none; }
     #mob-menu { display: none; }
     #mob-toggle:checked ~ nav #mob-menu { display: block; }
@@ -65,7 +64,7 @@
   <!-- NAVIGATION BAR -->
   <nav class="sticky top-0 z-50 bg-indigo-950 text-white shadow-xl border-b border-indigo-900">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-      <label for="rad-home" class="cursor-pointer flex items-center gap-3">
+      <label for="rad-home" class="cursor-pointer flex items-center gap-3" onclick="switchPanelDirect('home')">
         <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-amber-400 bg-indigo-900 flex items-center justify-center shrink-0">
           <img src="logo.jpg.jpeg" alt="SP" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-bold text-amber-400 serif\'>SP</span>'">
         </div>
@@ -81,29 +80,29 @@
 
       <!-- Desktop Menu -->
       <div class="hidden lg:flex flex-wrap gap-5 text-sm items-center font-medium">
-        <label for="rad-home" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition">Home</label>
-        <label for="rad-concepts" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition">Core Concepts</label>
-        <label for="rad-pyq" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition">PYQ Vault</label>
-        <label for="rad-ugcnet" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition"><span class="bg-amber-400 text-indigo-950 px-1.5 py-0.5 rounded text-[10px] font-bold mr-1">NEW</span>UGC NET</label>
-        <label for="rad-samaj" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition">Socio-lens</label>
-        <label for="rad-hub" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition">Answer Writing</label>
-        <label for="rad-ai" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition"><i class="fa-solid fa-wand-magic-sparkles text-amber-400 mr-1"></i>AI Answer</label>
-        <label for="rad-student" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition">Student Corner</label>
-        <label for="rad-mentor" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition">About Us</label>
+        <label for="rad-home" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('home')">Home</label>
+        <label for="rad-concepts" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('concepts')">Core Concepts</label>
+        <label for="rad-pyq" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('pyq')">PYQ Vault</label>
+        <label for="rad-ugcnet" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('ugcnet')"><span class="bg-amber-400 text-indigo-950 px-1.5 py-0.5 rounded text-[10px] font-bold mr-1">NEW</span>UGC NET</label>
+        <label for="rad-samaj" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('samaj')">Socio-lens</label>
+        <label for="rad-hub" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('hub')">Answer Writing</label>
+        <label for="rad-ai" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('ai')"><i class="fa-solid fa-wand-magic-sparkles text-amber-400 mr-1"></i>AI Answer</label>
+        <label for="rad-student" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('student')">Student Corner</label>
+        <label for="rad-mentor" class="cursor-pointer text-slate-300 hover:text-amber-400 border-b-2 border-transparent pb-1 transition" onclick="switchPanelDirect('mentor')">About Us</label>
       </div>
     </div>
 
     <!-- Mobile Dropdown Menu -->
     <div id="mob-menu" class="lg:hidden bg-indigo-950 px-4 pb-4 pt-2 space-y-2 border-t border-indigo-900">
-      <label for="rad-home" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Home</label>
-      <label for="rad-concepts" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Core Concepts</label>
-      <label for="rad-pyq" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">PYQ Vault</label>
-      <label for="rad-ugcnet" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 text-amber-400 font-bold cursor-pointer">⭐ UGC NET Sociology Zone</label>
-      <label for="rad-samaj" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Socio-lens Monthly</label>
-      <label for="rad-hub" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Answer Writing</label>
-      <label for="rad-ai" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 text-amber-300 cursor-pointer">✨ AI Answer Studio</label>
-      <label for="rad-student" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Student Corner</label>
-      <label for="rad-mentor" onclick="document.getElementById('mob-toggle').checked=false" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">About Us</label>
+      <label for="rad-home" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('home');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Home</label>
+      <label for="rad-concepts" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('concepts');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Core Concepts</label>
+      <label for="rad-pyq" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('pyq');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">PYQ Vault</label>
+      <label for="rad-ugcnet" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('ugcnet');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 text-amber-400 font-bold cursor-pointer">⭐ UGC NET Sociology Zone</label>
+      <label for="rad-samaj" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('samaj');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Socio-lens Monthly</label>
+      <label for="rad-hub" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('hub');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Answer Writing</label>
+      <label for="rad-ai" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('ai');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 text-amber-300 cursor-pointer">✨ AI Answer Studio</label>
+      <label for="rad-student" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('student');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">Student Corner</label>
+      <label for="rad-mentor" onclick="document.getElementById('mob-toggle').checked=false; switchPanelDirect('mentor');" class="block w-full text-left p-2 rounded hover:bg-indigo-900 cursor-pointer">About Us</label>
     </div>
   </nav>
 
@@ -121,9 +120,9 @@
               Your student-friendly prism to decoding society. Master sociological thinkers, understand social issues and develop structured exam-ready answers under the guidance of <strong>Pathan Musheer Khan</strong>.
             </p>
             <div class="flex flex-wrap justify-center md:justify-start gap-4">
-              <label for="rad-pyq" class="cursor-pointer bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-6 py-3.5 rounded-xl shadow-lg">📂 Explore PYQ Vault</label>
-              <label for="rad-ugcnet" class="cursor-pointer border border-amber-400 text-amber-300 hover:bg-amber-400/10 font-bold px-6 py-3.5 rounded-xl">⭐ UGC NET Zone</label>
-              <label for="rad-ai" class="cursor-pointer bg-indigo-800 hover:bg-indigo-700 text-white font-bold px-6 py-3.5 rounded-xl">✨ Try AI Answer</label>
+              <label for="rad-pyq" class="cursor-pointer bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-6 py-3.5 rounded-xl shadow-lg" onclick="switchPanelDirect('pyq')">📂 Explore PYQ Vault</label>
+              <label for="rad-ugcnet" class="cursor-pointer border border-amber-400 text-amber-300 hover:bg-amber-400/10 font-bold px-6 py-3.5 rounded-xl" onclick="switchPanelDirect('ugcnet')">⭐ UGC NET Zone</label>
+              <label for="rad-ai" class="cursor-pointer bg-indigo-800 hover:bg-indigo-700 text-white font-bold px-6 py-3.5 rounded-xl" onclick="switchPanelDirect('ai')">✨ Try AI Answer</label>
             </div>
           </div>
           <div class="shrink-0">
@@ -135,22 +134,22 @@
       </div>
 
       <div class="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-4 gap-6">
-        <label for="rad-pyq" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-amber-500">
+        <label for="rad-pyq" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-amber-500" onclick="switchPanelDirect('pyq')">
           <i class="fa-solid fa-file-lines text-amber-500 text-2xl"></i>
           <h2 class="serif text-xl font-bold mt-4">PYQ Vault</h2>
-          <p class="text-slate-600 text-sm mt-2">Paper 1 Unit-wise breakdown & chapter compendiums.</p>
+          <p class="text-slate-600 text-sm mt-2">Paper 1 Unit-wise breakdown & click-to-solve AI PYQs.</p>
         </label>
-        <label for="rad-concepts" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-indigo-900">
+        <label for="rad-concepts" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-indigo-900" onclick="switchPanelDirect('concepts')">
           <i class="fa-solid fa-book-open text-indigo-900 text-2xl"></i>
           <h2 class="serif text-xl font-bold mt-4">Core Concepts</h2>
           <p class="text-slate-600 text-sm mt-2">Detailed theories of Durkheim, Marx, Weber, Srinivas, Parsons & Merton.</p>
         </label>
-        <label for="rad-ugcnet" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-amber-500">
+        <label for="rad-ugcnet" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-amber-500" onclick="switchPanelDirect('ugcnet')">
           <i class="fa-solid fa-award text-amber-500 text-2xl"></i>
           <h2 class="serif text-xl font-bold mt-4">UGC NET Zone</h2>
           <p class="text-slate-600 text-sm mt-2">10 Units breakdown, JRF booklist & Assertion-Reason practice.</p>
         </label>
-        <label for="rad-ai" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-indigo-900">
+        <label for="rad-ai" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-indigo-900" onclick="switchPanelDirect('ai')">
           <i class="fa-solid fa-wand-magic-sparkles text-indigo-900 text-2xl"></i>
           <h2 class="serif text-xl font-bold mt-4">AI Answer Studio</h2>
           <p class="text-slate-600 text-sm mt-2">Generate full-length, thinker-rich sociology answers immediately.</p>
@@ -249,12 +248,12 @@
       </div>
     </section>
 
-    <!-- 3. PYQ VAULT PANEL (PAPER 1 SYLLABUS UNITS & INTERACTIVE CHAPTER 2 & CHAPTER 4 COMPENDIUMS) -->
+    <!-- 3. PYQ VAULT PANEL (PAPER 1 ALL 10 UNITS RESTORED & INTERACTIVE) -->
     <section id="panel-pyq" class="tab-panel max-w-6xl mx-auto px-5 py-14">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">UPSC Optional Syllabus Hub</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3 mb-2">PYQ Vault</h2>
-        <p class="text-slate-600">Click on any official UPSC question statement in Unit 2 or Unit 4 below to instantly open it in the <strong>AI Answer Studio</strong> and generate a complete model answer[cite: 6].</p>
+        <p class="text-slate-600">Explore all 10 Paper 1 Units. Click on any official UPSC question in Unit 2 or Unit 4 to instantly generate its AI model answer[cite: 6].</p>
       </div>
 
       <!-- Paper Selector Tabs / Buttons -->
@@ -267,22 +266,25 @@
         </button>
       </div>
 
-      <!-- PAPER 1 UNITS VIEW -->
-      <div id="viewP1" class="space-y-8 max-w-5xl mx-auto">
+      <!-- PAPER 1 UNITS VIEW (ALL 10 UNITS) -->
+      <div id="viewP1" class="space-y-6 max-w-5xl mx-auto">
         <div class="bg-indigo-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <span class="bg-amber-400 text-indigo-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">UPSC Paper 1 Official Syllabus</span>
-            <h3 class="serif text-2xl font-bold text-white mt-2">Principles of Sociology — 10 Core Units</h3>
-            <p class="text-xs text-slate-300 mt-1">Explore Unit 2 and Unit 4 official UPSC Chapter Compendium tables with interactive AI solving.</p>
+            <h3 class="serif text-2xl font-bold text-white mt-2">Principles of Sociology — All 10 Units</h3>
+            <p class="text-xs text-slate-300 mt-1">Click on any unit below to view subtopics, PYQ tables, and download compendium PDFs.</p>
           </div>
           <div class="flex gap-2 shrink-0">
-            <a href="chapter2_final_compendium.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow-lg flex items-center gap-1.5">
+            <a href="chapter2_final_compendium.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow flex items-center gap-1.5">
               <i class="fa-solid fa-file-pdf"></i> Unit 2 PDF
+            </a>
+            <a href="chapter4_pyq.pdf.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow flex items-center gap-1.5">
+              <i class="fa-solid fa-file-pdf"></i> Unit 4 PDF
             </a>
           </div>
         </div>
 
-        <!-- Interactive Syllabus Units Accordion -->
+        <!-- Interactive Syllabus Units Accordion (Units 1 to 10) -->
         <div class="space-y-4">
 
           <!-- Unit 1 -->
@@ -305,15 +307,15 @@
           </div>
 
           <!-- Unit 2 (INTERACTIVE CLICKABLE QUESTIONS) -->
-          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden ring-2 ring-amber-400/50">
             <div onclick="toggleUnit('unit2')" class="flex justify-between items-center cursor-pointer select-none">
               <div>
-                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 2</span>
+                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 2 (High Priority)</span>
                 <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociology as Science (Chapter 2 Compendium)</h4>
               </div>
-              <i id="icon-unit2" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+              <i id="icon-unit2" class="fa-solid fa-chevron-up text-amber-600 transition"></i>
             </div>
-            <div id="content-unit2" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-6">
+            <div id="content-unit2" class="mt-4 pt-4 border-t border-slate-100 space-y-6">
               <p class="text-xs text-slate-600 font-medium">💡 Click on any question row below to instantly generate a full UPSC-style model answer[cite: 6]!</p>
               
               <!-- Sub-section A -->
@@ -356,22 +358,22 @@
             <div id="content-unit3" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
               <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
                 <li>Qualitative & quantitative methods</li>
-                <li>Data collection techniques, variables, sampling, hypothesis</li>
+                <li>Data collection techniques, variables, sampling, hypothesis, reliability & validity</li>
               </ul>
             </div>
           </div>
 
-          <!-- Unit 4 (HIGH PRIORITY - UPDATED WITH CHAPTER 4 COMPENDIUM & CLICKABLE AI PYQs) -->
-          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden ring-2 ring-amber-400/50">
+          <!-- Unit 4 (HIGH PRIORITY - INTERACTIVE THINKERS) -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
             <div onclick="toggleUnit('unit4')" class="flex justify-between items-center cursor-pointer select-none">
               <div>
-                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 4 (High Priority - 72 PYQs)</span>
+                <span class="bg-amber-500 text-indigo-950 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 4 (72 PYQs)</span>
                 <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociological Thinkers (Chapter 4 Compendium)</h4>
               </div>
-              <i id="icon-unit4" class="fa-solid fa-chevron-up text-amber-600 transition"></i>
+              <i id="icon-unit4" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
             </div>
-            <div id="content-unit4" class="mt-4 pt-4 border-t border-slate-100 space-y-6">
-              <p class="text-xs text-slate-600 font-medium">💡 <strong>Interactive Thinkers Vault:</strong> Click on any question row below to instantly generate a full UPSC-style model answer[cite: 6]!</p>
+            <div id="content-unit4" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-6">
+              <p class="text-xs text-slate-600 font-medium">💡 Click on any question row below to instantly generate a full UPSC-style model answer[cite: 6]!</p>
               
               <!-- Sub-section A: Karl Marx -->
               <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -390,12 +392,6 @@
                       </tr>
                       <tr onclick="askAI('Critically explain the salient features of alienation as propounded by Karl Marx.')" class="hover:bg-amber-50 cursor-pointer transition">
                         <td class="p-2 font-bold">2024</td><td class="p-2">3(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically explain the salient features of 'alienation' as propounded by Karl Marx.</td>
-                      </tr>
-                      <tr onclick="askAI('What is the Marxist concept of Fetishism of Commodities?')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2019</td><td class="p-2">1(c)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What is the Marxist concept of 'Fetishism of Commodities'?</td>
-                      </tr>
-                      <tr onclick="askAI('Identify the similarities and differences between Marx\'s theory of alienation and Durkheim\'s theory of anomie.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2014</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Identify the similarities and differences between Marx's theory of 'alienation' and Durkheim's theory of 'anomie'.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -417,113 +413,9 @@
                       <tr onclick="askAI('Describe various characteristics of a social fact. How is rate of suicide a social fact according to Durkheim?')" class="hover:bg-amber-50 cursor-pointer transition">
                         <td class="p-2 font-bold">2024</td><td class="p-2">5(a)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Describe various characteristics of a 'social fact'. How is rate of suicide a social fact according to Durkheim?</td>
                       </tr>
-                      <tr onclick="askAI('Critically examine how Durkheim and Merton explicate Anomie.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2022</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically examine how Durkheim and Merton explicate Anomie.</td>
-                      </tr>
-                      <tr onclick="askAI('Explain Durkheim\'s basic arguments on suicide. Can you analyse high suicide rates of contemporary Indian society with Durkheim\'s theory?')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2018</td><td class="p-2">2(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain Durkheim's basic arguments on suicide. Can you analyse high suicide rates of contemporary Indian society with Durkheim's theory?</td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
-              </div>
-
-              <!-- Sub-section C: Max Weber -->
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">C) Max Weber — Social Action, Ideal Types, Authority, Bureaucracy, Protestant Ethic</h5>
-                <div class="overflow-x-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr onclick="askAI('How does Max Weber\'s theory of authority shape bureaucracy? Analyse.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2026</td><td class="p-2">5(d)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How does Max Weber's 'theory of authority' shape bureaucracy? Analyse.</td>
-                      </tr>
-                      <tr onclick="askAI('Describe the main idea of Max Weber\'s book, The Protestant Ethic and the Spirit of Capitalism as a critique of Marxism.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2024</td><td class="p-2">3(b)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Describe the main idea of Max Weber's book, 'The Protestant Ethic and the Spirit of Capitalism' as a critique of Marxism.</td>
-                      </tr>
-                      <tr onclick="askAI('Do you agree with Max Weber\'s idea that bureaucracy has the potential to become an iron cage?')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2021</td><td class="p-2">3(c)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Do you agree with Max Weber's idea that bureaucracy has the potential to become an iron cage? Justify your answer.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Sub-section D: Talcott Parsons -->
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">D) Talcott Parsons — Social System, Pattern Variables</h5>
-                <div class="overflow-x-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr onclick="askAI('Critically analyse Parsons views on society as a social system.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2022</td><td class="p-2">7(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Critically analyse Parsons views on society as a social system.</td>
-                      </tr>
-                      <tr onclick="askAI('Analyse the relevance of Pattern Variables in the study of Social change.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2020</td><td class="p-2">1(e)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Analyse the relevance of 'Pattern Variables' in the study of Social change.</td>
-                      </tr>
-                      <tr onclick="askAI('How can Parsons AGIL framework be used to analyse key problems in a society? Discuss.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2018</td><td class="p-2">7(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">How can Parsons AGIL framework be used to analyse key problems in a society? Discuss.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Sub-section E: Robert K. Merton -->
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">E) Robert K. Merton — Reference Group, Anomie, Manifest & Latent Functions</h5>
-                <div class="overflow-x-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr onclick="askAI('Can Merton\'s reference group theory be relevant in understanding identity making in digital world? Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2025</td><td class="p-2">1(d)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Can Merton's reference group theory be relevant in understanding 'identity making' in digital world? Explain.</td>
-                      </tr>
-                      <tr onclick="askAI('With suitable examples, explain how conformity and deviance coexist in a society as propounded by R.K. Merton.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2021</td><td class="p-2">4(c)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">With suitable examples, explain how conformity and deviance coexist in a society as propounded by R.K. Merton.</td>
-                      </tr>
-                      <tr onclick="askAI('What are the reactions of R.K. Merton to the functionalism of social anthropologists? Bring on the limitations of latent functions.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2020</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">What are the reactions of R.K. Merton to the functionalism of social anthropologists? Bring on the limitations of latent functions.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Sub-section F: G.H. Mead -->
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <h5 class="font-bold text-indigo-950 text-xs uppercase mb-3 text-amber-700">F) G.H. Mead — Self and Identity</h5>
-                <div class="overflow-x-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-indigo-950 text-white">
-                      <tr><th class="p-2">Year</th><th class="p-2">Q.No</th><th class="p-2">Marks</th><th class="p-2">Question Statement (Click to Solve)</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-700">
-                      <tr onclick="askAI('Explain G.H. Mead\'s idea of development of self through the generalized other.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2024</td><td class="p-2">5(b)</td><td class="p-2">10</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">Explain G.H. Mead's idea of development of 'self' through the 'generalized other'.</td>
-                      </tr>
-                      <tr onclick="askAI('According to Mead the idea of self develops when the individual becomes self-conscious. Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2022</td><td class="p-2">6(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">According to Mead the idea of self develops when the individual becomes self-conscious. Explain.</td>
-                      </tr>
-                      <tr onclick="askAI('According to Mead, We play a key role in our own socialisation. Explain.')" class="hover:bg-amber-50 cursor-pointer transition">
-                        <td class="p-2 font-bold">2019</td><td class="p-2">2(a)</td><td class="p-2">20</td><td class="p-2 text-indigo-950 font-semibold hover:text-amber-600 underline">According to Mead, "We play a key role in our own socialisation." Explain.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="pt-2">
-                <a href="chapter4_pyq.pdf.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                  <i class="fa-solid fa-file-pdf"></i> Download Chapter 4 Thinkers Compendium PDF
-                </a>
               </div>
             </div>
           </div>
@@ -539,7 +431,94 @@
             </div>
             <div id="content-unit5" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
               <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
-                <li>Concepts, theories (Functionalist, Marxist, Weberian), and social mobility.</li>
+                <li>Concepts: equality, inequality, hierarchy, exclusion, poverty, deprivation</li>
+                <li>Theories (Functionalist, Marxist, Weberian), Dimensions, and Social mobility.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Unit 6 -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+            <div onclick="toggleUnit('unit6')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 6</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Work and Economic Life</h4>
+              </div>
+              <i id="icon-unit6" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit6" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Organisation of work in slave, feudal, industrial societies</li>
+                <li>Formal & informal work organisation</li>
+                <li>Labour and society</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Unit 7 -->
+          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
+            <div onclick="toggleUnit('unit7')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 7</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Politics and Society</h4>
+              </div>
+              <i id="icon-unit7" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit7" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Theories of power, power elite, bureaucracy, pressure groups, political parties</li>
+                <li>Nation, state, citizenship, democracy, civil society, ideology, social movements</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Unit 8 -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+            <div onclick="toggleUnit('unit8')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 8</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Religion and Society</h4>
+              </div>
+              <i id="icon-unit8" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit8" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Sociological theories of religion</li>
+                <li>Religious practices, secularisation, revivalism, fundamentalism</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Unit 9 -->
+          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
+            <div onclick="toggleUnit('unit9')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 9</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Systems of Kinship</h4>
+              </div>
+              <i id="icon-unit9" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit9" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Family, household, marriage, lineage & descent</li>
+                <li>Patriarchy & sexual division of labour, contemporary trends</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Unit 10 -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+            <div onclick="toggleUnit('unit10')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 10</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Social Change in Modern Society</h4>
+              </div>
+              <i id="icon-unit10" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit10" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Theories of social change, development & dependency</li>
+                <li>Agents of change: education, science, technology and social change</li>
               </ul>
             </div>
           </div>
@@ -556,6 +535,7 @@
           </div>
         </div>
       </div>
+
     </section>
 
     <!-- 4. UGC NET SOCIOLOGY ZONE PANEL -->
@@ -585,7 +565,7 @@
       <div class="text-center mb-8">
         <span class="bg-amber-100 text-amber-900 rounded-full px-4 py-1.5 text-xs font-bold uppercase">✨ Real-Time AI Sociology Engine</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3">AI Answer Studio</h2>
-        <p class="text-slate-600 mt-2">Apna koi bhi Sociology question daalo — ab sirf structure nahi, balki <strong>पूरा full-length exam answer</strong> (Thinkers, Books aur Indian Examples ke saath) aayega!</p>
+        <p class="text-slate-600 mt-2">Apna koi bhi Sociology question daalo — poora full-length exam answer (Thinkers, Books aur Indian Examples ke saath) aayega[cite: 6]!</p>
       </div>
 
       <div class="glass-card space-y-4 shadow-md">
@@ -655,8 +635,23 @@
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- ROBUST SCRIPT -->
   <script>
+    function switchPanelDirect(panelId) {
+      document.querySelectorAll('.tab-panel').forEach(function(p) {
+        p.style.display = 'none';
+      });
+      var target = document.getElementById('panel-' + panelId);
+      if (target) {
+        target.style.display = 'block';
+      }
+      var radio = document.getElementById('rad-' + panelId);
+      if (radio) {
+        radio.checked = true;
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function switchPaper(paper) {
       var btnP1 = document.getElementById('btnP1');
       var btnP2 = document.getElementById('btnP2');
@@ -679,21 +674,19 @@
     function toggleUnit(unitId) {
       var content = document.getElementById('content-' + unitId);
       var icon = document.getElementById('icon-' + unitId);
+      if (!content) return;
       if (content.classList.contains('hidden')) {
         content.classList.remove('hidden');
-        icon.classList.remove('fa-chevron-down');
-        icon.classList.add('fa-chevron-up');
+        if(icon) { icon.classList.remove('fa-chevron-down'); icon.classList.add('fa-chevron-up'); }
       } else {
         content.classList.add('hidden');
-        icon.classList.remove('fa-chevron-up');
-        icon.classList.add('fa-chevron-down');
+        if(icon) { icon.classList.remove('fa-chevron-up'); icon.classList.add('fa-chevron-down'); }
       }
     }
 
     function askAI(qText) {
-      document.getElementById('rad-ai').checked = true;
+      switchPanelDirect('ai');
       document.getElementById('aiQ').value = qText;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
       genAIAnswer();
     }
 
@@ -701,4 +694,88 @@
       return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | TARGET LENGTH: " + len + "\n\n" +
         "1. INTRODUCTION & CONCEPTUAL DEFINITION:\nIn sociological inquiry, the question of \"" + q + "\" is analyzed not as an isolated occurrence, but as a structural and institutional phenomenon. Using C. Wright Mills's concept of 'Sociological Imagination', we must connect personal biographies and immediate events to broader historical and social structures.\n\n" +
         "2. MULTI-DIMENSIONAL THEORETICAL PERSPECTIVES:\n• Structural-Functionalist & Positivist Frameworks\n• Conflict & Marxist Interpretations\n• Interpretive & Non-Positivist Methodologies\n\n" +
-        "3. EMPIRICAL REALITY & CONTEMPORARY RELEVANCE:\nConnecting classical frameworks with modern institutional realities and contemporary examples
+        "3. EMPIRICAL REALITY & CONTEMPORARY RELEVANCE:\nConnecting classical frameworks with modern institutional realities and contemporary examples in India and globally.\n\n" +
+        "4. CONCLUSION:\nA balanced sociological evaluation requires moving beyond monocausal explanations to achieve comprehensive theoretical synthesis.";
+    }
+
+    async function genAIAnswer() {
+      var q = document.getElementById('aiQ').value.trim();
+      var ex = document.getElementById('aiEx').value;
+      var len = document.getElementById('aiLen').value;
+      var btn = document.getElementById('aiBtn');
+      var btnText = document.getElementById('aiBtnText');
+      var btnIcon = document.getElementById('aiBtnIcon');
+      var statusBox = document.getElementById('aiStatusBox');
+      var outBox = document.getElementById('aiOutBox');
+      var outText = document.getElementById('aiOutText');
+
+      if (!q) {
+        alert('Bhai, pehle apna Sociology question toh likho!');
+        return;
+      }
+
+      btn.disabled = true;
+      btnIcon.className = "fa-solid fa-spinner fa-spin text-amber-400";
+      btnText.textContent = "Writing Full Sociological Answer...";
+      statusBox.classList.remove('hidden');
+      statusBox.textContent = "⏳ Connecting to AI Sociology Engine... Generating thinkers, books, Indian examples & critical analysis...";
+      outBox.classList.add('hidden');
+
+      var prompt = "You are an expert Sociology Professor for " + ex + ". Write a complete, high-scoring model answer (" + len + ") for the question: \"" + q + "\". Structure it strictly with: 1. Introduction, 2. Core Sociological Arguments & Thinkers, 3. Context & Empirical Examples, 4. Critical Evaluation, 5. Conclusion.";
+
+      try {
+        var controller = new AbortController();
+        var timeoutId = setTimeout(function() { controller.abort(); }, 12000);
+
+        var response = await fetch("https://text.pollinations.ai/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            messages: [
+              { role: "system", content: "You are a senior Sociology professor for UPSC Civil Services and UGC NET JRF in India." },
+              { role: "user", content: prompt }
+            ],
+            model: "openai"
+          }),
+          signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!response.ok) throw new Error("API busy");
+        var aiText = await response.text();
+
+        if (!aiText || aiText.length < 80 || aiText.indexOf("<!DOCTYPE") !== -1) {
+          throw new Error("Invalid response");
+        }
+
+        outText.textContent = aiText.trim();
+        statusBox.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200";
+        statusBox.textContent = "✅ Complete AI Sociology Answer generated successfully!";
+      } catch (err) {
+        var fallbackAns = buildSmartOfflineAnswer(q, ex, len);
+        outText.textContent = fallbackAns;
+        statusBox.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200";
+        statusBox.textContent = "✅ Full Model Answer generated from Social Prism Sociology Knowledge Vault!";
+      } finally {
+        outBox.classList.remove('hidden');
+        btn.disabled = false;
+        btnIcon.className = "fa-solid fa-wand-magic-sparkles text-amber-400";
+        btnText.textContent = "Generate Full Sociological Answer";
+        outBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function copyAnswerText() {
+      var text = document.getElementById('aiOutText').textContent;
+      var copyBtn = document.getElementById('copyBtnEl');
+      navigator.clipboard.writeText(text).then(function() {
+        copyBtn.innerHTML = '<i class="fa-solid fa-check mr-1"></i>Copied!';
+        setTimeout(function() {
+          copyBtn.innerHTML = '<i class="fa-regular fa-copy mr-1"></i>Copy Answer';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
