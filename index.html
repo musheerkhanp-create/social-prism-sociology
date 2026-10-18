@@ -12,7 +12,7 @@
     h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
     .glass-card { background: white; border: 1px solid #e2e8f0; border-radius: 18px; padding: 24px; }
 
-    /* BULLETPROOF PURE CSS TAB ENGINE - WORKS EVEN IF JAVASCRIPT FAILS */
+    /* BULLETPROOF PURE CSS TAB ENGINE */
     input.tab-radio { display: none; }
     .tab-panel { display: none; }
 
@@ -28,7 +28,7 @@
       display: block;
     }
 
-    /* Active Navigation Highlighting via Pure CSS */
+    /* Active Navigation Highlighting */
     #rad-home:checked ~ nav label[for="rad-home"],
     #rad-concepts:checked ~ nav label[for="rad-concepts"],
     #rad-pyq:checked ~ nav label[for="rad-pyq"],
@@ -42,7 +42,7 @@
       border-bottom-color: #fbbf24 !important;
     }
 
-    /* Mobile Menu Pure CSS Toggle */
+    /* Mobile Menu Toggle */
     #mob-toggle { display: none; }
     #mob-menu { display: none; }
     #mob-toggle:checked ~ nav #mob-menu { display: block; }
@@ -153,7 +153,7 @@
         <label for="rad-ai" class="glass-card cursor-pointer hover:shadow-lg transition block border-t-4 border-t-indigo-900">
           <i class="fa-solid fa-wand-magic-sparkles text-indigo-900 text-2xl"></i>
           <h2 class="serif text-xl font-bold mt-4">AI Answer Studio</h2>
-          <p class="text-slate-600 text-sm mt-2">Generate structured exam answers immediately for any prompt.</p>
+          <p class="text-slate-600 text-sm mt-2">Generate full-length, thinker-rich sociology answers immediately.</p>
         </label>
       </div>
     </section>
@@ -169,7 +169,10 @@
       <div class="space-y-8">
         <!-- Durkheim -->
         <article class="glass-card border-l-4 border-l-indigo-900">
-          <h3 class="serif text-2xl font-bold text-indigo-950">1. Émile Durkheim (1858–1917) — Classical Functionalist</h3>
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <h3 class="serif text-2xl font-bold text-indigo-950">1. Émile Durkheim (1858–1917) — Classical Functionalist</h3>
+            <button onclick="askAI('Critically examine Émile Durkheim\'s theory of Division of Labour and Suicide in modern society.')" class="bg-indigo-950 text-amber-400 text-xs font-bold px-3 py-2 rounded-lg">✨ Generate Full Answer on Durkheim</button>
+          </div>
           <p class="text-slate-600 text-sm mt-1 mb-4">Established sociology as an autonomous science studying social order and collective integration.</p>
           <div class="grid md:grid-cols-3 gap-4 text-xs">
             <div class="bg-slate-50 p-4 rounded-xl"><strong>Social Facts:</strong> Ways of acting, thinking, and feeling external to the individual and endowed with coercive power (Material & Non-material).</div>
@@ -183,7 +186,10 @@
 
         <!-- Karl Marx -->
         <article class="glass-card border-l-4 border-l-amber-500">
-          <h3 class="serif text-2xl font-bold text-indigo-950">2. Karl Marx (1818–1883) — Conflict & Materialist Theorist</h3>
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <h3 class="serif text-2xl font-bold text-indigo-950">2. Karl Marx (1818–1883) — Conflict & Materialist Theorist</h3>
+            <button onclick="askAI('Evaluate Karl Marx\'s theory of Historical Materialism and Alienation in contemporary capitalist society.')" class="bg-indigo-950 text-amber-400 text-xs font-bold px-3 py-2 rounded-lg">✨ Generate Full Answer on Marx</button>
+          </div>
           <p class="text-slate-600 text-sm mt-1 mb-4">Analyzed capitalism, class conflict, and historical change driven by material production.</p>
           <div class="grid md:grid-cols-3 gap-4 text-xs">
             <div class="bg-slate-50 p-4 rounded-xl"><strong>Historical Materialism:</strong> Society evolves through modes of production: Primitive Communism, Slavery, Feudalism, Capitalism, Socialism.</div>
@@ -197,7 +203,10 @@
 
         <!-- Max Weber -->
         <article class="glass-card border-l-4 border-l-indigo-900">
-          <h3 class="serif text-2xl font-bold text-indigo-950">3. Max Weber (1864–1920) — Interpretive Sociology</h3>
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <h3 class="serif text-2xl font-bold text-indigo-950">3. Max Weber (1864–1920) — Interpretive Sociology</h3>
+            <button onclick="askAI('Discuss Max Weber\'s concepts of Social Action, Bureaucracy, and the Protestant Ethic.')" class="bg-indigo-950 text-amber-400 text-xs font-bold px-3 py-2 rounded-lg">✨ Generate Full Answer on Weber</button>
+          </div>
           <p class="text-slate-600 text-sm mt-1 mb-4">Pioneered Verstehen (interpretive understanding) of subjective meanings attached to human actions.</p>
           <div class="grid md:grid-cols-3 gap-4 text-xs">
             <div class="bg-slate-50 p-4 rounded-xl"><strong>Social Action (4 Types):</strong> Instrumentally Rational (Zweckrational), Value-Rational (Wertrational), Affective, and Traditional.</div>
@@ -211,7 +220,10 @@
 
         <!-- M.N. Srinivas -->
         <article class="glass-card border-l-4 border-l-amber-500">
-          <h3 class="serif text-2xl font-bold text-indigo-950">4. M. N. Srinivas (1916–1999) — Architect of Indian Sociology</h3>
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <h3 class="serif text-2xl font-bold text-indigo-950">4. M. N. Srinivas (1916–1999) — Architect of Indian Sociology</h3>
+            <button onclick="askAI('Critically examine M.N. Srinivas\'s concepts of Sanskritisation, Westernisation, and Dominant Caste in India.')" class="bg-indigo-950 text-amber-400 text-xs font-bold px-3 py-2 rounded-lg">✨ Generate Full Answer on Srinivas</button>
+          </div>
           <p class="text-slate-600 text-sm mt-1 mb-4">Shifted Indian sociology from textual Indology (Book-view) to empirical village ethnography (Field-view).</p>
           <div class="grid md:grid-cols-3 gap-4 text-xs">
             <div class="bg-slate-50 p-4 rounded-xl"><strong>Sanskritisation:</strong> Lower castes adopting rituals, customs, and vegetarianism of upper castes for positional status mobility.</div>
@@ -225,7 +237,10 @@
 
         <!-- Parsons & Merton -->
         <article class="glass-card border-l-4 border-l-indigo-900">
-          <h3 class="serif text-2xl font-bold text-indigo-950">5. Talcott Parsons & Robert K. Merton — American Functionalism</h3>
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <h3 class="serif text-2xl font-bold text-indigo-950">5. Talcott Parsons & Robert K. Merton — American Functionalism</h3>
+            <button onclick="askAI('Compare Talcott Parsons\'s Grand Functionalism (AGIL) with Robert K. Merton\'s Middle-Range Theory and Strain Theory.')" class="bg-indigo-950 text-amber-400 text-xs font-bold px-3 py-2 rounded-lg">✨ Generate Answer on Parsons & Merton</button>
+          </div>
           <div class="grid md:grid-cols-2 gap-4 text-xs mt-4">
             <div class="bg-slate-50 p-4 rounded-xl"><strong>Talcott Parsons:</strong> Formulated the <b>AGIL Framework</b> (Adaptation, Goal Attainment, Integration, Latency), <b>Pattern Variables</b> (5 dichotomies of action), and Social System equilibrium.</div>
             <div class="bg-slate-50 p-4 rounded-xl"><strong>Robert K. Merton:</strong> Introduced <b>Middle-Range Theories</b>, <b>Manifest vs. Latent Functions</b>, Dysfunctions, <b>Reference Group Theory</b>, and <b>Strain Theory of Deviance</b> (Conformity, Innovation, Ritualism, Retreatism, Rebellion).</div>
@@ -237,7 +252,7 @@
     <!-- 3. PYQ VAULT PANEL -->
     <section id="panel-pyq" class="tab-panel max-w-5xl mx-auto px-5 py-14">
       <h2 class="serif text-4xl font-bold text-indigo-950 mb-2">PYQ Vault & Solved Model Structures</h2>
-      <p class="text-slate-600 mb-8"> Complete exam-ready answer blueprints for UPSC Optional & UGC NET.</p>
+      <p class="text-slate-600 mb-8">Complete exam-ready answer blueprints for UPSC Optional & UGC NET.</p>
 
       <div class="space-y-6">
         <div class="glass-card border-l-4 border-l-indigo-900">
@@ -380,45 +395,67 @@
       </div>
     </section>
 
-    <!-- 7. AI ANSWER STUDIO PANEL -->
+    <!-- 7. AI ANSWER STUDIO PANEL (UPGRADED WITH LIVE AI + DEEP KNOWLEDGE BASE) -->
     <section id="panel-ai" class="tab-panel max-w-4xl mx-auto px-5 py-14">
       <div class="text-center mb-8">
-        <span class="bg-amber-100 text-amber-900 rounded-full px-4 py-1.5 text-xs font-bold uppercase">✨ AI-Powered Study Assistant</span>
+        <span class="bg-amber-100 text-amber-900 rounded-full px-4 py-1.5 text-xs font-bold uppercase">✨ Real-Time AI Sociology Engine</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3">AI Answer Studio</h2>
-        <p class="text-slate-600 mt-2">Apna question niche box mein daalo aur turant structured Sociology answer generate karo.</p>
+        <p class="text-slate-600 mt-2">Apna koi bhi Sociology question daalo — ab sirf structure nahi, balki <strong>पूरा full-length exam answer</strong> (Thinkers, Books aur Indian Examples ke saath) aayega!</p>
       </div>
 
-      <div class="glass-card space-y-4">
+      <!-- Quick Sample Prompts -->
+      <div class="mb-6">
+        <p class="text-xs font-bold text-slate-500 uppercase mb-2">🔥 Click any sample question to test instant full answer:</p>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="setSampleQ('Critically examine Émile Durkheim\'s theory of Suicide and its contemporary relevance.')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 px-3 py-1.5 rounded-lg font-medium transition">Durkheim's Suicide Theory</button>
+          <button type="button" onclick="setSampleQ('Explain Karl Marx\'s theory of Alienation and examine its relevance in the modern gig economy.')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 px-3 py-1.5 rounded-lg font-medium transition">Marx's Alienation & Gig Economy</button>
+          <button type="button" onclick="setSampleQ('Discuss M.N. Srinivas\'s concept of Sanskritisation and Dominant Caste in understanding social change in India.')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 px-3 py-1.5 rounded-lg font-medium transition">Srinivas: Sanskritisation & Caste</button>
+          <button type="button" onclick="setSampleQ('Examine Max Weber\'s Protestant Ethic and the Spirit of Capitalism thesis along with its major criticisms.')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 px-3 py-1.5 rounded-lg font-medium transition">Weber: Protestant Ethic</button>
+        </div>
+      </div>
+
+      <div class="glass-card space-y-4 shadow-md">
         <div>
           <label class="block font-bold text-sm mb-2 text-indigo-950">Your Sociology Question</label>
-          <textarea id="aiQ" rows="4" placeholder="Example: Critically examine Durkheim's theory of suicide." class="w-full border border-slate-300 rounded-xl p-4 focus:outline-none focus:border-indigo-900"></textarea>
+          <textarea id="aiQ" rows="4" placeholder="Type or paste any UPSC / UGC-NET Sociology question here..." class="w-full border border-slate-300 rounded-xl p-4 focus:outline-none focus:border-indigo-900"></textarea>
         </div>
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
             <label class="block font-bold text-sm mb-2 text-indigo-950">Exam Track</label>
             <select id="aiEx" class="w-full border border-slate-300 rounded-xl p-3 bg-white">
-              <option>UPSC Sociology Optional</option>
-              <option>UGC NET Sociology</option>
-              <option>M.A. / B.A. University Exam</option>
+              <option value="UPSC Sociology Optional">UPSC Sociology Optional</option>
+              <option value="UGC NET Sociology">UGC NET Sociology (JRF)</option>
+              <option value="M.A. / B.A. University Exam">M.A. / B.A. University Exam</option>
             </select>
           </div>
           <div>
             <label class="block font-bold text-sm mb-2 text-indigo-950">Target Length</label>
             <select id="aiLen" class="w-full border border-slate-300 rounded-xl p-3 bg-white">
-              <option>150 Words (10 Marks)</option>
-              <option selected>250 Words (15 Marks)</option>
-              <option>400 Words (20 Marks)</option>
+              <option value="150 Words (10 Marks)">150 Words (10 Marks)</option>
+              <option value="250 Words (15 Marks)" selected>250 Words (15 Marks)</option>
+              <option value="400 Words (20 Marks)">400 Words (20 Marks Detailed)</option>
             </select>
           </div>
         </div>
-        <button type="button" onclick="genAIAnswer()" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-bold py-4 rounded-xl shadow-lg">
-          <i class="fa-solid fa-wand-magic-sparkles text-amber-400 mr-2"></i>Generate Structured Answer
+        <button id="aiBtn" type="button" onclick="genAIAnswer()" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+          <i id="aiBtnIcon" class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+          <span id="aiBtnText">Generate Full Sociological Answer</span>
         </button>
       </div>
 
-      <div id="aiOutBox" class="hidden mt-6 glass-card border-l-4 border-l-amber-500">
-        <h3 class="serif text-2xl font-bold text-indigo-950 mb-3">Generated Sociological Answer Structure</h3>
-        <div id="aiOutText" class="whitespace-pre-wrap text-sm leading-7 text-slate-700"></div>
+      <div id="aiStatusBox" class="hidden mt-4 p-4 rounded-xl text-sm font-medium bg-indigo-50 text-indigo-900 border border-indigo-200"></div>
+
+      <div id="aiOutBox" class="hidden mt-6 glass-card border-l-4 border-l-amber-500 shadow-xl">
+        <div class="flex flex-wrap justify-between items-center gap-3 pb-3 mb-4 border-b border-slate-200">
+          <div>
+            <h3 class="serif text-2xl font-bold text-indigo-950">Complete Model Answer</h3>
+            <p class="text-xs text-slate-500">Includes Introduction, Thinkers, Books, Indian Context, Criticism & Conclusion</p>
+          </div>
+          <button type="button" onclick="copyAnswerText()" id="copyBtnEl" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-lg text-xs transition">
+            <i class="fa-regular fa-copy mr-1"></i>Copy Answer
+          </button>
+        </div>
+        <div id="aiOutText" class="whitespace-pre-wrap text-sm leading-7 text-slate-800"></div>
       </div>
     </section>
 
@@ -530,21 +567,146 @@
     </div>
   </footer>
 
+  <!-- UPGRADED AI ENGINE SCRIPT: REAL LIVE AI + RICH BUILT-IN SOCIOLOGY KNOWLEDGE BANK -->
   <script>
-    function genAIAnswer() {
+    function setSampleQ(qText) {
+      document.getElementById('aiQ').value = qText;
+      genAIAnswer();
+    }
+
+    function askAI(qText) {
+      document.getElementById('rad-ai').checked = true;
+      document.getElementById('aiQ').value = qText;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      genAIAnswer();
+    }
+
+    function buildSmartOfflineAnswer(q, ex, len) {
+      var ql = q.toLowerCase();
+
+      if (ql.indexOf('durkheim') !== -1 || ql.indexOf('suicide') !== -1 || ql.indexOf('solidarity') !== -1 || ql.indexOf('social fact') !== -1) {
+        return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | LENGTH: " + len + "\n\n" +
+          "1. INTRODUCTION:\nFrench sociologist Émile Durkheim, in his foundational works 'The Rules of Sociological Method' (1895) and 'Le Suicide' (1897), established that seemingly private or individual actions are governed by external, coercive 'Social Facts'. He rejected psychological reductionism and demonstrated how macro-level social forces shape human behaviour.\n\n" +
+          "2. CORE THEORETICAL ARGUMENTS:\n• Social Facts & Collective Conscience: Durkheim defined social facts as ways of acting, thinking, and feeling external to the individual and endowed with coercive power.\n• Fourfold Typology of Suicide (Integration vs. Regulation):\n  1. Egoistic Suicide: Resulting from low social integration (excessive individualism).\n  2. Altruistic Suicide: Resulting from over-integration (e.g., suicide bombers, Sati, or soldiers sacrificing life for the group).\n  3. Anomic Suicide: Resulting from low moral regulation during sudden economic crises or rapid social change.\n  4. Fatalistic Suicide: Resulting from excessive regulation and oppressive norms (e.g., prisoners or slaves).\n• Mechanical to Organic Solidarity: In 'The Division of Labour in Society' (1893), he showed how traditional societies bound by likeness transition into modern industrial societies bound by functional interdependence.\n\n" +
+          "3. INDIAN CONTEXT & CONTEMPORARY APPLICATION:\n• Farmer Suicides & Kota Coaching Suicides in India: Can be sociologically explained through Durkheim's concept of 'Anomic' and 'Egoistic' suicide—where agrarian distress (economic deregulation) and hyper-competitive academic isolation erode social support systems.\n\n" +
+          "4. CRITICAL EVALUATION:\n• J.M. Atkinson and Jack Douglas (Interactionist Critique): Argued that official suicide statistics are socially constructed labels by coroners ('social meanings of suicide') rather than objective social facts.\n• Gabriel Tarde highlighted the role of individual imitation which Durkheim overlooked.\n\n" +
+          "5. CONCLUSION:\nDespite methodological critiques of his positivism, Durkheim's framework remains indispensable for understanding how modern anomie, digital isolation, and institutional breakdown impact mental health and social order.";
+      }
+
+      if (ql.indexOf('marx') !== -1 || ql.indexOf('alienation') !== -1 || ql.indexOf('class') !== -1 || ql.indexOf('capitalism') !== -1 || ql.indexOf('materialism') !== -1) {
+        return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | LENGTH: " + len + "\n\n" +
+          "1. INTRODUCTION:\nKarl Marx, in his 'Economic and Philosophic Manuscripts of 1844' and 'Das Kapital' (1867), analyzed society through the lens of Historical Materialism. He argued that the economic 'Base' (forces and relations of production) fundamentally shapes the ideological and political 'Superstructure'.\n\n" +
+          "2. CORE THEORETICAL ARGUMENTS:\n• Four Dimensions of Alienation (Entfremdung): Under capitalist wage-labour, the proletariat experiences structural estrangement in four ways:\n  1. Alienation from the Product: The commodity produced by the worker is owned and controlled by the capitalist.\n  2. Alienation from the Act of Production: Work becomes coerced, repetitive drudgery rather than creative self-realization.\n  3. Alienation from Species-Being (Gattungswesen): Humans lose their intrinsic creative essence and are reduced to mere instruments of survival.\n  4. Alienation from Fellow Workers: Capitalism replaces cooperative solidarity with cut-throat labour market competition.\n• Class Struggle & Polarization: Extraction of 'Surplus Value' polarizes society into the Bourgeoisie (Haves) and Proletariat (Have-nots), eventually transforming a 'Class-in-itself' into a revolutionary 'Class-for-itself'.\n\n" +
+          "3. CONTEMPORARY & INDIAN RELEVANCE:\n• The Modern Gig Economy: Delivery partners (Zomato, Swiggy) and cab drivers face 'Algorithmic Alienation'—controlled by invisible app ratings, deprived of social security, and atomized from fellow workers.\n• Agrarian Class Structure in India: A.R. Desai and Daniel Thorner applied Marxian frameworks to study landlord-peasant exploitation (Malik, Kisan, Mazdoor) in post-independence India.\n\n" +
+          "4. CRITICAL EVALUATION:\n• Max Weber: Critiqued Marx's economic determinism through his trinitarian model of 'Class, Status, and Party'.\n• Ralf Dahrendorf: Argued that in post-capitalist societies, authority relations, middle-class expansion, and institutionalised collective bargaining prevent violent revolution.\n\n" +
+          "5. CONCLUSION:\nWhile welfare states and social mobility have softened classical polarization, Marx's critique of alienation and wealth concentration remains highly prophetic in the era of platform capitalism and AI automation.";
+      }
+
+      if (ql.indexOf('weber') !== -1 || ql.indexOf('bureaucracy') !== -1 || ql.indexOf('protestant') !== -1 || ql.indexOf('authority') !== -1 || ql.indexOf('verstehen') !== -1) {
+        return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | LENGTH: " + len + "\n\n" +
+          "1. INTRODUCTION:\nMax Weber pioneered Interpretive Sociology in 'Economy and Society' (1922), defining sociology as a science which attempts the interpretive understanding ('Verstehen') of social action in order to arrive at a causal explanation of its course and effects.\n\n" +
+          "2. CORE THEORETICAL ARGUMENTS:\n• Four Ideal Types of Social Action: (1) Zweckrational (Instrumentally rational/means-end), (2) Wertrational (Value-rational), (3) Affective (Emotional), and (4) Traditional (Habitual).\n• Three Types of Legitimate Authority: Traditional (customs/monarchs), Charismatic (extraordinary personal heroism), and Legal-Rational (modern constitutional law and bureaucracy).\n• Bureaucracy & The Iron Cage: While legal-rational bureaucracy is the most technically efficient organization (hierarchy, written rules, impersonality), excessive rationalization traps modern humans in an 'Iron Cage of Rationality', stripping life of charisma and meaning ('disenchantment of the world').\n• Protestant Ethic & Spirit of Capitalism (1905): Weber demonstrated how religious ideas (Calvinist doctrine of predestination and 'calling') fostered worldly asceticism, capital accumulation, and modern rational capitalism.\n\n" +
+          "3. INDIAN CONTEXT:\n• Milton Singer & M.N. Srinivas: Showed that Hinduism in India did not obstruct capitalism; rather, traditional merchant castes (Marwaris, Chettiars, Jains) adapted their 'compartmentalized' religious ethics to modern industrial entrepreneurship.\n\n" +
+          "4. CRITICAL EVALUATION:\n• Robert K. Merton: Pointed out that bureaucratic rigidity leads to 'Goal Displacement' and 'Trained Incapacity' (Red-tapism).\n• R.H. Tawney: Argued that capitalism in Europe preceded Protestantism and was driven by geographical discoveries and trade rather than Calvinist theology alone.\n\n" +
+          "5. CONCLUSION:\nWeber successfully bridged idealism and materialism, offering a multidimensional toolkit that remains foundational for analyzing modern governance, charismatic politics, and cultural modernization.";
+      }
+
+      if (ql.indexOf('srinivas') !== -1 || ql.indexOf('sanskrit') !== -1 || ql.indexOf('caste') !== -1 || ql.indexOf('dominant') !== -1) {
+        return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | LENGTH: " + len + "\n\n" +
+          "1. INTRODUCTION:\nM.N. Srinivas revolutionized Indian Sociology by rejecting the colonial 'Book-View' (Indological reliance on ancient texts like Manusmriti) in favour of the empirical 'Field-View' (ethnographic village studies like 'Religion and Society Among the Coorgs' and 'The Remembered Village').\n\n" +
+          "2. CORE THEORETICAL CONCEPTS:\n• Sanskritisation: Defined as the process by which a 'low' Hindu caste, or tribal or other group, changes its customs, ritual, ideology, and way of life in the direction of a high, and frequently, 'twice-born' (Dwija) caste. It proved that the caste system was not completely closed, allowing positional cultural mobility across generations.\n• Dominant Caste: A caste is locally dominant when it preponderates numerically, owns a major share of arable village land, wields political clout, and occupies a fairly high ritual rank (e.g., Marathas in Maharashtra, Reddys/Kammas in Andhra, Vokkaligas/Lingayats in Karnataka, Jats in North India).\n• Westernisation & Secularisation: Explained how British rule introduced secular legal institutions, modern education, and humanitarian values, weakening rigid purity-pollution norms.\n\n" +
+          "3. CRITICAL EVALUATION:\n• Yogendra Singh: Emphasized that Sanskritisation leads only to 'positional change' within the caste system, not 'structural change' of the system itself.\n• Dalit & Subaltern Critique (Gail Omvedt / Kancha Ilaiah): Argued that Sanskritisation legitimizes upper-caste Brahmanical hegemony and degrades Dalit-Bahujan productive culture.\n• Feminist Critique (Leela Dube): Pointed out that Sanskritisation is deeply patriarchal, as upward caste mobility imposes harsh restrictions on women (dowry, purdah, ban on widow remarriage).\n\n" +
+          "4. CONTEMPORARY TRENDS IN INDIA:\n• De-Sanskritisation & Politicisation of Caste (Rajni Kothari): In contemporary India, castes increasingly seek 'downward' backward-class labels (OBC/SC reservations) for state jobs and assert numeric strength through democratic 'Vote Bank' politics rather than ritual imitation.\n\n" +
+          "5. CONCLUSION:\nSrinivas's concepts remain the most powerful empirical lens to decode the dynamic interplay between tradition, hierarchy, and democratic politics in modern India.";
+      }
+
+      // Comprehensive Dynamic Sociological Answer for any other custom topic
+      return "QUESTION: " + q + "\nEXAM TRACK: " + ex + " | TARGET LENGTH: " + len + "\n\n" +
+        "1. INTRODUCTION & CONCEPTUAL DEFINITION:\nIn sociological inquiry, the question of \"" + q + "\" is analyzed not as an isolated occurrence, but as a structural and institutional phenomenon. Using C. Wright Mills's concept of 'Sociological Imagination', we must connect personal biographies and immediate events to broader historical and social structures.\n\n" +
+        "2. MULTI-DIMENSIONAL THEORETICAL PERSPECTIVES:\n• Structural-Functionalist Perspective (Émile Durkheim, Talcott Parsons, R.K. Merton):\n  Functionalists examine how this phenomenon contributes to value consensus, social integration, and systemic equilibrium (Parsons's AGIL schema). However, R.K. Merton cautions us to distinguish between its 'Manifest Functions' (intended outcomes) and 'Latent Functions' or 'Dysfunctions' that may generate social strain.\n\n• Conflict & Marxist Perspective (Karl Marx, Ralf Dahrendorf, Pierre Bourdieu):\n  Conflict theorists argue that social arrangements are not neutral; they reflect underlying asymmetries of economic power and resource distribution. Pierre Bourdieu highlights how 'Cultural and Symbolic Capital' are used by dominant groups to reproduce social inequalities across generations.\n\n• Interpretive & Feminist Perspective (Max Weber, G.H. Mead, Sylvia Walby):\n  Through Weberian 'Verstehen', sociologists decode the subjective meanings actors attach to their choices within this domain, while feminist scholars expose how patriarchal structures intersect with class and caste to create differentiated experiences.\n\n" +
+        "3. EMPIRICAL REALITY IN CONTEMPORARY INDIA:\n• Tradition vs. Modernity: As Yogendra Singh notes in 'Modernization of Indian Tradition', Indian society experiences continuous adaptive synthesis. Factors such as caste mobilization (M.N. Srinivas), agrarian transitions (André Béteille), rapid urbanisation, and digital penetration deeply mediate this issue on the ground.\n\n" +
+        "4. CONCLUSION:\nA balanced sociological evaluation requires moving beyond monocausal explanations. Sustainable transformation demands harmonizing constitutional-legal reforms with grassroot institutional empowerment and normative social change.";
+    }
+
+    async function genAIAnswer() {
       var q = document.getElementById('aiQ').value.trim();
       var ex = document.getElementById('aiEx').value;
       var len = document.getElementById('aiLen').value;
+      var btn = document.getElementById('aiBtn');
+      var btnText = document.getElementById('aiBtnText');
+      var btnIcon = document.getElementById('aiBtnIcon');
+      var statusBox = document.getElementById('aiStatusBox');
+      var outBox = document.getElementById('aiOutBox');
+      var outText = document.getElementById('aiOutText');
+
       if (!q) {
-        alert('Bhai, pehle apna question toh likho!');
+        alert('Bhai, pehle apna Sociology question toh likho!');
         return;
       }
-      var res = "Question: " + q + "\nExam Track: " + ex + " | Target: " + len + "\n\n" +
-        "1. INTRODUCTION:\nSociology analyses this phenomenon not as an isolated event, but as a structural outcome shaped by historical, institutional, and cultural forces.\n\n" +
-        "2. CORE SOCIOLOGICAL PERSPECTIVES:\n• Functionalist View (Émile Durkheim / Talcott Parsons): Examines how this institution/process contributes to social integration, value consensus, and systemic equilibrium.\n• Conflict / Materialist View (Karl Marx): Highlights how underlying economic inequalities and power asymmetries shape this domain.\n• Interpretive & Indian Context (Max Weber / M.N. Srinivas / André Béteille): Connects subjective social action with empirical realities of caste, class, gender, and modernization in India.\n\n" +
-        "3. CONCLUSION:\nA balanced sociological evaluation requires combining structural policy reforms with grassroot institutional transformation.";
-      document.getElementById('aiOutText').textContent = res;
-      document.getElementById('aiOutBox').classList.remove('hidden');
+
+      btn.disabled = true;
+      btnIcon.className = "fa-solid fa-spinner fa-spin text-amber-400";
+      btnText.textContent = "Writing Full Sociological Answer...";
+      statusBox.classList.remove('hidden');
+      statusBox.textContent = "⏳ Connecting to AI Sociology Engine... Generating thinkers, books, Indian examples & critical analysis...";
+      outBox.classList.add('hidden');
+
+      var prompt = "You are an expert Sociology Professor for " + ex + ". Write a complete, high-scoring model answer (" + len + ") for the question: \"" + q + "\". Structure it strictly with: 1. Introduction (with sociological definition and thinker book reference), 2. Core Sociological Arguments & Thinkers, 3. Indian Society Context & Empirical Examples, 4. Critical Evaluation / Limitations, 5. Conclusion. Write actual detailed content, not just placeholders.";
+
+      try {
+        // Live Free AI API Call (Pollinations Text AI - No API Key Needed, Works on GitHub Pages & Vercel)
+        var controller = new AbortController();
+        var timeoutId = setTimeout(function() { controller.abort(); }, 12000);
+
+        var response = await fetch("https://text.pollinations.ai/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            messages: [
+              { role: "system", content: "You are a senior Sociology professor for UPSC Civil Services and UGC NET JRF in India." },
+              { role: "user", content: prompt }
+            ],
+            model: "openai"
+          }),
+          signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!response.ok) throw new Error("API busy");
+        var aiText = await response.text();
+
+        if (!aiText || aiText.length < 80 || aiText.indexOf("<!DOCTYPE") !== -1) {
+          throw new Error("Invalid response");
+        }
+
+        outText.textContent = aiText.trim();
+        statusBox.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200";
+        statusBox.textContent = "✅ Complete AI Sociology Answer generated successfully!";
+      } catch (err) {
+        // Instant Smart Fallback with Full Topic-Specific Sociology Answers
+        var fallbackAns = buildSmartOfflineAnswer(q, ex, len);
+        outText.textContent = fallbackAns;
+        statusBox.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200";
+        statusBox.textContent = "✅ Full Model Answer generated from Social Prism Sociology Knowledge Vault!";
+      } finally {
+        outBox.classList.remove('hidden');
+        btn.disabled = false;
+        btnIcon.className = "fa-solid fa-wand-magic-sparkles text-amber-400";
+        btnText.textContent = "Generate Full Sociological Answer";
+        outBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function copyAnswerText() {
+      var text = document.getElementById('aiOutText').textContent;
+      var copyBtn = document.getElementById('copyBtnEl');
+      navigator.clipboard.writeText(text).then(function() {
+        copyBtn.innerHTML = '<i class="fa-solid fa-check mr-1"></i>Copied!';
+        setTimeout(function() {
+          copyBtn.innerHTML = '<i class="fa-regular fa-copy mr-1"></i>Copy Answer';
+        }, 2000);
+      });
     }
   </script>
 </body>
