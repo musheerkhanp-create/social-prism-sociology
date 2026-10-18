@@ -249,12 +249,12 @@
       </div>
     </section>
 
-    <!-- 3. PYQ VAULT PANEL (PAPER 1 SYLLABUS UNITS & PAPER 2 SELECTION) -->
+    <!-- 3. PYQ VAULT PANEL (PAPER 1 SYLLABUS UNITS & HIGH-YIELD TABLE) -->
     <section id="panel-pyq" class="tab-panel max-w-6xl mx-auto px-5 py-14">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">UPSC Optional Syllabus Hub</span>
         <h2 class="serif text-4xl font-bold text-indigo-950 mt-3 mb-2">PYQ Vault</h2>
-        <p class="text-slate-600">Select Paper 1 to explore unit-wise subtopics and open direct PYQ PDFs, or switch to Paper 2 for Indian Society.</p>
+        <p class="text-slate-600">Explore Paper 1 Unit-wise syllabus breakdown, high-yield trends, and download unit PYQ PDFs.</p>
       </div>
 
       <!-- Paper Selector Tabs / Buttons -->
@@ -267,140 +267,330 @@
         </button>
       </div>
 
-      <!-- PAPER 1 UNITS VIEW (INTERACTIVE SYLLABUS ACCORDION) -->
-      <div id="viewP1" class="space-y-4 max-w-4xl mx-auto">
-        <div class="bg-indigo-950 text-white p-5 rounded-2xl mb-6">
-          <h3 class="serif text-xl font-bold text-amber-400 mb-1">Paper 1: Principles of Sociology</h3>
-          <p class="text-xs text-slate-300">Click on any Unit below to expand subtopics and instantly download the respective unit PYQ PDF.</p>
+      <!-- PAPER 1 UNITS VIEW (INTERACTIVE SYLLABUS ACCORDION + LOTUSARISE HIGH YIELD TABLE) -->
+      <div id="viewP1" class="space-y-8 max-w-5xl mx-auto">
+        <div class="bg-indigo-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
+          <div>
+            <span class="bg-amber-400 text-indigo-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">UPSC Paper 1 Official Syllabus</span>
+            <h3 class="serif text-2xl font-bold text-white mt-2">Principles of Sociology — 10 Core Units</h3>
+            <p class="text-xs text-slate-300 mt-1">Click on any Unit below to view subtopics and access unit PYQ PDFs.</p>
+          </div>
+          <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-5 py-3 rounded-xl text-xs transition shadow-lg flex items-center gap-2 shrink-0">
+            <i class="fa-solid fa-file-pdf text-base"></i> Download Complete Paper 1 PDF
+          </a>
         </div>
 
-        <!-- Unit 1 -->
-        <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
-          <div onclick="toggleUnit('unit1')" class="flex justify-between items-center cursor-pointer select-none">
-            <div>
-              <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 1</span>
-              <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociological Thinkers (Classical & Modern)</h4>
-            </div>
-            <i id="icon-unit1" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-          </div>
-          <div id="content-unit1" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-            <p class="text-xs text-slate-600 font-medium">Subtopics: Émile Durkheim (Social Facts, Division of Labour, Religion, Suicide), Karl Marx (Historical Materialism, Alienation, Class Struggle), Max Weber (Social Action, Ideal Types, Bureaucracy, Protestant Ethic), Talcott Parsons (AGIL), Robert K. Merton (Middle-Range Theory), Mead (Symbolic Interactionism).</p>
-            <div class="pt-2">
-              <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                <i class="fa-solid fa-file-pdf"></i> Download Unit 1 PYQ PDF
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unit 2 -->
-        <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
-          <div onclick="toggleUnit('unit2')" class="flex justify-between items-center cursor-pointer select-none">
-            <div>
-              <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 2</span>
-              <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociological Investigation & Research Methods</h4>
-            </div>
-            <i id="icon-unit2" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-          </div>
-          <div id="content-unit2" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-            <p class="text-xs text-slate-600 font-medium">Subtopics: Positivism and its critique, Fact, value and objectivity, Non-positivist methodologies, Quantitative and qualitative methods, Research techniques (Observation, Interview, Questionnaire), Sampling.</p>
-            <div class="pt-2">
-              <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                <i class="fa-solid fa-file-pdf"></i> Download Unit 2 PYQ PDF
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unit 3 -->
-        <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
-          <div onclick="toggleUnit('unit3')" class="flex justify-between items-center cursor-pointer select-none">
-            <div>
-              <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 3</span>
-              <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Basic Concepts & Social Institutions</h4>
-            </div>
-            <i id="icon-unit3" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-          </div>
-          <div id="content-unit3" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-            <p class="text-xs text-slate-600 font-medium">Subtopics: Sociological imagination, Social structure, Status and role, Socialization, Social control, Family, marriage and kinship, Household structures.</p>
-            <div class="pt-2">
-              <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                <i class="fa-solid fa-file-pdf"></i> Download Unit 3 PYQ PDF
-              </a>
-            </div>
+        <!-- High-Yield PYQ Trends Table (LotusArise) -->
+        <div class="glass-card border-t-4 border-t-amber-500 shadow-sm">
+          <h3 class="serif text-xl font-bold text-indigo-950 mb-2">🔥 High-Yield Paper 1 Core Priority Units</h3>
+          <p class="text-xs text-slate-500 mb-4">Grounded in PYQ trend counts from 1980s–2026 (LotusArise framework)</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-100 text-indigo-950 font-bold uppercase">
+                <tr>
+                  <th class="p-3 rounded-l-xl">Unit Name</th>
+                  <th class="p-3 text-center">PYQs since 2013</th>
+                  <th class="p-3 rounded-r-xl">Why High Priority</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-slate-700 font-medium">
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold text-indigo-950">Sociological Thinkers</td>
+                  <td class="p-3 text-center font-extrabold text-amber-600">72</td>
+                  <td class="p-3">Most asked; Marx–Durkheim–Weber comparisons frequent.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold text-indigo-950">Stratification & Mobility</td>
+                  <td class="p-3 text-center font-extrabold text-amber-600">46</td>
+                  <td class="p-3">Directly links to caste/class questions in Paper 2.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold text-indigo-950">Politics & Society</td>
+                  <td class="p-3 text-center font-extrabold text-amber-600">39</td>
+                  <td class="p-3">Power, democracy, civil society appear regularly.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold text-indigo-950">Research Methods</td>
+                  <td class="p-3 text-center font-extrabold text-amber-600">36</td>
+                  <td class="p-3">Rising trend—frequent methodology questions in recent years.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold text-indigo-950">Religion & Society</td>
+                  <td class="p-3 text-center font-extrabold text-amber-600">33</td>
+                  <td class="p-3">Often linked with secularisation & modernity debates.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- Unit 4 -->
-        <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
-          <div onclick="toggleUnit('unit4')" class="flex justify-between items-center cursor-pointer select-none">
-            <div>
-              <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 4</span>
-              <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Social Stratification & Mobility</h4>
-            </div>
-            <i id="icon-unit4" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-          </div>
-          <div id="content-unit4" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-            <p class="text-xs text-slate-600 font-medium">Subtopics: Concepts, Equality, inequality, hierarchy, exclusion, poverty and deprivation. Theories of social stratification (Davis-Moore functionalist theory, Marxian conflict theory, Weberian class-status-party). Social mobility (open and closed systems).</p>
-            <div class="pt-2">
-              <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                <i class="fa-solid fa-file-pdf"></i> Download Unit 4 PYQ PDF
-              </a>
-            </div>
-          </div>
-        </div>
+        <!-- Interactive Syllabus Units Accordion -->
+        <div class="space-y-4">
+          <h3 class="serif text-2xl font-bold text-indigo-950 pt-4">📖 Unit-by-Unit Syllabus & PYQ Access</h3>
 
-        <!-- Unit 5 -->
-        <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
-          <div onclick="toggleUnit('unit5')" class="flex justify-between items-center cursor-pointer select-none">
-            <div>
-              <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 5</span>
-              <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Work & Economic Life</h4>
+          <!-- Unit 1 -->
+          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
+            <div onclick="toggleUnit('unit1')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 1</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociology – The Discipline</h4>
+              </div>
+              <i id="icon-unit1" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
             </div>
-            <i id="icon-unit5" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-          </div>
-          <div id="content-unit5" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-            <p class="text-xs text-slate-600 font-medium">Subtopics: Social organization of work in different types of society (slave, feudal, capitalist). Formal and informal organization of work. Labour and society, Gig economy, Automation.</p>
-            <div class="pt-2">
-              <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                <i class="fa-solid fa-file-pdf"></i> Download Unit 5 PYQ PDF
-              </a>
+            <div id="content-unit1" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Modernity and social change in Europe</li>
+                <li>Emergence of Sociology</li>
+                <li>Scope of Sociology</li>
+                <li>Comparison with other social sciences</li>
+                <li>Sociology and common sense</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 1 PYQ PDF
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Unit 6 -->
-        <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
-          <div onclick="toggleUnit('unit6')" class="flex justify-between items-center cursor-pointer select-none">
-            <div>
-              <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 6</span>
-              <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Politics, Power & Religion</h4>
+          <!-- Unit 2 -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+            <div onclick="toggleUnit('unit2')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 2</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociology as Science</h4>
+              </div>
+              <i id="icon-unit2" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
             </div>
-            <i id="icon-unit6" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-          </div>
-          <div id="content-unit6" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
-            <p class="text-xs text-slate-600 font-medium">Subtopics: Power elite, bureaucracy, pressure groups, political parties. Nation, state, citizenship, democracy, civil society. Sociology of religion: Types of religious practices (animism, monotheism, pluralism), Religion and science.</p>
-            <div class="pt-2">
-              <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
-                <i class="fa-solid fa-file-pdf"></i> Download Unit 6 PYQ PDF
-              </a>
+            <div id="content-unit2" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Scientific method and critique</li>
+                <li>Theoretical strands of methodology</li>
+                <li>Positivism and its critique</li>
+                <li>Fact–value debate & Objectivity</li>
+                <li>Non‑positivist methodologies</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 2 PYQ PDF
+                </a>
+              </div>
             </div>
           </div>
+
+          <!-- Unit 3 -->
+          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
+            <div onclick="toggleUnit('unit3')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 3</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Research Methods and Analysis</h4>
+              </div>
+              <i id="icon-unit3" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit3" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Qualitative & quantitative methods</li>
+                <li>Data collection techniques</li>
+                <li>Variables, sampling, hypothesis</li>
+                <li>Reliability & validity</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 3 PYQ PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 4 -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+            <div onclick="toggleUnit('unit4')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 4</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Sociological Thinkers</h4>
+              </div>
+              <i id="icon-unit4" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit4" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li><strong>Karl Marx:</strong> historical materialism, mode of production, alienation, class struggle</li>
+                <li><strong>Emile Durkheim:</strong> division of labour, social fact, suicide, religion</li>
+                <li><strong>Max Weber:</strong> social action, ideal types, authority, bureaucracy, Protestant ethic</li>
+                <li><strong>Talcott Parsons:</strong> social system, pattern variables</li>
+                <li><strong>Robert K. Merton:</strong> latent/manifest functions, deviance, reference groups</li>
+                <li><strong>G.H. Mead:</strong> self and identity</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 4 PYQ PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 5 -->
+          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
+            <div onclick="toggleUnit('unit5')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 5</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Stratification and Mobility</h4>
+              </div>
+              <i id="icon-unit5" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit5" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Concepts: equality, inequality, hierarchy, exclusion, poverty, deprivation</li>
+                <li>Theories: functionalist, Marxist, Weberian</li>
+                <li>Dimensions: class, status, gender, ethnicity, race</li>
+                <li>Social mobility: types, sources, causes</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 5 PYQ PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 6 -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+            <div onclick="toggleUnit('unit6')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 6</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Work and Economic Life</h4>
+              </div>
+              <i id="icon-unit6" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit6" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Organisation of work in slave, feudal, industrial societies</li>
+                <li>Formal & informal work organisation</li>
+                <li>Labour and society</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 6 PYQ PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 7 -->
+          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
+            <div onclick="toggleUnit('unit7')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 7</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Politics and Society</h4>
+              </div>
+              <i id="icon-unit7" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit7" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Theories of power</li>
+                <li>Power elite, bureaucracy, pressure groups, political parties</li>
+                <li>Nation, state, citizenship, democracy, civil society, ideology</li>
+                <li>Protest, agitation, social movements, collective action, revolution</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 7 PYQ PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 8 -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+            <div onclick="toggleUnit('unit8')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 8</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Religion and Society</h4>
+              </div>
+              <i id="icon-unit8" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit8" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Sociological theories of religion</li>
+                <li>Religious practices: animism, monism, pluralism, sects, cults</li>
+                <li>Religion in modern society: secularisation, revivalism, fundamentalism</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 8 PYQ PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 9 -->
+          <div class="glass-card border-l-4 border-l-indigo-900 overflow-hidden">
+            <div onclick="toggleUnit('unit9')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-indigo-100 text-indigo-900 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 9</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Systems of Kinship</h4>
+              </div>
+              <i id="icon-unit9" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit9" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Family, household, marriage</li>
+                <li>Types/forms of family</li>
+                <li>Lineage & descent</li>
+                <li>Patriarchy & sexual division of labour</li>
+                <li>Contemporary trends</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 9 PYQ PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 10 -->
+          <div class="glass-card border-l-4 border-l-amber-500 overflow-hidden">
+            <div onclick="toggleUnit('unit10')" class="flex justify-between items-center cursor-pointer select-none">
+              <div>
+                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded">Unit 10</span>
+                <h4 class="serif text-lg font-bold text-indigo-950 mt-1">Social Change in Modern Society</h4>
+              </div>
+              <i id="icon-unit10" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
+            </div>
+            <div id="content-unit10" class="hidden mt-4 pt-4 border-t border-slate-100 space-y-3">
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-medium">
+                <li>Theories of social change</li>
+                <li>Development & dependency</li>
+                <li>Agents of change</li>
+                <li>Education, science, technology and social change</li>
+              </ul>
+              <div class="pt-2">
+                <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-file-pdf"></i> Download Unit 10 PYQ PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <!-- PAPER 2 INDIAN SOCIETY VIEW (INITIALLY HIDDEN) -->
       <div id="viewP2" class="hidden space-y-6 max-w-4xl mx-auto">
-        <div class="bg-indigo-950 text-white p-5 rounded-2xl mb-6">
-          <h3 class="serif text-xl font-bold text-amber-400 mb-1">Paper 2: Indian Society — Structure & Change</h3>
-          <p class="text-xs text-slate-300">Comprehensive Indian Society PYQ compendium and model structures.</p>
+        <div class="bg-indigo-950 text-white p-6 rounded-3xl shadow-xl flex justify-between items-center gap-4 mb-6">
+          <div>
+            <span class="bg-amber-400 text-indigo-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">UPSC Paper 2 Official Syllabus</span>
+            <h3 class="serif text-2xl font-bold text-white mt-2">Indian Society — Structure & Change</h3>
+          </div>
+          <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-5 py-3 rounded-xl text-xs transition shadow-lg flex items-center gap-2 shrink-0">
+            <i class="fa-solid fa-file-pdf text-base"></i> Download Paper 2 PDF
+          </a>
         </div>
 
         <div class="glass-card border-l-4 border-l-amber-500">
           <div class="flex justify-between items-start mb-2">
             <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Indian Society Perspectives</span>
             <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-3.5 py-2 rounded-xl text-xs shadow flex items-center gap-1.5">
-              <i class="fa-solid fa-file-pdf"></i> Download PDF
+              <i class="fa-solid fa-file-pdf"></i> PDF
             </a>
           </div>
           <h4 class="serif text-xl font-bold text-indigo-950">Introducing Indian Society: Indological, Structural, and Subaltern Perspectives</h4>
@@ -411,7 +601,7 @@
           <div class="flex justify-between items-start mb-2">
             <span class="bg-indigo-100 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full">Social Transformation</span>
             <a href="chapter1_pyqs_watermarked.pdf" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-indigo-950 font-bold px-3.5 py-2 rounded-xl text-xs shadow flex items-center gap-1.5">
-              <i class="fa-solid fa-file-pdf"></i> Download PDF
+              <i class="fa-solid fa-file-pdf"></i> PDF
             </a>
           </div>
           <h4 class="serif text-xl font-bold text-indigo-950">Rural & Agrarian Transformation in India</h4>
