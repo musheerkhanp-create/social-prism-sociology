@@ -1,0 +1,13 @@
+
+{
+  "name": "social-prism-sociology",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.x"
+  },
+  "dependencies": {
+    "@google/genai": "^2.30.0"
+  }
+}
