@@ -55,7 +55,7 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
 .task-row.done{background:#f0fdf4}
 .task-row.done .task-name{text-decoration:line-through;color:#64748b}
 .mcq-option{display:block;width:100%;text-align:left;padding:12px;border:1px solid #cbd5e1;border-radius:10px;margin-top:9px;background:white}
-.mcq-option.hover:not(:disabled){background:#eef2ff;border-color:#818cf8}
+.mcq-option:hover:not(:disabled){background:#eef2ff;border-color:#818cf8}
 .mcq-option.correct{background:#dcfce7;border-color:#16a34a}
 .mcq-option.wrong{background:#fee2e2;border-color:#dc2626}
 .small-muted{font-size:12px;color:#64748b}
@@ -272,9 +272,9 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
   </div>
 </section>
 
-<!-- AI ANSWER STUDIO -->
+<!-- AI ANSWER STUDIO & EVALUATOR -->
 <section id="panel-ai" class="tab-panel max-w-4xl mx-auto px-5 py-12">
-  <div class="text-center mb-7"><span class="text-xs font-bold text-amber-800">AI-ASSISTED PRACTICE</span><h2 class="serif text-4xl font-bold text-indigo-950 mt-2">AI Answer Studio</h2><p class="text-slate-600 mt-2">Generate a draft, then verify facts and refine it in your own words.</p></div>
+  <div class="text-center mb-7"><span class="text-xs font-bold text-amber-800">AI-ASSISTED PRACTICE</span><h2 class="serif text-4xl font-bold text-indigo-950 mt-2">AI Answer Studio & Evaluator</h2><p class="text-slate-600 mt-2">Generate model answers or evaluate your written answers using Gemini AI.</p></div>
   <div class="glass-card space-y-4">
     <div><label class="block font-bold text-sm mb-2">Your Question</label><textarea id="aiQ" rows="4" class="field" placeholder="Type your UPSC or Sociology question here..."></textarea></div>
     <div>
@@ -287,7 +287,7 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
     <div id="aiStudentAnswerWrap" class="hidden">
       <label class="block font-bold text-sm mb-2">Paste your answer for evaluation</label>
       <textarea id="aiStudentAnswer" rows="8" maxlength="18000" class="field" placeholder="Paste the answer you wrote here..."></textarea>
-      <p class="small-muted mt-2">The AI will assess relevance, structure, conceptual accuracy, thinkers/examples, critical analysis and conclusion. Treat the score as indicative feedback, not an official UPSC marking.</p>
+      <p class="small-muted mt-2">The AI will assess relevance, structure, conceptual accuracy, thinkers/examples, critical analysis and conclusion.</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-4">
       <div><label class="block font-bold text-sm mb-2">Exam Track</label><select id="aiEx" class="field"><option>UPSC Sociology Optional</option><option>UGC NET Sociology</option><option>UPSC General Studies</option><option>M.A. / B.A. University Exam</option></select></div>
@@ -297,7 +297,7 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
     <p id="aiStatusBox" class="hidden text-sm rounded-xl p-3 bg-indigo-50 text-indigo-900"></p>
   </div>
   <div id="aiOutBox" class="hidden glass-card mt-5 border-l-4 border-amber-500">
-    <div class="flex justify-between items-center gap-3 mb-4"><h3 class="serif text-2xl font-bold">Model Answer</h3><button class="btn btn-gold" onclick="copyText('aiOutText')">Copy Answer</button></div>
+    <div class="flex justify-between items-center gap-3 mb-4"><h3 class="serif text-2xl font-bold" id="aiOutTitle">Model Answer</h3><button class="btn btn-gold" onclick="copyText('aiOutText')">Copy Result</button></div>
     <div id="aiOutText" class="whitespace-pre-wrap text-sm leading-7"></div>
   </div>
 </section>
@@ -449,8 +449,30 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
   <div class="max-w-6xl mx-auto border-t border-indigo-900 pt-5 mt-7 text-center text-xs text-slate-400">© 2026 Social Prism by Pathan Musheer Khan. All Rights Reserved.</div>
 </footer>
 
+<!-- FLOATING GEMINI AI CHAT WIDGET -->
+<div id="sp-chat-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: Inter, sans-serif;">
+  <div id="sp-chat-bubble" onclick="toggleSpChat()" style="background: #1e1b4b; color: #fbbf24; border: 2px solid #fbbf24; padding: 12px 20px; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25); font-weight: bold; display: flex; align-items: center; gap: 8px;">
+    <i class="fa-solid fa-wand-magic-sparkles"></i> Sociology AI
+  </div>
+  <div id="sp-chat-box" style="display: none; width: 330px; height: 450px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); flex-direction: column; overflow: hidden; border: 1px solid #cbd5e1;">
+    <div id="sp-chat-header" style="background: #1e1b4b; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-weight: bold;">
+      <span>Social Prism AI Assistant</span>
+      <button onclick="toggleSpChat()" style="background: none; border: none; color: #fbbf24; font-size: 20px; cursor: pointer;">×</button>
+    </div>
+    <div id="sp-chat-messages" style="flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; font-size: 13px; background: #f8fafc;">
+      <div class="sp-msg sp-ai" style="background: #e0e7ff; color: #1e1b4b; padding: 10px 12px; border-radius: 10px; max-width: 85%; line-height: 1.4;">Namaste! Main Social Prism ka Sociology AI assistant hoon. Sociology ya UPSC se juda koi bhi sawal poochiye!</div>
+    </div>
+    <div id="sp-chat-input-area" style="display: flex; padding: 10px; border-top: 1px solid #e2e8f0; background: white;">
+      <input type="text" id="sp-user-input" placeholder="Sawal yahan type karein..." onkeypress="handleSpKeyPress(event)" style="flex: 1; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; font-size: 13px;">
+      <button onclick="sendSpMessage()" style="background: #1e1b4b; color: #fbbf24; border: none; padding: 8px 14px; margin-left: 6px; border-radius: 8px; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
+
 <script>
 "use strict";
+
+const GEMINI_API_KEY = "AQ.Ab8RN6Ke1rV7wYv1Itd5lToiwbtWuhUVO3iQ6RaY6PsGmk3pKQ";
 
 /* Safe local storage helpers */
 const STORE_KEY="socialPrismStudentHub_v1";
@@ -755,14 +777,16 @@ function updateDashboard(){
   renderDashboardTasks();
 }
 
-/* AI Answer Studio — secure backend connection */
+/* AI Answer Studio & Evaluator — Powered by Gemini API */
 function toggleEvaluationInput(){
   const evaluate=document.getElementById("aiMode").value==="evaluate";
   document.getElementById("aiStudentAnswerWrap").classList.toggle("hidden",!evaluate);
   document.getElementById("aiBtn").innerHTML=evaluate
     ? '<i class="fa-solid fa-clipboard-check mr-2"></i>Evaluate My Answer'
     : '<i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Generate Model Answer';
+  document.getElementById("aiOutTitle").textContent = evaluate ? "Answer Evaluation & Feedback" : "Model Answer";
 }
+
 function askAI(question){
   document.getElementById("aiQ").value=question;
   document.getElementById("aiMode").value="generate";
@@ -770,9 +794,7 @@ function askAI(question){
   switchPanelDirect("ai");
   genAIAnswer();
 }
-function offlineAnswer(q,ex,len){
-  return `QUESTION: ${q}\nEXAM TRACK: ${ex}\nTARGET: ${len}\n\nINTRODUCTION\nDefine the central concept and establish its relevance to the question.\n\nANALYTICAL BODY\n1. Conceptual framework: explain the key terms and dimensions.\n2. Theoretical perspective: connect relevant sociologists, theories and scholarly debates.\n3. Indian context: use relevant constitutional provisions, institutions, empirical examples or contemporary cases where appropriate.\n4. Critical evaluation: discuss limitations, counterarguments and alternative explanations.\n\nCONCLUSION\nOffer a balanced synthesis directly addressing the question.\n\nIMPORTANT: This is an offline answer framework, not a completed factual model answer. Verify facts and add topic-specific evidence before using it.`;
-}
+
 async function genAIAnswer(){
   const q=document.getElementById("aiQ").value.trim();
   if(!q){alert("Bhai, pehle apna question likho!");return;}
@@ -780,43 +802,49 @@ async function genAIAnswer(){
   const len=document.getElementById("aiLen").value;
   const mode=document.getElementById("aiMode").value;
   const studentAnswer=document.getElementById("aiStudentAnswer").value.trim();
+  
   if(mode==="evaluate"&&!studentAnswer){alert("Bhai, evaluation ke liye apna written answer paste karo.");return;}
+  
   const btn=document.getElementById("aiBtn");
   const status=document.getElementById("aiStatusBox");
   const out=document.getElementById("aiOutBox");
+
   btn.disabled=true;
-  btn.innerHTML='<i class="fa-solid fa-spinner fa-spin mr-2"></i>Working...';
+  btn.innerHTML='<i class="fa-solid fa-spinner fa-spin mr-2"></i>Processing via Gemini AI...';
   status.className="mt-4 text-sm rounded-xl p-3 bg-indigo-50 text-indigo-900";
   status.classList.remove("hidden");
-  status.textContent=mode==="evaluate"?"Your answer is being evaluated against an exam-focused rubric...":"Generating your exam-focused model answer...";
+  status.textContent=mode==="evaluate"?"Evaluating your answer against sociological standards...":"Generating comprehensive model answer...";
   out.classList.add("hidden");
+
+  let promptText = "";
+  if(mode === "evaluate") {
+    promptText = `You are an expert UPSC Sociology examiner and mentor for 'Social Prism Sociology'. Evaluate the following student answer for the question: "${q}". Exam Track: ${ex}. Target Length: ${len}.\n\nStudent Answer:\n${studentAnswer}\n\nPlease provide constructive evaluation including:\n1. Strengths & Positives\n2. Conceptual & Thinker Gaps (missing theorists, concepts, or Indian examples)\n3. Structure & Conclusion Feedback\n4. Indicative Score / Rating (out of 10 or 20 marks)`;
+  } else {
+    promptText = `You are an expert sociology tutor and assistant for 'Social Prism Sociology'. Prepare a comprehensive model answer for the question: "${q}". Exam Track: ${ex}. Target Length: ${len}. Use an introduction, clear analytical subheadings, relevant thinkers and sociological theories, Indian examples, and a balanced conclusion.`;
+  }
+
   try{
-    const controller=new AbortController();
-    const timer=setTimeout(()=>controller.abort(),60000);
-    let response;
-    try{
-      response=await fetch("/api/ai-answer",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({mode,question:q,exam:ex,length:len,answer:studentAnswer}),
-        signal:controller.signal
-      });
-    } finally { clearTimeout(timer); }
-    const payload=await response.json().catch(()=>({}));
-    if(!response.ok)throw new Error(payload.error||("Backend returned HTTP "+response.status));
-    if(!payload.text)throw new Error("AI service returned an empty response.");
-    document.getElementById("aiOutText").textContent=payload.text;
-    status.textContent=mode==="evaluate"
-      ?"Evaluation complete. Use the feedback to improve your next draft; this is not an official UPSC score."
-      :"Model answer generated. Verify facts, examples and references before using it.";
-    status.className="mt-4 text-sm rounded-xl p-3 bg-emerald-50 text-emerald-900";
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: promptText }] }]
+      })
+    });
+
+    const data = await response.json();
+    if(data.error) throw new Error(data.error.message || "Gemini API Error");
+
+    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if(!reply) throw new Error("No response received from Gemini.");
+
+    document.getElementById("aiOutText").textContent = reply.trim();
+    status.textContent = mode==="evaluate" ? "Evaluation completed successfully!" : "Model answer generated successfully!";
+    status.className = "mt-4 text-sm rounded-xl p-3 bg-emerald-50 text-emerald-900";
   }catch(error){
-    document.getElementById("aiOutText").textContent=
-      mode==="generate"?offlineAnswer(q,ex,len):
-      "The AI evaluation service could not be reached, so no score has been assigned. Check the Vercel API deployment and GEMINI_API_KEY environment variable, then try again.";
-    status.textContent=(error.name==="AbortError"?"The request timed out. ":"AI connection failed: "+error.message+" ") +
-      "Check that the Vercel API function is deployed and GEMINI_API_KEY is configured in Vercel. No API key should be placed in this HTML file.";
-    status.className="mt-4 text-sm rounded-xl p-3 bg-amber-50 text-amber-900";
+    document.getElementById("aiOutText").textContent = "Maaf kijiye, error aaya: " + error.message;
+    status.textContent = "Connection failed. Please check your network connection.";
+    status.className = "mt-4 text-sm rounded-xl p-3 bg-rose-50 text-rose-900";
   }finally{
     out.classList.remove("hidden");
     btn.disabled=false;
@@ -824,6 +852,7 @@ async function genAIAnswer(){
     out.scrollIntoView({behavior:"smooth",block:"start"});
   }
 }
+
 function copyText(id){
   const text=document.getElementById(id).innerText;
   if(navigator.clipboard&&window.isSecureContext){
@@ -875,7 +904,50 @@ renderUnits("netUnits",[
   ["Stratification","Class, caste, gender, ethnicity and mobility."],
   ["Political Sociology","Power, state, democracy, citizenship and movements."],
   ["Indian Society","Social structure, institutions, change and development."]
-].map(u=>u).map(u=>u).map((u,i)=>u).map((u,i)=>u));
+].map(u=>u));
+
+/* Floating Chat Widget Logic */
+function toggleSpChat() {
+  const box = document.getElementById('sp-chat-box');
+  box.style.display = box.style.display === 'none' ? 'flex' : 'none';
+}
+function handleSpKeyPress(e) {
+  if (e.key === 'Enter') sendSpMessage();
+}
+async function sendSpMessage() {
+  const input = document.getElementById('sp-user-input');
+  const messages = document.getElementById('sp-chat-messages');
+  const text = input.value.trim();
+  if (!text) return;
+
+  messages.innerHTML += `<div class="sp-msg sp-user" style="background: #1e1b4b; color: white; padding: 10px 12px; border-radius: 10px; max-width: 85%; align-self: flex-end; line-height: 1.4;">${escapeHTML(text)}</div>`;
+  input.value = '';
+  messages.scrollTop = messages.scrollHeight;
+
+  const loadingId = 'load-' + Date.now();
+  messages.innerHTML += `<div id="${loadingId}" class="sp-msg sp-ai" style="background: #e0e7ff; color: #1e1b4b; padding: 10px 12px; border-radius: 10px; max-width: 85%; align-self: flex-start;">Soch raha hoon...</div>`;
+  messages.scrollTop = messages.scrollHeight;
+
+  try {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: "You are an expert sociology tutor for 'Social Prism Sociology'. Answer strictly through a sociological lens using relevant concepts and thinkers: " + text }] }]
+      })
+    });
+    
+    const data = await response.json();
+    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf kijiye, jawab dene mein kuch samasya aayi.";
+    
+    document.getElementById(loadingId).remove();
+    messages.innerHTML += `<div class="sp-msg sp-ai" style="background: #e0e7ff; color: #1e1b4b; padding: 10px 12px; border-radius: 10px; max-width: 85%; align-self: flex-start; line-height: 1.4;">${escapeHTML(reply).replace(/\n/g, '<br>')}</div>`;
+  } catch (err) {
+    document.getElementById(loadingId).remove();
+    messages.innerHTML += `<div class="sp-msg sp-ai" style="background: #fee2e2; color: #991b1b; padding: 10px 12px; border-radius: 10px; max-width: 85%; align-self: flex-start;">Network error aa gaya, dobara koshish karein.</div>`;
+  }
+  messages.scrollTop = messages.scrollHeight;
+}
 
 /* Initial render */
 document.getElementById("todayDate").textContent=new Date().toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short",year:"numeric"});
