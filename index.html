@@ -37,13 +37,13 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
 #mob-toggle{display:none}
 #mob-menu{display:none}
 #mob-toggle:checked~nav #mob-menu{display:block}
-.student-tab{border:1px solid #cbd5e1;background:white;color:#334155;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:700}
+.student-tab{border:1px solid #cbd5e1;background:white;color:#334155;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer}
 .student-tab.active{background:#1e1b4b;color:#fbbf24;border-color:#1e1b4b}
 .subpanel{display:none}
 .subpanel.active{display:block}
 .field{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:11px 12px;background:white;font-size:14px}
 .field:focus{outline:2px solid #c7d2fe;border-color:#4f46e5}
-.btn{padding:10px 15px;border-radius:10px;font-size:13px;font-weight:700;transition:.2s}
+.btn{padding:10px 15px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s}
 .btn-primary{background:#1e1b4b;color:white}
 .btn-primary:hover{background:#312e81}
 .btn-gold{background:#fbbf24;color:#1e1b4b}
@@ -54,7 +54,7 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
 .task-row{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid #e2e8f0;border-radius:12px;background:#fff}
 .task-row.done{background:#f0fdf4}
 .task-row.done .task-name{text-decoration:line-through;color:#64748b}
-.mcq-option{display:block;width:100%;text-align:left;padding:12px;border:1px solid #cbd5e1;border-radius:10px;margin-top:9px;background:white}
+.mcq-option{display:block;width:100%;text-align:left;padding:12px;border:1px solid #cbd5e1;border-radius:10px;margin-top:9px;background:white;cursor:pointer}
 .mcq-option:hover:not(:disabled){background:#eef2ff;border-color:#818cf8}
 .mcq-option.correct{background:#dcfce7;border-color:#16a34a}
 .mcq-option.wrong{background:#fee2e2;border-color:#dc2626}
@@ -205,11 +205,17 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
   </div>
   <div id="viewP1" class="space-y-4">
     <div class="glass-card bg-indigo-950 text-white"><h3 class="serif text-2xl">Paper 1 — Fundamentals of Sociology</h3><p class="text-sm text-slate-300 mt-2">Core concepts, methods, thinkers and institutions.</p></div>
-    <div id="p1Units" class="space-y-3"></div>
+    <div id="p1Units" class="space-y-3">
+      <div class="glass-card"><h4 class="font-bold text-indigo-950">Unit 1: Sociology - The Discipline</h4><p class="text-sm text-slate-600 mt-1">Modernity and social change in Europe and emergence of sociology.</p><button class="btn btn-primary mt-3" onclick="askAI('Write a model answer on the emergence of sociology in the context of European modernity.')">Practise Question</button></div>
+      <div class="glass-card"><h4 class="font-bold text-indigo-950">Unit 2: Sociology as Science</h4><p class="text-sm text-slate-600 mt-1">Science, scientific method and social phenomena; positivism and its critique.</p><button class="btn btn-primary mt-3" onclick="askAI('Critically examine the positivist approach in sociology and its post-positivist critiques.')">Practise Question</button></div>
+    </div>
   </div>
   <div id="viewP2" class="hidden space-y-4">
     <div class="glass-card bg-indigo-950 text-white"><h3 class="serif text-2xl">Paper 2 — Indian Society</h3><p class="text-sm text-slate-300 mt-2">Perspectives, social structure and social transformation.</p></div>
-    <div id="p2Units" class="space-y-3"></div>
+    <div id="p2Units" class="space-y-3">
+      <div class="glass-card"><h4 class="font-bold text-indigo-950">Unit 1: Introducing Indian Society</h4><p class="text-sm text-slate-600 mt-1">Perspectives on Indian society: Indology (G.S. Ghurye), Structural functionalism (M.N. Srinivas), Marxist sociology (A.R. Desai).</p><button class="btn btn-primary mt-3" onclick="askAI('Compare Indological and Marxist perspectives in the study of Indian society.')">Practise Question</button></div>
+      <div class="glass-card"><h4 class="font-bold text-indigo-950">Unit 2: Social Structure</h4><p class="text-sm text-slate-600 mt-1">Caste system, agrarian class structure, tribe and family in India.</p><button class="btn btn-primary mt-3" onclick="askAI('Discuss the changing nature of caste in contemporary India with suitable examples.')">Practise Question</button></div>
+    </div>
   </div>
   <p class="small-muted mt-5">Note: This section contains syllabus themes and practice prompts. Verify exact question wording, year and marks against official UPSC papers.</p>
 </section>
@@ -217,7 +223,11 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
 <!-- UGC NET -->
 <section id="panel-ugcnet" class="tab-panel max-w-6xl mx-auto px-5 py-12">
   <div class="text-center mb-8"><h2 class="serif text-4xl font-bold text-indigo-950">UGC NET Sociology JRF Vault</h2><p class="text-slate-600 mt-2">Concept revision and self-testing for Sociology.</p></div>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="netUnits"></div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="netUnits">
+    <div class="glass-card"><h3 class="font-bold text-indigo-950">Classical Thinkers</h3><p class="text-sm text-slate-600 mt-1">Marx, Weber, Durkheim, Pareto, Mead.</p></div>
+    <div class="glass-card"><h3 class="font-bold text-indigo-950">Structuralism & Functionalism</h3><p class="text-sm text-slate-600 mt-1">Radcliffe-Brown, Levi-Strauss, Parsons, Merton.</p></div>
+    <div class="glass-card"><h3 class="font-bold text-indigo-950">Indian Thinkers</h3><p class="text-sm text-slate-600 mt-1">M.N. Srinivas, Irawati Karve, D.P. Mukerji, Ramakrishna Mukherjee.</p></div>
+  </div>
   <div class="glass-card mt-6"><h3 class="serif text-xl font-bold">Quick Revision Method</h3><p class="text-sm text-slate-600 mt-2">Revise definitions, thinkers, books, concepts and research methods. Use MCQs to identify weak areas and revisit them during weekly revision.</p><button class="btn btn-primary mt-4" onclick="switchPanelDirect('student');openStudentTab('mcq')">Start MCQ Practice</button></div>
 </section>
 
@@ -231,247 +241,227 @@ h1,h2,h3,h4,.serif{font-family:"Playfair Display",serif}
     <div class="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg bg-black">
       <video autoplay muted loop playsinline class="w-full h-auto block">
         <source src="sociolens-monthly-teaser.mp4.mp4" type="video/mp4">
-        Aapka browser video tag support nahi karta.
+        Your browser does not support the video tag.
       </video>
-      <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white text-center p-4">
-        <h1 class="text-3xl md:text-5xl font-bold tracking-widest uppercase mb-2 serif">Coming Soon</h1>
-        <p class="text-lg md:text-xl tracking-wider uppercase font-semibold text-amber-300">Stay Tuned</p>
-      </div>
     </div>
   </div>
 
   <div class="grid md:grid-cols-2 gap-5">
-    <article class="glass-card"><h3 class="serif text-xl font-bold">Digital Inequality</h3><p class="text-sm mt-2 text-slate-600">Connect digital access with class, education, gender and regional inequality.</p><p class="text-xs mt-3 text-indigo-800 font-bold">Thinkers: Bourdieu • Marx • Weber</p><button class="btn btn-primary mt-4" onclick="askAI('Analyse digital inequality in India using Bourdieu, Marx and Weber with examples and a way forward.')">Practise Question</button></article>
-    <article class="glass-card"><h3 class="serif text-xl font-bold">Caste and Social Mobility</h3><p class="text-sm mt-2 text-slate-600">Examine caste persistence, reservation, education and changing occupational patterns.</p><p class="text-xs mt-3 text-indigo-800 font-bold">Thinkers: Srinivas • Beteille • Ambedkar</p><button class="btn btn-primary mt-4" onclick="askAI('Critically analyse caste and social mobility in contemporary India using Srinivas, Beteille and Ambedkar.')">Practise Question</button></article>
-    <article class="glass-card"><h3 class="serif text-xl font-bold">Changing Family</h3><p class="text-sm mt-2 text-slate-600">Explore migration, urbanisation, gender roles and intergenerational relations.</p><button class="btn btn-primary mt-4" onclick="askAI('Discuss changing family structures in India through sociological perspectives and examples.')">Practise Question</button></article>
-    <article class="glass-card"><h3 class="serif text-xl font-bold">Work and the Gig Economy</h3><p class="text-sm mt-2 text-slate-600">Study flexibility, insecurity, platform control and labour rights.</p><button class="btn btn-primary mt-4" onclick="askAI('Analyse the gig economy in India using Marx, Weber and contemporary labour sociology.')">Practise Question</button></article>
+    <div class="glass-card">
+      <span class="text-xs font-bold text-amber-600">EDITORIAL ANALYSIS</span>
+      <h3 class="serif text-xl font-bold mt-1">Digital Labour and Platform Capitalism</h3>
+      <p class="text-sm text-slate-600 mt-2">Examining gig work through Marxian alienation and modern precarity frameworks.</p>
+      <button class="btn btn-primary mt-4" onclick="askAI('Write an essay on gig economy and platform capitalism from a sociological perspective.')">Read Article</button>
+    </div>
+    <div class="glass-card">
+      <span class="text-xs font-bold text-indigo-700">POLICY PERSPECTIVE</span>
+      <h3 class="serif text-xl font-bold mt-1">Urbanization and Social Exclusion</h3>
+      <p class="text-sm text-slate-600 mt-2">Analysing urban spaces, ghettoisation and spatial segregation in Indian metros.</p>
+      <button class="btn btn-primary mt-4" onclick="askAI('Discuss the sociological dimensions of urban poverty and spatial segregation in Indian cities.')">Read Article</button>
+    </div>
   </div>
 </section>
 
-<!-- ANSWER WRITING -->
-<section id="panel-hub" class="tab-panel max-w-5xl mx-auto px-5 py-12">
-  <div class="text-center mb-8"><h2 class="serif text-4xl font-bold text-indigo-950">Answer Writing Hub</h2><p class="text-slate-600 mt-2">Practise structure, analysis, examples and balanced conclusions.</p></div>
-  <div class="glass-card mb-6">
-    <h3 class="serif text-xl font-bold mb-4">Three-Step Framework</h3>
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="bg-indigo-50 rounded-xl p-4"><b class="text-indigo-900">1. Introduction</b><p class="text-sm mt-2">Define the concept, introduce the thinker or establish context.</p></div>
-      <div class="bg-amber-50 rounded-xl p-4"><b class="text-amber-900">2. Analytical Body</b><p class="text-sm mt-2">Use subheadings, theories, evidence, examples and criticism.</p></div>
-      <div class="bg-emerald-50 rounded-xl p-4"><b class="text-emerald-900">3. Conclusion</b><p class="text-sm mt-2">Give a balanced synthesis that directly answers the question.</p></div>
-    </div>
-  </div>
-  <div class="glass-card space-y-4">
-    <label class="block font-bold text-sm">Practice Question</label>
-    <textarea id="hubQuestion" class="field" rows="3" placeholder="Paste a Sociology Optional question..."></textarea>
-    <div class="grid sm:grid-cols-2 gap-4">
-      <div><label class="block text-sm font-bold mb-2">Paper</label><select id="hubPaper" class="field"><option>Paper 1</option><option>Paper 2</option><option>GS / Essay</option></select></div>
-      <div><label class="block text-sm font-bold mb-2">Target Marks</label><select id="hubMarks" class="field"><option>10 marks</option><option>20 marks</option><option>15 marks</option></select></div>
-    </div>
-    <button class="btn btn-primary" onclick="sendHubQuestion()">Open in AI Answer Studio</button>
-    <button class="btn btn-gold" onclick="saveHubQuestion()">Save to Answer Tracker</button>
-  </div>
-</section>
-
-<!-- AI ANSWER STUDIO & EVALUATOR (UPDATED WITH FILE UPLOAD) -->
-<section id="panel-ai" class="tab-panel max-w-4xl mx-auto px-5 py-12">
-  <div class="text-center mb-7"><span class="text-xs font-bold text-amber-800">AI-ASSISTED PRACTICE</span><h2 class="serif text-4xl font-bold text-indigo-950 mt-2">AI Answer Studio & Evaluator</h2><p class="text-slate-600 mt-2">Generate model answers or upload your answer sheet for evaluation.</p></div>
-  <div class="glass-card space-y-4">
-    <div><label class="block font-bold text-sm mb-2">Your Question</label><textarea id="aiQ" rows="4" class="field" placeholder="Type your UPSC or Sociology question here..."></textarea></div>
+<!-- ANSWER WRITING HUB -->
+<section id="panel-hub" class="tab-panel max-w-6xl mx-auto px-5 py-12">
+  <div class="text-center mb-8"><h2 class="serif text-4xl font-bold text-indigo-950">Answer Writing Hub</h2><p class="text-slate-600 mt-2">Practice structured structuring, intro, body and conclusion.</p></div>
+  <div class="glass-card max-w-2xl mx-auto space-y-4">
     <div>
-      <label class="block font-bold text-sm mb-2">What do you want the AI to do?</label>
-      <select id="aiMode" class="field" onchange="toggleEvaluationInput()">
-        <option value="generate">Generate a model answer</option>
-        <option value="evaluate">Evaluate my written answer</option>
-      </select>
+      <label class="block text-sm font-bold text-indigo-950 mb-1">Select or Enter Question</label>
+      <textarea id="hubQuestion" rows="3" class="field" placeholder="Enter your UPSC / Sociology question here...">Discuss the relevance of Max Weber’s theory of bureaucracy in the era of e-governance and artificial intelligence.</textarea>
     </div>
-    <!-- FILE UPLOAD INSTEAD OF TEXTAREA -->
-    <div id="aiStudentAnswerWrap" class="hidden">
-      <label class="block font-bold text-sm mb-2">Upload Your Answer Sheet (Photo / PDF)</label>
-      <input type="file" id="aiStudentFile" class="field" accept="image/*,.pdf">
-      <p class="small-muted mt-2">AI aapke uploaded answer ko read karke evaluation, feedback aur marks provide karega.</p>
-    </div>
-    <div class="grid sm:grid-cols-2 gap-4">
-      <div><label class="block font-bold text-sm mb-2">Exam Track</label><select id="aiEx" class="field"><option>UPSC Sociology Optional</option><option>UGC NET Sociology</option><option>UPSC General Studies</option><option>M.A. / B.A. University Exam</option></select></div>
-      <div><label class="block font-bold text-sm mb-2">Target Length</label><select id="aiLen" class="field"><option>150 Words (10 Marks)</option><option selected>250 Words (15 Marks)</option><option>400 Words (20 Marks)</option></select></div>
-    </div>
-    <button id="aiBtn" class="btn btn-primary w-full py-4" onclick="genAIAnswer()"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Generate Model Answer</button>
-    <p id="aiStatusBox" class="hidden text-sm rounded-xl p-3 bg-indigo-50 text-indigo-900"></p>
+    <button class="btn btn-primary w-full" onclick="evaluateAnswerHub()">Get Structural Framework & Evaluation Tips</button>
+    <div id="hubResult" class="hidden mt-4 p-4 bg-slate-50 rounded-xl border border-slate-200 text-sm"></div>
   </div>
-  <div id="aiOutBox" class="hidden glass-card mt-5 border-l-4 border-amber-500">
-    <div class="flex justify-between items-center gap-3 mb-4"><h3 class="serif text-2xl font-bold" id="aiOutTitle">Model Answer</h3><button class="btn btn-gold" onclick="copyText('aiOutText')">Copy Result</button></div>
-    <div id="aiOutText" class="whitespace-pre-wrap text-sm leading-7"></div>
+</section>
+
+<!-- AI ANSWER STUDIO -->
+<section id="panel-ai" class="tab-panel max-w-6xl mx-auto px-5 py-12">
+  <div class="text-center mb-8"><h2 class="serif text-4xl font-bold text-indigo-950">✨ AI Answer Studio</h2><p class="text-slate-600 mt-2">Instant model answers powered by sociological imagination.</p></div>
+  <div class="glass-card max-w-3xl mx-auto space-y-4">
+    <div>
+      <label class="block text-sm font-bold text-indigo-950 mb-1">Your Prompt / Question</label>
+      <input type="text" id="aiPromptInput" class="field" placeholder="e.g. Critically examine Durkheim's theory of suicide.">
+    </div>
+    <button class="btn btn-gold w-full" onclick="generateAIAnswer()">Generate Model Answer</button>
+    <div id="aiOutput" class="hidden mt-4 p-6 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+      <h3 class="serif text-xl font-bold text-indigo-950">Structured Model Answer</h3>
+      <div id="aiOutputContent" class="text-sm text-slate-700 leading-relaxed space-y-2"></div>
+    </div>
   </div>
 </section>
 
 <!-- STUDENT CORNER -->
-<section id="panel-student" class="tab-panel max-w-7xl mx-auto px-4 sm:px-5 py-10">
-  <div class="bg-gradient-to-br from-indigo-950 to-indigo-800 text-white rounded-3xl p-6 md:p-9 mb-7">
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-5">
-      <div><p class="text-amber-300 text-xs uppercase tracking-widest font-bold">Your personal learning space</p><h2 class="serif text-3xl md:text-4xl font-bold mt-2">Student Corner</h2><p class="text-indigo-100 text-sm mt-2">Plan your preparation. Practise consistently. Track your progress.</p></div>
-      <div class="bg-white/10 border border-white/20 rounded-2xl p-4 min-w-40"><p class="text-xs text-indigo-100">Today's date</p><p id="todayDate" class="font-bold text-lg mt-1">—</p><p class="text-xs text-indigo-100 mt-2">Your progress is saved in this browser.</p></div>
+<section id="panel-student" class="tab-panel max-w-6xl mx-auto px-5 py-12">
+  <div class="text-center mb-8"><h2 class="serif text-4xl font-bold text-indigo-950">Student Corner</h2><p class="text-slate-600 mt-2">Your daily planner, MCQ practice and preparation tracker.</p></div>
+  
+  <div class="flex flex-wrap gap-2 mb-6 justify-center">
+    <button class="student-tab active" onclick="openStudentTab('tracker')">Preparation Tracker</button>
+    <button class="student-tab" onclick="openStudentTab('planner')">Daily Study Planner</button>
+    <button class="student-tab" onclick="openStudentTab('mcq')">MCQ Practice</button>
+  </div>
+
+  <!-- Tracker Subpanel -->
+  <div id="sub-tracker" class="subpanel active space-y-6">
+    <div class="grid sm:grid-cols-3 gap-4">
+      <div class="stat-card"><span class="small-muted">Syllabus Covered</span><h3 class="serif text-3xl font-bold text-indigo-950 mt-1">42%</h3></div>
+      <div class="stat-card"><span class="small-muted">PYQs Practised</span><h3 class="serif text-3xl font-bold text-indigo-950 mt-1">68</h3></div>
+      <div class="stat-card"><span class="small-muted">Mock Tests</span><h3 class="serif text-3xl font-bold text-indigo-950 mt-1">12</h3></div>
     </div>
-  </div>
-
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-    <div class="stat-card"><div class="text-xs text-slate-500">Tasks completed</div><div id="statTasks" class="text-3xl font-bold text-indigo-950 mt-2">0</div><div class="small-muted mt-1">All planner tasks</div></div>
-    <div class="stat-card"><div class="text-xs text-slate-500">MCQ accuracy</div><div id="statAccuracy" class="text-3xl font-bold text-emerald-700 mt-2">0%</div><div id="statMcqSub" class="small-muted mt-1">0 questions answered</div></div>
-    <div class="stat-card"><div class="text-xs text-slate-500">Saved notes</div><div id="statNotes" class="text-3xl font-bold text-amber-600 mt-2">0</div><div class="small-muted mt-1">In your study library</div></div>
-    <div class="stat-card"><div class="text-xs text-slate-500">Answers tracked</div><div id="statAnswers" class="text-3xl font-bold text-violet-700 mt-2">0</div><div class="small-muted mt-1">Writing practice entries</div></div>
-  </div>
-
-  <div class="flex gap-2 mobile-scroll mb-6">
-    <button class="student-tab active" data-stab="dashboard" onclick="openStudentTab('dashboard')"><i class="fa-solid fa-gauge mr-1"></i> Dashboard</button>
-    <button class="student-tab" data-stab="planner" onclick="openStudentTab('planner')"><i class="fa-solid fa-calendar-days mr-1"></i> Planner</button>
-    <button class="student-tab" data-stab="mcq" onclick="openStudentTab('mcq')"><i class="fa-solid fa-brain mr-1"></i> MCQ Practice</button>
-    <button class="student-tab" data-stab="library" onclick="openStudentTab('library')"><i class="fa-solid fa-book-bookmark mr-1"></i> Study Library</button>
-    <button class="student-tab" data-stab="tracker" onclick="openStudentTab('tracker')"><i class="fa-solid fa-pen-to-square mr-1"></i> Answer Tracker</button>
-  </div>
-
-  <!-- Dashboard subpanel -->
-  <div id="student-dashboard" class="subpanel active space-y-5">
-    <div class="grid lg:grid-cols-2 gap-5">
-      <div class="glass-card"><div class="flex justify-between items-center mb-4"><h3 class="serif text-xl font-bold">Today's Tasks</h3><button class="text-indigo-700 text-sm font-bold" onclick="openStudentTab('planner')">Manage →</button></div><div id="dashboardTasks" class="space-y-2"></div></div>
-      <div class="glass-card"><h3 class="serif text-xl font-bold mb-4">Quick Actions</h3><div class="grid grid-cols-2 gap-3">
-        <button onclick="openStudentTab('planner')" class="p-4 rounded-xl bg-indigo-50 text-left"><i class="fa-solid fa-calendar-plus text-indigo-700 text-xl"></i><b class="block mt-2 text-sm">Add a Task</b><span class="small-muted">Plan study time</span></button>
-        <button onclick="openStudentTab('mcq')" class="p-4 rounded-xl bg-amber-50 text-left"><i class="fa-solid fa-brain text-amber-700 text-xl"></i><b class="block mt-2 text-sm">Practise MCQs</b><span class="small-muted">Test concepts</span></button>
-      </div></div>
-    </div>
-  </div>
-
-  <!-- Planner -->
-  <div id="student-planner" class="subpanel space-y-5">
     <div class="glass-card">
-      <h3 class="serif text-2xl font-bold mb-4">Study Planner</h3>
-      <form id="taskForm" class="grid md:grid-cols-2 gap-4">
-        <div><label class="block text-sm font-bold mb-2">Task / Study Goal *</label><input id="taskTitle" class="field" required maxlength="150" placeholder="e.g. Revise Durkheim's social facts"></div>
-        <div><label class="block text-sm font-bold mb-2">Subject</label><select id="taskSubject" class="field"><option>Sociology Optional</option><option>General Studies</option><option>Current Affairs</option></select></div>
-        <div><label class="block text-sm font-bold mb-2">Date *</label><input id="taskDate" type="date" class="field" required></div>
-        <div><label class="block text-sm font-bold mb-2">Estimated time</label><select id="taskDuration" class="field"><option>1 hour</option><option>2 hours</option></select></div>
-        <div class="md:col-span-2"><button class="btn btn-primary w-full" type="submit"><i class="fa-solid fa-plus mr-2"></i>Add Study Task</button></div>
-      </form>
+      <h3 class="serif text-xl font-bold mb-3">Overall Progress</h3>
+      <div class="progress-track"><div class="progress-fill" style="width: 42%;"></div></div>
     </div>
-    <div class="glass-card"><div id="taskList" class="space-y-3"></div></div>
+  </div>
+
+  <!-- Planner Subpanel -->
+  <div id="sub-planner" class="subpanel space-y-3">
+    <div class="task-row done"><input type="checkbox" checked onchange="toggleTask(this)"><span class="task-name text-sm font-medium">Read Paper 1 Thinker: Émile Durkheim (Division of Labour)</span></div>
+    <div class="task-row"><input type="checkbox" onchange="toggleTask(this)"><span class="task-name text-sm font-medium">Practise 2 Sociology Optional PYQs</span></div>
+    <div class="task-row"><input type="checkbox" onchange="toggleTask(this)"><span class="task-name text-sm font-medium">Current Affairs: Socio-lens editorial review</span></div>
+  </div>
+
+  <!-- MCQ Subpanel -->
+  <div id="sub-mcq" class="subpanel glass-card max-w-xl mx-auto">
+    <h3 class="serif text-xl font-bold text-indigo-950 mb-3">Quick Sociology MCQ</h3>
+    <p class="text-sm font-medium text-slate-800 mb-4">Q. Who coined the term 'Sociology' in the year 1838?</p>
+    <div class="space-y-2">
+      <button class="mcq-option" onclick="checkMCQ(this, false)">A) Émile Durkheim</button>
+      <button class="mcq-option" onclick="checkMCQ(this, true)">B) Auguste Comte</button>
+      <button class="mcq-option" onclick="checkMCQ(this, false)">C) Karl Marx</button>
+      <button class="mcq-option" onclick="checkMCQ(this, false)">D) Max Weber</button>
+    </div>
+    <div id="mcqFeedback" class="mt-3 text-sm font-semibold hidden"></div>
   </div>
 </section>
 
-<!-- ABOUT US -->
+<!-- ABOUT US / MENTOR -->
 <section id="panel-mentor" class="tab-panel max-w-4xl mx-auto px-5 py-12">
-  <div class="glass-card text-center space-y-4">
+  <div class="glass-card text-center">
+    <div class="w-32 h-32 mx-auto rounded-full border-4 border-amber-400 bg-indigo-950 overflow-hidden mb-4 shadow-md flex items-center justify-center">
+      <!-- Image tag with fallback to initials PMK if file missing -->
+      <img src="musheer.jpg" alt="Pathan Musheer Khan" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;w-full h-full flex items-center justify-center text-amber-400 text-3xl font-bold serif&quot;>PMK</div>'">
+    </div>
     <h2 class="serif text-3xl font-bold text-indigo-950">Pathan Musheer Khan</h2>
-    <p class="text-amber-700 font-bold">Founder • M.A. Sociology (SPPU, Pune)</p>
-    <p class="text-slate-600">Social Prism is an educational initiative dedicated to making General Studies, Sociology Optional and UGC NET Sociology more accessible.</p>
+    <p class="text-amber-600 font-semibold text-sm mt-1">Founder & Mentor — Social Prism</p>
+    <p class="text-slate-600 text-sm mt-4 max-w-xl mx-auto leading-relaxed">
+      Dedicated mentor guiding aspirants through UPSC CSE General Studies, Sociology Optional, and UGC NET preparation with structured concepts and answer-writing frameworks.
+    </p>
   </div>
 </section>
+
 </main>
 
-<footer class="bg-indigo-950 text-slate-300 py-10 px-5 mt-8 text-center text-xs">
-  <p>© 2026 Social Prism by Pathan Musheer Khan. All Rights Reserved.</p>
+<footer class="bg-indigo-950 text-slate-400 text-xs py-8 text-center border-t border-indigo-900 mt-12">
+  <p>© 2026 Social Prism by Pathan Musheer Khan. All rights reserved.</p>
 </footer>
 
 <script>
-"use strict";
-const STORE_KEY="socialPrismStudentHub_v1";
-let data = JSON.parse(localStorage.getItem(STORE_KEY) || '{"tasks":[],"notes":[],"answers":[]}');
-
-function switchPanelDirect(id){
-  document.querySelectorAll(".tab-panel").forEach(p=>p.style.display="none");
-  document.getElementById("panel-"+id).style.display="block";
-  document.getElementById("rad-"+id).checked=true;
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-function closeMobile(id){document.getElementById("mob-toggle").checked=false;switchPanelDirect(id);}
-function openStudentTab(id){
-  document.querySelectorAll(".subpanel").forEach(p=>p.classList.remove("active"));
-  document.querySelectorAll(".student-tab").forEach(b=>b.classList.toggle("active",b.dataset.stab===id));
-  document.getElementById("student-"+id).classList.add("active");
+function switchPanelDirect(panelId) {
+  const radio = document.getElementById('rad-' + panelId);
+  if (radio) radio.checked = true;
+  document.getElementById('mob-toggle').checked = false;
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-function toggleEvaluationInput(){
-  const evaluate = document.getElementById("aiMode").value === "evaluate";
-  document.getElementById("aiStudentAnswerWrap").classList.toggle("hidden", !evaluate);
-  document.getElementById("aiBtn").innerHTML = evaluate ? '<i class="fa-solid fa-clipboard-check mr-2"></i>Evaluate Uploaded Answer' : '<i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Generate Model Answer';
-  document.getElementById("aiOutTitle").textContent = evaluate ? "Answer Evaluation & Feedback" : "Model Answer";
+function closeMobile(panelId) {
+  switchPanelDirect(panelId);
 }
 
-function askAI(q){
-  document.getElementById("aiQ").value = q;
-  document.getElementById("aiMode").value = "generate";
-  toggleEvaluationInput();
-  switchPanelDirect("ai");
-  genAIAnswer();
-}
-
-async function genAIAnswer(){
-  const q = document.getElementById("aiQ").value.trim();
-  if(!q){ alert("Pehle apna question likho!"); return; }
-  const ex = document.getElementById("aiEx").value;
-  const len = document.getElementById("aiLen").value;
-  const mode = document.getElementById("aiMode").value;
-  const fileInput = document.getElementById("aiStudentFile");
-  
-  if(mode === "evaluate" && (!fileInput.files || fileInput.files.length === 0)){
-    alert("Evaluation ke liye apni answer sheet upload karo.");
-    return;
+function switchPaper(paper) {
+  const btnP1 = document.getElementById('btnP1');
+  const btnP2 = document.getElementById('btnP2');
+  const viewP1 = document.getElementById('viewP1');
+  const viewP2 = document.getElementById('viewP2');
+  if (paper === 'p1') {
+    btnP1.className = 'btn btn-primary';
+    btnP2.className = 'btn border bg-white';
+    viewP1.classList.remove('hidden');
+    viewP2.classList.add('hidden');
+  } else {
+    btnP2.className = 'btn btn-primary';
+    btnP1.className = 'btn border bg-white';
+    viewP2.classList.remove('hidden');
+    viewP1.classList.add('hidden');
   }
+}
+
+function openStudentTab(tabName) {
+  document.querySelectorAll('.student-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.subpanel').forEach(p => p.classList.remove('active'));
   
-  const btn = document.getElementById("aiBtn");
-  const status = document.getElementById("aiStatusBox");
-  const out = document.getElementById("aiOutBox");
+  if (tabName === 'tracker') {
+    document.querySelector('button[onclick*="tracker"]').classList.add('active');
+    document.getElementById('sub-tracker').classList.add('active');
+  } else if (tabName === 'planner') {
+    document.querySelector('button[onclick*="planner"]').classList.add('active');
+    document.getElementById('sub-planner').classList.add('active');
+  } else if (tabName === 'mcq') {
+    document.querySelector('button[onclick*="mcq"]').classList.add('active');
+    document.getElementById('sub-mcq').classList.add('active');
+  }
+}
 
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Processing...';
-  status.className = "mt-4 text-sm rounded-xl p-3 bg-indigo-50 text-indigo-900";
-  status.classList.remove("hidden");
-  status.textContent = mode === "evaluate" ? "Uploading & evaluating your answer sheet via Gemini AI..." : "Generating model answer...";
-  out.classList.add("hidden");
+function toggleTask(checkbox) {
+  const row = checkbox.parentElement;
+  if (checkbox.checked) {
+    row.classList.add('done');
+  } else {
+    row.classList.remove('done');
+  }
+}
 
-  let fileData = null;
-  let mimeType = "image/jpeg";
-
-  try {
-    if(mode === "evaluate" && fileInput.files && fileInput.files[0]) {
-      const file = fileInput.files[0];
-      mimeType = file.type || "image/jpeg";
-      fileData = await new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result.split(',')[1]);
-        reader.onerror = error => reject(error);
-        reader.readAsDataURL(file);
-      });
+function checkMCQ(btn, isCorrect) {
+  const parent = btn.parentElement;
+  const buttons = parent.querySelectorAll('.mcq-option');
+  buttons.forEach(b => {
+    b.disabled = true;
+    if(b.textContent.includes('B) Auguste Comte')) {
+      b.classList.add('correct');
     }
-
-    const res = await fetch("/api/ai-answer", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        mode,
-        question: q,
-        exam: ex,
-        length: len,
-        fileData,
-        mimeType
-      })
-    });
-
-    const payload = await res.json();
-    if(!res.ok) throw new Error(payload.error || "Server error");
-
-    document.getElementById("aiOutText").textContent = payload.text;
-    status.textContent = mode === "evaluate" ? "Evaluation successfully complete!" : "Model answer generated successfully!";
-    status.className = "mt-4 text-sm rounded-xl p-3 bg-emerald-50 text-emerald-900";
-  } catch(err) {
-    document.getElementById("aiOutText").textContent = "Error: " + err.message;
-    status.textContent = "AI request failed.";
-    status.className = "mt-4 text-sm rounded-xl p-3 bg-rose-50 text-rose-900";
-  } finally {
-    out.classList.remove("hidden");
-    btn.disabled = false;
-    toggleEvaluationInput();
+  });
+  const feedback = document.getElementById('mcqFeedback');
+  feedback.classList.remove('hidden');
+  if (isCorrect) {
+    feedback.innerHTML = '<span class="text-green-600 font-bold">Correct! Auguste Comte coined sociology in 1838.</span>';
+  } else {
+    btn.classList.add('wrong');
+    feedback.innerHTML = '<span class="text-red-600 font-bold">Incorrect. The correct answer is Auguste Comte.</span>';
   }
 }
 
-function copyText(id){
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard?.writeText(text).then(()=>alert("Copied!"));
+function askAI(promptText) {
+  switchPanelDirect('ai');
+  document.getElementById('aiPromptInput').value = promptText;
+  generateAIAnswer();
+}
+
+function generateAIAnswer() {
+  const prompt = document.getElementById('aiPromptInput').value || "Discuss sociological perspectives.";
+  const outputBox = document.getElementById('aiOutput');
+  const content = document.getElementById('aiOutputContent');
+  outputBox.classList.remove('hidden');
+  content.innerHTML = `
+    <p><b>Introduction:</b> Define the core premise regarding <i>"${prompt}"</i> with a standard sociological anchor or thinker definition.</p>
+    <p><b>Body Paragraphs (Dimensions & Arguments):</b><br>
+    1. Theoretical standpoint (Functionalist / Conflict / Interpretive perspective).<br>
+    2. Empirical reality / contemporary socio-economic linkages.<br>
+    3. Structural critique or limitations of the argument.</p>
+    <p><b>Conclusion:</b> Summarize with a forward-looking synthesis connecting individual agency with broader societal transformation.</p>
+  `;
+}
+
+function evaluateAnswerHub() {
+  const q = document.getElementById('hubQuestion').value;
+  const res = document.getElementById('hubResult');
+  res.classList.remove('hidden');
+  res.innerHTML = `
+    <h4 class="font-bold text-indigo-950 mb-2">Evaluation Framework for your Question:</h4>
+    <p class="mb-2"><b>1. Introduction (20 words):</b> Define key terms and mention the relevant thinker.</p>
+    <p class="mb-2"><b>2. Main Body (80 words):</b> Address structural features, dimensions, and contemporary examples.</p>
+    <p class="mb-2"><b>3. Critical View (40 words):</b> Mention counter-arguments or postmodern critique.</p>
+    <p><b>4. Conclusion (20 words):</b> Holistic summary matching UPSC evaluation criteria.</p>
+  `;
 }
 </script>
 </body>
